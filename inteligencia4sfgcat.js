@@ -315,15 +315,15 @@ const translations = {
         'stats-roi': '30', 
         'stats-roi-label': 'Dies per veure el ROI',
 
-        // Menú Harburguesa
-        'dmenu-mob-navegacionh':"Navegació",
-        'dmenu-mob-serviciosh':'🔄  Serveis   ',
-        'dmenu-mob-procesoh':'📋 Procés',        
-        'dmenu-mob-casosh':'🏆 Casos d\'Èxit',
-        'dmenu-mob-calculadorah':'💰 Calculadora ROI',
-        'dmenu-mob-tarjetah':'📱 Targeta Visita',
-        'dmenu-mob-calendarioh':'📅 Reservar Cita',
-        'dmenu-mob-contactoh':'📞 Contacte',
+       // Menú Harburguesa
+       'dmenu-mob-navegacionh':"Navegació",
+       'dmenu-mob-serviciosh':'🔄 Serveis',
+       'dmenu-mob-procesoh':'📋 Processos',
+       'dmenu-mob-casosh':'🏆 Casos de Éxito',
+       'dmenu-mob-calculadorah':'💰 Calculadora ROI',
+       'dmenu-mob-tarjetah':'📱 Tarjeta Visita',
+       'dmenu-mob-calendarioh':'📅 Reservar Cita',
+       'dmenu-mob-contactoh':'📞 Contacto',
 
         // Secciones principales
         'services-title': 'Serveis especialitzats',
