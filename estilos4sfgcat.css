@@ -939,6 +939,7 @@ nav a:hover {
 
 #chatbot-container {
     position: fixed;
+    top:40px;
     bottom: 90px;
     right: 20px;
     width: 360px;
