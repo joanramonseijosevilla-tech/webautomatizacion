@@ -1,0 +1,9 @@
+# Robots.txt para AutomatizaPro
+User-agent: *
+Allow: /
+
+# Sitemap (opcional - crear cuando tengas más páginas)
+# Sitemap: https://gusi-ui.github.io/automatic/sitemap.xml
+
+# Optimización para SEO
+Crawl-delay: 1

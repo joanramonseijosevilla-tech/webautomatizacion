@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>
+            Elimina el 90% de Tareas Repetitivas en Tu Empresa
+        </title>
+        <meta
+            name="description"
+            content="Automatizamos procesos empresariales para ahorrar tiempo y reducir errores. Diagnóstico gratuito + ROI garantido en 30 días."
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="estilos4sfgcat.css" />
+        
+        <!-- Favicon -->
+        <link rel="icon" type="image/x-icon" href="favicon.ico" />
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+        <meta name="theme-color" content="#1e3a8a" />
+    </head>
+    <body id="top">
+        <!-- PANEL DE ANALYTICS -->
+        <button class="analytics-toggle" onclick="toggleAnalytics()">
+            📊 Analytics
+        </button>
+        <div class="analytics-panel" id="analytics-panel">
+            <div><strong>📊 ANALYTICS EN TIEMPO REAL</strong></div>
+            <div>Versión A/B: <span id="current-version">A</span></div>
+            <div>👤 Visitante: <span id="visitors-count">1</span></div>
+            <div>🎯 Clics en CTAs: <span id="cta-clicks">0</span></div>
+            <div>
+                📝 Conversiones: <span id="conversions">0</span> (formularios
+                enviados)
+            </div>
+            <div>⏱️ Tiempo: <span id="avg-time">0s</span></div>
+            <div>🔥 Clics heatmap: <span id="heatmap-clicks">0</span></div>
+            <div>📱 vCard Descargas: <span id="vcard-downloads">0</span></div>
+            <div
+                id="helper"
+                style="font-size: 0.7rem; color: #888; margin-top: 0.5rem"
+            >
+                💡 CTAs = Todos los botones importantes<br />
+                💡 Conversiones = Solo formularios enviados
+            </div>
+            <br />
+            <button
+                onclick="switchABVersion()"
+                style="
+                    background: #0066cc;
+                    color: white;
+                    border: none;
+                    padding: 0.5rem;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    font-size: 0.8rem;
+                "
+            >
+                🔄 Cambiar Versión A/B
+            </button>
+            <button
+                onclick="showHeatmapReport()"
+                style="
+                    background: #00d4aa;
+                    color: white;
+                    border: none;
+                    padding: 0.5rem;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    margin-top: 0.5rem;
+                    font-size: 0.8rem;
+                    width: 100%;
+                "
+            >
+                📊 Ver Informe Detallado
+            </button>
+        </div>
+
+        <header>
+            <div class="header-content">
+                <div class="logo">
+                    <a href="#top" data-track="nav-logo">
+                        <img
+                            src="logo.png"
+                            alt="InnovaRetail"
+                            width="120"
+                            height="auto"
+                            id="logo"
+                        />
+                    </a>
+                </div>
+                <nav>
+                    <a href="#servicios" data-track="nav-servicios"
+                        >Servicios</a
+                    >
+                    <a href="#proceso" data-track="nav-proceso">Proceso</a>
+                    <a href="#casos" data-track="nav-casos">Casos de Éxito</a>
+                    <a href="#calculadora" data-track="nav-calculadora"
+                        >Calculadora ROI</a
+                    >
+                    <a href="#vcard" data-track="nav-tarjeta">Targeta visita</a>
+
+                    <a href="#calendario" data-track="nav-calendario"
+                        >Reservar cita</a
+                    >
+                    <a href="#contacto" data-track="nav-contacto">Contacto</a>
+                </nav>
+                <div class="header-controls">
+                    <div class="language-selector">
+                        <button
+                            id="current-language"
+                            class="language-btn"
+                            data-track="language-selector"
+                        >
+                            🌐 ES
+                        </button>
+                        <div class="language-dropdown" id="language-dropdown">
+                            <button
+                                class="language-option"
+                                data-lang="es"
+                                data-track="lang-spanish"
+                            >
+                                <img
+                                    src="bandera_espanola.png"
+                                    alt="Español"
+                                    width="24"
+                                    height="16"
+                                />
+                                Español
+                            </button>
+                            <button
+                                class="language-option"
+                                data-lang="ca"
+                                data-track="lang-catalan"
+                            >
+                                <img
+                                    src="bandera_catalana.png"
+                                    alt="Catalán"
+                                    width="24"
+                                    height="16"
+                                />
+                                Català
+                            </button>
+                            <button
+                                class="language-option"
+                                data-lang="en"
+                                data-track="lang-english"
+                            >
+                                <img
+                                    src="bandera_inglesa.png"
+                                    alt="Inglés"
+                                    width="24"
+                                    height="16"
+                                />
+                                English
+                            </button>
+                        </div>
+                    </div>
+                    <button
+                        id="dark-mode-toggle"
+                        class="dark-mode-btn"
+                        data-track="dark-mode-toggle"
+                    >
+                        🌙
+                    </button>
+                    
+                    <!-- Botón Analytics integrado en header -->
+                    <button
+                        id="analytics-toggle-header"
+                        class="analytics-toggle-header"
+                        data-track="analytics-toggle"
+                        aria-label="Analytics"
+                        onclick="toggleAnalytics()"
+                    >
+                        📊
+                    </button>
+                    
+                    <!-- Menú hamburguesa para móvil -->
+                    <button
+                        id="mobile-menu-toggle"
+                        class="mobile-menu-btn"
+                        data-track="mobile-menu-toggle"
+                        aria-label="Menú de navegación"
+                    >
+                        ☰
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- MOBILE MENU OVERLAY -->
+        <div class="mobile-menu-overlay" id="mobile-menu-overlay">
+            <div class="mobile-menu-content">
+                <div class="mobile-menu-header">
+                    <h3>Navegación</h3>
+                    <button class="mobile-menu-close" id="mobile-menu-close">✕</button>
+                </div>
+                <nav class="mobile-menu-nav">
+                    <a href="#servicios" data-track="mobile-menu-servicios">
+                        🔄 Servicios
+                    </a>
+                    <a href="#proceso" data-track="mobile-menu-proceso">
+                        📋 Proceso
+                    </a>
+                    <a href="#casos" data-track="mobile-menu-casos">
+                        🏆 Casos de Éxito
+                    </a>
+                    <a href="#calculadora" data-track="mobile-menu-calculadora">
+                        💰 Calculadora ROI
+                    </a>
+                    <a href="#vcard" data-track="mobile-menu-tarjeta">
+                        📱 Tarjeta Visita
+                    </a>
+                    <a href="#calendario" data-track="mobile-menu-calendario">
+                        📅 Reservar Cita
+                    </a>
+                    <a href="#contacto" data-track="mobile-menu-contacto">
+                        📞 Contacto
+                    </a>
+                </nav>
+            </div>
+        </div>
+
+        <section class="hero">
+            <div class="hero-content">
+                <h1 id="main-headline">
+                    Elimina el 90% de Tareas Repetitivas en Tu Empresa
+                </h1>
+                <p id="main-subtitle">
+                    Transformamos empresas con automatizaciones inteligentes que
+                    eliminan tareas repetitivas, reducen errores y aumentan la
+                    productividad hasta un 300%.
+                </p>
+
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <span class="stat-number">20h</span>
+                        <div class="stat-label">Promedio semanal ahorrado</div>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">95%</span>
+                        <div class="stat-label">Reducción de errores</div>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">30</span>
+                        <div class="stat-label">Días para ver el ROI</div>
+                    </div>
+                </div>
+
+                <div class="cta-buttons">
+                    <a
+                        href="#contacto"
+                        class="btn btn-primary"
+                        id="primary-cta"
+                        data-track="cta-primary"
+                    >
+                        🚀
+                        <span id="primary-cta-text">Diagnóstico gratuito</span>
+                    </a>
+                    <a
+                        href="#casos"
+                        class="btn btn-secondary"
+                        id="secondary-cta"
+                        data-track="cta-secondary"
+                    >
+                        📊
+                        <span id="secondary-cta-text">Ver casos de éxito</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="servicios" class="section">
+            <h2>Servicios especializados</h2>
+            <div class="cards">
+                <div class="card" data-track="card-procesos">
+                    <div class="card-icon">🔄</div>
+                    <h3>Automatización de procesos</h3>
+                    <p>
+                        Conectamos tus herramientas (CRM, email, facturación,
+                        inventario) para que trabajen en sincronización
+                        automáticamente.
+                    </p>
+                    <strong style="color: var(--success)"
+                        >ROI promedio: 400%</strong
+                    >
+                </div>
+                <div class="card" data-track="card-marketing">
+                    <div class="card-icon">🎯</div>
+                    <h3>Marketing automatizado</h3>
+                    <p>
+                        Secuencias de email, lead scoring, segmentación
+                        automática y nurturing de clientes potenciales.
+                    </p>
+                    <strong style="color: var(--success)"
+                        >+150% de leads calificados</strong
+                    >
+                </div>
+                <div class="card" data-track="card-reportes">
+                    <div class="card-icon">📊</div>
+                    <h3>Reportes inteligentes</h3>
+                    <p>
+                        Dashboards automáticos que consolidan datos de múltiples
+                        fuentes para decisiones basadas en datos reales.
+                    </p>
+                    <strong style="color: var(--success)"
+                        >Decisiones 5 veces más rápidas</strong
+                    >
+                </div>
+
+                <div class="card" data-track="card-web">
+                    <div class="card-icon">💻</div>
+                    <h3>Realización de páginas web</h3>
+                    <p>
+                        Diseñamos y desarrollamos sitios web rápidos, seguros y
+                        adaptados a cualquier dispositivo, optimizados para
+                        atraer y convertir clientes.
+                    </p>
+                    <strong style="color: var(--success)">
+                        Entregas en tiempo récord y listas para SEO
+                    </strong>
+                </div>
+
+                <div class="card" data-track="card-ai">
+                    <div class="card-icon">🤖</div>
+                    <h3>Inteligencia artificial</h3>
+                    <p>
+                        Implementamos soluciones de IA que automatizan tareas,
+                        analizan datos y mejoran la toma de decisiones en tu
+                        negocio.
+                    </p>
+                    <strong style="color: var(--success)">
+                        Hasta un 60% más de eficiencia operativa
+                    </strong>
+                </div>
+
+                <div class="card" data-track="card-training">
+                    <div class="card-icon">🎓</div>
+                    <h3>Formación para empresas</h3>
+                    <p>
+                        Programas de capacitación personalizados para equipos,
+                        enfocados en tecnología, ventas y productividad.
+                    </p>
+                    <strong style="color: var(--success)">
+                        Aprendizaje práctico con resultados inmediatos
+                    </strong>
+                </div>
+            </div>
+        </section>
+
+        <section id="proceso" class="section">
+            <h2>Proceso garantizado en 4 pasos</h2>
+            <div class="process-steps">
+                <div class="process-step" data-track="step-1">
+                    <div class="step-number">1</div>
+                    <h3>Auditoría gratuita</h3>
+                    <p>
+                        Analizamos tus procesos actuales e identificamos
+                        oportunidades de automatización
+                    </p>
+                </div>
+                <div class="process-step" data-track="step-2">
+                    <div class="step-number">2</div>
+                    <h3>Propuesta personalizada</h3>
+                    <p>
+                        Diseñamos la solución específica con ROI calculado y
+                        tiempos de implementación
+                    </p>
+                </div>
+                <div class="process-step" data-track="step-3">
+                    <div class="step-number">3</div>
+                    <h3>Implementación</h3>
+                    <p>
+                        Configuramos y probamos todas las automatizaciones sin
+                        interrumpir tu operación
+                    </p>
+                </div>
+                <div class="process-step" data-track="step-4">
+                    <div class="step-number">4</div>
+                    <h3>Soporte continuo</h3>
+                    <p>
+                        Monitoreo, optimización y formación de tu equipo para
+                        maximizar resultados
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="casos" class="section">
+            <h2>Casos de éxito reales</h2>
+            <div class="cards">
+                <div class="testimonial" data-track="testimonial-1">
+                    <p>
+                        "Automatizamos el proceso de cotizaciones y seguimiento.
+                        Ahora generamos 3 veces más propuestas con el mismo
+                        equipo."
+                    </p>
+                    <strong>— Elena Martínez, CEO TechSolutions</strong>
+                    <div style="margin-top: 1rem; color: var(--success)">
+                        ✅ 15 horas semanales ahorradas<br />
+                        ✅ 200% más cotizaciones enviadas<br />
+                        ✅ ROI del 450% en 6 meses
+                    </div>
+                </div>
+
+                <div class="testimonial" data-track="testimonial-2">
+                    <p>
+                        "La automatización de inventario y facturación eliminó
+                        errores y aceleró nuestro flujo de caja."
+                    </p>
+                    <strong
+                        >— Carlos Ruiz, Director Comercial InnovaRetail</strong
+                    >
+                    <div style="margin-top: 1rem; color: var(--success)">
+                        ✅ 0% de errores en inventario<br />
+                        ✅ Facturación 24/7 automática<br />
+                        ✅ Flujo de caja mejorado 40%
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="calculadora" class="section">
+            <h2>💰 Descubre cuánto dinero estás perdiendo</h2>
+            <div class="calculator-container">
+                <div class="calculator-inputs">
+                    <div class="calc-group">
+                        <label for="hours"
+                            >⏰ Horas semanales en tareas repetitivas (por
+                            empleado):</label
+                        >
+                        <input
+                            type="number"
+                            id="hours"
+                            min="1"
+                            max="60"
+                            value="15"
+                        />
+                    </div>
+                    <div class="calc-group">
+                        <label for="hourly-cost"
+                            >💰 Costo por hora medio (€):</label
+                        >
+                        <input
+                            type="number"
+                            id="hourly-cost"
+                            min="10"
+                            max="200"
+                            value="25"
+                        />
+                    </div>
+                    <div class="calc-group">
+                        <label for="employees"
+                            >👥 Empleados que realizan estas tareas:</label
+                        >
+                        <input
+                            type="number"
+                            id="employees"
+                            min="1"
+                            max="50"
+                            value="3"
+                        />
+                    </div>
+                </div>
+                <div
+                    class="calculator-results"
+                    id="results"
+                    style="display: none"
+                >
+                    <div class="result-pain">
+                        <h3>💸 ESTÁS PERDEDOR:</h3>
+                        <div class="loss-amount" id="annual-loss">
+                            0 € al año
+                        </div>
+                    </div>
+                    <div class="result-gain">
+                        <h3>🚀 CON AUTOMATIZACIÓN:</h3>
+                        <div id="savings-details">
+                            <div>
+                                <span id="annual-savings-label"
+                                    >Ahorro anual:</span
+                                >
+                                <span id="annual-savings">0€</span>
+                            </div>
+                            <div>
+                                <span id="annual-roi"> ROI proyectado: </span>
+                                <span id="roi">0%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#contacto" class="btn btn-primary calc-cta">
+                        🎯 Quiero recuperar estos euros
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN VCARD -->
+        <section class="vcard-section" id="vcard">
+            <div class="vcard-container">
+                <div>
+                    <img
+                        src="logo.png"
+                        alt="InnovaRetail"
+                        width="150"
+                        height="auto"
+                        class="vcard-avatar"
+                    />
+                </div>
+                <div class="vcard-info">
+                    <h3>AutomatizaPro - Consultor en automatización</h3>
+                    <p>📧 contacto@automatizapro.com</p>
+                    <p>📱 +34 900 123 456</p>
+                    <p>🌐 www.automatizapro.com</p>
+                    <p>📍 Barcelona, España</p>
+                </div>
+                <div class="vcard-buttons">
+                    <button
+                        class="btn-vcard"
+                        onclick="downloadVCard()"
+                        data-track="vcard-download"
+                    >
+                        📱 Descargar contacto
+                    </button>
+                    <a
+                        href="tel:+34900123456"
+                        class="btn-vcard"
+                        data-track="vcard-call"
+                    >
+                        📞 Llamar ahora
+                    </a>
+                    <a
+                        href="mailto:contacto@automatizapro.com?subject=Consulta sobre Automatización"
+                        class="btn-vcard"
+                        data-track="vcard-email"
+                    >
+                        ✉️ Enviar correo electrónico
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="calendario" class="section">
+            <!-- Aquí va todo el contenido del calendario del artifact -->
+            <div class="calendar-section">
+                <div id="calendar-header">
+                    <h2>📅 Reserva esa tu cita para el diagnóstico gratuito</h2>
+                    <p>
+                        Selecciona el día y la hora que más te guste para tu
+                        consulta por videoconferencia
+                    </p>
+                    <div
+                        style="
+                            margin-top: 1rem;
+                            padding: 1rem;
+                            background: linear-gradient(
+                                135deg,
+                                #0066cc,
+                                #e6fffa
+                            );
+                            border-radius: 12px;
+                        "
+                    >
+                        <p>
+                            <strong>📺 Modalidad:</strong> Videoconferencia (1
+                            hora)
+                        </p>
+                        <p>
+                            <strong>🕒 Horario:</strong> Lunes a viernes,
+                            9:00-14:00 y 15:00-19:00
+                        </p>
+                        <p><strong>🌍 Zona horaria:</strong> España (Madrid)</p>
+                    </div>
+                </div>
+
+                <div class="calendar-container">
+                    <!-- CALENDARIO -->
+                    <div class="calendar-widget">
+                        <div class="calendar-nav">
+                            <button id="prev-month">‹ Anterior</button>
+                            <h3 id="current-month">Enero 2025</h3>
+                            <button id="next-month">Siguiente ›</button>
+                        </div>
+                        <div class="calendar-grid" id="calendar-grid">
+                            <!-- Se genera dinámicamente -->
+                        </div>
+                    </div>
+
+                    <!-- HORARIOS DISPONIBLES -->
+                    <div class="time-slots">
+                        <h3 id="selected-date-title">Selecciona un día</h3>
+                        <div id="time-slots-container">
+                            <div class="no-slots">
+                                <p>
+                                    👆 Selecciona un día al calendario para ver
+                                    los horarios disponibles
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FORMULARIO DE CITA -->
+                    <div class="appointment-form" id="appointment-form">
+                        <h3>📝 Datos para la cita</h3>
+
+                        <div class="appointment-summary">
+                            <h4>📅 Resumen de tu cita:</h4>
+                            <div class="summary-item">
+                                <span>Fecha:</span>
+                                <strong id="summary-date">-</strong>
+                            </div>
+                            <div class="summary-item">
+                                <span>Hora:</span>
+                                <strong id="summary-time">-</strong>
+                            </div>
+                            <div class="summary-item">
+                                <span>Duración:</span>
+                                <strong id="summary-duration">1 hora</strong>
+                            </div>
+                            <div class="summary-item">
+                                <span>Modalidad:</span>
+                                <strong id="summary-mode"
+                                    >Videoconferencia</strong
+                                >
+                            </div>
+                        </div>
+
+                        <div id="appointment-contact-form-container"></div>
+                    </div>
+                </div>
+
+                <div class="loading" id="loading">
+                    <div class="spinner"></div>
+                    <p>Procesando tu cita...</p>
+                </div>
+            </div>
+
+            <!-- MODAL DE CONFIRMACIÓN -->
+            <div class="confirmation-modal" id="confirmation-modal">
+                <div class="confirmation-content">
+                    <div class="success-icon">🎉</div>
+                    <h3>¡Cita Confirmada!</h3>
+                    <p>
+                        Hemos enviado los detalles de tu cita a
+                        <strong id="confirmed-email"></strong>
+                    </p>
+                    <p style="margin: 1rem 0">Te llegará un email con:</p>
+                    <ul style="text-align: left; margin: 1rem 0">
+                        <li>✅ Confirmación de fecha y hora</li>
+                        <li>📺 Enlace para la videoconferencia</li>
+                        <li>📋 Recordatorio 24 horas antes</li>
+                        <li>🔗 Opción para cancelar/reprogramar</li>
+                    </ul>
+                    <div
+                        style="
+                            display: flex;
+                            gap: 0.5rem;
+                            justify-content: center;
+                            flex-wrap: wrap;
+                        "
+                    >
+                        <button
+                            class="btn btn-secondary"
+                            id="cancel-booking-btn"
+                            type="button"
+                        >
+                            ❌ Cancelar cita
+                        </button>
+                        <button
+                            class="btn btn-primary"
+                            onclick="closeConfirmation()"
+                        >
+                            👍 Perfecto, gracias
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contacto" class="section">
+            <h2>Obtén tu diagnóstico gratuito</h2>
+            <div class="form-container">
+                <form id="contact-form" data-track="form-submit">
+                    <div class="form-group">
+                        <label for="name">Nombre completo *</label>
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            required
+                            placeholder="Nombre completo"
+                        />
+                    </div>
+                    <div class="form-group">
+                        <label for="email"
+                            >Correo electrónico empresarial *</label
+                        >
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            required
+                            placeholder="Correo electrónico"
+                        />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Teléfono</label>
+                        <input
+                            type="tel"
+                            id="phone"
+                            name="phone"
+                            placeholder="Teléfono"
+                        />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="company">Empresa *</label>
+                        <input
+                            type="text"
+                            id="company"
+                            name="company"
+                            placeholder="Empresa"
+                            required
+                        />
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-employees"
+                            >Número de empleados</label
+                        >
+                        <select id="contact-employees" name="employees">
+                            <option value="">Selecciona...</option>
+                            <option value="1-10">1-10 empleados</option>
+                            <option value="11-50">11-50 empleados</option>
+                            <option value="51-200">51-200 empleados</option>
+                            <option value="200+">Más de 200 empleados</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="consultation-type2">Tipo de consulta</label>
+                        <select id="consultation-type2" name="type">
+                            <option value="diagnostico">
+                                Diagnóstico general de automatización
+                            </option>
+                            <option value="procesos">
+                                Automatización de procesos específicos
+                            </option>
+                            <option value="marketing">
+                                Márqueting automatizado
+                            </option>
+                            <option value="reportes">Informes y paneles</option>
+                            <option value="integraciones">
+                                Integraciones entre herramientas
+                            </option>
+                            <option value="otro">
+                                Otros (especifica en comentarios2)
+                            </option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="challenge"
+                            >Desafío principal que quieres automatizar *</label
+                        >
+                        <textarea
+                            id="challenge"
+                            name="challenge"
+                            rows="4"
+                            required
+                            placeholder="Ej.: Gestión de leads, facturación, informes, seguimiento de clientes..."
+                        ></textarea>
+                    </div>
+                    <button
+                        type="submit"
+                        class="btn btn-primary"
+                        style="width: 100%"
+                        data-track="form-submit-btn"
+                    >
+                        🚀
+                        <span id="form-cta-text"
+                            >Solicitar diagnóstico gratuito</span
+                        >
+                    </button>
+                    <p
+                        class="contact-response-time"
+                        style="
+                            text-align: center;
+                            margin-top: 1rem;
+                            color: var(--text-light);
+                            font-size: 0.9rem;
+                        "
+                    >
+                        ⏱️ Respuesta en menos de 2 horas laborales
+                    </p>
+                </form>
+            </div>
+        </section>
+
+        <!-- Chatbot -->
+        <button id="chatbot-btn" data-track="chatbot-open">💬</button>
+        <div id="chatbot-container">
+            <div id="chatbot-header">
+                <span id="chatbot-title">Consultor en automatización</span>
+                <button id="chatbot-close" data-track="chatbot-close">✕</button>
+            </div>
+            <div id="chatbot-messages"></div>
+            <div class="quick-responses" id="quick-responses">
+                <button
+                    class="quick-btn"
+                    data-message="¿Cuánto tiempo puedo ahorrar automatizando?"
+                    data-track="quick-tiempo"
+                >
+                    ⏰ Tiempo ahorrado
+                </button>
+                <button
+                    class="quick-btn"
+                    data-message="¿Cuál es el costo de automatizar mis procesos?"
+                    data-track="quick-costo"
+                >
+                    💰 Costo/ROI
+                </button>
+                <button
+                    class="quick-btn"
+                    data-message="¿Qué procesos puedo automatizar en mi empresa?"
+                    data-track="quick-procesos"
+                >
+                    🔧 Qué automatizar
+                </button>
+                <button
+                    class="quick-btn"
+                    data-message="Quiero programar una llamada gratuita"
+                    data-track="quick-llamada"
+                >
+                    📞 Llamada gratuita
+                </button>
+            </div>
+            <div id="chatbot-input-container">
+                <input
+                    type="text"
+                    id="chatbot-input"
+                    placeholder="Pregúntame sobre automatización..."
+                />
+                <button id="chatbot-send" data-track="chatbot-send">
+                    Enviar
+                </button>
+            </div>
+        </div>
+
+        <footer>
+            <p>
+                &copy; 2025 AutomatitzaPro. Transformant empreses amb
+                automatització intel·ligent.
+            </p>
+        </footer>
+
+        <!-- MOBILE BOTTOM NAVIGATION -->
+        <nav class="mobile-bottom-nav" id="mobile-bottom-nav">
+            <div class="mobile-nav-items">
+                <div class="mobile-nav-item" data-section="inicio" data-track="mobile-nav-inicio">
+                    <div class="mobile-nav-icon">🏠</div>
+                    <div class="mobile-nav-label">Inicio</div>
+                </div>
+                <div class="mobile-nav-item" data-section="servicios" data-track="mobile-nav-servicios">
+                    <div class="mobile-nav-icon">🔄</div>
+                    <div class="mobile-nav-label">Servicios</div>
+                </div>
+                <div class="mobile-nav-item" data-section="proceso" data-track="mobile-nav-proceso">
+                    <div class="mobile-nav-icon">📋</div>
+                    <div class="mobile-nav-label">Proceso</div>
+                </div>
+                <div class="mobile-nav-item" data-section="calculadora" data-track="mobile-nav-calculadora">
+                    <div class="mobile-nav-icon">💰</div>
+                    <div class="mobile-nav-label">ROI</div>
+                </div>
+                <div class="mobile-nav-item" data-section="calendario" data-track="mobile-nav-calendario">
+                    <div class="mobile-nav-icon">📅</div>
+                    <div class="mobile-nav-label">Cita</div>
+                </div>
+                <div class="mobile-nav-item" data-section="contacto" data-track="mobile-nav-contacto">
+                    <div class="mobile-nav-icon">✉️</div>
+                    <div class="mobile-nav-label">Contacto</div>
+                </div>
+            </div>
+        </nav>
+
+        <script src="inteligencia4sfgcat.js"></script>
+    </body>
+</html>
