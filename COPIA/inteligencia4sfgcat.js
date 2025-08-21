@@ -20,6 +20,17 @@ const translations = {
         'stats-roi': '30',
         'stats-roi-label': 'Días para ver el ROI',
 
+        // Menú Harburguesa
+        'dmenu-mob-navegacionh':"Navegación",
+        'dmenu-mob-serviciosh':'🔄 Servicios',
+        'dmenu-mob-procesoh':'📋 Proceso',
+        'dmenu-mob-casosh':'🏆 Casos de Éxito',
+        'dmenu-mob-calculadorah':'💰 Calculadora ROI',
+        'dmenu-mob-tarjetah':'📱 Tarjeta Visita',
+        'dmenu-mob-calendarioh':'📅 Reservar Cita',
+        'dmenu-mob-contactoh':'📞 Contacto',
+
+
         // Secciones principales
         'services-title': 'Servicios especializados',
         'process-title': 'Proceso garantizado en 4 pasos',
@@ -304,6 +315,16 @@ const translations = {
         'stats-roi': '30', 
         'stats-roi-label': 'Dies per veure el ROI',
 
+       // Menú Harburguesa
+       'dmenu-mob-navegacionh':"Navegació",
+       'dmenu-mob-serviciosh':'🔄 Serveis',
+       'dmenu-mob-procesoh':'📋 Processos',
+       'dmenu-mob-casosh':'🏆 Casos de Éxito',
+       'dmenu-mob-calculadorah':'💰 Calculadora ROI',
+       'dmenu-mob-tarjetah':'📱 Tarjeta Visita',
+       'dmenu-mob-calendarioh':'📅 Reservar Cita',
+       'dmenu-mob-contactoh':'📞 Contacto',
+
         // Secciones principales
         'services-title': 'Serveis especialitzats',
         'process-title': 'Procés garantit en 4 passos',
@@ -580,6 +601,17 @@ const translations = {
         'stats-errors-label': 'Error reduction',
         'stats-roi': '30',
         'stats-roi-label': 'Days to see ROI',
+
+        // Menú Harburguesa
+
+        'dmenu-mob-navegacionh':"Navigation",
+        'dmenu-mob-serviciosh':'🔄 Services',
+        'dmenu-mob-procesoh':'📋 Process',
+        'dmenu-mob-casosh':'🏆 Success Stories',
+        'dmenu-mob-calculadorah':'💰 ROI calculator',
+        'dmenu-mob-tarjetah':'📱 Business card',
+        'dmenu-mob-calendarioh':'📅 Book Appointment',
+        'dmenu-mob-contactoh':'📞 Contact',
 
         // Secciones principales  
         'services-title': 'Specialized Services',
@@ -994,7 +1026,8 @@ function updateAllTranslations() {
     updateContactFormSection();    
     updateFooterSection();
     updateDateAppointment();
-    calculateROI();       
+    calculateROI();
+    updateHamburgerMenu ()     
     
 }
 
@@ -1771,7 +1804,7 @@ ${analytics.events
             }
 
 // =============================
-// CHATBOT SYSTEM - VERSIÓN CORREGIDA
+// CHATBOT SYSTEM - VERSIÓN MEJORADA
 // =============================
 const assistantNames = ["Ana", "Carlos", "María", "David"];
 let currentAssistantName = "";
@@ -1895,28 +1928,75 @@ function formatMessage(text) {
     return formatted;
 }
 
-// Función para escribir texto progresivamente (efecto typewriter)
-function typeWriterEffect(element, text, speed = 30) {
+// Función mejorada para escribir texto progresivamente con formato en tiempo real
+function typeWriterEffect(element, text, speed = 50) {
     return new Promise((resolve) => {
-        const formattedText = formatMessage(text);
         let i = 0;
         let currentText = '';
+        let isInList = false;
+        let listType = null; // 'ol' para listas numeradas, 'ul' para listas con viñetas
         
-        // Para manejar HTML, necesitamos ser más cuidadosos
-        const tempDiv = document.createElement('div');
-        tempDiv.innerHTML = formattedText;
-        const textContent = tempDiv.textContent || tempDiv.innerText || '';
-        
-        element.innerHTML = ''; // Limpiar contenido
+        element.innerHTML = '';
         
         function typeChar() {
-            if (i < textContent.length) {
-                currentText += textContent.charAt(i);
+            if (i < text.length) {
+                const char = text.charAt(i);
+                const nextChars = text.substr(i, 5);
+                const prevChars = currentText.slice(-10);
                 
-                // Actualizar el contenido manteniendo el formato
-                const progress = i / textContent.length;
-                const partialHTML = getPartialHTML(formattedText, progress);
-                element.innerHTML = partialHTML + '<span class="typing-cursor">|</span>';
+                currentText += char;
+                
+                // Detectar patrones para saltos de línea en tiempo real
+                let shouldAddBreak = false;
+                let shouldStartList = false;
+                let shouldEndList = false;
+                
+                // Detectar dos puntos seguidos de contenido (probable lista)
+                if (char === ':' && i < text.length - 1 && text.charAt(i + 1) !== ' ') {
+                    shouldAddBreak = true;
+                } else if (char === ':' && text.substr(i + 1, 2) === ' 1' || text.substr(i + 1, 3) === ' \n1') {
+                    shouldAddBreak = true;
+                }
+                
+                // Detectar inicio de lista numerada (ej: "1. ", "2. ", etc.)
+                const numberListPattern = /\d+\.\s/;
+                if (numberListPattern.test(nextChars) && (i === 0 || currentText.slice(-1) === '\n' || currentText.slice(-1) === ':')) {
+                    if (!isInList) {
+                        shouldStartList = true;
+                        listType = 'ol';
+                        isInList = true;
+                    } else if (isInList && listType !== 'ol') {
+                        shouldEndList = true;
+                        shouldStartList = true;
+                        listType = 'ol';
+                    }
+                }
+                
+                // Detectar inicio de lista con viñetas (ej: "- ", "• ")
+                const bulletListPattern = /[\-•]\s/;
+                if (bulletListPattern.test(nextChars) && (i === 0 || currentText.slice(-1) === '\n')) {
+                    if (!isInList) {
+                        shouldStartList = true;
+                        listType = 'ul';
+                        isInList = true;
+                    } else if (isInList && listType !== 'ul') {
+                        shouldEndList = true;
+                        shouldStartList = true;
+                        listType = 'ul';
+                    }
+                }
+                
+                // Detectar fin de lista (dos saltos de línea consecutivos o cambio de patrón)
+                if (isInList && (currentText.endsWith('\n\n') || (char === '\n' && i < text.length - 1 && !numberListPattern.test(text.substr(i + 1, 5)) && !bulletListPattern.test(text.substr(i + 1, 3))))) {
+                    shouldEndList = true;
+                    isInList = false;
+                    listType = null;
+                }
+                
+                // Aplicar formato en tiempo real
+                let displayText = formatTextProgressive(currentText, isInList, listType, shouldStartList, shouldEndList, shouldAddBreak);
+                
+                element.innerHTML = displayText + '<span class="typing-cursor">|</span>';
                 
                 // Scroll automático
                 messagesContainer.scrollTop = messagesContainer.scrollHeight;
@@ -1924,8 +2004,9 @@ function typeWriterEffect(element, text, speed = 30) {
                 i++;
                 setTimeout(typeChar, speed);
             } else {
-                // Terminar el efecto
-                element.innerHTML = formattedText;
+                // Terminar el efecto - cerrar listas abiertas si es necesario
+                let finalText = formatMessage(text);
+                element.innerHTML = finalText;
                 resolve();
             }
         }
@@ -1934,26 +2015,62 @@ function typeWriterEffect(element, text, speed = 30) {
     });
 }
 
-// Función auxiliar para obtener HTML parcial
-function getPartialHTML(fullHTML, progress) {
-    const tempDiv = document.createElement('div');
-    tempDiv.innerHTML = fullHTML;
-    const fullText = tempDiv.textContent || tempDiv.innerText || '';
-    const targetLength = Math.floor(fullText.length * progress);
+// Función para formatear texto progresivamente manteniendo el contexto de listas
+function formatTextProgressive(text, isInList, listType, shouldStartList, shouldEndList, shouldAddBreak) {
+    let formatted = text;
     
-    let currentLength = 0;
-    let result = '';
+    // Aplicar salto de línea automático después de ":"
+    if (shouldAddBreak) {
+        formatted = formatted.replace(/:([^\n])/, ':<br>$1');
+    }
     
-    // Esto es una implementación simplificada
-    // Para casos complejos, podrías usar una librería como typed.js
-    const textOnly = fullText.substring(0, targetLength);
+    // Convertir saltos de línea a <br> (excepto en listas)
+    if (!isInList) {
+        formatted = formatted.replace(/\n/g, '<br>');
+    }
     
-    // Aplicar formato básico al texto parcial
-    result = textOnly.replace(/\n/g, '<br>');
-    result = result.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
-    result = result.replace(/\*(.*?)\*/g, '<em>$1</em>');
+    // Aplicar formato básico
+    formatted = formatted.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+    formatted = formatted.replace(/\*(.*?)\*/g, '<em>$1</em>');
     
-    return result;
+    // Manejar listas en tiempo real
+    if (isInList || shouldStartList) {
+        // Listas numeradas
+        if (listType === 'ol') {
+            // Convertir elementos de lista numerada
+            formatted = formatted.replace(/(\d+)\.\s*([^\n]*)/g, '<li>$2</li>');
+            
+            if (shouldStartList || formatted.includes('<li>')) {
+                // Envolver en <ol> si no está ya envuelto
+                if (!formatted.includes('<ol>')) {
+                    formatted = formatted.replace(/(<li>.*)/s, '<ol>$1');
+                }
+            }
+        }
+        // Listas con viñetas
+        else if (listType === 'ul') {
+            // Convertir elementos de lista con viñetas
+            formatted = formatted.replace(/[\-•]\s*([^\n]*)/g, '<li>$1</li>');
+            
+            if (shouldStartList || formatted.includes('<li>')) {
+                // Envolver en <ul> si no está ya envuelto
+                if (!formatted.includes('<ul>')) {
+                    formatted = formatted.replace(/(<li>.*)/s, '<ul>$1');
+                }
+            }
+        }
+    }
+    
+    // Cerrar listas si es necesario
+    if (shouldEndList) {
+        if (listType === 'ol' && formatted.includes('<ol>') && !formatted.includes('</ol>')) {
+            formatted = formatted.replace(/(<ol>.*<li>.*<\/li>)([^<]*)$/s, '$1</ol>$2');
+        } else if (listType === 'ul' && formatted.includes('<ul>') && !formatted.includes('</ul>')) {
+            formatted = formatted.replace(/(<ul>.*<li>.*<\/li>)([^<]*)$/s, '$1</ul>$2');
+        }
+    }
+    
+    return formatted;
 }
 
 function removeTypingIndicator() {
@@ -2005,7 +2122,7 @@ async function sendMessageToBot(message) {
 
         // Llamar al webhook de Make
         const triggerResponse = await fetch(
-            `https://hook.eu2.make.com/vnw4l25h5pl8c6rckozjvq2131wtgj31?nombre=&email=&phone=&empresa=&empleados=&tipo=&desafio=&fecha_envio=&version_ab=&origen=chatbot&diaSeleccionado=&horaSeleccionada=&fechaISO=&fechaConZona=&idioma=&meetingID=&CalendarID&message=${query}&id=${requestId}&user=${userId}`,
+            `https://hook.eu2.make.com/epwb68m412q6nj6odydhwm8g1xk7efqq?nombre=&email=&phone=&empresa=&empleados=&tipo=&desafio=&fecha_envio=&version_ab=&origen=chatbot&diaSeleccionado=&horaSeleccionada=&fechaISO=&fechaConZona=&idioma=&meetingID=&CalendarID&message=${query}&id=${requestId}&user=${userId}`,
             {
                 method: "GET",
                 headers: {
@@ -2098,8 +2215,8 @@ async function sendMessageToBot(message) {
         const messageContentElement = botMessageElement.querySelector('.message-content');
         
         if (messageContentElement) {
-            // Aplicar efecto typewriter
-            await typeWriterEffect(messageContentElement, botMessage, 25);
+            // Aplicar efecto typewriter con velocidad más lenta (50ms en lugar de 25ms)
+            await typeWriterEffect(messageContentElement, botMessage, 50);
         } else {
             // Fallback si no encuentra el elemento
             appendMessage("bot", botMessage);
@@ -2267,7 +2384,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const style = document.createElement('style');
     style.textContent = `
         .message-content {
-            line-height: 1.5;
+            line-height: 1.6;
         }
         
         .message-content strong {
@@ -2285,12 +2402,18 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         
         .message-content li {
-            margin: 0.25rem 0;
+            margin: 0.3rem 0;
+            line-height: 1.4;
+        }
+        
+        .message-content ol li {
+            margin: 0.4rem 0;
         }
         
         .typing-cursor {
             animation: blink 1s infinite;
             color: var(--primary, #007bff);
+            font-weight: bold;
         }
         
         @keyframes blink {
@@ -2315,9 +2438,16 @@ document.addEventListener('DOMContentLoaded', () => {
             color: #333;
             font-weight: 500;
         }
+        
+        /* Mejorar el espaciado de listas */
+        .message-content br + ol,
+        .message-content br + ul {
+            margin-top: 0.3rem;
+        }
     `;
     document.head.appendChild(style);
 });
+
 // =============================
             // FORM HANDLING
             // =============================
@@ -2338,7 +2468,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     // 🔧 CAMBIA ESTA URL POR TU WEBHOOK DE MAKE
                     const WEBHOOK_URL =
-                        "https://hook.eu2.make.com/1cyk5p363jbmb2748a65g57ar3jomd76";
+                        "https://hook.eu2.make.com/epwb68m412q6nj6odydhwm8g1xk7efqq";
 
                     try {
     // Preparar datos para enviar
@@ -4125,6 +4255,34 @@ function updateCalculatorSection() {
     // Botón CTA de calculadora
     const calcCta = document.querySelector('.calc-cta');
     if (calcCta) calcCta.textContent = t('calc-cta-button');
+}
+
+function updateHamburgerMenu (){
+
+    const mhnavegacion = document.querySelector('#menu-mob-navegacionh');
+    if (mhnavegacion) mhnavegacion.textContent = t('dmenu-mob-navegacionh');
+    
+    const mhservicios = document.querySelector('#menu-mob-serviciosh');
+    if (mhservicios) mhservicios.textContent = t('dmenu-mob-serviciosh');
+
+    const mhproceso = document.querySelector('#menu-mob-procesoh');
+    if (mhproceso) mhproceso.textContent = t('dmenu-mob-procesoh');
+
+    const mhcasos = document.querySelector('#menu-mob-casosh');
+    if (mhcasos) mhcasos.textContent = t('dmenu-mob-casosh');
+
+    const mhcalculadora = document.querySelector('#menu-mob-calculadorah');
+    if (mhcalculadora) mhcalculadora.textContent = t('dmenu-mob-calculadorah');
+
+    const mhtarjeta = document.querySelector('#menu-mob-tarjetah');
+    if (mhtarjeta) mhtarjeta.textContent = t('dmenu-mob-tarjetah');
+
+    const mhcontacto= document.querySelector('#menu-mob-contactoh');
+    if (mhcontacto) mhcontacto.textContent = t('dmenu-mob-contactoh');
+
+    const mhcalendario = document.querySelector('#menu-mob-calendarioh');
+    if (mhcalendario) mhcalendario.textContent = t('dmenu-mob-calendarioh');
+
 }
 
 function updateContactFormSection() {

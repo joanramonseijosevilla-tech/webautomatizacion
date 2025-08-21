@@ -190,11 +190,11 @@ const translations = {
 
         
         // VCard
-        'vcard-title': 'AutomatizaPro - Consultor en automatización',
-        'vcard-email': '📧 contacto@automatizapro.com',
-        'vcard-phone': '📱 +34 900 123 456',
-        'vcard-website': '🌐 www.automatizapro.com',
-        'vcard-location': '📍 Madrid, España',
+        'vcard-title': 'Nexautia.com - Mejoramos la productividad en tu negocio',
+        'vcard-email': '📧 contacto@nexautia.com',
+        'vcard-phone': '📱 +34 610 510 642',
+        'vcard-website': '🌐 www.nexautia.com',
+        'vcard-location': '📍 Barcelona, España',
         'vcard-download-text': '📱 Descargar contacto',
         'vcard-call-text': '📞 Llamar ahora',
         'vcard-email-text': '✉️ Enviar email',
@@ -454,11 +454,11 @@ const translations = {
         'calendar-timezone': '🌍 Zona horària: España (Madrid)',
 
         // vCard
-        'vcard-title': 'AutomatizaPro - Consultor en automatització',
-        'vcard-email': '📧 contacto@automatizapro.com',
-        'vcard-phone': '📱 +34 900 123 456',
-        'vcard-website': '🌐 www.automatizapro.com',
-        'vcard-location': '📍 Barcelona, España',
+        'vcard-title': 'Nexautia.com - Millorem la productivitat en el teu negoci',
+        'vcard-email': '📧 contacto@nexautia.com',
+        'vcard-phone': '📱 +34 610 510 642',
+        'vcard-website': '🌐 www.nexautia.com',
+        'vcard-location': '📍 Barcelona, Espanya',
         'vcard-download-text': '📱 Descarregar contacte',
         'vcard-call-text': '📞 Trucar ara',
         'vcard-email-text': '✉️ Enviar correu electrònic',
@@ -709,11 +709,11 @@ const translations = {
         'calendar-timezone': '🌍 Timezone: Spain (Madrid)',
 
         // vCard
-        'vcard-title': 'AutomatizaPro - Automation Consultant',
-        'vcard-email': '📧 contacto@automatizapro.com',
-        'vcard-phone': '📱 +34 900 123 456', 
-        'vcard-website': '🌐 www.automatizapro.com',
-        'vcard-location': '📍 Madrid, Spain',
+        'vcard-title': 'Nexautia.com - We improve productivity in your business',
+        'vcard-email': '📧 contacto@nexautia.com',
+        'vcard-phone': '📱 +34 610 510 642', 
+        'vcard-website': '🌐 www.nexautia.com',
+        'vcard-location': '📍 Barcelona, Spain',
         'vcard-download-text': '📱 Download contact',
         'vcard-call-text': '📞 Call now',
         'vcard-email-text': '✉️ Send email',

@@ -37,6 +37,14 @@ body {
     overflow-x: hidden;
 }
 
+.header-controls{
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+    flex-shrink: 0 !important;
+    justify-content: flex-end !important;
+}
+
 /* VCARD STYLES */
 .vcard-section {
     background: linear-gradient(
@@ -190,6 +198,10 @@ body {
 
 /* HEADER RESPONSIVE */
 header {
+
+    
+
+    /*Experimeto lo de arriba*/
     background: linear-gradient(
         135deg,
         var(--primary) 0%,
@@ -209,7 +221,7 @@ header {
    ======================================== */
 
 /* Mobile Header - No fijo en móvil */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     header {
         position: relative !important;
         padding: 0.75rem 0 !important;
@@ -229,7 +241,7 @@ header {
     }
     
     .logo img {
-        width: 80px !important;
+        width: 350px !important;
         height: auto !important;
     }
     
@@ -255,7 +267,7 @@ header {
     
     .language-btn {
         padding: 0.4rem 0.6rem !important;
-        font-size: 0.8rem !important;
+        font-size: 1rem !important;
         min-width: 50px !important;
         min-height: 35px !important;
     }
@@ -440,7 +452,7 @@ body.dark-mode .mobile-menu-nav a:hover {
 }
 
 /* Mostrar menú móvil solo en pantallas pequeñas */
-@media (min-width: 769px) {
+@media (min-width: 1233px) {
     .mobile-menu-overlay {
         display: none !important;
     }
@@ -529,7 +541,7 @@ nav a {
     transition: all 0.3s ease;
     padding: 0.5rem 0.75rem;
     border-radius: 8px;
-    font-size: 0.9rem;
+    font-size: 1rem;
     white-space: nowrap;
     touch-action: manipulation;
 }
@@ -1170,7 +1182,7 @@ nav a:hover {
 }
 
 /* Responsive para el botón CTA */
-@media (max-width: 768px) {
+@media (max-width: 1232px) {
     .calc-cta {
     font-size: 0.85rem !important;
     padding: 0.75rem 1rem !important;
@@ -1199,10 +1211,10 @@ footer {
 }
 
 /* RESPONSIVE BREAKPOINTS */
-@media (max-width: 1024px) {
-    .header-content {
+@media (max-width: 1232px) {
+  /*  .header-content {
         padding: 0 1.5rem;
-    }
+    }*/
 
     .section {
         padding: clamp(2rem, 5vw, 3rem) 1.5rem;
@@ -1214,7 +1226,7 @@ footer {
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 769px) {
 /* HEADER MOBILE - SOBRESCRITO POR ESTILOS MÓVILES ESPECÍFICOS */
 /* .header-content {
     flex-direction: column;
@@ -1406,6 +1418,29 @@ nav {
 } */
 
 }
+@media (max-width: 662px){
+    .logo img {
+        width: 250px !important;
+        height: auto !important;
+    }
+
+}
+@media (max-width: 570px){
+    .logo img {
+        width: 200px !important;
+        height: auto !important;
+    }
+
+}
+
+@media (max-width: 513px){
+    .logo img {
+        width: 180px !important;
+        height: auto !important;
+    }
+
+}
+
 
 @media (max-width: 360px) {
 .header-content {
@@ -1711,7 +1746,7 @@ nav {
                         }
 
                         /* Responsive */
-                        @media (max-width: 768px) {
+                        @media (max-width: 1232px) {
                             .calendar-container {
                                 grid-template-columns: 1fr;
                             }
@@ -1752,7 +1787,7 @@ nav {
             }
 
             /* CALENDARIO RESPONSIVE - AÑADIR AL FINAL DEL CSS */
-@media (max-width: 1024px) {
+@media (max-width: 1232px) {
     .calendar-container {
         grid-template-columns: 1fr;
         gap: 1.5rem;
@@ -1772,7 +1807,7 @@ nav {
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1232px) {
     .calendar-section {
         padding: 1.5rem;
     }
@@ -2043,10 +2078,11 @@ nav {
     background: linear-gradient(135deg, var(--primary), var(--secondary));
     color: white;    
     border: none;
-    padding: 0.5rem 1rem;
+    padding: 0.6em 0.8rem;
     border-radius: 8px;
     cursor: pointer;
-    font-size: 0.9rem;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
     font-weight: 600;
     transition: all 0.3s ease;
 }
@@ -2206,7 +2242,7 @@ body.dark-mode .mobile-nav-item.active {
 }
 
 /* Mostrar navegación móvil solo en pantallas pequeñas */
-@media (max-width: 768px) {
+@media (max-width: 1232px) {
     .mobile-bottom-nav {
         display: block;
     }
@@ -2218,7 +2254,7 @@ body.dark-mode .mobile-nav-item.active {
     
     /* Ajustar footer para la navegación inferior */
     footer {
-        margin-bottom: 80px;
+        margin-bottom: 0px;
     }
     
     /* Ocultar chatbot en móvil si interfiere */
@@ -2269,7 +2305,7 @@ body.dark-mode .mobile-nav-item.active {
    ======================================== */
 
 /* Forzar estilos móviles en pantallas pequeñas */
-@media (max-width: 768px) {
+@media (max-width: 1232px) {
     /* Header móvil */
     header {
         position: relative !important;
@@ -2293,7 +2329,7 @@ body.dark-mode .mobile-nav-item.active {
     }
     
     .logo img {
-        width: 80px !important;
+        width: 350  px !important;
         height: auto !important;
     }
     
@@ -2317,8 +2353,9 @@ body.dark-mode .mobile-nav-item.active {
     }
     
     .language-btn {
-        padding: 0.4rem 0.6rem !important;
-        font-size: 0.8rem !important;
+        margin-top: 15px;
+        padding: 0.5rem 0.6rem !important;
+        font-size: 1.3rem !important;
         min-width: 50px !important;
         min-height: 35px !important;
     }
@@ -2329,7 +2366,7 @@ body.dark-mode .mobile-nav-item.active {
         min-width: 50px !important;
         min-height: 35px !important;
         padding: 0.4rem !important;
-        font-size: 1rem !important;
+        font-size: 1.3rem !important;
     }
     
     /* Botón hamburguesa */
@@ -2341,7 +2378,7 @@ body.dark-mode .mobile-nav-item.active {
         padding: 0.4rem 0.6rem !important;
         border-radius: 8px !important;
         cursor: pointer !important;
-        font-size: 1.2rem !important;
+        font-size: 1.3rem !important;
         min-width: 50px !important;
         min-height: 35px !important;
         transition: all 0.3s ease !important;
@@ -2358,7 +2395,7 @@ body.dark-mode .mobile-nav-item.active {
         top: 10px !important;
         right: 10px !important;
         padding: 0.4rem 0.6rem !important;
-        font-size: 0.8rem !important;
+        font-size: 1.3rem !important;
         min-width: 50px !important;
         min-height: 35px !important;
         z-index: 10002 !important;
@@ -2373,7 +2410,7 @@ body.dark-mode .mobile-nav-item.active {
         padding: 0.4rem 0.6rem !important;
         border-radius: 8px !important;
         cursor: pointer !important;
-        font-size: 0.8rem !important;
+        font-size: 1.3rem !important;
         min-width: 50px !important;
         min-height: 35px !important;
         transition: all 0.3s ease !important;
@@ -2398,7 +2435,7 @@ body.dark-mode .mobile-nav-item.active {
 }
 
 /* Ocultar botón hamburguesa en desktop */
-@media (min-width: 769px) {
+@media (min-width: 1233px) {
     .mobile-menu-btn {
         display: none !important;
     }
