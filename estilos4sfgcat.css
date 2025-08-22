@@ -1497,6 +1497,10 @@ nav {
         font-size: 1.1rem;
     }
 
+    footer {
+        margin-bottom: 0px;  /*Jugar con este que falla segun el tamaño*/
+    }
+
     .language-btn {
         padding: 0.2rem 0.5rem !important;
         font-size: 1rem !important;
