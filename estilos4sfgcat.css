@@ -1452,6 +1452,23 @@ nav {
     .analytics-toggle-header {
         display: none !important;
         }
+
+        .language-btn {
+            padding: 0.4rem 0.6rem !important;
+            font-size: 1rem !important;
+            min-width: 40px !important;
+            min-height: 25px !important;
+        }
+        
+        .dark-mode-btn {
+            margin: 0 !important;
+            margin-top: 0 !important;
+            min-width: 40px !important;
+            min-height: 25px !important;
+            padding: 0.4rem !important;
+            font-size: 1rem !important;
+            order: 2 !important;
+        }
     
 }
 
