@@ -1446,46 +1446,50 @@ nav {
         width: 120px !important;
         height: auto !important;
     }
-
+    .analytics-toggle-header {
+        display: none !important;
+        }
+    
 }
 
 
 
 
 @media (max-width: 360px) {
-.header-content {
-    padding: 0 0.75rem;
-}
+    .header-content {
+        padding: 0 0.75rem;
+    }
 
+    .analytics-toggle-header {
+        display: none !important;
+    }
 
     .logo img {
         width: 80px !important;
         height: auto !important;
     }
 
-
-
-.logo {
-    font-size: 1.1rem;
-}
-
-    nav a {
-        padding: 0.4rem;
-        font-size: 0.8rem;
+    .logo {
+        font-size: 1.1rem;
     }
 
-    .hero h1 {
-        font-size: 1.6rem;
-    }
+        nav a {
+            padding: 0.4rem;
+            font-size: 0.8rem;
+        }
 
-    #chatbot-input-container {
-        padding: 0.75rem;
-    }
+        .hero h1 {
+            font-size: 1.6rem;
+        }
 
-    #chatbot-send {
-        min-width: 70px;
-        padding: 0.75rem;
-    }
+        #chatbot-input-container {
+            padding: 0.75rem;
+        }
+
+        #chatbot-send {
+            min-width: 70px;
+            padding: 0.75rem;
+        }
 }
 
 /* ANIMACIONES RESPONSIVE */
