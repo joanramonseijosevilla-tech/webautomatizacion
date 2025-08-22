@@ -1438,6 +1438,9 @@ nav {
         width: 180px !important;
         height: auto !important;
     }
+    .analytics-toggle-header {
+        display: none !important;
+    }
 
 }
 
