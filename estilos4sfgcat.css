@@ -1441,6 +1441,10 @@ nav {
     .analytics-toggle-header {
         display: none !important;
     }
+    footer {
+        margin-bottom: 0px;  /*Jugar con este que falla segun el tamaño*/
+        border: yellow solid 5px;
+    }
 
 }
 
@@ -1472,6 +1476,7 @@ nav {
 
         footer {
             margin-bottom: 0px;  /*Jugar con este que falla segun el tamaño*/
+            border: red solid 5px;
         }
     
 }
@@ -1499,6 +1504,7 @@ nav {
 
     footer {
         margin-bottom: 0px;  /*Jugar con este que falla segun el tamaño*/
+        border: #004499 solid 5px;
     }
 
     .language-btn {
