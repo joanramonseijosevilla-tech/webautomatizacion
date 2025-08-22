@@ -1441,11 +1441,29 @@ nav {
 
 }
 
+@media (max-width: 450px){
+    .logo img {
+        width: 120px !important;
+        height: auto !important;
+    }
+
+}
+
+
+
 
 @media (max-width: 360px) {
 .header-content {
     padding: 0 0.75rem;
 }
+
+
+    .logo img {
+        width: 80px !important;
+        height: auto !important;
+    }
+
+
 
 .logo {
     font-size: 1.1rem;
@@ -2254,7 +2272,7 @@ body.dark-mode .mobile-nav-item.active {
     
     /* Ajustar footer para la navegación inferior */
     footer {
-        margin-bottom: 0px;
+        margin-bottom: 80px;  /*Jugar con este que falla segun el tamaño*/
     }
     
     /* Ocultar chatbot en móvil si interfiere */
