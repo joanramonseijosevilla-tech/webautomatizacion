@@ -1469,6 +1469,10 @@ nav {
             font-size: 1rem !important;
             order: 2 !important;
         }
+
+        footer {
+            margin-bottom: 0px;  /*Jugar con este que falla segun el tamaño*/
+        }
     
 }
 
