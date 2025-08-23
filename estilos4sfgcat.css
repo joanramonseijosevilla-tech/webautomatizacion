@@ -2476,6 +2476,10 @@ body.dark-mode .mobile-nav-item.active {
         padding: 0 0.75rem;
     }
 
+    .header-controls{
+        gap:5px;
+    }
+
     .analytics-toggle-header {
         display: none !important;
     }
@@ -2502,7 +2506,6 @@ body.dark-mode .mobile-nav-item.active {
         font-size: 1rem !important;
         min-width: 30px !important;
         min-height: 30px !important;
-        margin-right: 0px !important;
         /*border: 5px solid purple !important;*/
     }
     
