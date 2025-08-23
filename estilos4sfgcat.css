@@ -2494,6 +2494,8 @@ body.dark-mode .mobile-nav-item.active {
    .language-selector{
     border: 1px solid white !important;
     padding: 0px !important;
+    min-width: 40px;
+
     /*margin-right: 0px !important;*/
    }
 
