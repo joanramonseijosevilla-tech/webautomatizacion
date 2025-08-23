@@ -2492,7 +2492,7 @@ body.dark-mode .mobile-nav-item.active {
 
     footer {
         margin-bottom: 0px;  /*Jugar con este que falla segun el tamaño*/
-        border: purple 5px !important;
+        border: mediumseagreen 5px !important;
     }
 
     .language-btn {
