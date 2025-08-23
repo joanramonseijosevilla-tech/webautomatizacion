@@ -2483,12 +2483,11 @@ body.dark-mode .mobile-nav-item.active {
     .logo img {
         width: 150px !important;
         height: auto !important;
-        margin-left: 0px;
-        padding-left: 0px;
-    }
+   }
 
     .logo {
         font-size: 1.1rem;
+        margin-left: 0px !important;
     }
 
     footer {
