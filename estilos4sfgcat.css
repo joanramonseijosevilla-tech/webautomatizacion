@@ -2493,7 +2493,7 @@ body.dark-mode .mobile-nav-item.active {
 
    .language-selector{
     border: 1px solid white !important;
-    margin: 0px !important;
+    margin-right: 0px !important;
    }
 
     .logo {
