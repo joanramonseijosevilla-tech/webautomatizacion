@@ -2477,7 +2477,8 @@ body.dark-mode .mobile-nav-item.active {
     }
 
     .header-controls{
-        gap:5px;
+        display: flex !important;
+        gap:5px !important;
     }
 
     .analytics-toggle-header {
