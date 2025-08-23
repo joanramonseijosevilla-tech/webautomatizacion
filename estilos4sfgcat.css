@@ -2484,6 +2484,7 @@ body.dark-mode .mobile-nav-item.active {
         width: 150px !important;
         height: auto !important;
         margin-left: 0px;
+        padding-left: 0px;
     }
 
     .logo {
