@@ -319,11 +319,11 @@ const translations = {
        'dmenu-mob-navegacionh':"Navegació",
        'dmenu-mob-serviciosh':'🔄 Serveis',
        'dmenu-mob-procesoh':'📋 Processos',
-       'dmenu-mob-casosh':'🏆 Casos de Éxito',
+       'dmenu-mob-casosh':'🏆 Casos d\'Èxit',
        'dmenu-mob-calculadorah':'💰 Calculadora ROI',
-       'dmenu-mob-tarjetah':'📱 Tarjeta Visita',
+       'dmenu-mob-tarjetah':'📱 Targeta Visita',
        'dmenu-mob-calendarioh':'📅 Reservar Cita',
-       'dmenu-mob-contactoh':'📞 Contacto',
+       'dmenu-mob-contactoh':'📞 Contacte',
 
         // Secciones principales
         'services-title': 'Serveis especialitzats',

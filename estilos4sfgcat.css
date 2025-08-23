@@ -2210,7 +2210,7 @@ body.dark-mode .mobile-nav-item.active {
     
     /* Ajustar footer para la navegación inferior */
     footer {
-        margin-bottom: 80px;  /*Jugar con este que falla segun el tamaño*/
+        margin-bottom: 0px;  /*Jugar con este que falla segun el tamaño*/
     }
     
     /* Ocultar chatbot en móvil si interfiere */
@@ -2422,56 +2422,9 @@ body.dark-mode .mobile-nav-item.active {
 
 }
 
-@media (max-width: 513px){
-    .logo img {
-        width: 180px !important;
-        height: auto !important;
-    }
-    .analytics-toggle-header {
-        display: none !important;
-    }
-    footer {
-        margin-bottom: 0px;  /*Jugar con este que falla segun el tamaño*/
-        border: yellow solid 5px !important;
-    }
-
-}
-
-@media (max-width: 450px){
-    .logo img {
-        width: 120px !important;
-        height: auto !important;
-    }
-    .analytics-toggle-header {
-        display: none !important;
-        }
-
-        .language-btn {
-            padding: 0.2rem 0.5rem !important;
-            font-size: 1rem !important;
-            min-width: 30px !important;
-            min-height: 20px !important;
-        }
-        
-        .dark-mode-btn {
-            margin: 0 !important;
-            margin-top: 0 !important;
-            min-width: 40px !important;
-            min-height: 25px !important;
-            padding: 0.4rem !important;
-            font-size: 1rem !important;
-            order: 2 !important;
-        }
-
-        footer {
-            margin-bottom: 0px;  /*Jugar con este que falla segun el tamaño*/
-            border: solid 5px red !important;
-        }
-    
-}
 
 
-@media (max-width: 360px) {
+@media (max-width: 513px) {
     .header-content {
         padding: 0 0.75rem;
     }
@@ -2481,6 +2434,11 @@ body.dark-mode .mobile-nav-item.active {
         gap:10px !important;
         justify-content: center !important;
     }
+
+    .analytics-toggle-header {
+        display: none !important;
+        }
+
 
     .analytics-toggle-header {
         display: none !important;
@@ -2506,29 +2464,8 @@ body.dark-mode .mobile-nav-item.active {
     }
 
     footer {
-        margin-bottom: 45px;  /*Jugar con este que falla segun el tamaño*/        
-    }
-
-    .language-btn {
-        padding: 0.2rem 0.5rem !important;
-        margin: 0px !important;
-        font-size: 1rem !important;
-        min-width: 30px !important;
-        min-height: 30px !important;
-        /*border: 5px solid purple !important;*/
-    }
-    
-    .dark-mode-btn {
-        margin: 0 !important;
-        margin-top: 0 !important;
-        min-width: 30px !important;
-        min-height: 20px !important;
-        padding: 0.4rem !important;
-        font-size: 1rem !important;
-        order: 2 !important;
-       
-
-    }
+        margin-bottom: 0px;  /*Jugar con este que falla segun el tamaño*/        
+    }    
 
         nav a {
             padding: 0.4rem;
