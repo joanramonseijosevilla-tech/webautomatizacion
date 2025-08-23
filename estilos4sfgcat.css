@@ -1443,7 +1443,7 @@ nav {
     }
     footer {
         margin-bottom: 0px;  /*Jugar con este que falla segun el tamaño*/
-        border: yellow solid 5px;
+        border: yellow solid 5px !important;
     }
 
 }
@@ -1476,12 +1476,10 @@ nav {
 
         footer {
             margin-bottom: 0px;  /*Jugar con este que falla segun el tamaño*/
-            border: red solid 5px;
+            border: solid 5px red !important;
         }
     
 }
-
-
 
 
 @media (max-width: 360px) {
@@ -1504,7 +1502,7 @@ nav {
 
     footer {
         margin-bottom: 0px;  /*Jugar con este que falla segun el tamaño*/
-        border: #004499 solid 5px;
+        border: #004499 solid 5px !important;
     }
 
     .language-btn {
