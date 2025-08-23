@@ -2491,6 +2491,10 @@ body.dark-mode .mobile-nav-item.active {
         height: auto !important;
    }
 
+   .language-selector{
+    border: 1px solid white !important;
+   }
+
     .logo {
         font-size: 1.1rem;
         margin-left: -30px !important;
