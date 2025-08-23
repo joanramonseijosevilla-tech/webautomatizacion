@@ -2487,12 +2487,12 @@ body.dark-mode .mobile-nav-item.active {
 
     .logo {
         font-size: 1.1rem;
-        margin-left: 0px !important;
+        margin-left: -50px !important;
     }
 
     footer {
         margin-bottom: 0px;  /*Jugar con este que falla segun el tamaño*/
-        border: 5px solid mediumseagreen !important;
+        border: 5px solid purple !important;
     }
 
     .language-btn {
