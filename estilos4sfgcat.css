@@ -1425,121 +1425,6 @@ nav {
     }
 
 }
-@media (max-width: 570px){
-    .logo img {
-        width: 200px !important;
-        height: auto !important;
-    }
-
-}
-
-@media (max-width: 513px){
-    .logo img {
-        width: 180px !important;
-        height: auto !important;
-    }
-    .analytics-toggle-header {
-        display: none !important;
-    }
-    footer {
-        margin-bottom: 0px;  /*Jugar con este que falla segun el tamaño*/
-        border: yellow solid 5px !important;
-    }
-
-}
-
-@media (max-width: 450px){
-    .logo img {
-        width: 120px !important;
-        height: auto !important;
-    }
-    .analytics-toggle-header {
-        display: none !important;
-        }
-
-        .language-btn {
-            padding: 0.2rem 0.5rem !important;
-            font-size: 1rem !important;
-            min-width: 30px !important;
-            min-height: 20px !important;
-        }
-        
-        .dark-mode-btn {
-            margin: 0 !important;
-            margin-top: 0 !important;
-            min-width: 40px !important;
-            min-height: 25px !important;
-            padding: 0.4rem !important;
-            font-size: 1rem !important;
-            order: 2 !important;
-        }
-
-        footer {
-            margin-bottom: 0px;  /*Jugar con este que falla segun el tamaño*/
-            border: solid 5px red !important;
-        }
-    
-}
-
-
-@media (max-width: 360px) {
-    .header-content {
-        padding: 0 0.75rem;
-    }
-
-    .analytics-toggle-header {
-        display: none !important;
-    }
-
-    .logo img {
-        width: 20px !important;
-        height: auto !important;
-    }
-
-    .logo {
-        font-size: 1.1rem;
-    }
-
-    footer {
-        margin-bottom: 0px;  /*Jugar con este que falla segun el tamaño*/
-        border: #004499 solid 5px !important;
-    }
-
-    .language-btn {
-        padding: 0.2rem 0.5rem !important;
-        font-size: 1rem !important;
-        min-width: 30px !important;
-        min-height: 20px !important;
-    }
-    
-    .dark-mode-btn {
-        margin: 0 !important;
-        margin-top: 0 !important;
-        min-width: 40px !important;
-        min-height: 25px !important;
-        padding: 0.4rem !important;
-        font-size: 1rem !important;
-        order: 2 !important;
-    }
-
-        nav a {
-            padding: 0.4rem;
-            font-size: 0.8rem;
-        }
-
-        .hero h1 {
-            font-size: 1.6rem;
-        }
-
-        #chatbot-input-container {
-            padding: 0.75rem;
-        }
-
-        #chatbot-send {
-            min-width: 70px;
-            padding: 0.75rem;
-        }
-}
 
 /* ANIMACIONES RESPONSIVE */
 .fade-in {
@@ -2528,4 +2413,119 @@ body.dark-mode .mobile-nav-item.active {
     .analytics-toggle {
         display: block !important;
     }
+}
+@media (max-width: 570px){
+    .logo img {
+        width: 200px !important;
+        height: auto !important;
+    }
+
+}
+
+@media (max-width: 513px){
+    .logo img {
+        width: 180px !important;
+        height: auto !important;
+    }
+    .analytics-toggle-header {
+        display: none !important;
+    }
+    footer {
+        margin-bottom: 0px;  /*Jugar con este que falla segun el tamaño*/
+        border: yellow solid 5px !important;
+    }
+
+}
+
+@media (max-width: 450px){
+    .logo img {
+        width: 120px !important;
+        height: auto !important;
+    }
+    .analytics-toggle-header {
+        display: none !important;
+        }
+
+        .language-btn {
+            padding: 0.2rem 0.5rem !important;
+            font-size: 1rem !important;
+            min-width: 30px !important;
+            min-height: 20px !important;
+        }
+        
+        .dark-mode-btn {
+            margin: 0 !important;
+            margin-top: 0 !important;
+            min-width: 40px !important;
+            min-height: 25px !important;
+            padding: 0.4rem !important;
+            font-size: 1rem !important;
+            order: 2 !important;
+        }
+
+        footer {
+            margin-bottom: 0px;  /*Jugar con este que falla segun el tamaño*/
+            border: solid 5px red !important;
+        }
+    
+}
+
+
+@media (max-width: 360px) {
+    .header-content {
+        padding: 0 0.75rem;
+    }
+
+    .analytics-toggle-header {
+        display: none !important;
+    }
+
+    .logo img {
+        width: 20px !important;
+        height: auto !important;
+    }
+
+    .logo {
+        font-size: 1.1rem;
+    }
+
+    footer {
+        margin-bottom: 0px;  /*Jugar con este que falla segun el tamaño*/
+        border: #004499 solid 5px !important;
+    }
+
+    .language-btn {
+        padding: 0.2rem 0.5rem !important;
+        font-size: 1rem !important;
+        min-width: 30px !important;
+        min-height: 20px !important;
+    }
+    
+    .dark-mode-btn {
+        margin: 0 !important;
+        margin-top: 0 !important;
+        min-width: 40px !important;
+        min-height: 25px !important;
+        padding: 0.4rem !important;
+        font-size: 1rem !important;
+        order: 2 !important;
+    }
+
+        nav a {
+            padding: 0.4rem;
+            font-size: 0.8rem;
+        }
+
+        .hero h1 {
+            font-size: 1.6rem;
+        }
+
+        #chatbot-input-container {
+            padding: 0.75rem;
+        }
+
+        #chatbot-send {
+            min-width: 70px;
+            padding: 0.75rem;
+        }
 }
