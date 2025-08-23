@@ -1492,7 +1492,7 @@ nav {
     }
 
     .logo img {
-        width: 120px !important;
+        width: 180px !important;
         height: auto !important;
     }
 
@@ -1504,7 +1504,7 @@ nav {
         margin-bottom: 0px;  /*Jugar con este que falla segun el tamaño*/
         border: #004499 solid 5px !important;
     }
-    
+
     .language-btn {
         padding: 0.2rem 0.5rem !important;
         font-size: 1rem !important;
