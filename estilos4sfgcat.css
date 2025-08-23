@@ -2487,7 +2487,7 @@ body.dark-mode .mobile-nav-item.active {
 
     .logo {
         font-size: 1.1rem;
-        margin-left: -10px !important;
+        margin-left: -20px !important;
     }
 
     footer {
@@ -2499,7 +2499,8 @@ body.dark-mode .mobile-nav-item.active {
         padding: 0.2rem 0.5rem !important;
         font-size: 1rem !important;
         min-width: 30px !important;
-        min-height: 20px !important;
+        min-height: 25px !important;
+        border: 5px solid purple !important;
     }
     
     .dark-mode-btn {
@@ -2510,6 +2511,8 @@ body.dark-mode .mobile-nav-item.active {
         padding: 0.4rem !important;
         font-size: 1rem !important;
         order: 2 !important;
+        border: 5px solid yellow !important;
+
     }
 
         nav a {
