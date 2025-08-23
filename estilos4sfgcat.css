@@ -2493,6 +2493,7 @@ body.dark-mode .mobile-nav-item.active {
 
    .language-selector{
     border: 1px solid white !important;
+    padding: 0px !important;
     /*margin-right: 0px !important;*/
    }
 
@@ -2509,7 +2510,7 @@ body.dark-mode .mobile-nav-item.active {
     }
 
     .language-btn {
-        padding: 0px !important;
+        padding: 0.2rem 0.5rem !important;
         margin: 0px !important;
         font-size: 1rem !important;
         min-width: 30px !important;
