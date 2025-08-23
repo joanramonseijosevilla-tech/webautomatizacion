@@ -2491,8 +2491,7 @@ body.dark-mode .mobile-nav-item.active {
         height: auto !important;
    }
 
-   .language-selector{
-    border: 1px solid white !important;
+   .language-selector{    
     min-width: auto !important;
     width: auto !important;
     min-height: auto !important;
@@ -2507,8 +2506,7 @@ body.dark-mode .mobile-nav-item.active {
     }
 
     footer {
-        margin-bottom: 0px;  /*Jugar con este que falla segun el tamaño*/
-        border: 5px solid purple !important;
+        margin-bottom: 45px;  /*Jugar con este que falla segun el tamaño*/        
     }
 
     .language-btn {
@@ -2528,7 +2526,7 @@ body.dark-mode .mobile-nav-item.active {
         padding: 0.4rem !important;
         font-size: 1rem !important;
         order: 2 !important;
-        /*border: 5px solid yellow !important;*/
+       
 
     }
 
