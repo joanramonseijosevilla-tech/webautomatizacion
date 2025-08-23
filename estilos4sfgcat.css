@@ -2479,6 +2479,7 @@ body.dark-mode .mobile-nav-item.active {
     .header-controls{
         display: flex !important;
         gap:5px !important;
+        justify-content: center !important;
     }
 
     .analytics-toggle-header {
