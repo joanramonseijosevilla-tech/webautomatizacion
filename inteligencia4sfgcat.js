@@ -3380,10 +3380,32 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
                 if (legacyNav) legacyNav.id = '';
 
                 // Restaurar el formulario a su lugar original cuando el usuario navega por el header
-                const headerNav = document.querySelector('header nav');
+                const headerNav = document.querySelector('header nav');                
                 if (headerNav) {
                     headerNav.addEventListener('click', (e) => {
                         const link = e.target.closest('a');
+                        if (link) {
+                            cancelAppointment(false);
+                        }
+                    });
+                }
+
+                // Restaurar el formulario a su lugar original cuando el usuario hacer click en otra opción del menú hamburguesa            
+                const headerHamburguer= document.querySelector('.mobile-menu-nav');
+                if (headerHamburguer) {
+                    headerHamburguer.addEventListener('click', (e) => {
+                        const link = e.target.closest('a');
+                        if (link) {
+                            cancelAppointment(false);
+                        }
+                    });
+                }
+
+                //Restaurar el formulario a su lugar original cuando el usuario hacer click en otra opción de los botones del menú inferior            
+                const headerIconsInferiors= document.querySelector('.mobile-nav-items');
+                if (headerIconsInferiors) {
+                    headerIconsInferiors.addEventListener('click', (e) => {
+                        const link = e.target.closest('div');
                         if (link) {
                             cancelAppointment(false);
                         }
