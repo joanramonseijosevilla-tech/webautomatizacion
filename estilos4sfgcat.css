@@ -2431,7 +2431,7 @@ body.dark-mode .mobile-nav-item.active {
 
     .header-controls{
         display: flex !important;
-        gap:10px !important;
+        gap:8px !important;
         justify-content: center !important;
     }
 
@@ -2445,7 +2445,7 @@ body.dark-mode .mobile-nav-item.active {
     }
 
     .logo img {
-        width: 180px !important;
+        width: 170px !important;
         height: auto !important;
    }
 
@@ -2485,10 +2485,10 @@ body.dark-mode .mobile-nav-item.active {
             padding: 0.75rem;
         }
         #with-automation {
-            font-size: 1rem;
+            font-size: 0.9rem;
         }
         #losing{
-            font-size: 1rem;
+            font-size: 0.9rem;
         }
 }
 
