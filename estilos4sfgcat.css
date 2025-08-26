@@ -951,7 +951,7 @@ nav a:hover {
 
 #chatbot-container {
     position: fixed;
-    top:10px; /*Cambiado 26/08/2025 de 40 px a 10 px para evitar problemas en el móvil */
+    top:40px; /*Cambiado 26/08/2025 de 40 px a 10 px para evitar problemas en el móvil */
     bottom: 90px;
     right: 20px;
     width: 360px;
@@ -2414,6 +2414,15 @@ body.dark-mode .mobile-nav-item.active {
         display: block !important;
     }
 }
+
+@media (max-width: 753px){
+
+    #chatbot-container {        
+        top:0px; /*Cambiado 26/08/2025 de 40 px a 10 px para evitar problemas en el móvil */
+        
+    }    
+}
+
 @media (max-width: 570px){
     .logo img {
         width: 200px !important;
