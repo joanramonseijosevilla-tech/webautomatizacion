@@ -951,7 +951,7 @@ nav a:hover {
 
 #chatbot-container {
     position: fixed;
-    top:40px;
+    top:10px; /*Cambiado 26/08/2025 de 40 px a 10 px para evitar problemas en el móvil */
     bottom: 90px;
     right: 20px;
     width: 360px;
