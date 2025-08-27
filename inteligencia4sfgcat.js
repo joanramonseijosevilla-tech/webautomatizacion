@@ -2122,7 +2122,7 @@ async function sendMessageToBot(message) {
 
         // Llamar al webhook de Make
         const triggerResponse = await fetch(
-            `https://hook.eu2.make.com/epwb68m412q6nj6odydhwm8g1xk7efqq?nombre=&email=&phone=&empresa=&empleados=&tipo=&desafio=&fecha_envio=&version_ab=&origen=chatbot&diaSeleccionado=&horaSeleccionada=&fechaISO=&fechaConZona=&idioma=&meetingID=&CalendarID&message=${query}&id=${requestId}&user=${userId}`,
+            `https://hook.eu2.make.com/3gdrtys1ypxrkrtvjksb10rmo126dwl1?nombre=&email=&phone=&empresa=&empleados=&tipo=&desafio=&fecha_envio=&version_ab=&origen=chatbot&diaSeleccionado=&horaSeleccionada=&fechaISO=&fechaConZona=&idioma=&meetingID=&CalendarID&message=${query}&id=${requestId}&user=${userId}`,
             {
                 method: "GET",
                 headers: {
@@ -2466,9 +2466,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     submitBtn.innerHTML = "⏳ Enviando...";
                     submitBtn.disabled = true;
 
-                    // 🔧 CAMBIA ESTA URL POR TU WEBHOOK DE MAKE
+                    // 🔧 CAMBIA ESTA URL POR TU WEBHOOK DE MAKE NEXAUTIA@GMAIL.COM
                     const WEBHOOK_URL =
-                        "https://hook.eu2.make.com/epwb68m412q6nj6odydhwm8g1xk7efqq";
+                        "https://hook.eu2.make.com/3gdrtys1ypxrkrtvjksb10rmo126dwl1";
 
                     try {
     // Preparar datos para enviar
