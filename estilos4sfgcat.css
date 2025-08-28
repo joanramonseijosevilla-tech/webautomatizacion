@@ -1304,7 +1304,7 @@ nav a {
     right: 0;
     left: 0;
     width: 100%;
-    height: 85vh; /*Esto estaba en 100 pero entonces o no se veía el título o no podía introducir texto */
+    height: 80vh; /* 28/08/2026. Esto estaba en 100 pero entonces o no se veía el título o no podía introducir texto */
     border-radius: 0;
     max-height: 100vh;
 }
