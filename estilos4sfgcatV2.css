@@ -289,7 +289,7 @@ footer {
 
 .contact-item {
     display: flex;
-    align-items: center;
+    align-items: center;    
     gap: 8px;
     text-decoration: none;
     color: var(
@@ -2685,11 +2685,13 @@ body.dark-mode .mobile-nav-item.active {
     
 @media(max-width: 450px){
     .p2_logo img{        
-        width: 150px !important;
+        width: 140px !important;
         height: auto !important;       
 }
     .p2_titulo{
-        font-size: 1.5rem;       
+        font-size: 1.1rem;       
     }
+    #cursos h2{
+        font-size: 1rem;
 
 }
