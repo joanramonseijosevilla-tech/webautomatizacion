@@ -1,0 +1,1249 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>
+            ¿Qué es la Inteligencia Artificial? - Aventura IA para Niños
+        </title>
+
+        <!-- Favicon personalizado de robot -->
+        <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiIgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIj4KICA8IS0tIEJhY2tncm91bmQgY2lyY2xlIC0tPgogIDxjaXJjbGUgY3g9IjE2IiBjeT0iMTYiIHI9IjE1IiBmaWxsPSIjMkE0RDY5IiBzdHJva2U9IiNGRjdFNUYiIHN0cm9rZS13aWR0aD0iMSIvPgogIAogIDwhLS0gUm9ib3QgaGVhZCAtLT4KICA8cmVjdCB4PSI4IiB5PSI4IiB3aWR0aD0iMTYiIGhlaWdodD0iMTIiIHJ4PSIzIiBmaWxsPSIjNEJDNkI5Ii8+CiAgCiAgPCEtLSBFeWVzIC0tPgogIDxjaXJjbGUgY3g9IjEyIiBjeT0iMTMiIHI9IjEuNSIgZmlsbD0iIzJBNEQ2OSIvPgogIDxjaXJjbGUgY3g9IjIwIiBjeT0iMTMiIHI9IjEuNSIgZmlsbD0iIzJBNEQ2OSIvPgogIDxjaXJjbGUgY3g9IjEyIiBjeT0iMTMiIHI9IjAuOCIgZmlsbD0id2hpdGUiLz4KICA8Y2lyY2xlIGN4PSIyMCIgY3k9IjEzIiByPSIwLjgiIGZpbGw9IndoaXRlIi8+CiAgCiAgPCEtLSBNb3V0aCAtLT4KICA8cmVjdCB4PSIxNCIgeT0iMTYiIHdpZHRoPSI0IiBoZWlnaHQ9IjEuNSIgcng9IjAuNSIgZmlsbD0iIzJBNEQ2OSIvPgogIAogIDwhLS0gQW50ZW5uYSAtLT4KICA8bGluZSB4MT0iMTYiIHkxPSI4IiB4Mj0iMTYiIHkyPSI1IiBzdHJva2U9IiNGRjdFNUYiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KICA8Y2lyY2xlIGN4PSIxNiIgY3k9IjUiIHI9IjEiIGZpbGw9IiNGRjdFNUYiLz4KICAKICA8IS0tIEJvZHkgLS0+CiAgPHJlY3QgeD0iMTAiIHk9IjIwIiB3aWR0aD0iMTIiIGhlaWdodD0iOCIgcng9IjIiIGZpbGw9IiNGRjdFNUYiLz4KICAKICA8IS0tIENoZXN0IHBhbmVsIC0tPgogIDxyZWN0IHg9IjEyIiB5PSIyMiIgd2lkdGg9IjgiIGhlaWdodD0iNCIgcng9IjEiIGZpbGw9IiMyQTRENjkiLz4KICA8Y2lyY2xlIGN4PSIxNCIgY3k9IjI0IiByPSIwLjgiIGZpbGw9IiM0QkM2QjkiLz4KICA8Y2lyY2xlIGN4PSIxNiIgY3k9IjI0IiByPSIwLjgiIGZpbGw9IiM0QkM2QjkiLz4KICA8Y2lyY2xlIGN4PSIxOCIgY3k9IjI0IiByPSIwLjgiIGZpbGw9IiM0QkM2QjkiLz4KICAKICA8IS0tIEFybXMgLS0+CiAgPHJlY3QgeD0iNiIgeT0iMjEiIHdpZHRoPSI0IiBoZWlnaHQ9IjIiIHJ4PSIxIiBmaWxsPSIjNEJDNkI5Ii8+CiAgPHJlY3QgeD0iMjIiIHk9IjIxIiB3aWR0aD0iNCIgaGVpZ2h0PSIyIiByeD0iMSIgZmlsbD0iIzRCQzZCOSIvPgo8L3N2Zz4="
+        />
+        <link rel="shortcut icon" href="favicon.svg" type="image/svg+xml" />
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiIgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIj4KICA8IS0tIEJhY2tncm91bmQgY2lyY2xlIC0tPgogIDxjaXJjbGUgY3g9IjE2IiBjeT0iMTYiIHI9IjE1IiBmaWxsPSIjMkE0RDY5IiBzdHJva2U9IiNGRjdFNUYiIHN0cm9rZS13aWR0aD0iMSIvPgogIAogIDwhLS0gUm9ib3QgaGVhZCAtLT4KICA8cmVjdCB4PSI4IiB5PSI4IiB3aWR0aD0iMTYiIGhlaWdodD0iMTIiIHJ4PSIzIiBmaWxsPSIjNEJDNkI5Ii8+CiAgCiAgPCEtLSBFeWVzIC0tPgogIDxjaXJjbGUgY3g9IjEyIiBjeT0iMTMiIHI9IjEuNSIgZmlsbD0iIzJBNEQ2OSIvPgogIDxjaXJjbGUgY3g9IjIwIiBjeT0iMTMiIHI9IjEuNSIgZmlsbD0iIzJBNEQ2OSIvPgogIDxjaXJjbGUgY3g9IjEyIiBjeT0iMTMiIHI9IjAuOCIgZmlsbD0id2hpdGUiLz4KICA8Y2lyY2xlIGN4PSIyMCIgY3k9IjEzIiByPSIwLjgiIGZpbGw9IndoaXRlIi8+CiAgCiAgPCEtLSBNb3V0aCAtLT4KICA8cmVjdCB4PSIxNCIgeT0iMTYiIHdpZHRoPSI0IiBoZWlnaHQ9IjEuNSIgcng9IjAuNSIgZmlsbD0iIzJBNEQ2OSIvPgogIAogIDwhLS0gQW50ZW5uYSAtLT4KICA8bGluZSB4MT0iMTYiIHkxPSI4IiB4Mj0iMTYiIHkyPSI1IiBzdHJva2U9IiNGRjdFNUYiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KICA8Y2lyY2xlIGN4PSIxNiIgY3k9IjUiIHI9IjEiIGZpbGw9IiNGRjdFNUYiLz4KICAKICA8IS0tIEJvZHkgLS0+CiAgPHJlY3QgeD0iMTAiIHk9IjIwIiB3aWR0aD0iMTIiIGhlaWdodD0iOCIgcng9IjIiIGZpbGw9IiNGRjdFNUYiLz4KICAKICA8IS0tIENoZXN0IHBhbmVsIC0tPgogIDxyZWN0IHg9IjEyIiB5PSIyMiIgd2lkdGg9IjgiIGhlaWdodD0iNCIgcng9IjEiIGZpbGw9IiMyQTRENjkiLz4KICA8Y2lyY2xlIGN4PSIxNCIgY3k9IjI0IiByPSIwLjgiIGZpbGw9IiM0QkM2QjkiLz4KICA8Y2lyY2xlIGN4PSIxNiIgY3k9IjI0IiByPSIwLjgiIGZpbGw9IiM0QkM2QjkiLz4KICA8Y2lyY2xlIGN4PSIxOCIgY3k9IjI0IiByPSIwLjgiIGZpbGw9IiM0QkM2QjkiLz4KICAKICA8IS0tIEFybXMgLS0+CiAgPHJlY3QgeD0iNiIgeT0iMjEiIHdpZHRoPSI0IiBoZWlnaHQ9IjIiIHJ4PSIxIiBmaWxsPSIjNEJDNkI5Ii8+CiAgPHJlY3QgeD0iMjIiIHk9IjIxIiB3aWR0aD0iNCIgaGVpZ2h0PSIyIiByeD0iMSIgZmlsbD0iIzRCQzZCOSIvPgo8L3N2Zz4="
+        />
+
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Nunito:wght@400;700&display=swap"
+            rel="stylesheet"
+        />
+        <style>
+            * {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
+
+            body {
+                font-family: "Nunito", sans-serif;
+                background-color: #f7f7f7;
+                color: #333333;
+                line-height: 1.6;
+                overflow-x: hidden;
+            }
+
+            .container {
+                max-width: 1100px;
+                margin: 0 auto;
+                padding: 0 20px;
+            }
+
+            /* Header */
+            header {
+                background: linear-gradient(135deg, #2a4d69 0%, #4bc6b9 100%);
+                color: white;
+                padding: 40px 0;
+                text-align: center;
+                position: relative;
+                overflow: hidden;
+            }
+
+            header::before {
+                content: "";
+                position: absolute;
+                top: -50%;
+                left: -50%;
+                width: 200%;
+                height: 200%;
+                background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/></svg>')
+                    repeat;
+                animation: float 20s infinite linear;
+            }
+
+            @keyframes float {
+                0% {
+                    transform: translateX(0) translateY(0);
+                }
+                100% {
+                    transform: translateX(-50px) translateY(-50px);
+                }
+            }
+
+            .robot-header {
+                position: relative;
+                z-index: 2;
+                margin-bottom: 20px;
+            }
+
+            h1 {
+                font-family: "Poppins", sans-serif;
+                font-weight: 700;
+                font-size: 3.5rem;
+                margin-bottom: 15px;
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+                position: relative;
+                z-index: 2;
+            }
+
+            .subtitle {
+                font-size: 1.3rem;
+                opacity: 0.95;
+                position: relative;
+                z-index: 2;
+            }
+
+            /* Main content */
+            main {
+                padding: 60px 0;
+            }
+
+            section {
+                margin-bottom: 60px;
+            }
+
+            h2 {
+                font-family: "Poppins", sans-serif;
+                font-weight: 600;
+                font-size: 2.5rem;
+                color: #2a4d69;
+                margin-bottom: 30px;
+                text-align: center;
+            }
+
+            h3 {
+                font-family: "Poppins", sans-serif;
+                font-weight: 600;
+                font-size: 1.8rem;
+                color: #2a4d69;
+                margin-bottom: 20px;
+            }
+
+            p {
+                font-size: 1.2rem;
+                margin-bottom: 20px;
+                text-align: center;
+            }
+
+            pre {
+                font-size: 1.2rem;
+                margin-bottom: 20px;
+                text-align: center;
+            }
+
+            /* Cards */
+            .cards-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 30px;
+                margin: 40px 0;
+            }
+
+            .card {
+                background: white;
+                padding: 30px;
+                border-radius: 16px;
+                box-shadow: 0px 8px 20px rgba(42, 77, 105, 0.1);
+                text-align: center;
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+
+            .card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0px 12px 30px rgba(42, 77, 105, 0.15);
+            }
+
+            .card-icon {
+                width: 80px;
+                height: 80px;
+                margin: 0 auto 20px;
+            }
+
+            .card h3 {
+                color: #ff7e5f;
+                margin-bottom: 15px;
+                text-align: center;
+            }
+
+            .card p {
+                font-size: 1.1rem;
+                text-align: left;
+            }
+
+            /* Curiosidades Section */
+            .curiosidades {
+                background: #2a4d69;
+                color: white;
+                padding: 50px 30px;
+                border-radius: 20px;
+                margin: 60px 0;
+            }
+
+            .curiosidades h2 {
+                color: white;
+                margin-bottom: 40px;
+            }
+
+            .curiosidades-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 25px;
+            }
+
+            .curiosidad-item {
+                background: rgba(255, 255, 255, 0.1);
+                padding: 25px;
+                border-radius: 12px;
+                border-top: 5px solid #4bc6b9;
+                backdrop-filter: blur(10px);
+            }
+
+            .curiosidad-item h4 {
+                font-family: "Poppins", sans-serif;
+                color: #4bc6b9;
+                font-size: 1.3rem;
+                margin-bottom: 10px;
+            }
+
+            .curiosidad-item p {
+                font-size: 1.1rem;
+                text-align: left;
+            }
+
+            /* Quiz Section */
+            .quiz-section {
+                background: white;
+                padding: 50px 30px;
+                border-radius: 20px;
+                box-shadow: 0px 8px 30px rgba(42, 77, 105, 0.1);
+                text-align: center;
+            }
+
+            .quiz-container {
+                max-width: 700px;
+                margin: 0 auto;
+            }
+
+            .question-counter {
+                background: #4bc6b9;
+                color: white;
+                padding: 10px 20px;
+                border-radius: 20px;
+                display: inline-block;
+                margin-bottom: 30px;
+                font-weight: 700;
+            }
+
+            .question-title {
+                font-size: 1.6rem;
+                margin-bottom: 30px;
+                color: #2a4d69;
+            }
+
+            .answer-buttons {
+                display: grid;
+                gap: 15px;
+                margin-bottom: 30px;
+            }
+
+            .answer-btn {
+                background: #ff7e5f;
+                color: white;
+                border: none;
+                padding: 20px 30px;
+                border-radius: 30px;
+                font-family: "Nunito", sans-serif;
+                font-weight: 700;
+                font-size: 1.2rem;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                text-transform: none;
+            }
+
+            .answer-btn:hover {
+                background: #e56a50;
+                transform: translateY(-2px);
+                box-shadow: 0px 6px 20px rgba(255, 126, 95, 0.3);
+            }
+
+            .answer-btn:disabled {
+                cursor: not-allowed;
+                opacity: 0.7;
+            }
+
+            .answer-btn.correct {
+                background: #5cb85c;
+            }
+
+            .answer-btn.incorrect {
+                background: #d9534f;
+            }
+
+            .feedback-message {
+                min-height: 60px;
+                padding: 20px;
+                margin: 20px 0;
+                border-radius: 15px;
+                font-weight: 700;
+                font-size: 1.2rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                opacity: 0;
+                transition: opacity 0.3s ease;
+            }
+
+            .feedback-message.show {
+                opacity: 1;
+            }
+
+            .feedback-message.success {
+                background: #d4edda;
+                color: #155724;
+                border: 2px solid #5cb85c;
+            }
+
+            .feedback-message.error {
+                background: #f8d7da;
+                color: #721c24;
+                border: 2px solid #d9534f;
+            }
+
+            .quiz-progress {
+                background: #e9ecef;
+                border-radius: 10px;
+                height: 8px;
+                margin-bottom: 30px;
+                overflow: hidden;
+            }
+
+            .quiz-progress-bar {
+                background: linear-gradient(90deg, #ff7e5f, #4bc6b9);
+                height: 100%;
+                width: 0%;
+                transition: width 0.3s ease;
+            }
+
+            .quiz-results {
+                text-align: center;
+                padding: 40px;
+            }
+
+            .score-circle {
+                width: 120px;
+                height: 120px;
+                border-radius: 50%;
+                background: linear-gradient(45deg, #ff7e5f, #4bc6b9);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 0 auto 30px;
+                color: white;
+                font-size: 2rem;
+                font-weight: 700;
+            }
+
+            .restart-btn {
+                background: #2a4d69;
+                color: white;
+                border: none;
+                padding: 15px 30px;
+                border-radius: 25px;
+                font-family: "Nunito", sans-serif;
+                font-weight: 700;
+                font-size: 1.1rem;
+                cursor: pointer;
+                margin-top: 20px;
+                transition: all 0.3s ease;
+            }
+
+            .restart-btn:hover {
+                background: #1e3a52;
+                transform: translateY(-2px);
+                box-shadow: 0px 6px 20px rgba(42, 77, 105, 0.3);
+            }
+
+            /* Footer */
+            footer {
+                background: #2a4d69;
+                color: white;
+                text-align: center;
+                padding: 40px 0;
+                margin-top: 60px;
+            }
+
+            /* Responsive Design */
+            @media (max-width: 768px) {
+                h1 {
+                    font-size: 2.5rem;
+                }
+
+                h2 {
+                    font-size: 2rem;
+                }
+
+                .cards-grid {
+                    grid-template-columns: 1fr;
+                    gap: 20px;
+                }
+
+                .curiosidades-grid {
+                    grid-template-columns: 1fr;
+                }
+
+                .container {
+                    padding: 0 15px;
+                }
+
+                .answer-buttons {
+                    grid-template-columns: 1fr;
+                }
+            }
+
+            @media (max-width: 480px) {
+                h1 {
+                    font-size: 2rem;
+                }
+
+                p {
+                    font-size: 1.1rem;
+                }
+
+                pre {
+                    font-size: 1.1rem;
+                }
+
+                .card {
+                    padding: 20px;
+                }
+
+                .curiosidades {
+                    padding: 30px 20px;
+                }
+
+                .quiz-section {
+                    padding: 30px 20px;
+                }
+            }
+
+            /* Accessibility */
+            .answer-btn:focus-visible {
+                outline: 3px solid #ff7e5f;
+                outline-offset: 2px;
+            }
+
+            .restart-btn:focus-visible {
+                outline: 3px solid #4bc6b9;
+                outline-offset: 2px;
+            }
+
+            /* Robot SVG Animation */
+            .robot-svg {
+                animation: bounce 2s ease-in-out infinite;
+            }
+
+            @keyframes bounce {
+                0%,
+                20%,
+                50%,
+                80%,
+                100% {
+                    transform: translateY(0);
+                }
+                40% {
+                    transform: translateY(-10px);
+                }
+                60% {
+                    transform: translateY(-5px);
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <div class="container">
+                <div class="logo">
+                    <a href="www.nexautia.com" data-track="nav-logo">
+                        <img
+                            src="logo.svg"
+                            alt="NEXAUTIA"
+                            width="340"
+                            height="auto"
+                            id="logo"
+                        />
+                    </a>
+                </div>
+                <div class="robot-header">
+                    <svg
+                        class="robot-svg"
+                        width="120"
+                        height="120"
+                        viewBox="0 0 120 120"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <!-- Robot Body -->
+                        <rect
+                            x="35"
+                            y="45"
+                            width="50"
+                            height="60"
+                            rx="10"
+                            fill="#FF7E5F"
+                            stroke="#2A4D69"
+                            stroke-width="3"
+                        />
+
+                        <!-- Robot Head -->
+                        <rect
+                            x="40"
+                            y="15"
+                            width="40"
+                            height="40"
+                            rx="8"
+                            fill="#4BC6B9"
+                            stroke="#2A4D69"
+                            stroke-width="3"
+                        />
+
+                        <!-- Eyes -->
+                        <circle cx="48" cy="30" r="4" fill="#2A4D69" />
+                        <circle cx="72" cy="30" r="4" fill="#2A4D69" />
+                        <circle cx="48" cy="30" r="2" fill="white" />
+                        <circle cx="72" cy="30" r="2" fill="white" />
+
+                        <!-- Mouth -->
+                        <rect
+                            x="55"
+                            y="38"
+                            width="10"
+                            height="4"
+                            rx="2"
+                            fill="#2A4D69"
+                        />
+
+                        <!-- Antenna -->
+                        <line
+                            x1="60"
+                            y1="15"
+                            x2="60"
+                            y2="5"
+                            stroke="#2A4D69"
+                            stroke-width="3"
+                            stroke-linecap="round"
+                        />
+                        <circle cx="60" cy="5" r="3" fill="#FF7E5F" />
+
+                        <!-- Arms -->
+                        <rect
+                            x="20"
+                            y="55"
+                            width="15"
+                            height="8"
+                            rx="4"
+                            fill="#4BC6B9"
+                            stroke="#2A4D69"
+                            stroke-width="2"
+                        />
+                        <rect
+                            x="85"
+                            y="55"
+                            width="15"
+                            height="8"
+                            rx="4"
+                            fill="#4BC6B9"
+                            stroke="#2A4D69"
+                            stroke-width="2"
+                        />
+
+                        <!-- Hands -->
+                        <circle
+                            cx="20"
+                            cy="59"
+                            r="6"
+                            fill="#FF7E5F"
+                            stroke="#2A4D69"
+                            stroke-width="2"
+                        />
+                        <circle
+                            cx="100"
+                            cy="59"
+                            r="6"
+                            fill="#FF7E5F"
+                            stroke="#2A4D69"
+                            stroke-width="2"
+                        />
+
+                        <!-- Legs -->
+                        <rect
+                            x="45"
+                            y="105"
+                            width="8"
+                            height="12"
+                            rx="4"
+                            fill="#4BC6B9"
+                            stroke="#2A4D69"
+                            stroke-width="2"
+                        />
+                        <rect
+                            x="67"
+                            y="105"
+                            width="8"
+                            height="12"
+                            rx="4"
+                            fill="#4BC6B9"
+                            stroke="#2A4D69"
+                            stroke-width="2"
+                        />
+
+                        <!-- Chest panel -->
+                        <rect
+                            x="42"
+                            y="60"
+                            width="36"
+                            height="25"
+                            rx="5"
+                            fill="#2A4D69"
+                        />
+                        <circle cx="50" cy="67" r="3" fill="#4BC6B9" />
+                        <circle cx="60" cy="67" r="3" fill="#FF7E5F" />
+                        <circle cx="70" cy="67" r="3" fill="#4BC6B9" />
+                        <rect
+                            x="45"
+                            y="75"
+                            width="30"
+                            height="3"
+                            rx="1"
+                            fill="#4BC6B9"
+                        />
+                        <rect
+                            x="45"
+                            y="80"
+                            width="20"
+                            height="2"
+                            rx="1"
+                            fill="#FF7E5F"
+                        />
+                    </svg>
+                </div>
+                <h1>¿Qué es la Inteligencia Artificial?</h1>
+                <p class="subtitle">
+                    ¡Descubre el fascinante mundo de las máquinas que pueden
+                    pensar!
+                </p>
+            </div>
+        </header>
+
+        <main>
+            <div class="container">
+                <section id="introduccion">
+                    <h2>¡Bienvenido a tu Aventura IA!</h2>
+                    <p>
+                        ¿Te has preguntado alguna vez cómo Alexa sabe qué música
+                        te gusta? ¿O cómo YouTube encuentra videos perfectos
+                        para ti? ¡Esto es gracias a la Inteligencia Artificial!
+                        Vamos a descubrir juntos este increíble mundo donde las
+                        máquinas pueden aprender y ayudarnos de maneras
+                        sorprendentes.
+                    </p>
+                </section>
+
+                <section id="explicacion">
+                    <h2>¿Qué es la Inteligencia Artificial?</h2>
+                    <p>
+                        La Inteligencia Artificial, o IA para los amigos, es
+                        como darle un cerebro super inteligente a las
+                        computadoras. ¡Es como si las máquinas pudieran pensar,
+                        aprender y tomar decisiones como nosotros!
+                    </p>
+
+                    <div class="cards-grid">
+                        <div class="card">
+                            <svg
+                                class="card-icon"
+                                viewBox="0 0 100 100"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <circle
+                                    cx="50"
+                                    cy="50"
+                                    r="45"
+                                    fill="#4BC6B9"
+                                    stroke="#2A4D69"
+                                    stroke-width="3"
+                                />
+                                <path
+                                    d="M25 45 Q50 25 75 45"
+                                    stroke="#2A4D69"
+                                    stroke-width="4"
+                                    fill="none"
+                                    stroke-linecap="round"
+                                />
+                                <path
+                                    d="M25 55 Q50 75 75 55"
+                                    stroke="#2A4D69"
+                                    stroke-width="4"
+                                    fill="none"
+                                    stroke-linecap="round"
+                                />
+                                <circle cx="35" cy="40" r="3" fill="#FF7E5F" />
+                                <circle cx="65" cy="40" r="3" fill="#FF7E5F" />
+                            </svg>
+                            <h3>Asistentes de Voz</h3>
+                            <p>
+                                Alexa, Siri y Google Assistant usan IA para
+                                entender lo que dices y responderte. ¡Es como
+                                tener un amigo robot que siempre te escucha!
+                            </p>
+                        </div>
+
+                        <div class="card">
+                            <svg
+                                class="card-icon"
+                                viewBox="0 0 100 100"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <rect
+                                    x="15"
+                                    y="25"
+                                    width="70"
+                                    height="50"
+                                    rx="5"
+                                    fill="#FF7E5F"
+                                    stroke="#2A4D69"
+                                    stroke-width="3"
+                                />
+                                <rect
+                                    x="20"
+                                    y="30"
+                                    width="60"
+                                    height="35"
+                                    fill="#2A4D69"
+                                />
+                                <rect
+                                    x="25"
+                                    y="35"
+                                    width="15"
+                                    height="8"
+                                    fill="#4BC6B9"
+                                />
+                                <rect
+                                    x="45"
+                                    y="35"
+                                    width="15"
+                                    height="8"
+                                    fill="#4BC6B9"
+                                />
+                                <rect
+                                    x="65"
+                                    y="35"
+                                    width="15"
+                                    height="8"
+                                    fill="#4BC6B9"
+                                />
+                                <rect
+                                    x="25"
+                                    y="50"
+                                    width="50"
+                                    height="3"
+                                    fill="#4BC6B9"
+                                />
+                                <rect
+                                    x="25"
+                                    y="57"
+                                    width="35"
+                                    height="3"
+                                    fill="#FF7E5F"
+                                />
+                            </svg>
+                            <h3>Videos y Entretenimiento</h3>
+                            <p>
+                                YouTube y Netflix usan IA para recomendarte
+                                videos que te van a encantar. ¡Es como si
+                                supieran exactamente lo que quieres ver!
+                            </p>
+                        </div>
+
+                        <div class="card">
+                            <svg
+                                class="card-icon"
+                                viewBox="0 0 100 100"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <rect
+                                    x="20"
+                                    y="20"
+                                    width="60"
+                                    height="60"
+                                    rx="5"
+                                    fill="#4BC6B9"
+                                    stroke="#2A4D69"
+                                    stroke-width="3"
+                                />
+                                <g fill="#2A4D69">
+                                    <rect x="30" y="30" width="8" height="8" />
+                                    <rect x="45" y="30" width="8" height="8" />
+                                    <rect x="60" y="30" width="8" height="8" />
+                                    <rect x="30" y="45" width="8" height="8" />
+                                    <rect x="45" y="45" width="8" height="8" />
+                                    <rect x="60" y="45" width="8" height="8" />
+                                    <rect x="30" y="60" width="8" height="8" />
+                                    <rect x="45" y="60" width="8" height="8" />
+                                    <rect x="60" y="60" width="8" height="8" />
+                                </g>
+                                <circle cx="34" cy="34" r="2" fill="#FF7E5F" />
+                                <circle cx="49" cy="49" r="2" fill="#FF7E5F" />
+                            </svg>
+                            <h3>Robots Jugadores</h3>
+                            <p>
+                                Hay robots que pueden jugar ajedrez y ganar a
+                                los mejores jugadores del mundo. ¡Pueden
+                                calcular millones de movimientos en segundos!
+                            </p>
+                        </div>
+
+                        <div class="card">
+                            <svg
+                                class="card-icon"
+                                viewBox="0 0 100 100"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <circle
+                                    cx="50"
+                                    cy="35"
+                                    r="25"
+                                    fill="#FF7E5F"
+                                    stroke="#2A4D69"
+                                    stroke-width="3"
+                                />
+                                <path
+                                    d="M35 45 Q50 55 65 45"
+                                    stroke="#2A4D69"
+                                    stroke-width="3"
+                                    fill="none"
+                                />
+                                <circle cx="42" cy="30" r="3" fill="#2A4D69" />
+                                <circle cx="58" cy="30" r="3" fill="#2A4D69" />
+                                <path
+                                    d="M30 65 Q50 85 70 65"
+                                    stroke="#2A4D69"
+                                    stroke-width="4"
+                                    fill="none"
+                                    stroke-linecap="round"
+                                />
+                                <path
+                                    d="M35 70 Q50 80 65 70"
+                                    stroke="#4BC6B9"
+                                    stroke-width="3"
+                                    fill="none"
+                                    stroke-linecap="round"
+                                />
+                            </svg>
+                            <h3>Reconocimiento de Caras</h3>
+                            <p>
+                                Tu teléfono puede reconocer tu cara para
+                                desbloquearse. ¡La IA aprende cómo luces y te
+                                reconoce entre millones de personas!
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="curiosidades">
+                    <div class="container">
+                        <h2>¡Datos Curiosos sobre IA!</h2>
+                        <div class="curiosidades-grid">
+                            <div class="curiosidad-item">
+                                <h4>¡Más rápida que el rayo!</h4>
+                                <p>
+                                    Una computadora con IA puede procesar
+                                    información 1,000,000 de veces más rápido
+                                    que un cerebro humano.
+                                </p>
+                            </div>
+                            <div class="curiosidad-item">
+                                <h4>Artista Digital</h4>
+                                <p>
+                                    Hay IA que pueden crear pinturas, música y
+                                    hasta cuentos. ¡Algunas de sus obras se
+                                    venden por millones!
+                                </p>
+                            </div>
+                            <div class="curiosidad-item">
+                                <h4>Doctora Robot</h4>
+                                <p>
+                                    La IA puede ayudar a los doctores a detectar
+                                    enfermedades mirando radiografías mejor que
+                                    muchos humanos.
+                                </p>
+                            </div>
+                            <div class="curiosidad-item">
+                                <h4>Traducción Mágica</h4>
+                                <p>
+                                    Google Translate puede entender más de 100
+                                    idiomas diferentes. ¡Es como tener un
+                                    diccionario mágico!
+                                </p>
+                            </div>
+                            <div class="curiosidad-item">
+                                <h4>Coches que se Manejan Solos</h4>
+                                <p>
+                                    Ya existen autos que pueden conducirse solos
+                                    usando IA. ¡Es como tener un chofer robot
+                                    invisible!
+                                </p>
+                            </div>
+                            <div class="curiosidad-item">
+                                <h4>Predicción del Clima</h4>
+                                <p>
+                                    La IA puede predecir el clima analizando
+                                    millones de datos del cielo, viento y
+                                    temperatura.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="quiz" class="quiz-section">
+                    <h2>¡Ponte a Prueba!</h2>
+                    <div class="quiz-container">
+                        <div class="question-counter">
+                            Pregunta <span id="current-question">1</span> de
+                            <span id="total-questions">5</span>
+                        </div>
+
+                        <div class="quiz-progress">
+                            <div
+                                class="quiz-progress-bar"
+                                id="progress-bar"
+                            ></div>
+                        </div>
+
+                        <h3 class="question-title" id="question-title">
+                            ¿Cuál de estos usa Inteligencia Artificial?
+                        </h3>
+
+                        <div class="answer-buttons" id="answer-buttons">
+                            <button
+                                class="answer-btn"
+                                onclick="selectAnswer(0)"
+                            >
+                                Alexa de Amazon
+                            </button>
+                            <button
+                                class="answer-btn"
+                                onclick="selectAnswer(1)"
+                            >
+                                Una piedra
+                            </button>
+                            <button
+                                class="answer-btn"
+                                onclick="selectAnswer(2)"
+                            >
+                                Un lápiz
+                            </button>
+                        </div>
+
+                        <div
+                            class="feedback-message"
+                            id="feedback-message"
+                            aria-live="polite"
+                        ></div>
+                    </div>
+
+                    <div
+                        class="quiz-results"
+                        id="quiz-results"
+                        style="display: none"
+                    >
+                        <div class="score-circle">
+                            <span id="final-score">5/5</span>
+                        </div>
+                        <h3 id="results-title">¡Increíble!</h3>
+                        <p id="results-message">
+                            Eres todo un experto en Inteligencia Artificial.
+                            ¡Sigue explorando este fascinante mundo!
+                        </p>
+                        <button class="restart-btn" onclick="restartQuiz()">
+                            Intentar de Nuevo
+                        </button>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <footer>
+            <div class="container">
+                <p>
+                    ¡Sigue explorando el increíble mundo de la Inteligencia
+                    Artificial!
+                </p>
+                <p>
+                    Creado con ❤️ por Nexautia para el traspaso de conocimiento
+                </p>
+                <pre>
+Nexautia, Transformando empresas con automatización inteligente.</pre
+                >
+            </div>
+        </footer>
+
+        <script defer>
+            // Quiz Data
+            const quizData = [
+                {
+                    question: "¿Cuál de estos usa Inteligencia Artificial?",
+                    options: ["Alexa de Amazon", "Una piedra", "Un lápiz"],
+                    correct: 0,
+                    feedback: {
+                        correct:
+                            "¡Excelente! Alexa usa IA para entender tu voz y responder preguntas.",
+                        incorrect:
+                            "¡Casi! Alexa usa IA para entender lo que dices y ayudarte.",
+                    },
+                },
+                {
+                    question: "¿Cómo sabe YouTube qué videos recomendarte?",
+                    options: [
+                        "Adivina al azar",
+                        "Usa Inteligencia Artificial",
+                        "Le pregunta a tu mamá",
+                    ],
+                    correct: 1,
+                    feedback: {
+                        correct:
+                            "¡Correcto! YouTube usa IA para aprender qué te gusta y sugerirte videos similares.",
+                        incorrect:
+                            "¡Buen intento! YouTube usa IA para analizar lo que te gusta ver.",
+                    },
+                },
+                {
+                    question:
+                        "¿Qué hace especial a un robot que juega ajedrez?",
+                    options: [
+                        "Tiene manos muy rápidas",
+                        "Puede calcular millones de movimientos",
+                        "Conoce trucos secretos",
+                    ],
+                    correct: 1,
+                    feedback: {
+                        correct:
+                            "¡Fantástico! Los robots de ajedrez pueden analizar millones de posibilidades en segundos.",
+                        incorrect:
+                            "¡Casi aciertas! Los robots usan IA para calcular millones de movimientos posibles.",
+                    },
+                },
+                {
+                    question:
+                        "¿Verdadero o Falso? La IA puede crear arte como pinturas y música.",
+                    options: ["Verdadero", "Falso"],
+                    correct: 0,
+                    feedback: {
+                        correct:
+                            "¡Súper! Hay IA que crean obras de arte increíbles, música y hasta poemas.",
+                        incorrect:
+                            "¡En realidad es verdadero! La IA puede crear arte, música y muchas cosas creativas.",
+                    },
+                },
+                {
+                    question:
+                        "¿Cuál es la principal diferencia entre una computadora normal y una con IA?",
+                    options: [
+                        "La IA es más colorida",
+                        "La IA puede aprender y tomar decisiones",
+                        "La IA es más grande",
+                    ],
+                    correct: 1,
+                    feedback: {
+                        correct:
+                            "¡Perfecto! La IA puede aprender de la información y tomar decisiones inteligentes.",
+                        incorrect:
+                            "¡Buena reflexión! La IA se diferencia porque puede aprender y decidir como nosotros.",
+                    },
+                },
+            ];
+
+            // Quiz State
+            let currentQuestion = 0;
+            let score = 0;
+            let answered = false;
+
+            // DOM Elements
+            const questionTitle = document.getElementById("question-title");
+            const answerButtons = document.getElementById("answer-buttons");
+            const feedbackMessage = document.getElementById("feedback-message");
+            const currentQuestionSpan =
+                document.getElementById("current-question");
+            const totalQuestionsSpan =
+                document.getElementById("total-questions");
+            const progressBar = document.getElementById("progress-bar");
+            const quizResults = document.getElementById("quiz-results");
+            const finalScore = document.getElementById("final-score");
+            const resultsTitle = document.getElementById("results-title");
+            const resultsMessage = document.getElementById("results-message");
+
+            // Initialize Quiz
+            function initQuiz() {
+                currentQuestion = 0;
+                score = 0;
+                answered = false;
+                totalQuestionsSpan.textContent = quizData.length;
+                quizResults.style.display = "none";
+                document.querySelector(".quiz-container").style.display =
+                    "block";
+                loadQuestion();
+            }
+
+            // Load Current Question
+            function loadQuestion() {
+                if (currentQuestion >= quizData.length) {
+                    showResults();
+                    return;
+                }
+
+                const question = quizData[currentQuestion];
+                answered = false;
+
+                // Update UI
+                questionTitle.textContent = question.question;
+                currentQuestionSpan.textContent = currentQuestion + 1;
+
+                // Update progress bar
+                const progress = (currentQuestion / quizData.length) * 100;
+                progressBar.style.width = progress + "%";
+
+                // Clear previous feedback
+                feedbackMessage.className = "feedback-message";
+                feedbackMessage.textContent = "";
+
+                // Create answer buttons
+                answerButtons.innerHTML = "";
+                question.options.forEach((option, index) => {
+                    const button = document.createElement("button");
+                    button.className = "answer-btn";
+                    button.textContent = option;
+                    button.onclick = () => selectAnswer(index);
+                    answerButtons.appendChild(button);
+                });
+            }
+
+            // Handle Answer Selection
+            function selectAnswer(selectedIndex) {
+                if (answered) return;
+
+                answered = true;
+                const question = quizData[currentQuestion];
+                const buttons = answerButtons.querySelectorAll(".answer-btn");
+
+                // Disable all buttons
+                buttons.forEach((btn) => (btn.disabled = true));
+
+                // Check if answer is correct
+                const isCorrect = selectedIndex === question.correct;
+
+                if (isCorrect) {
+                    score++;
+                    buttons[selectedIndex].classList.add("correct");
+                    showFeedback(question.feedback.correct, true);
+                } else {
+                    buttons[selectedIndex].classList.add("incorrect");
+                    buttons[question.correct].classList.add("correct");
+                    showFeedback(question.feedback.incorrect, false);
+                }
+
+                // Move to next question after delay
+                setTimeout(() => {
+                    currentQuestion++;
+                    loadQuestion();
+                }, 2500);
+            }
+
+            // Show Feedback Message
+            function showFeedback(message, isCorrect) {
+                feedbackMessage.textContent = message;
+                feedbackMessage.className = `feedback-message show ${
+                    isCorrect ? "success" : "error"
+                }`;
+            }
+
+            // Show Final Results
+            function showResults() {
+                document.querySelector(".quiz-container").style.display =
+                    "none";
+                quizResults.style.display = "block";
+
+                // Update progress bar to 100%
+                progressBar.style.width = "100%";
+
+                // Calculate percentage
+                const percentage = Math.round((score / quizData.length) * 100);
+                finalScore.textContent = `${score}/${quizData.length}`;
+
+                // Show appropriate message based on score
+                if (percentage === 100) {
+                    resultsTitle.textContent =
+                        "¡Increíble! ¡Eres un Genio de la IA!";
+                    resultsMessage.textContent =
+                        "¡Perfecto! Conoces muy bien la Inteligencia Artificial. ¡Eres todo un experto!";
+                } else if (percentage >= 80) {
+                    resultsTitle.textContent = "¡Excelente! ¡Casi Perfecto!";
+                    resultsMessage.textContent =
+                        "¡Muy bien! Entiendes súper bien qué es la IA. ¡Sigue aprendiendo!";
+                } else if (percentage >= 60) {
+                    resultsTitle.textContent =
+                        "¡Muy Bien! ¡Vas por Buen Camino!";
+                    resultsMessage.textContent =
+                        "¡Buen trabajo! Ya sabes bastante sobre IA. ¡Puedes mejorar aún más!";
+                } else {
+                    resultsTitle.textContent =
+                        "¡Buen Intento! ¡Sigue Practicando!";
+                    resultsMessage.textContent =
+                        "¡No te preocupes! Aprender sobre IA es divertido. ¡Inténtalo de nuevo!";
+                }
+            }
+
+            // Restart Quiz
+            function restartQuiz() {
+                initQuiz();
+            }
+
+            // Initialize quiz when page loads
+            document.addEventListener("DOMContentLoaded", initQuiz);
+
+            // Smooth scrolling for better UX
+            document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+                anchor.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(
+                        this.getAttribute("href")
+                    );
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: "smooth",
+                            block: "start",
+                        });
+                    }
+                });
+            });
+
+            // Add keyboard navigation for accessibility
+            document.addEventListener("keydown", function (e) {
+                if (e.key === "Enter" || e.key === " ") {
+                    if (
+                        e.target.classList.contains("answer-btn") &&
+                        !answered
+                    ) {
+                        e.target.click();
+                    }
+                }
+            });
+        </script>
+    </body>
+</html>

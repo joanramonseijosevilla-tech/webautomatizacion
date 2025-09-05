@@ -1,0 +1,1983 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>
+            Automatización Empresarial e Inteligencia Artificial - Guía
+            Educativa
+        </title>
+
+        <!-- Google Fonts -->
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Lato:wght@400;700&display=swap"
+            rel="stylesheet"
+        />
+
+        <!-- Feather Icons -->
+        <script src="https://unpkg.com/feather-icons@4.29.0/dist/feather.min.js"></script>
+
+        <style>
+            /* --- Variables CSS --- */
+            :root {
+                --primary-color: #0a2540;
+                --secondary-color: #425466;
+                --accent-color: #00c853;
+                --accent-hover: #009624;
+                --background-primary: #f8f9fa;
+                --background-components: #ffffff;
+                --text-primary: #212529;
+                --text-secondary: #6c757d;
+                --border-color: #e0e0e0;
+                --success-bg: #e0f8e6;
+                --error-bg: #fdeded;
+                --error-border: #dc3545;
+
+                --font-heading: "Montserrat", sans-serif;
+                --font-body: "Lato", sans-serif;
+
+                --space-xs: 4px;
+                --space-sm: 8px;
+                --space-md: 16px;
+                --space-lg: 32px;
+                --space-xl: 64px;
+            }
+
+            /* --- Reset y Base --- */
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            html {
+                scroll-behavior: smooth;
+                overflow-x: hidden; /* Prevenir scroll horizontal */
+            }
+
+            body {
+                font-family: var(--font-body);
+                font-size: 1.1rem;
+                line-height: 1.6;
+                color: var(--text-primary);
+                background-color: var(--background-primary);
+                overflow-x: hidden; /* Prevenir scroll horizontal */
+            }
+
+            .container {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 0 var(--space-lg);
+                width: 100%;
+                box-sizing: border-box;
+            }
+
+            .container h1 {
+                margin-top: 30px;
+            }
+
+            /* Prevenir overflow horizontal en todas las secciones */
+            .section {
+                overflow-x: hidden;
+                width: 100%;
+            }
+
+            .content-section {
+                overflow-x: hidden;
+                width: 100%;
+                box-sizing: border-box;
+            }
+
+            /* --- Tipografía --- */
+            h1 {
+                font-family: var(--font-heading);
+                font-weight: 700;
+                font-size: 3.5rem;
+                color: var(--primary-color);
+                margin-bottom: 1.5rem;
+            }
+
+            h2 {
+                font-family: var(--font-heading);
+                font-weight: 600;
+                font-size: 2.5rem;
+                color: var(--primary-color);
+                margin-bottom: 1.5rem;
+            }
+
+            h3 {
+                font-family: var(--font-heading);
+                font-weight: 500;
+                font-size: 1.75rem;
+                color: var(--secondary-color);
+                margin-bottom: 1rem;
+            }
+
+            a {
+                color: var(--accent-color);
+                text-decoration: none;
+                font-weight: 700;
+                transition: color 0.3s ease;
+            }
+
+            a:hover {
+                color: var(--accent-hover);
+            }
+
+            /* --- Navegación --- */
+            .navbar {
+                background-color: var(--background-components);
+                box-shadow: 0 2px 10px rgba(10, 37, 64, 0.1);
+                position: fixed;
+                top: 0;
+                width: 100%;
+                z-index: 1000;
+            }
+
+            .nav-container {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 1rem var(--space-lg);
+            }
+
+            .logo {
+                font-family: var(--font-heading);
+                font-size: 1.5rem;
+                font-weight: 700;
+                color: var(--primary-color);
+            }
+
+            .nav-menu {
+                display: flex;
+                list-style: none;
+                gap: 2rem;
+            }
+
+            .nav-link {
+                color: var(--secondary-color);
+                font-weight: 400;
+                transition: color 0.3s ease;
+            }
+
+            .nav-link:hover {
+                color: var(--accent-color);
+            }
+
+            .cta-button {
+                background-color: var(--accent-color);
+                color: var(--background-components);
+                padding: 12px 24px;
+                border-radius: 8px;
+                border: none;
+                box-shadow: 0 4px 15px rgba(0, 200, 83, 0.2);
+                transition: all 0.3s ease;
+                cursor: pointer;
+                text-decoration: none;
+                font-weight: 700;
+                display: inline-block;
+            }
+
+            .cta-button:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 6px 20px rgba(0, 200, 83, 0.3);
+                color: var(--background-components);
+            }
+
+            /* Menú móvil */
+            .menu-toggle {
+                display: none;
+                flex-direction: column;
+                cursor: pointer;
+            }
+
+            .menu-toggle span {
+                width: 25px;
+                height: 3px;
+                background-color: var(--primary-color);
+                margin: 3px 0;
+                transition: 0.3s;
+            }
+
+            /* --- Secciones Principales --- */
+            .section {
+                padding: var(--space-xl) 0;
+                min-height: 100vh;
+                display: flex;
+                align-items: center;
+            }
+
+            .hero-section {
+                background: linear-gradient(
+                    135deg,
+                    var(--primary-color),
+                    var(--secondary-color)
+                );
+                color: var(--background-components);
+                text-align: center;
+                padding-top: 120px;
+            }
+
+            .hero-section h1 {
+                color: var(--background-components);
+            }
+
+            .hero-section p {
+                font-size: 1.3rem;
+                margin-bottom: 2rem;
+                opacity: 0.9;
+            }
+
+            .content-section {
+                background-color: var(--background-components);
+                margin: var(--space-lg) 0;
+                padding: var(--space-xl);
+                border-radius: 12px;
+                box-shadow: 0 5px 25px rgba(10, 37, 64, 0.1);
+            }
+
+            .content-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: var(--space-lg);
+                margin-top: var(--space-lg);
+            }
+
+            .content-card {
+                background-color: var(--background-components);
+                padding: var(--space-lg);
+                border-radius: 12px;
+                border: 1px solid var(--border-color);
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+
+            .content-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 30px rgba(10, 37, 64, 0.15);
+            }
+
+            .content-card .icon {
+                width: 48px;
+                height: 48px;
+                color: var(--accent-color);
+                margin-bottom: 1rem;
+            }
+
+            /* --- Línea de Tiempo --- */
+            .timeline {
+                position: relative;
+                padding: var(--space-lg) 0;
+                width: 100%;
+                overflow-x: hidden; /* Prevenir overflow horizontal */
+            }
+
+            .timeline::before {
+                content: "";
+                position: absolute;
+                left: 50%;
+                top: 0;
+                bottom: 0;
+                width: 2px;
+                background: var(--secondary-color);
+                transform: translateX(-50%);
+            }
+
+            .timeline-item {
+                position: relative;
+                margin: var(--space-lg) 0;
+                width: 50%;
+                overflow: hidden; /* Prevenir contenido que se desborde */
+                box-sizing: border-box;
+            }
+
+            .timeline-item:nth-child(odd) {
+                left: 0;
+                padding-right: var(--space-xl);
+                text-align: right;
+            }
+
+            .timeline-item:nth-child(even) {
+                left: 50%;
+                padding-left: var(--space-xl);
+                text-align: left;
+            }
+
+            .timeline-content {
+                background-color: var(--background-components);
+                padding: var(--space-lg);
+                border-radius: 12px;
+                box-shadow: 0 5px 25px rgba(10, 37, 64, 0.1);
+                border: 1px solid var(--border-color);
+                width: 100%;
+                box-sizing: border-box;
+                overflow-wrap: break-word; /* Asegurar que el texto largo se ajuste */
+                word-wrap: break-word;
+            }
+
+            .timeline-marker {
+                position: absolute;
+                top: 20px;
+                width: 16px;
+                height: 16px;
+                background-color: var(--accent-color);
+                border-radius: 50%;
+                border: 3px solid var(--background-components);
+            }
+
+            .timeline-item:nth-child(odd) .timeline-marker {
+                right: -8px;
+            }
+
+            .timeline-item:nth-child(even) .timeline-marker {
+                left: -8px;
+            }
+
+            .timeline-year {
+                font-family: var(--font-heading);
+                font-weight: 600;
+                color: var(--accent-color);
+                font-size: 1.2rem;
+            }
+
+            /* --- Quiz --- */
+            .quiz-container {
+                background-color: var(--background-components);
+                padding: var(--space-xl);
+                border-radius: 12px;
+                box-shadow: 0 5px 25px rgba(10, 37, 64, 0.1);
+                border: 1px solid var(--border-color);
+                max-width: 800px;
+                margin: 0 auto;
+            }
+
+            .quiz-question {
+                font-size: 1.3rem;
+                font-weight: 600;
+                margin-bottom: var(--space-lg);
+                color: var(--primary-color);
+            }
+
+            .quiz-options {
+                display: flex;
+                flex-direction: column;
+                gap: var(--space-md);
+                margin-bottom: var(--space-lg);
+            }
+
+            .quiz-option {
+                padding: 1rem;
+                border: 2px solid var(--border-color);
+                border-radius: 8px;
+                background-color: var(--background-components);
+                cursor: pointer;
+                transition: all 0.3s ease;
+                text-align: left;
+                font-size: 1rem;
+            }
+
+            .quiz-option:hover {
+                border-color: var(--accent-color);
+                background-color: #f8f9fa;
+            }
+
+            .quiz-option.selected {
+                border-color: var(--accent-color);
+                background-color: var(--success-bg);
+            }
+
+            .quiz-option.correct {
+                border-color: var(--accent-color);
+                background-color: var(--success-bg);
+            }
+
+            .quiz-option.incorrect {
+                border-color: var(--error-border);
+                background-color: var(--error-bg);
+            }
+
+            .quiz-feedback {
+                margin: var(--space-lg) 0;
+                padding: var(--space-md);
+                border-radius: 8px;
+                font-weight: 600;
+                display: none;
+            }
+
+            .quiz-feedback.show {
+                display: block;
+            }
+
+            .quiz-feedback.correct {
+                background-color: var(--success-bg);
+                color: var(--primary-color);
+            }
+
+            .quiz-feedback.incorrect {
+                background-color: var(--error-bg);
+                color: var(--primary-color);
+            }
+
+            .quiz-stats {
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: var(--space-lg);
+                font-weight: 600;
+            }
+
+            .quiz-score {
+                color: var(--accent-color);
+            }
+
+            .quiz-progress {
+                color: var(--secondary-color);
+            }
+
+            .quiz-results {
+                text-align: center;
+                display: none;
+            }
+
+            .quiz-results.show {
+                display: block;
+            }
+
+            .quiz-score-display {
+                font-size: 3rem;
+                font-weight: 700;
+                color: var(--accent-color);
+                margin: var(--space-lg) 0;
+            }
+
+            .secondary-button {
+                background-color: transparent;
+                color: var(--primary-color);
+                border: 2px solid var(--primary-color);
+                padding: 12px 24px;
+                border-radius: 8px;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                font-weight: 700;
+                margin: 0 var(--space-sm);
+            }
+
+            .secondary-button:hover {
+                background-color: var(--primary-color);
+                color: var(--background-components);
+            }
+
+            /* Footer */
+            footer {
+                background: #2a4d69;
+                color: white;
+                text-align: center;
+                padding: 40px 0;
+                margin-top: 60px;
+            }
+
+            .footer-content {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 30px;
+            }
+
+            .footer-links {
+                display: flex;
+                align-items: center;
+                gap: 30px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .social-links {
+                display: flex;
+                gap: 20px;
+                align-items: center;
+            }
+
+            .social-link {
+                display: inline-block;
+                padding: 10px;
+                border-radius: 50%;
+                background: rgba(255, 255, 255, 0.1);
+                transition: all 0.3s ease;
+                text-decoration: none;
+            }
+
+            .social-link:hover {
+                background: rgba(255, 255, 255, 0.2);
+                transform: translateY(-2px);
+            }
+
+            .social-icon {
+                width: 24px;
+                height: 24px;
+                fill: white;
+            }
+
+            .footer-logo {
+                display: inline-block;
+                transition: transform 0.3s ease;
+            }
+
+            .footer-logo:hover {
+                transform: scale(1.05);
+            }
+
+            .footer-text {
+                text-align: center;
+            }
+
+            .contact-info {
+                display: flex;
+                gap: 20px;
+                align-items: center;
+                flex-wrap: wrap;
+            }
+
+            .contact-item {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                text-decoration: none;
+                color: var(
+                    --accent-color
+                ); /* Verde que contrasta bien con fondo oscuro */
+            }
+
+            .contact-icon {
+                width: 40px;
+                height: 40px;
+            }
+
+            /* --- Responsive Design --- */
+            @media (max-width: 991px) {
+                /* Timeline responsive - cambio a diseño vertical */
+                .timeline::before {
+                    left: 32px;
+                    transform: none;
+                }
+
+                .timeline-item {
+                    width: 100% !important;
+                    left: 0 !important;
+                    padding-left: 64px !important;
+                    padding-right: 16px !important;
+                    text-align: left !important;
+                    margin-bottom: 2rem;
+                }
+
+                .timeline-item:nth-child(odd),
+                .timeline-item:nth-child(even) {
+                    left: 0 !important;
+                    width: 100% !important;
+                    padding-left: 64px !important;
+                    padding-right: 16px !important;
+                    text-align: left !important;
+                }
+
+                .timeline-marker {
+                    left: 24px !important;
+                    right: auto !important;
+                }
+
+                .timeline-content {
+                    width: 100%;
+                    margin: 0;
+                    max-width: none;
+                }
+            }
+
+            @media (max-width: 768px) {
+                h1 {
+                    font-size: 2.5rem;
+                }
+
+                h2 {
+                    font-size: 2rem;
+                }
+
+                .nav-menu {
+                    position: fixed;
+                    left: -100%;
+                    top: 70px;
+                    flex-direction: column;
+                    background-color: var(--background-components);
+                    width: 100%;
+                    text-align: center;
+                    transition: 0.3s;
+                    box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+                    padding: var(--space-lg);
+                }
+
+                .nav-menu.active {
+                    left: 0;
+                }
+
+                .menu-toggle {
+                    display: flex;
+                }
+
+                .content-grid {
+                    grid-template-columns: 1fr;
+                }
+
+                .section {
+                    min-height: auto;
+                    padding: var(--space-lg) 0;
+                }
+
+                .container {
+                    padding: 0 var(--space-md);
+                }
+
+                /* Timeline optimizada para tablets */
+                .timeline::before {
+                    left: 24px;
+                }
+
+                .timeline-item {
+                    padding-left: 56px !important;
+                }
+
+                .timeline-marker {
+                    left: 16px !important;
+                }
+
+                .timeline-content {
+                    padding: var(--space-md);
+                }
+
+                .timeline-year {
+                    font-size: 1.1rem;
+                }
+            }
+
+            @media (max-width: 480px) {
+                /* Optimización específica para móviles pequeños */
+                h1 {
+                    font-size: 2rem;
+                }
+
+                h2 {
+                    font-size: 1.75rem;
+                }
+
+                h3 {
+                    font-size: 1.5rem;
+                }
+
+                .container {
+                    padding: 0 var(--space-sm);
+                }
+
+                .logo img {
+                    width: 100px;
+                    height: 70px;
+                }
+
+                .content-section {
+                    padding: var(--space-lg);
+                    margin: var(--space-md) 0;
+                }
+
+                /* Timeline completamente optimizada para móviles */
+                .timeline {
+                    padding: var(--space-md) 0;
+                }
+
+                .timeline::before {
+                    left: 16px;
+                    width: 2px;
+                }
+
+                .timeline-item {
+                    padding-left: 40px !important;
+                    padding-right: 8px !important;
+                    margin-bottom: 1.5rem;
+                }
+
+                .timeline-marker {
+                    left: 8px !important;
+                    width: 16px;
+                    height: 16px;
+                }
+
+                .timeline-content {
+                    padding: var(--space-md);
+                    border-radius: 8px;
+                }
+
+                .timeline-year {
+                    font-size: 1rem;
+                    margin-bottom: 0.5rem;
+                }
+
+                .timeline-content h3 {
+                    font-size: 1.25rem;
+                    margin-bottom: 0.75rem;
+                }
+
+                .timeline-content p {
+                    font-size: 0.95rem;
+                    line-height: 1.5;
+                }
+
+                /* Quiz responsive para móviles */
+                .quiz-container {
+                    padding: var(--space-md);
+                }
+
+                .quiz-question {
+                    font-size: 1.1rem;
+                }
+
+                .quiz-option {
+                    padding: 0.75rem;
+                    font-size: 0.95rem;
+                }
+
+                .quiz-stats {
+                    flex-direction: column;
+                    gap: 0.5rem;
+                    text-align: center;
+                }
+
+                .quiz-score-display {
+                    font-size: 2.5rem;
+                }
+
+                .cta-button,
+                .secondary-button {
+                    padding: 10px 20px;
+                    font-size: 0.9rem;
+                    margin: 0.25rem;
+                }
+                /* Centrar el contenedor de información de contacto */
+                .contact-info {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    text-align: center;
+                    width: 100%;
+                }
+
+                /* Centrar cada elemento de contacto (teléfono y email) */
+                .contact-item {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    text-align: center;
+                    width: 100%;
+                    margin: 8px 0; /* Espacio entre elementos */
+                }
+
+                /* Asegurar que el icono y texto estén centrados */
+                .contact-icon {
+                    margin-right: 8px; /* Espacio entre icono y texto */
+                }
+
+                .contact-text {
+                    text-align: center;
+                }
+
+                /* Si el footer completo necesita centrado adicional */
+                .footer-content {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    text-align: center;
+                }
+
+                /* Centrar también los enlaces sociales y logo si es necesario */
+                .footer-links {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    width: 100%;
+                }
+
+                .social-links {
+                    display: flex;
+                    justify-content: center;
+                    margin-bottom: 16px;
+                }
+
+                .footer-logo {
+                    display: flex;
+                    justify-content: center;
+                    margin-bottom: 16px;
+                }
+            }
+
+            @media (max-width: 320px) {
+                /* Optimización para móviles ultra pequeños */
+                .container {
+                    padding: 0 var(--space-xs);
+                }
+
+                .timeline::before {
+                    left: 12px;
+                }
+
+                .timeline-item {
+                    padding-left: 32px !important;
+                    padding-right: 4px !important;
+                }
+
+                .timeline-marker {
+                    left: 4px !important;
+                    width: 14px;
+                    height: 14px;
+                }
+
+                .timeline-content {
+                    padding: 12px;
+                }
+
+                .timeline-year {
+                    font-size: 0.9rem;
+                }
+
+                .timeline-content h3 {
+                    font-size: 1.1rem;
+                }
+
+                .timeline-content p {
+                    font-size: 0.9rem;
+                }
+            }
+
+            /* --- Animaciones --- */
+            @keyframes fadeInUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(30px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            .fade-in {
+                animation: fadeInUp 0.6s ease-out;
+            }
+
+            /* --- Estados de Focus --- */
+            .cta-button:focus,
+            .secondary-button:focus,
+            .quiz-option:focus {
+                outline: 3px solid var(--accent-color);
+                outline-offset: 2px;
+            }
+
+            .nav-link:focus {
+                outline: 2px solid var(--accent-color);
+                outline-offset: 2px;
+                border-radius: 4px;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Navegación -->
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-container">
+                    <div class="logo">
+                        <a
+                            href="https://www.nexautia.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            data-track="nav-logo"
+                        >
+                            <img
+                                src="Logo_negro.svg"
+                                alt="NEXAUTIA"
+                                width="150"
+                                height="100"
+                                id="logo"
+                            />
+                        </a>
+                    </div>
+
+                    <ul class="nav-menu" id="nav-menu">
+                        <li>
+                            <a href="#introduccion" class="nav-link"
+                                >Introducción</a
+                            >
+                        </li>
+                        <li>
+                            <a href="#historia" class="nav-link">Historia</a>
+                        </li>
+                        <li><a href="#ia" class="nav-link">IA</a></li>
+                        <li><a href="#quiz" class="nav-link">Quiz</a></li>
+                    </ul>
+
+                    <a href="#quiz" class="cta-button">Hacer el Quiz</a>
+
+                    <div class="menu-toggle" id="menu-toggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Sección Hero -->
+        <section class="hero-section">
+            <div class="container">
+                <h1>Automatización Empresarial e Inteligencia Artificial</h1>
+                <p>
+                    Descubre cómo la tecnología está transformando los procesos
+                    empresariales y el futuro del trabajo
+                </p>
+                <a href="#introduccion" class="cta-button"
+                    >Comenzar Aprendizaje</a
+                >
+            </div>
+        </section>
+
+        <!-- Introducción -->
+        <section id="introduccion" class="section">
+            <div class="container">
+                <div class="content-section fade-in">
+                    <h2>¿Qué es la Automatización Empresarial?</h2>
+                    <p>
+                        La automatización empresarial se refiere al uso de
+                        tecnología para ejecutar procesos o procedimientos
+                        recurrentes en una empresa, con el objetivo de minimizar
+                        los costos, incrementar la eficiencia y agilizar los
+                        procesos. Esta disciplina abarca desde tareas simples
+                        hasta complejos flujos de trabajo que tradicionalmente
+                        requerían intervención humana.
+                    </p>
+
+                    <div class="content-grid">
+                        <div class="content-card">
+                            <i data-feather="trending-up" class="icon"></i>
+                            <h3>Beneficios Principales</h3>
+                            <ul>
+                                <li>
+                                    Reducción de costos operativos hasta 60%
+                                </li>
+                                <li>Eliminación de errores humanos</li>
+                                <li>Mejora en la velocidad de procesamiento</li>
+                                <li>
+                                    Liberación de talento humano para tareas
+                                    estratégicas
+                                </li>
+                                <li>Disponibilidad 24/7 sin interrupciones</li>
+                            </ul>
+                        </div>
+
+                        <div class="content-card">
+                            <i data-feather="alert-triangle" class="icon"></i>
+                            <h3>Desafíos Actuales</h3>
+                            <ul>
+                                <li>Resistencia al cambio organizacional</li>
+                                <li>Inversión inicial significativa</li>
+                                <li>Necesidad de capacitación del personal</li>
+                                <li>Integración con sistemas legacy</li>
+                                <li>Preocupaciones sobre seguridad de datos</li>
+                            </ul>
+                        </div>
+
+                        <div class="content-card">
+                            <i data-feather="layers" class="icon"></i>
+                            <h3>Tipos de Automatización</h3>
+                            <ul>
+                                <li>
+                                    <strong>Automatización de Procesos:</strong>
+                                    RPA, workflows
+                                </li>
+                                <li>
+                                    <strong>Automatización Cognitiva:</strong>
+                                    IA, ML, NLP
+                                </li>
+                                <li>
+                                    <strong>Automatización Física:</strong>
+                                    Robótica, IoT
+                                </li>
+                                <li>
+                                    <strong
+                                        >Automatización de Decisiones:</strong
+                                    >
+                                    Sistemas expertos
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Historia y Evolución -->
+        <section id="historia" class="section">
+            <div class="container">
+                <div class="content-section fade-in">
+                    <h2>Historia y Evolución de la Automatización</h2>
+                    <p>
+                        La automatización empresarial ha evolucionado
+                        dramáticamente desde sus inicios industriales hasta la
+                        era digital actual, impulsada por avances tecnológicos
+                        revolucionarios.
+                    </p>
+
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-year">1960s-1970s</div>
+                                <h3>Era de los Mainframes</h3>
+                                <p>
+                                    Primeros sistemas de procesamiento de datos
+                                    empresariales. IBM introduce los conceptos
+                                    de procesamiento por lotes y sistemas de
+                                    gestión de bases de datos.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-year">1980s-1990s</div>
+                                <h3>Sistemas ERP y CRM</h3>
+                                <p>
+                                    SAP lanza R/2 y R/3, revolucionando la
+                                    gestión empresarial. Aparecen los primeros
+                                    sistemas CRM para automatizar la gestión de
+                                    clientes.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-year">2000s</div>
+                                <h3>Servicios Web y SOA</h3>
+                                <p>
+                                    Arquitectura Orientada a Servicios (SOA)
+                                    permite la integración de sistemas. Aparecen
+                                    los primeros servicios web y APIs para
+                                    automatización de procesos.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-year">2010s</div>
+                                <h3>RPA y Cloud Computing</h3>
+                                <p>
+                                    UiPath, Blue Prism y Automation Anywhere
+                                    popularizan RPA. La nube permite
+                                    automatización escalable y accesible para
+                                    empresas de todos los tamaños.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-year">2018-2020</div>
+                                <h3>IA y Machine Learning</h3>
+                                <p>
+                                    Integración masiva de IA en procesos
+                                    empresariales. Automatización inteligente
+                                    que puede tomar decisiones y aprender de los
+                                    datos.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-year">2020-2022</div>
+                                <h3>Hiperautomatización</h3>
+                                <p>
+                                    COVID-19 acelera la adopción digital.
+                                    Gartner identifica la hiperautomatización
+                                    como tendencia tecnológica principal,
+                                    combinando RPA, IA, y orquestación de
+                                    procesos.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-year">2023-2025</div>
+                                <h3>
+                                    IA Generativa y Automatización Cognitiva
+                                </h3>
+                                <p>
+                                    ChatGPT y GPT-4 revolucionan la
+                                    automatización cognitiva. Las empresas
+                                    integran IA generativa para automatizar
+                                    creación de contenido, análisis y toma de
+                                    decisiones complejas.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- El Papel de la IA -->
+        <section id="ia" class="section">
+            <div class="container">
+                <div class="content-section fade-in">
+                    <h2>El Papel de la Inteligencia Artificial</h2>
+                    <p>
+                        La IA ha transformado la automatización empresarial de
+                        procesos mecánicos a sistemas inteligentes capaces de
+                        aprender, adaptar y tomar decisiones complejas.
+                    </p>
+
+                    <div class="content-grid">
+                        <div class="content-card">
+                            <i data-feather="cpu" class="icon"></i>
+                            <h3>Automatización Cognitiva</h3>
+                            <p>
+                                La IA permite que los sistemas procesen
+                                información no estructurada, comprendan contexto
+                                y tomen decisiones basadas en patrones
+                                complejos. Incluye procesamiento de lenguaje
+                                natural, visión por computadora y análisis
+                                predictivo.
+                            </p>
+                        </div>
+
+                        <div class="content-card">
+                            <i data-feather="settings" class="icon"></i>
+                            <h3>Automatización de Procesos</h3>
+                            <p>
+                                RPA tradicional ejecuta tareas repetitivas
+                                siguiendo reglas predefinidas. Es ideal para
+                                procesos estructurados como entrada de datos,
+                                generación de reportes y transferencias entre
+                                sistemas.
+                            </p>
+                        </div>
+
+                        <div class="content-card">
+                            <i data-feather="brain" class="icon"></i>
+                            <h3>IA Generativa en Empresas</h3>
+                            <p>
+                                Desde 2023, herramientas como ChatGPT
+                                Enterprise, Claude for Business y GitHub Copilot
+                                han automatizado la creación de contenido,
+                                código, documentación y análisis, transformando
+                                sectores completos.
+                            </p>
+                        </div>
+                    </div>
+
+                    <h3>Impacto de la IA en Procesos Empresariales</h3>
+
+                    <div class="content-grid">
+                        <div class="content-card">
+                            <i data-feather="user-check" class="icon"></i>
+                            <h3>Recursos Humanos</h3>
+                            <ul>
+                                <li>Screening automatizado de CVs con IA</li>
+                                <li>Chatbots para preguntas frecuentes</li>
+                                <li>
+                                    Análisis predictivo de rotación de personal
+                                </li>
+                                <li>
+                                    Automatización de encuestas de clima laboral
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="content-card">
+                            <i data-feather="dollar-sign" class="icon"></i>
+                            <h3>Finanzas y Contabilidad</h3>
+                            <ul>
+                                <li>Procesamiento inteligente de facturas</li>
+                                <li>Detección automática de fraudes</li>
+                                <li>Reconciliación bancaria automatizada</li>
+                                <li>Análisis predictivo de flujo de caja</li>
+                            </ul>
+                        </div>
+
+                        <div class="content-card">
+                            <i data-feather="users" class="icon"></i>
+                            <h3>Atención al Cliente</h3>
+                            <ul>
+                                <li>Chatbots conversacionales avanzados</li>
+                                <li>Análisis de sentimientos en tiempo real</li>
+                                <li>Routing inteligente de tickets</li>
+                                <li>Personalización automática de ofertas</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h3>Tendencias Futuras hasta 2025</h3>
+                    <div class="content-card">
+                        <ul>
+                            <li>
+                                <strong>Autonomous Enterprise:</strong> Empresas
+                                que operan con mínima intervención humana
+                            </li>
+                            <li>
+                                <strong>AI-First Processes:</strong> Diseño de
+                                procesos centrados en IA desde el inicio
+                            </li>
+                            <li>
+                                <strong>Democratización de la IA:</strong>
+                                Herramientas no-code/low-code para
+                                automatización
+                            </li>
+                            <li>
+                                <strong>IA Explicable:</strong> Sistemas que
+                                pueden justificar sus decisiones para cumplir
+                                regulaciones
+                            </li>
+                            <li>
+                                <strong>Edge AI:</strong> Procesamiento de IA en
+                                dispositivos locales para automatización en
+                                tiempo real
+                            </li>
+                            <li>
+                                <strong>Automatización Sostenible:</strong> IA
+                                optimizada para eficiencia energética y
+                                sostenibilidad
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quiz Interactivo -->
+        <section id="quiz" class="section">
+            <div class="container">
+                <div class="content-section fade-in">
+                    <h2>Quiz Interactivo</h2>
+                    <p>
+                        Pon a prueba tus conocimientos sobre automatización
+                        empresarial e inteligencia artificial
+                    </p>
+
+                    <div class="quiz-container">
+                        <div class="quiz-stats">
+                            <div class="quiz-score">
+                                Puntuación: <span id="current-score">0</span>
+                            </div>
+                            <div class="quiz-progress">
+                                Pregunta <span id="current-question">1</span> de
+                                <span id="total-questions">5</span>
+                            </div>
+                        </div>
+
+                        <div id="quiz-content">
+                            <div class="quiz-question" id="question-text">
+                                Cargando pregunta...
+                            </div>
+
+                            <div class="quiz-options" id="quiz-options">
+                                <!-- Opciones se llenarán dinámicamente -->
+                            </div>
+
+                            <div class="quiz-feedback" id="quiz-feedback">
+                                <!-- Retroalimentación aparecerá aquí -->
+                            </div>
+
+                            <button
+                                class="cta-button"
+                                id="next-button"
+                                style="display: none"
+                            >
+                                Siguiente Pregunta
+                            </button>
+                        </div>
+
+                        <div class="quiz-results" id="quiz-results">
+                            <h3>¡Quiz Completado!</h3>
+                            <div class="quiz-score-display" id="final-score">
+                                0/5
+                            </div>
+                            <p id="score-message">¡Excelente trabajo!</p>
+                            <div style="margin-top: var(--space-lg)">
+                                <button
+                                    class="cta-button"
+                                    onclick="Quiz.restart()"
+                                >
+                                    Repetir Quiz
+                                </button>
+                                <button
+                                    class="secondary-button"
+                                    onclick="location.href='#introduccion'"
+                                >
+                                    Repasar Contenido
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-links">
+                        <div class="social-links">
+                            <a
+                                href="https://www.facebook.com/profile.php?id=61579981550830"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="social-link"
+                                aria-label="Síguenos en Facebook"
+                            >
+                                <svg class="social-icon" viewBox="0 0 24 24">
+                                    <path
+                                        d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+                                    />
+                                </svg>
+                            </a>
+                            <a
+                                href="#"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="social-link"
+                                aria-label="Síguenos en LinkedIn"
+                            >
+                                <svg class="social-icon" viewBox="0 0 24 24">
+                                    <path
+                                        d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                                    />
+                                </svg>
+                            </a>
+                        </div>
+
+                        <a
+                            href="https://www.nexautia.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="footer-logo"
+                        >
+                            <img
+                                src="logo.svg"
+                                alt="NEXAUTIA"
+                                width="200"
+                                height="auto"
+                            />
+                        </a>
+                    </div>
+
+                    <!-- Información de contacto -->
+                    <div class="contact-info">
+                        <a href="tel:+34610510642" class="contact-item">
+                            <svg
+                                class="contact-icon"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                            >
+                                <path
+                                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                                ></path>
+                            </svg>
+                            <span class="contact-text">610 510 642</span>
+                        </a>
+
+                        <a
+                            href="mailto:contacto@nexautia.com"
+                            class="contact-item"
+                        >
+                            <svg
+                                class="contact-icon"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                            >
+                                <path
+                                    d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                                ></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                            <span class="contact-text"
+                                >contacto@nexautia.com</span
+                            >
+                        </a>
+                    </div>
+
+                    <div class="footer-text">
+                        <p>
+                            ¡Sigue explorando el increíble mundo de la
+                            Inteligencia Artificial!
+                        </p>
+                        <p>
+                            Creado con ❤️ por Nexautia para el traspaso de
+                            conocimiento
+                        </p>
+                        <p>
+                            Nexautia, Transformando empresas con automatización
+                            inteligente.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script defer>
+            // --- Quiz Application ---
+            const Quiz = {
+                // Estado del quiz
+                state: {
+                    score: 0,
+                    currentQuestionIndex: 0,
+                    quizQuestions: [],
+                    selectedAnswer: null,
+                    answered: false,
+                },
+
+                // Pool completo de preguntas
+                questionPool: [
+                    {
+                        question:
+                            "¿Qué significa RPA en el contexto de automatización empresarial?",
+                        options: [
+                            "Robotic Process Automation",
+                            "Real-time Process Analysis",
+                            "Rapid Project Allocation",
+                            "Remote Process Administration",
+                        ],
+                        correctAnswer: 0,
+                        explanation:
+                            "RPA (Robotic Process Automation) se refiere a la tecnología que utiliza software robots para automatizar tareas repetitivas y basadas en reglas.",
+                    },
+                    {
+                        question:
+                            "¿Cuál es el principal beneficio de la automatización empresarial?",
+                        options: [
+                            "Reducir el número de empleados",
+                            "Incrementar la eficiencia y reducir errores",
+                            "Complicar los procesos",
+                            "Aumentar los costos",
+                        ],
+                        correctAnswer: 1,
+                        explanation:
+                            "La automatización empresarial busca principalmente incrementar la eficiencia operativa y reducir errores humanos, liberando talento para tareas estratégicas.",
+                    },
+                    {
+                        question:
+                            "¿En qué década se popularizaron los sistemas ERP?",
+                        options: ["1970s", "1980s-1990s", "2000s", "2010s"],
+                        correctAnswer: 1,
+                        explanation:
+                            "Los sistemas ERP se popularizaron en las décadas de 1980s y 1990s, con SAP lanzando sus sistemas R/2 y R/3 que revolucionaron la gestión empresarial.",
+                    },
+                    {
+                        question:
+                            "¿Qué diferencia principal existe entre automatización cognitiva y automatización de procesos?",
+                        options: [
+                            "No hay diferencias",
+                            "La cognitiva puede procesar información no estructurada",
+                            "La de procesos es más cara",
+                            "La cognitiva solo funciona en la nube",
+                        ],
+                        correctAnswer: 1,
+                        explanation:
+                            "La automatización cognitiva utiliza IA para procesar información no estructurada y tomar decisiones complejas, mientras que la de procesos sigue reglas predefinidas.",
+                    },
+                    {
+                        question:
+                            "¿Cuál ha sido el impacto principal de ChatGPT en la automatización empresarial desde 2023?",
+                        options: [
+                            "Eliminó todos los empleos",
+                            "Revolucionó la automatización cognitiva",
+                            "Solo afectó a las redes sociales",
+                            "No tuvo impacto empresarial",
+                        ],
+                        correctAnswer: 1,
+                        explanation:
+                            "ChatGPT y la IA generativa han revolucionado la automatización cognitiva, permitiendo automatizar la creación de contenido, análisis y decisiones complejas.",
+                    },
+                    {
+                        question:
+                            "¿Qué es la hiperautomatización según Gartner?",
+                        options: [
+                            "Automatización muy rápida",
+                            "Combinación de RPA, IA y orquestación de procesos",
+                            "Solo automatización con robots",
+                            "Automatización en la nube",
+                        ],
+                        correctAnswer: 1,
+                        explanation:
+                            "La hiperautomatización combina múltiples tecnologías como RPA, IA, machine learning y orquestación de procesos para automatizar tanto como sea posible.",
+                    },
+                    {
+                        question:
+                            "¿Cuál es un desafío común en la implementación de automatización empresarial?",
+                        options: [
+                            "Es demasiado barata",
+                            "Resistencia al cambio organizacional",
+                            "Solo funciona en computadoras viejas",
+                            "No tiene beneficios reales",
+                        ],
+                        correctAnswer: 1,
+                        explanation:
+                            "La resistencia al cambio organizacional es uno de los principales desafíos, junto con la inversión inicial y la necesidad de capacitación del personal.",
+                    },
+                    {
+                        question:
+                            "¿Qué tecnología permitió la integración de sistemas en los años 2000?",
+                        options: [
+                            "RPA",
+                            "Servicios Web y SOA",
+                            "Mainframes",
+                            "IA Generativa",
+                        ],
+                        correctAnswer: 1,
+                        explanation:
+                            "Los Servicios Web y la Arquitectura Orientada a Servicios (SOA) permitieron la integración de sistemas y el desarrollo de APIs para automatización.",
+                    },
+                    {
+                        question:
+                            "En el contexto de RRHH, ¿qué puede automatizar la IA?",
+                        options: [
+                            "Solo el pago de salarios",
+                            "Screening de CVs y análisis predictivo de rotación",
+                            "Únicamente entrevistas",
+                            "Solo la contratación",
+                        ],
+                        correctAnswer: 1,
+                        explanation:
+                            "La IA en RRHH puede automatizar el screening de CVs, análisis predictivo de rotación, chatbots para consultas y encuestas de clima laboral.",
+                    },
+                    {
+                        question:
+                            "¿Qué es Edge AI en el contexto de automatización?",
+                        options: [
+                            "IA solo para navegadores web",
+                            "Procesamiento de IA en dispositivos locales",
+                            "IA que funciona solo en el borde de la ciudad",
+                            "IA muy rápida",
+                        ],
+                        correctAnswer: 1,
+                        explanation:
+                            "Edge AI se refiere al procesamiento de inteligencia artificial en dispositivos locales, permitiendo automatización en tiempo real sin depender de la nube.",
+                    },
+                    {
+                        question:
+                            "¿Cuál es una característica de los sistemas ERP?",
+                        options: [
+                            "Solo manejan ventas",
+                            "Integran múltiples procesos empresariales",
+                            "Solo funcionan offline",
+                            "Son solo para empresas pequeñas",
+                        ],
+                        correctAnswer: 1,
+                        explanation:
+                            "Los sistemas ERP (Enterprise Resource Planning) integran múltiples procesos empresariales como finanzas, recursos humanos, ventas y operaciones en un solo sistema.",
+                    },
+                    {
+                        question:
+                            "¿Qué porcentaje de reducción de costos puede lograr la automatización empresarial?",
+                        options: [
+                            "5%",
+                            "Hasta 60%",
+                            "Solo 10%",
+                            "No reduce costos",
+                        ],
+                        correctAnswer: 1,
+                        explanation:
+                            "La automatización empresarial puede lograr una reducción de costos operativos de hasta el 60%, según estudios de implementación en diversas industrias.",
+                    },
+                    {
+                        question: "¿Qué permite la automatización sostenible?",
+                        options: [
+                            "Usar más energía",
+                            "Optimización para eficiencia energética",
+                            "Solo trabajar de día",
+                            "Funcionar sin electricidad",
+                        ],
+                        correctAnswer: 1,
+                        explanation:
+                            "La automatización sostenible se enfoca en la optimización de IA para lograr eficiencia energética y contribuir a objetivos de sostenibilidad empresarial.",
+                    },
+                    {
+                        question: "¿Qué es un 'Autonomous Enterprise'?",
+                        options: [
+                            "Una empresa sin empleados",
+                            "Empresa que opera con mínima intervención humana",
+                            "Solo empresas de tecnología",
+                            "Empresas que funcionan solas sin gerencia",
+                        ],
+                        correctAnswer: 1,
+                        explanation:
+                            "Un Autonomous Enterprise es una organización que puede operar la mayoría de sus procesos con mínima intervención humana, utilizando IA y automatización avanzada.",
+                    },
+                    {
+                        question:
+                            "¿Cuál es una aplicación de IA en finanzas y contabilidad?",
+                        options: [
+                            "Solo calcular impuestos",
+                            "Detección automática de fraudes",
+                            "Solo imprimir facturas",
+                            "Únicamente contar dinero",
+                        ],
+                        correctAnswer: 1,
+                        explanation:
+                            "La IA en finanzas puede detectar automáticamente fraudes, procesar facturas inteligentemente, realizar reconciliación bancaria y análisis predictivo de flujo de caja.",
+                    },
+                    {
+                        question:
+                            "¿Qué caracteriza a la IA explicable en automatización?",
+                        options: [
+                            "Es más costosa",
+                            "Puede justificar sus decisiones",
+                            "Solo funciona en inglés",
+                            "Es más lenta",
+                        ],
+                        correctAnswer: 1,
+                        explanation:
+                            "La IA explicable puede justificar sus decisiones y procesos de razonamiento, lo cual es crucial para cumplir con regulaciones y generar confianza empresarial.",
+                    },
+                    {
+                        question:
+                            "¿Qué evento aceleró masivamente la adopción de automatización en 2020-2022?",
+                        options: [
+                            "Una nueva ley",
+                            "La pandemia COVID-19",
+                            "Un descubrimiento científico",
+                            "Cambios climáticos",
+                        ],
+                        correctAnswer: 1,
+                        explanation:
+                            "La pandemia COVID-19 aceleró dramáticamente la adopción digital y de automatización, ya que las empresas necesitaron adaptarse rápidamente al trabajo remoto y nuevos procesos.",
+                    },
+                    {
+                        question:
+                            "¿Qué permite las herramientas no-code/low-code en automatización?",
+                        options: [
+                            "Solo programar en Python",
+                            "Democratizar el acceso a la IA",
+                            "Complicar los procesos",
+                            "Aumentar los costos",
+                        ],
+                        correctAnswer: 1,
+                        explanation:
+                            "Las herramientas no-code/low-code democratizan el acceso a la IA y automatización, permitiendo que usuarios sin conocimientos técnicos profundos puedan crear soluciones automatizadas.",
+                    },
+                    {
+                        question:
+                            "¿Cuál es una ventaja de la automatización 24/7?",
+                        options: [
+                            "Solo funciona de noche",
+                            "Disponibilidad continua sin interrupciones",
+                            "Necesita más empleados",
+                            "Es más cara",
+                        ],
+                        correctAnswer: 1,
+                        explanation:
+                            "La automatización proporciona disponibilidad 24/7 sin interrupciones, lo que permite procesar tareas y atender servicios de manera continua sin limitaciones de horario.",
+                    },
+                    {
+                        question:
+                            "¿Qué es el análisis de sentimientos en automatización de atención al cliente?",
+                        options: [
+                            "Analizar emociones en tiempo real",
+                            "Solo contar palabras",
+                            "Traducir idiomas",
+                            "Enviar emails",
+                        ],
+                        correctAnswer: 0,
+                        explanation:
+                            "El análisis de sentimientos utiliza IA para analizar emociones y actitudes de los clientes en tiempo real, permitiendo respuestas más apropiadas y escalación automática cuando es necesario.",
+                    },
+                ],
+
+                // Inicializar quiz
+                init() {
+                    this.setupEventListeners();
+                    this.generateQuizQuestions();
+                    this.renderCurrentQuestion();
+                },
+
+                // Configurar event listeners
+                setupEventListeners() {
+                    document
+                        .getElementById("next-button")
+                        .addEventListener("click", () => this.nextQuestion());
+                },
+
+                // Generar preguntas aleatorias para la ronda
+                generateQuizQuestions() {
+                    const shuffled = [...this.questionPool].sort(
+                        () => 0.5 - Math.random()
+                    );
+                    this.state.quizQuestions = shuffled.slice(0, 5); // 5 preguntas por ronda
+                    document.getElementById("total-questions").textContent =
+                        this.state.quizQuestions.length;
+                },
+
+                // Renderizar pregunta actual
+                renderCurrentQuestion() {
+                    const currentQ =
+                        this.state.quizQuestions[
+                            this.state.currentQuestionIndex
+                        ];
+
+                    document.getElementById("question-text").textContent =
+                        currentQ.question;
+                    document.getElementById("current-question").textContent =
+                        this.state.currentQuestionIndex + 1;
+
+                    const optionsContainer =
+                        document.getElementById("quiz-options");
+                    optionsContainer.innerHTML = "";
+
+                    currentQ.options.forEach((option, index) => {
+                        const optionElement = document.createElement("button");
+                        optionElement.className = "quiz-option";
+                        optionElement.textContent = option;
+                        optionElement.addEventListener("click", () =>
+                            this.selectAnswer(index)
+                        );
+                        optionsContainer.appendChild(optionElement);
+                    });
+
+                    // Reset estado
+                    this.state.selectedAnswer = null;
+                    this.state.answered = false;
+                    document.getElementById("quiz-feedback").style.display =
+                        "none";
+                    document.getElementById("quiz-feedback").className =
+                        "quiz-feedback";
+                    document.getElementById("next-button").style.display =
+                        "none";
+                },
+
+                // Seleccionar respuesta
+                selectAnswer(selectedIndex) {
+                    if (this.state.answered) return;
+
+                    const currentQ =
+                        this.state.quizQuestions[
+                            this.state.currentQuestionIndex
+                        ];
+                    const options = document.querySelectorAll(".quiz-option");
+                    const isCorrect = selectedIndex === currentQ.correctAnswer;
+
+                    this.state.selectedAnswer = selectedIndex;
+                    this.state.answered = true;
+
+                    // Actualizar estilos de opciones
+                    options.forEach((option, index) => {
+                        option.style.pointerEvents = "none";
+                        if (index === currentQ.correctAnswer) {
+                            option.classList.add("correct");
+                        } else if (index === selectedIndex && !isCorrect) {
+                            option.classList.add("incorrect");
+                        }
+                    });
+
+                    // Mostrar feedback
+                    this.showFeedback(isCorrect, currentQ.explanation);
+
+                    // Actualizar puntuación
+                    if (isCorrect) {
+                        this.state.score++;
+                        document.getElementById("current-score").textContent =
+                            this.state.score;
+                    }
+
+                    // Mostrar botón siguiente
+                    document.getElementById("next-button").style.display =
+                        "inline-block";
+                },
+
+                // Mostrar retroalimentación
+                showFeedback(isCorrect, explanation) {
+                    const feedback = document.getElementById("quiz-feedback");
+                    feedback.style.display = "block";
+                    feedback.className = `quiz-feedback show ${
+                        isCorrect ? "correct" : "incorrect"
+                    }`;
+
+                    const feedbackText = isCorrect
+                        ? `¡Correcto! ${explanation}`
+                        : `Incorrecto. ${explanation}`;
+
+                    feedback.textContent = feedbackText;
+                },
+
+                // Siguiente pregunta
+                nextQuestion() {
+                    this.state.currentQuestionIndex++;
+
+                    if (
+                        this.state.currentQuestionIndex >=
+                        this.state.quizQuestions.length
+                    ) {
+                        this.showResults();
+                    } else {
+                        this.renderCurrentQuestion();
+                    }
+                },
+
+                // Mostrar resultados
+                showResults() {
+                    const quizContent = document.getElementById("quiz-content");
+                    const quizResults = document.getElementById("quiz-results");
+
+                    quizContent.style.display = "none";
+                    quizResults.classList.add("show");
+
+                    const finalScore = this.state.score;
+                    const totalQuestions = this.state.quizQuestions.length;
+                    const percentage = Math.round(
+                        (finalScore / totalQuestions) * 100
+                    );
+
+                    document.getElementById(
+                        "final-score"
+                    ).textContent = `${finalScore}/${totalQuestions}`;
+
+                    let message = "";
+                    if (percentage >= 90) {
+                        message =
+                            "¡Excelente! Dominas el tema de automatización empresarial e IA.";
+                    } else if (percentage >= 70) {
+                        message =
+                            "¡Muy bien! Tienes buenos conocimientos sobre automatización.";
+                    } else if (percentage >= 50) {
+                        message =
+                            "Bien. Te recomendamos repasar algunos conceptos.";
+                    } else {
+                        message =
+                            "Te sugerimos revisar el contenido antes de repetir el quiz.";
+                    }
+
+                    document.getElementById("score-message").textContent =
+                        message;
+                },
+
+                // Reiniciar quiz
+                restart() {
+                    this.state = {
+                        score: 0,
+                        currentQuestionIndex: 0,
+                        quizQuestions: [],
+                        selectedAnswer: null,
+                        answered: false,
+                    };
+
+                    document.getElementById("current-score").textContent = "0";
+                    document.getElementById("quiz-content").style.display =
+                        "block";
+                    document
+                        .getElementById("quiz-results")
+                        .classList.remove("show");
+
+                    this.generateQuizQuestions();
+                    this.renderCurrentQuestion();
+                },
+            };
+
+            // --- Navegación y UI ---
+            const App = {
+                init() {
+                    this.setupNavigation();
+                    this.setupAnimations();
+                    Quiz.init();
+
+                    // Inicializar iconos de Feather
+                    if (typeof feather !== "undefined") {
+                        feather.replace();
+                    }
+                },
+
+                setupNavigation() {
+                    // Menu toggle para móvil
+                    const menuToggle = document.getElementById("menu-toggle");
+                    const navMenu = document.getElementById("nav-menu");
+
+                    menuToggle?.addEventListener("click", () => {
+                        navMenu.classList.toggle("active");
+                    });
+
+                    // Cerrar menú al hacer click en enlaces (móvil)
+                    document.querySelectorAll(".nav-link").forEach((link) => {
+                        link.addEventListener("click", () => {
+                            navMenu.classList.remove("active");
+                        });
+                    });
+
+                    // Smooth scroll para navegación
+                    document
+                        .querySelectorAll('a[href^="#"]')
+                        .forEach((anchor) => {
+                            anchor.addEventListener("click", function (e) {
+                                e.preventDefault();
+                                const target = document.querySelector(
+                                    this.getAttribute("href")
+                                );
+                                if (target) {
+                                    const navbarHeight =
+                                        document.querySelector(
+                                            ".navbar"
+                                        ).offsetHeight;
+                                    const targetPosition =
+                                        target.offsetTop - navbarHeight;
+
+                                    window.scrollTo({
+                                        top: targetPosition,
+                                        behavior: "smooth",
+                                    });
+                                }
+                            });
+                        });
+                },
+
+                setupAnimations() {
+                    // Intersection Observer para animaciones de entrada
+                    const observerOptions = {
+                        threshold: 0.1,
+                        rootMargin: "0px 0px -100px 0px",
+                    };
+
+                    const observer = new IntersectionObserver((entries) => {
+                        entries.forEach((entry) => {
+                            if (entry.isIntersecting) {
+                                entry.target.classList.add("fade-in");
+                            }
+                        });
+                    }, observerOptions);
+
+                    // Observar elementos con animación
+                    document
+                        .querySelectorAll(".content-section, .timeline-item")
+                        .forEach((el) => {
+                            observer.observe(el);
+                        });
+                },
+            };
+
+            // Inicializar aplicación cuando el DOM esté listo
+            document.addEventListener("DOMContentLoaded", () => {
+                App.init();
+            });
+
+            // Función global para reiniciar quiz (accesible desde HTML)
+            window.restartQuiz = () => Quiz.restart();
+        </script>
+    </body>
+</html>
