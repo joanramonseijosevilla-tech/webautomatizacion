@@ -1,0 +1,865 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Curso Tally Forms</title>
+        <!-- Favicon -->
+        <link
+            rel="icon"
+            type="image/x-icon"
+            href="LogoFavicon/favicon-v2.ico"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="favicon-16x16.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="favicon-32x32.png"
+        />
+        <meta
+            name="description"
+            content="Curso de Tally: aprende a crear formularios de forma gratuita paso a paso."
+        />
+        <style>
+            /* Estilos generales */
+            * {
+                box-sizing: border-box; /* CRÍTICO: previene overflow */
+            }
+            html {
+                overflow-x: hidden;
+            }
+
+            body {
+                font-family: "Arial", sans-serif;
+                max-width: 900px;
+                margin: 0 auto;
+                padding: 20px;
+                line-height: 1.6;
+                background-color: #f0f4f8;
+                overflow-x: hidden; /* Previene scroll horizontal */
+            }
+
+            h1,
+            h2,
+            h3 {
+                color: #2c3e50;
+                word-wrap: break-word; /* Rompe palabras largas */
+            }
+
+            h1 {
+                border-bottom: 3px solid hsl(204, 70%, 53%);
+                padding-bottom: 5px;
+            }
+
+            .teoria,
+            .practica {
+                border-bottom: 3px solid hsl(204, 70%, 53%);
+                padding-bottom: 10px;
+            }
+
+            p {
+                margin-bottom: 15px;
+                word-wrap: break-word;
+            }
+
+            /* Bloques visuales */
+
+            #tittle a {
+                margin: 0;
+                height: 30px;
+            }
+
+            .block {
+                background-color: white;
+                padding: 20px;
+                margin: 20px 0;
+                border-radius: 10px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+                width: 100%; /* Asegura que no exceda el contenedor */
+                overflow-wrap: break-word;
+            }
+
+            .sangria {
+                margin-left: 60px;
+            }
+            .sangria2 {
+                margin-left: 30px;
+            }
+            .sangria3 {
+                margin-left: 30px;
+            }
+            .sangria4 {
+                margin-left: 30px;
+            }
+
+            .block img {
+                max-width: 100%;
+                height: auto; /* Mantiene proporción */
+                border-radius: 8px;
+                margin: 15px 0;
+                display: block; /* Evita espacios extra */
+            }
+
+            img {
+                max-width: 100% !important;
+                width: 100% !important;
+                height: auto !important;
+            }
+
+            /* Índice de lección */
+            .index,
+            .indext {
+                background-color: #eaf2f8;
+                padding: 15px;
+                border-radius: 8px;
+                margin-bottom: 20px;
+                width: 100%;
+                overflow-wrap: break-word;
+            }
+
+            .indext strong,
+            .index strong {
+                display: block;
+                margin-bottom: 12px;
+            }
+
+            .index a,
+            .indext a {
+                display: block;
+                color: #2980b9;
+                text-decoration: none;
+                margin-bottom: 8px;
+                word-wrap: break-word;
+            }
+
+            .index a:hover,
+            .indext a:hover {
+                text-decoration: underline;
+            }
+
+            /* Tabs */
+            .tab-container {
+                background: #fff;
+                border-radius: 10px;
+                padding: 20px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+                margin-bottom: 30px;
+                width: 100%;
+            }
+
+            .tabs {
+                display: flex;
+                margin-bottom: 15px;
+                flex-wrap: wrap; /* Permite envolver tabs si son muchos */
+                gap: 5px;
+            }
+
+            .tab-button {
+                flex: 1;
+                min-width: 100px; /* Ancho mínimo */
+                padding: 10px;
+                border: none;
+                background: #eaf2f8;
+                cursor: pointer;
+                border-radius: 5px 5px 0 0;
+                font-weight: bold;
+                color: #0066cc;
+                margin-right: 5px;
+            }
+
+            .tab-button.active {
+                background: #0066cc;
+                color: #fff;
+            }
+
+            .tab-content {
+                padding: 15px;
+                border-top: 2px solid #0066cc;
+                overflow-wrap: break-word;
+            }
+
+            /* Botones de navegación */
+            .buttons {
+                display: flex;
+                justify-content: space-between;
+                margin-top: 30px;
+                gap: 10px;
+                flex-wrap: wrap;
+            }
+
+            .buttons a {
+                text-decoration: none;
+                background-color: #3498db;
+                color: white;
+                padding: 12px 25px;
+                border-radius: 6px;
+                font-weight: bold;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            .buttons a:hover {
+                background-color: #2980b9;
+            }
+
+            /* Destacado SEO */
+            .highlight {
+                font-weight: bold;
+                color: #e74c3c;
+            }
+
+            /* Video placeholder */
+            .video-placeholder {
+                background-color: #dfe6e9;
+                padding: 10px; /* antes 30px */
+                border-radius: 10px;
+                margin: 20px 0;
+                width: 100%;
+            }
+
+            .video-placeholder iframe {
+                width: 100%;
+                aspect-ratio: 16 / 9;
+                border: 0;
+                display: block;
+            }
+
+            .imagen-titulo {
+                width: 100%;
+                max-width: 20px; /* Ajusta este valor al tamaño que quieras en escritorio */
+                height: auto;
+                display: block;
+                margin: 0 auto; /* Esto las centra */
+            }
+
+            /*claude.html*/
+            header {
+                background-color: #0066cc;
+                border-bottom: 1px solid #ddd;
+                padding: 1.5rem 2rem;
+                font-family: "Poppins", Arial, sans-serif;
+                width: 100%;
+                position: sticky;
+                top: 0;
+                z-index: 999;
+            }
+
+            .header-content {
+                max-width: 1200px;
+                margin: 0 auto;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: 2rem;
+            }
+
+            .left-section {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 1.5rem;
+                flex: 1;
+            }
+
+            .logo-img {
+                /* ← AQUÍ ESTÁ */
+                width: 400px;
+                max-width: 400px;
+                height: auto;
+            }
+
+            .logo-img {
+                transition: transform 0.4s ease;
+            }
+
+            .logo-img:hover {
+                transform: scale(1.05);
+            }
+
+            .header-text,
+            .header-text2 {
+                font-size: 1.1rem;
+                color: blanchedalmond;
+                margin: 0 0 0.3rem 0;
+                line-height: 1.5;
+                font-weight: 400;
+            }
+
+            .contact-button {
+                background-color: #eaf2f8;
+                color: #0066cc;
+                text-decoration: none;
+                padding: 1rem 2rem;
+                border-radius: 9999px;
+                font-weight: 600;
+                font-size: 1.1rem;
+                transition:
+                    background-color 0.3s ease,
+                    transform 0.2s ease;
+                white-space: nowrap;
+            }
+
+            .index-button {
+                display: block; /* Hace que cada enlace sea un bloque completo */
+                width: 50%; /* Ajusta el ancho (por ejemplo, 80% del contenedor) */
+                margin: 10px auto; /* Deja espacio arriba/abajo y centra horizontalmente */
+                padding: 7px 0; /* Espacio interior: 10px arriba/abajo */
+                text-align: center; /* Centra el texto */
+                background-color: #eaf2f8; /* Color de fondo */
+                color: #0056d2;
+                font-weight: bold; /* Color del texto */
+                text-decoration: none; /* Quita el subrayado */
+                border-radius: 8px; /* Bordes redondeados */
+                border: 1px solid #eaf2f8; /* Opcional: borde visible */
+            }
+
+            .contact-button:hover {
+                background-color: white;
+                transform: scale(1.05);
+            }
+
+            .index-button:hover {
+                background-color: #0066cc;
+                color: white;
+            }
+
+            a {
+                font-size: 0.85em;
+            }
+
+            .index-button a:hover {
+                color: #0066cc !important;
+            }
+
+            /* Tablets y pantallas medianas */
+            @media (max-width: 950px) {
+                .header-content {
+                    flex-direction: column;
+                    text-align: center;
+                }
+
+                .left-section {
+                    flex-direction: column;
+                }
+            }
+
+            @media (min-width: 951px) {
+                .logo-img {
+                    width: 450px !important;
+                }
+            }
+
+            /* Tablets y pantallas medianas - Logo más grande */
+            @media (min-width: 481px) and (max-width: 950px) {
+                .logo-img {
+                    width: 380px !important;
+                }
+            }
+
+            /* Móviles grandes */
+            @media (max-width: 600px) {
+                .header-text,
+                .header-text2 {
+                    font-size: 1.3rem;
+                }
+
+                .contact-button {
+                    font-size: 1.4rem;
+                    padding: 1.2rem 2.4rem;
+                }
+            }
+
+            /*fin claude*/
+
+            /*Video*/
+            .video-placeholder video {
+                width: 100%; /* Se adapta al espacio disponible */
+                max-width: 640px; /* Nunca será más grande que tu tamaño ideal */
+                height: auto; /* Mantiene las proporciones */
+                display: block;
+                margin: 0 auto; /* Lo centra dentro del “folio” */
+            }
+
+            /*Fin Video*/
+
+            /*Footer*/
+            footer {
+                background: #1e293b;
+                color: white;
+                text-align: center;
+                padding: 40px 0;
+                margin-top: 60px;
+            }
+
+            .footer-content {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 30px;
+            }
+
+            .footer-links {
+                display: flex;
+                align-items: center;
+                gap: 30px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .social-links {
+                display: flex;
+                gap: 20px;
+                align-items: center;
+            }
+
+            .social-link {
+                display: inline-block;
+                padding: 10px;
+                border-radius: 50%;
+                background: rgba(255, 255, 255, 0.1);
+                transition: all 0.3s ease;
+                text-decoration: none;
+            }
+
+            .social-link:hover {
+                background: rgba(255, 255, 255, 0.2);
+                transform: translateY(-2px);
+            }
+
+            .social-icon {
+                width: 24px;
+                height: 24px;
+                fill: white;
+            }
+
+            .footer-logo {
+                display: inline-block;
+                transition: transform 0.3s ease;
+            }
+
+            .footer-logo:hover {
+                transform: scale(1.05);
+            }
+
+            .footer-text {
+                text-align: center;
+            }
+
+            .contact-info {
+                display: flex;
+                gap: 20px;
+                align-items: center;
+                flex-wrap: wrap;
+            }
+
+            .contact-item {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                text-decoration: none;
+                color: var(--accent-color);
+            }
+
+            .contact-icon {
+                width: 40px;
+                height: 40px;
+            }
+
+            /*Fin Footer */
+
+            /* === RESPONSIVE === */
+
+            /* Tablets y dispositivos medianos */
+            @media (max-width: 768px) {
+                body {
+                    padding: 15px;
+                    max-width: 100%;
+                }
+
+                #tittle {
+                    flex-direction: column;
+                    text-align: center;
+                    gap: 10px;
+                }
+
+                #tittle a {
+                    height: auto;
+                }
+
+                /* Reducir sangrías */
+                .sangria {
+                    margin-left: 20px;
+                }
+                .sangria2,
+                .sangria3,
+                .sangria4 {
+                    margin-left: 15px;
+                }
+
+                .block,
+                .tab-container,
+                .index,
+                .video-placeholder {
+                    padding: 15px;
+                }
+
+                /* Tabs en columna */
+                .tabs {
+                    flex-direction: column;
+                }
+
+                .tab-button {
+                    margin-right: 0;
+                    margin-bottom: 5px;
+                    width: 100%;
+                }
+
+                /* Botones apilados */
+                .buttons {
+                    flex-direction: column;
+                }
+
+                .buttons a {
+                    width: 100%;
+                    text-align: center;
+                }
+            }
+
+            /* Móviles pequeños */
+            @media (max-width: 480px) {
+                body {
+                    padding: 10px;
+                }
+
+                h1 {
+                    font-size: 1.5rem;
+                }
+
+                h2 {
+                    font-size: 1.3rem;
+                }
+
+                h3 {
+                    font-size: 1.1rem;
+                }
+
+                p {
+                    font-size: 0.95rem;
+                }
+
+                header {
+                    padding: 2rem 1rem;
+                }
+
+                .header-content {
+                    display: block;
+                    text-align: center;
+                }
+
+                .left-section {
+                    display: block;
+                    margin-bottom: 1.5rem;
+                }
+
+                .logo-img {
+                    width: 85vw;
+                    max-width: 380px;
+                    display: block;
+                    margin: 0 auto 1.5rem auto;
+                }
+
+                .text-container {
+                    display: block;
+                    margin-bottom: 1.5rem;
+                }
+
+                .header-text,
+                .header-text2 {
+                    font-size: 0.9rem;
+                    line-height: 1.6;
+                    color: blanchedalmond;
+                    font-weight: 400;
+                    margin-bottom: 0.5rem;
+                    display: block;
+                }
+
+                .contact-button {
+                    font-size: 0.85rem;
+                    padding: 1rem 2rem;
+                    display: inline-block;
+                }
+
+                /* Sangrías mínimas */
+                .sangria {
+                    margin-left: 10px;
+                }
+                .sangria2,
+                .sangria3,
+                .sangria4 {
+                    margin-left: 8px;
+                }
+
+                .block,
+                .tab-container,
+                .index,
+                .video-placeholder {
+                    padding: 12px;
+                    margin: 15px 0;
+                }
+
+                .buttons a {
+                    padding: 10px 15px;
+                    font-size: 0.95rem;
+                }
+
+                /* Imágenes adaptadas */
+                .block img,
+                .contenedor img {
+                    width: 100%;
+                    max-width: 100%;
+                    height: auto;
+                    display: block;
+                }
+
+                /*footer*/
+                .contact-icon {
+                    width: 25px;
+                    height: 25px;
+                }
+                .contact-text {
+                    font-size: 12px;
+                }
+            }
+
+            /* Móviles muy pequeños */
+            @media (max-width: 340px) {
+                .logo-img {
+                    width: 90vw;
+                    max-width: 350px;
+                }
+
+                .header-text,
+                .header-text2 {
+                    font-size: 0.75rem;
+                    line-height: 1.5;
+                }
+
+                .contact-button {
+                    font-size: 1.15rem;
+                    padding: 0.95rem 1.9rem;
+                }
+                /*footer*/
+                .contact-icon {
+                    width: 20px;
+                    height: 20px;
+                }
+                .contact-text {
+                    font-size: 10px;
+                }
+            }
+            #titulo-teoria,
+            #titulo-practica {
+                scroll-margin-top: 140px;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <div class="header-content">
+                <div class="left-section">
+                    <a
+                        href="https://www.nexautia.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <img
+                            src="LogoFavicon/logo_nexautia.svg"
+                            alt="NEXAUTIA"
+                            class="logo-img"
+                        />
+                    </a>
+
+                    <div class="text-container">
+                        <p class="header-text">
+                            © 2025 Nexautia. Transformando empresas con
+                            automatización inteligente.
+                        </p>
+                        <p class="header-text2">
+                            Creado con ❤️ por Nexautia para el traspaso de
+                            conocimiento.
+                        </p>
+                    </div>
+                </div>
+
+                <a href="#contact_clients" class="contact-button"> Contacto </a>
+            </div>
+        </header>
+        <h1>Curso de Tally forms</h1>
+        <img
+            src="imagenes/tally_card.webp"
+            alt="Curso de Tally Forms"
+            class="card-svg"
+        />
+        <!-- Intro del curso -->
+        <div class="block">
+            <p>
+                En este vídeo del curso aprenderás
+                <b>cómo crear un formulario con Tally de forma gratuita</b>,
+                paso a paso y desde cero.
+            </p>
+            <p>
+                Se explica cómo diseñar formularios online profesionales,
+                estructurar preguntas, configurar campos y publicar formularios
+                para captar datos en empresas y proyectos digitales.
+            </p>
+            <p>
+                También se muestra dónde se encuentran algunas funciones
+                avanzadas dentro de <b>Tally</b> y se comenta cómo estos
+                formularios pueden integrarse posteriormente con
+                <b>herramientas de automatización como Make, n8n o Zapier</b>,
+                permitiendo crear flujos automáticos y procesos empresariales
+                más eficientes en otros escenarios.
+            </p>
+            <p>
+                Este tutorial forma parte de la formación en
+                <b
+                    >formularios online, automatización de procesos y
+                    herramientas no-code</b
+                >, enfocada a <b>negocios</b> que quieren
+                <b>digitalizar tareas</b> y <b>mejorar su productividad</b>.
+            </p>
+
+            <div class="video-placeholder">
+                <iframe
+                    src="https://www.youtube-nocookie.com/embed/XdHktOau-eo"
+                    title="Vídeo del curso"
+                    frameborder="0"
+                    allow="
+                        accelerometer;
+                        autoplay;
+                        clipboard-write;
+                        encrypted-media;
+                        gyroscope;
+                        picture-in-picture;
+                    "
+                    allowfullscreen
+                >
+                </iframe>
+            </div>
+        </div>
+
+        <footer id="seccion-footer">
+            <div class="container" id="contact_clients">
+                <div class="footer-content">
+                    <div class="footer-links">
+                        <div class="social-links">
+                            <a
+                                href="https://www.facebook.com/profile.php?id=61579981550830"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="social-link"
+                                aria-label="Síguenos en Facebook"
+                            >
+                                <svg class="social-icon" viewBox="0 0 24 24">
+                                    <path
+                                        d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+                                    />
+                                </svg>
+                            </a>
+                            <a
+                                href="#"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="social-link"
+                                aria-label="Síguenos en LinkedIn"
+                            >
+                                <svg class="social-icon" viewBox="0 0 24 24">
+                                    <path
+                                        d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                                    />
+                                </svg>
+                            </a>
+                        </div>
+
+                        <a
+                            href="https://www.nexautia.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="footer-logo"
+                        >
+                            <img
+                                src="LogoFavicon/logo_nexautia.svg"
+                                alt="NEXAUTIA"
+                                width="200"
+                                height="auto"
+                            />
+                        </a>
+                    </div>
+
+                    <!-- Información de contacto -->
+                    <div class="contact-info">
+                        <a href="tel:+34610510642" class="contact-item">
+                            <svg
+                                class="contact-icon"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                            >
+                                <path
+                                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                                ></path>
+                            </svg>
+                            <span class="contact-text">610 510 642</span>
+                        </a>
+
+                        <a
+                            href="mailto:contacto@nexautia.com"
+                            class="contact-item"
+                        >
+                            <svg
+                                class="contact-icon"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                            >
+                                <path
+                                    d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                                ></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                            <span class="contact-text"
+                                >contacto@nexautia.com</span
+                            >
+                        </a>
+                    </div>
+
+                    <div class="footer-text">
+                        <p class="footer-text1">
+                            © 2025 Nexautia. Transformando empresas con
+                            automatización inteligente.
+                        </p>
+                        <p class="footer-text2">
+                            Creado con ❤️ por Nexautia para el traspaso de
+                            conocimiento
+                        </p>
+                        <p class="footer-text3">
+                            ¡Sigue explorando el increíble mundo de la
+                            automatización de empresas y la Inteligencia
+                            Artificial!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>

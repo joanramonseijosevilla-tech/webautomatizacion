@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Elimina el 90% de Tareas Repetitivas en Tu Empresa</title>
+        <title>Aprende Con Nosotros</title>
         <meta
             name="description"
             content="Automatizamos procesos empresariales para ahorrar tiempo y reducir errores. Diagnóstico gratuito + ROI garantido en 30 días."
@@ -12,10 +12,10 @@
             href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
             rel="stylesheet"
         />
-        <link rel="stylesheet" href="../estilos4sfgcatV2.css" />
+        <link rel="stylesheet" href="styles.css" />
 
         <!-- Favicon -->
-        <link rel="icon" type="image/x-icon" href="../favicon.ico" />
+        <link rel="icon" type="image/x-icon" href="imagenes/favicon.ico" />
         <link
             rel="icon"
             type="image/png"
@@ -31,77 +31,24 @@
         <meta name="theme-color" content="#1e3a8a" />
     </head>
     <body id="top">
-        <!-- Pongo un div que engloba todo el botón analytics para hacer no visible, 
-         porque si lo elimino no funciona, debido a que debe dar algún error en JS-->
-        <div style="display: none;"> 
-        <!-- PANEL DE ANALYTICS -->
-        <button class="analytics-toggle" onclick="toggleAnalytics()">
-            📊 Analytics
-        </button>
-        <div class="analytics-panel" id="analytics-panel" style="display: none;">
-            <div><strong>📊 ANALYTICS EN TIEMPO REAL</strong></div>
-            <div>Versión A/B: <span id="current-version">A</span></div>
-            <div>👤 Visitante: <span id="visitors-count">1</span></div>
-            <div>🎯 Clics en CTAs: <span id="cta-clicks">0</span></div>
-            <div>
-                📝 Conversiones: <span id="conversions">0</span> (formularios
-                enviados)
-            </div>
-            <div>⏱️ Tiempo: <span id="avg-time">0s</span></div>
-            <div>🔥 Clics heatmap: <span id="heatmap-clicks">0</span></div>
-            <div>📱 vCard Descargas: <span id="vcard-downloads">0</span></div>
-            <div
-                id="helper"
-                style="font-size: 0.7rem; color: #888; margin-top: 0.5rem"
-            >
-                💡 CTAs = Todos los botones importantes<br />
-                💡 Conversiones = Solo formularios enviados
-            </div>
-            <br />
-            <button
-                onclick="switchABVersion()"
-                style="
-                    background: #0066cc;
-                    color: white;
-                    border: none;
-                    padding: 0.5rem;
-                    border-radius: 4px;
-                    cursor: pointer;
-                    font-size: 0.8rem;
-                "
-            >
-                🔄 Cambiar Versión A/B
-            </button>
-            <button
-                onclick="showHeatmapReport()"
-                style="
-                    background: #00d4aa;
-                    color: white;
-                    border: none;
-                    padding: 0.5rem;
-                    border-radius: 4px;
-                    cursor: pointer;
-                    margin-top: 0.5rem;
-                    font-size: 0.8rem;
-                    width: 100%;
-                "
-            >
-                📊 Ver Informe Detallado
-            </button>
-        </div>
-    </div>
-        <header>
+            <header>
             <div class="header-content2">
                 <div class="p2_logo">
-                    <a href="#top" data-track="nav-logo">
-                        <img
-                            src="../logo.svg"
+                    <a
+                            href="https://www.nexautia.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="footer-logo"
+                        >
+                            <img
+                            src="imagenes/logo.svg"
                             alt="NEXAUTIA"
                             width="340"
                             height="auto"
                             id="p2_logo"
-                        />
+                          />
                     </a>
+                    
                 </div>
                 <div class="p2_titulo">
                     <p>
@@ -125,7 +72,7 @@
                                 data-track="lang-spanish"
                             >
                                 <img
-                                    src="../bandera_espanola.png"
+                                    src="imagenes/bandera_espanola.png"
                                     alt="Español"
                                     width="24"
                                     height="16"
@@ -138,7 +85,7 @@
                                 data-track="lang-catalan"
                             >
                                 <img
-                                    src="../bandera_catalana.png"
+                                    src="imagenes/bandera_catalana.png"
                                     alt="Catalán"
                                     width="24"
                                     height="16"
@@ -151,7 +98,7 @@
                                 data-track="lang-english"
                             >
                                 <img
-                                    src="../bandera_inglesa.png"
+                                    src="imagenes/bandera_inglesa.png"
                                     alt="Inglés"
                                     width="24"
                                     height="16"
@@ -172,99 +119,38 @@
                 </div>
             </div>
         </header>
-        <!-- Pongo un div que engloba toda la seccion Calculadora para hacer no visible, 
-         porque si lo elimino no funciona, debido a que debe dar algún error en JS-->
-         <div style="display: none;"> 
-        <!-- MOBILE MENU OVERLAY -->
-        <div class="mobile-menu-overlay" id="mobile-menu-overlay">
-            <div class="mobile-menu-content">
-                <div class="mobile-menu-header">
-                    <h3 id="menu-mob-navegacionh">Navegación</h3>
-                    <button class="mobile-menu-close" id="mobile-menu-close">
-                        ✕
-                    </button>
-                </div>
-                <nav class="mobile-menu-nav">
-                    <a
-                        href="#servicios"
-                        id="menu-mob-serviciosh"
-                        data-track="mobile-menu-servicios"
-                    >
-                        🔄 Servicios
-                    </a>
-                    <a
-                        href="#proceso"
-                        id="menu-mob-procesoh"
-                        data-track="mobile-menu-proceso"
-                    >
-                        📋 Proceso
-                    </a>
-                    <a
-                        href="#casos"
-                        id="menu-mob-casosh"
-                        data-track="mobile-menu-casos"
-                    >
-                        🏆 Casos de Éxito
-                    </a>
-                    <a
-                        href="#calculadora"
-                        id="menu-mob-calculadorah"
-                        data-track="mobile-menu-calculadora"
-                    >
-                        💰 Calculadora ROI
-                    </a>
-                    <a
-                        href="#vcard"
-                        id="menu-mob-tarjetah"
-                        data-track="mobile-menu-tarjeta"
-                    >
-                        📱 Tarjeta Visita
-                    </a>
-                    <a
-                        href="#calendario"
-                        id="menu-mob-calendarioh"
-                        data-track="mobile-menu-calendario"
-                    >
-                        📅 Reservar Cita
-                    </a>
-                    <a
-                        href="#contacto"
-                        id="menu-mob-contactoh"
-                        data-track="mobile-menu-contacto"
-                    >
-                        📞 Contacto
-                    </a>
-                    <a
-                        href="recursos/index.html"
-                        onclick="window.open('recursos/index.html', '_blank');"
-                        id="menu-mob-aprendeh"
-                        data-track="mobile-menu-aprende"
-                    >
-                       🎓 Aprende con Nosotros
-                    </a>
-                    <a
-                        href="recursos/index.html"
-                        onclick="window.open('recursos/index.html', '_blank');"
-                        id="menu-mob-ejemplosh"
-                        data-track="mobile-menu-ejemplos"
-                    >
-                      ⚙️ Ejemplos de Automatización
-                    </a>
-                </nav>
-            </div>
-        </div>
-        </div>
         
         <section id="cursos" class="section">
             <h2>Cursos y páginas y enlaces de interés</h2>
             <p>
                 En esta sección encontrarás páginas de interés pensadas para acercarte al mundo de la Inteligencia Artificial y de las automatizaciones en los procesos de las empresas. Aquí podrás aprender conceptos básicos, acceder a noticias relevantes y descubrir recursos de formación. Se trata de una página dinámica que irá creciendo poco a poco, incorporando nuevos contenidos y enlaces útiles, para que siempre estés al día de las últimas novedades y avances en este campo.
-
-
             </p>
             <div class="p2_cards">
-                <div class="p2_card" data-track="card-procesos" onclick="window.open('ianinos/index.html','_blank');">
-                    <div class="card-icon">🔄</div>
+                <div class="p2_card" data-track="card-procesos" onclick="window.open('curso_basico_make/index.html','_blank');">
+                    <div class="card-icon">
+                        <img src="imagenes/make_card.png" alt="Make" class="card-svg">
+                      </div>
+                    <h3>Curso básico de Make</h3>
+                    <p>
+                        esto es una prueba.
+                    </p>                    
+                </div>
+                <div class="p2_card" data-track="card-procesos" onclick="window.open('curso_tally/index.html','_blank');">
+                    <div class="card-icon">
+                        <img src="imagenes/tally_card 2.png" alt="Curso Tally Forms" class="card-svg">
+                      </div>
+                    <h3>Curso de Tally Forms</h3>
+                    <p>
+                        En este vídeo del curso aprenderás cómo crear un formulario con Tally de forma gratuita, paso a paso y desde cero.
+                        Se explica cómo diseñar formularios online profesionales, estructurar preguntas, configurar campos y publicar formularios para captar datos en empresas y proyectos digitales.
+                        También se muestra dónde se encuentran algunas funciones avanzadas dentro de Tally y se comenta cómo estos formularios pueden integrarse posteriormente con herramientas de automatización como Make, n8n o Zapier, permitiendo crear flujos automáticos y procesos empresariales más eficientes en otros escenarios.
+                        Este tutorial forma parte de la formación en formularios online, automatización de procesos y herramientas no-code, enfocada a negocios que quieren digitalizar tareas y mejorar su productividad.
+                    </p>                    
+                </div>
+                <div class="p2_card" data-track="card-procesos" onclick="window.open('ia_para_ninos/index.html','_blank');">
+                    <div class="card-icon">
+                        <img src="imagenes/ianinos_card.png" alt="Inteligencia Artificial Niños" class="card-svg">
+                      </div>
                     <h3>IA para niños</h3>
                     <p>
                         Haz clic aquí y entra en una paginita hecha para niños, donde descubrirás de forma
@@ -272,8 +158,10 @@
                         y al final te espera un mini quiz divertido para poner a prueba lo que aprendiste.
                     </p>                    
                 </div>
-                <div class="p2_card" data-track="card-marketing" onclick="window.open('automatizacion_empresa_ia/index.html','_blank');">
-                    <div class="card-icon">🎯</div>
+                <div class="p2_card" data-track="card-marketing" onclick="window.open('automatizacion_procesos/index.html','_blank');">
+                    <div class="card-icon">
+                        <img src="imagenes/autpro_card.webp" alt="Automatización de Empresas" class="card-svg">
+                      </div>
                     <h3>Automatización Procesos</h3>
                     <p>
                         Esta sección es una introducción sencilla a la automatización de procesos y la 
@@ -281,95 +169,27 @@
                         familiarizarse con estos temas, con explicaciones básicas y ejemplos claros. 
                         Al final encontrarás un pequeño quiz para poner a prueba lo aprendido.
                     </p>                    
-                </div>                
+                </div> 
+                <div class="p2_card" data-track="card-marketing" onclick="window.open('relatos_ia/index.html','_blank');">
+                    <div class="card-icon">
+                        <img src="imagenes/relatos_card.webp" alt="Relatos IA y Sociedad" class="card-svg">
+                      </div>
+                    <h3>Relatos sobre IA y Sociedad</h3>
+                    <p>
+                        En esta sección encontrarás <b>historias y reflexiones sobre Inteligencia Artificial y sociedad</b>, donde exploramos cómo la tecnología transforma nuestra forma de pensar, creer y convivir.<br><br>
+                        Algunos contenidos adoptan la forma de relatos narrativos; otros abordan cuestiones reales como <b>la ética de la IA, su relación con la religión y los límites cognitivos del ser humano</b>.<br><br>
+                        Un espacio para mirar la Inteligencia Artificial no solo como herramienta, sino como <b>espejo de nuestra propia civilización</b>.
+                    </p>                    
+                </div>               
         </section>
 
-        <!-- Pongo un div que engloba toda la seccion Calculadora para hacer no visible, 
-         porque si lo elimino no funciona, debido a que debe dar algún error en JS-->
-         <div style="display: none;"> 
-        
-        <section id="calculadora" class="section">
-            <h2>💰 Descubre cuánto dinero estás perdiendo</h2>
-            <div class="calculator-container">
-                <div class="calculator-inputs">
-                    <div class="calc-group">
-                        <label for="hours"
-                            >⏰ Horas semanales en tareas repetitivas (por
-                            empleado):</label
-                        >
-                        <input
-                            type="number"
-                            id="hours"
-                            min="1"
-                            max="60"
-                            value="15"
-                        />
-                    </div>
-                    <div class="calc-group">
-                        <label for="hourly-cost"
-                            >💰 Costo por hora medio (€):</label
-                        >
-                        <input
-                            type="number"
-                            id="hourly-cost"
-                            min="10"
-                            max="200"
-                            value="25"
-                        />
-                    </div>
-                    <div class="calc-group">
-                        <label for="employees"
-                            >👥 Empleados que realizan estas tareas:</label
-                        >
-                        <input
-                            type="number"
-                            id="employees"
-                            min="1"
-                            max="50"
-                            value="3"
-                        />
-                    </div>
-                </div>
-                <div
-                    class="calculator-results"
-                    id="results"
-                    style="display: none"
-                >
-                    <div class="result-pain">
-                        <h3 id="losing">💸 ESTÁS PERDEDOR:</h3>
-                        <div class="loss-amount" id="annual-loss">
-                            0 € al año
-                        </div>
-                    </div>
-                    <div class="result-gain">
-                        <h3 id="with-automation">🚀 CON AUTOMATIZACIÓN:</h3>
-                        <div id="savings-details">
-                            <div>
-                                <span id="annual-savings-label"
-                                    >Ahorro anual:</span
-                                >
-                                <span id="annual-savings">0€</span>
-                            </div>
-                            <div>
-                                <span id="annual-roi"> ROI proyectado: </span>
-                                <span id="roi">0%</span>
-                            </div>
-                        </div>
-                    </div>
-                    <a href="#contacto" class="btn btn-primary calc-cta">
-                        🎯 Quiero recuperar estos euros
-                    </a>
-                </div>
-            </div>
-        </section>
-        </div>
-
+    
         <!-- SECCIÓN VCARD -->
         <section class="vcard-section" id="vcard">
             <div class="vcard-container">
                 <div>
                     <img
-                        src="../logo.png"
+                        src="imagenes/logo.png"
                         alt="NexAutIA"
                         width="80"
                         height="auto"
@@ -410,329 +230,8 @@
                     </a>
                 </div>
             </div>
-        </section>
-
-        <!-- Pongo un div que engloba toda la seccion Calendario para hacer no visible, 
-         porque si lo elimino no funciona, debido a que debe dar algún error en JS-->
-         <div style="display: none;"> 
-
-        <section id="calendario" class="section">
-            <!-- Aquí va todo el contenido del calendario del artifact -->
-            <div class="calendar-section">
-                <div id="calendar-header">
-                    <h2>📅 Reserva esa tu cita para el diagnóstico gratuito</h2>
-                    <p>
-                        Selecciona el día y la hora que más te guste para tu
-                        consulta por videoconferencia
-                    </p>
-                    <div
-                        style="
-                            margin-top: 1rem;
-                            padding: 1rem;
-                            background: linear-gradient(
-                                135deg,
-                                #0066cc,
-                                #e6fffa
-                            );
-                            border-radius: 12px;
-                        "
-                    >
-                        <p>
-                            <strong>📺 Modalidad:</strong> Videoconferencia (1
-                            hora)
-                        </p>
-                        <p>
-                            <strong>🕒 Horario:</strong> Lunes a viernes,
-                            9:00-14:00 y 15:00-19:00
-                        </p>
-                        <p><strong>🌍 Zona horaria:</strong> España (Madrid)</p>
-                    </div>
-                </div>
-
-                <div class="calendar-container">
-                    <!-- CALENDARIO -->
-                    <div class="calendar-widget">
-                        <div class="calendar-nav">
-                            <button id="prev-month">‹ Anterior</button>
-                            <h3 id="current-month">Enero 2025</h3>
-                            <button id="next-month">Siguiente ›</button>
-                        </div>
-                        <div class="calendar-grid" id="calendar-grid">
-                            <!-- Se genera dinámicamente -->
-                        </div>
-                    </div>
-
-                    <!-- HORARIOS DISPONIBLES -->
-                    <div class="time-slots">
-                        <h3 id="selected-date-title">Selecciona un día</h3>
-                        <div id="time-slots-container">
-                            <div class="no-slots">
-                                <p>
-                                    👆 Selecciona un día al calendario para ver
-                                    los horarios disponibles
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- FORMULARIO DE CITA -->
-                    <div class="appointment-form" id="appointment-form">
-                        <h3>📝 Datos para la cita</h3>
-
-                        <div class="appointment-summary">
-                            <h4>📅 Resumen de tu cita:</h4>
-                            <div class="summary-item">
-                                <span>Fecha:</span>
-                                <strong id="summary-date">-</strong>
-                            </div>
-                            <div class="summary-item">
-                                <span>Hora:</span>
-                                <strong id="summary-time">-</strong>
-                            </div>
-                            <div class="summary-item">
-                                <span>Duración:</span>
-                                <strong id="summary-duration">1 hora</strong>
-                            </div>
-                            <div class="summary-item">
-                                <span>Modalidad:</span>
-                                <strong id="summary-mode"
-                                    >Videoconferencia</strong
-                                >
-                            </div>
-                        </div>
-
-                        <div id="appointment-contact-form-container"></div>
-                    </div>
-                </div>
-
-                <div class="loading" id="loading">
-                    <div class="spinner"></div>
-                    <p>Procesando tu cita...</p>
-                </div>
-            </div>
-
-            <!-- MODAL DE CONFIRMACIÓN -->
-            <div class="confirmation-modal" id="confirmation-modal">
-                <div class="confirmation-content">
-                    <div class="success-icon">🎉</div>
-                    <h3>¡Cita Confirmada!</h3>
-                    <p>
-                        Hemos enviado los detalles de tu cita a
-                        <strong id="confirmed-email"></strong>
-                    </p>
-                    <p style="margin: 1rem 0">Te llegará un email con:</p>
-                    <ul style="text-align: left; margin: 1rem 0">
-                        <li>✅ Confirmación de fecha y hora</li>
-                        <li>📺 Enlace para la videoconferencia</li>
-                        <li>📋 Recordatorio 24 horas antes</li>
-                        <li>🔗 Opción para cancelar/reprogramar</li>
-                    </ul>
-                    <div
-                        style="
-                            display: flex;
-                            gap: 0.5rem;
-                            justify-content: center;
-                            flex-wrap: wrap;
-                        "
-                    >
-                        <button
-                            class="btn btn-secondary"
-                            id="cancel-booking-btn"
-                            type="button"
-                        >
-                            ❌ Cancelar cita
-                        </button>
-                        <button
-                            class="btn btn-primary"
-                            onclick="closeConfirmation()"
-                        >
-                            👍 Perfecto, gracias
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </section>
-        </div>
-
-        <!-- Pongo un div que engloba toda la seccion Contacto para hacer no visible, 
-         porque si lo elimino no funciona, debido a que debe dar algún error en JS-->
-         <div style="display: none;"> 
-        <section id="contacto" class="section">
-            <h2>Obtén tu diagnóstico gratuito</h2>
-            <div class="form-container">
-                <form id="contact-form" data-track="form-submit">
-                    <div class="form-group">
-                        <label for="name">Nombre completo *</label>
-                        <input
-                            type="text"
-                            id="name"
-                            name="name"
-                            required
-                            placeholder="Nombre completo"
-                        />
-                    </div>
-                    <div class="form-group">
-                        <label for="email"
-                            >Correo electrónico empresarial *</label
-                        >
-                        <input
-                            type="email"
-                            id="email"
-                            name="email"
-                            required
-                            placeholder="Correo electrónico"
-                        />
-                    </div>
-
-                    <div class="form-group">
-                        <label for="phone">Teléfono</label>
-                        <input
-                            type="tel"
-                            id="phone"
-                            name="phone"
-                            placeholder="Teléfono"
-                        />
-                    </div>
-
-                    <div class="form-group">
-                        <label for="company">Empresa *</label>
-                        <input
-                            type="text"
-                            id="company"
-                            name="company"
-                            placeholder="Empresa"
-                            required
-                        />
-                    </div>
-                    <div class="form-group">
-                        <label for="contact-employees"
-                            >Número de empleados</label
-                        >
-                        <select id="contact-employees" name="employees">
-                            <option value="">Selecciona...</option>
-                            <option value="1-10">1-10 empleados</option>
-                            <option value="11-50">11-50 empleados</option>
-                            <option value="51-200">51-200 empleados</option>
-                            <option value="200+">Más de 200 empleados</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="consultation-type2">Tipo de consulta</label>
-                        <select id="consultation-type2" name="type">
-                            <option value="diagnostico">
-                                Diagnóstico general de automatización
-                            </option>
-                            <option value="procesos">
-                                Automatización de procesos específicos
-                            </option>
-                            <option value="marketing">
-                                Márqueting automatizado
-                            </option>
-                            <option value="reportes">Informes y paneles</option>
-                            <option value="integraciones">
-                                Integraciones entre herramientas
-                            </option>
-                            <option value="otro">
-                                Otros (especifica en comentarios2)
-                            </option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="challenge"
-                            >Desafío principal que quieres automatizar *</label
-                        >
-                        <textarea
-                            id="challenge"
-                            name="challenge"
-                            rows="4"
-                            required
-                            placeholder="Ej.: Gestión de leads, facturación, informes, seguimiento de clientes..."
-                        ></textarea>
-                    </div>
-                    <button
-                        type="submit"
-                        class="btn btn-primary"
-                        style="width: 100%"
-                        data-track="form-submit-btn"
-                    >
-                        🚀
-                        <span id="form-cta-text"
-                            >Solicitar diagnóstico gratuito</span
-                        >
-                    </button>
-                    <p
-                        class="contact-response-time"
-                        style="
-                            text-align: center;
-                            margin-top: 1rem;
-                            color: var(--text-light);
-                            font-size: 0.9rem;
-                        "
-                    >
-                        ⏱️ Respuesta en menos de 2 horas laborales
-                    </p>
-                </form>
-            </div>
-        </section>
-        </div>
-
-        <!-- Pongo un div que engloba toda la seccion Chatbot para hacer no visible, 
-         porque si lo elimino no funciona, debido a que debe dar algún error en JS-->
-         <div style="display: none;"> 
-
-        <!-- Chatbot -->
-        <button id="chatbot-btn" data-track="chatbot-open">💬</button>
-        <div id="chatbot-container">
-            <div id="chatbot-header">
-                <span id="chatbot-title">Consultor en automatización</span>
-                <button id="chatbot-close" data-track="chatbot-close">✕</button>
-            </div>
-            <div id="chatbot-messages"></div>
-            <div class="quick-responses" id="quick-responses">
-                <button
-                    class="quick-btn"
-                    data-message="¿Cuánto tiempo puedo ahorrar automatizando?"
-                    data-track="quick-tiempo"
-                >
-                    ⏰ Tiempo ahorrado
-                </button>
-                <button
-                    class="quick-btn"
-                    data-message="¿Cuál es el costo de automatizar mis procesos?"
-                    data-track="quick-costo"
-                >
-                    💰 Costo/ROI
-                </button>
-                <button
-                    class="quick-btn"
-                    data-message="¿Qué procesos puedo automatizar en mi empresa?"
-                    data-track="quick-procesos"
-                >
-                    🔧 Qué automatizar
-                </button>
-                <button
-                    class="quick-btn"
-                    data-message="Quiero programar una llamada gratuita"
-                    data-track="quick-llamada"
-                >
-                    📞 Llamada gratuita
-                </button>
-            </div>
-            <div id="chatbot-input-container">
-                <input
-                    type="text"
-                    id="chatbot-input"
-                    placeholder="Pregúntame sobre automatización..."
-                />
-                <button id="chatbot-send" data-track="chatbot-send">
-                    Enviar
-                </button>
-            </div>
-        </div>
-        </div>
-
+        </section>          
+       
         <footer>
             <div class="container">
                 <div class="footer-content">
@@ -773,7 +272,7 @@
                             class="footer-logo"
                         >
                             <img
-                                src="../logo.svg"
+                                src="imagenes/logo.svg"
                                 alt="NEXAUTIA"
                                 width="200"
                                 height="auto"
@@ -837,91 +336,6 @@
             </div>
         </footer>
 
-        <!-- Pongo un div que engloba toda la seccion Menú para hacer no visible, 
-         porque si lo elimino no funciona, debido a que debe dar algún error en JS-->
-         <div style="display: none;"> 
-
-        <!-- MOBILE BOTTOM NAVIGATION -->
-        <nav class="mobile-bottom-nav" id="mobile-bottom-nav">
-            <div class="mobile-nav-items">
-                <div
-                    class="mobile-nav-item"
-                    data-section="inicio"
-                    data-track="mobile-nav-inicio"
-                >
-                    <div class="mobile-nav-icon">🏠</div>
-                    <div class="mobile-nav-label">Inicio</div>
-                </div>
-                <div
-                    class="mobile-nav-item"
-                    data-section="servicios"
-                    data-track="mobile-nav-servicios"
-                >
-                    <div class="mobile-nav-icon">🔄</div>
-                    <div class="mobile-nav-label">Servicios</div>
-                </div>
-                <div
-                    class="mobile-nav-item"
-                    data-section="proceso"
-                    data-track="mobile-nav-proceso"
-                >
-                    <div class="mobile-nav-icon">📋</div>
-                    <div class="mobile-nav-label">Proceso</div>
-                </div>
-                <div
-                    class="mobile-nav-item"
-                    data-section="calculadora"
-                    data-track="mobile-nav-calculadora"
-                >
-                    <div class="mobile-nav-icon">💰</div>
-                    <div class="mobile-nav-label">ROI</div>
-                </div>
-                <div
-                    class="mobile-nav-item"
-                    data-section="calendario"
-                    data-track="mobile-nav-calendario"
-                >
-                    <div class="mobile-nav-icon">📅</div>
-                    <div class="mobile-nav-label">Cita</div>
-                </div>
-                <div
-                    class="mobile-nav-item"
-                    data-section="contacto"
-                    data-track="mobile-nav-contacto"
-                >
-                    <div class="mobile-nav-icon">✉️</div>
-                    <div class="mobile-nav-label">Contacto</div>
-                </div>
-
-                <div
-                    class="mobile-nav-item"
-                    data-section="aprende"
-                    data-track="mobile-nav-aprende"
-                >   
-                    <a href="recursos/index.html" target="_blank" class="mobile-nav-link">
-                        <div class="mobile-nav-icon">🎓</div>
-                        <div class="mobile-nav-label">Aprende con Nosotros</div>
-                    </a>
-                </div>
-                <div
-                    class="mobile-nav-item"
-                    data-section="ejemplos"
-                    data-track="mobile-nav-ejemplos"
-                >
-                    <a href="recursos/index.html" target="_blank" class="mobile-nav-link">
-                        <div class="mobile-nav-icon">⚙️</div>
-                        <div class="mobile-nav-label">Ejemplo de Automatización</div>
-                    </a>
-
-                </div>
-                              
-            </div>
-            
-            </div>
-            
-        </nav>
-    </div>
-
-        <script src="../inteligencia4sfgcatV2.js"></script>
+        <script src="script.js"></script>
     </body>
 </html>

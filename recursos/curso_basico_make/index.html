@@ -1,0 +1,2201 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Curso Básico de Make</title>
+        <!-- Favicon -->
+        <link rel="icon" type="image/x-icon" href="LogoFavicon/favicon-v2.ico" />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="favicon-16x16.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="favicon-32x32.png"
+        />
+        <meta
+            name="description"
+            content="Curso básico de Make: aprende los conceptos de automatización en formato texto y vídeo."
+        />
+        <style>
+
+            /* Estilos generales */
+    * {
+    box-sizing: border-box; /* CRÍTICO: previene overflow */
+    }
+    html {
+        overflow-x: hidden;
+    }
+
+    body {
+        font-family: "Arial", sans-serif;
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 20px;
+        line-height: 1.6;
+        background-color: #f0f4f8;
+        overflow-x: hidden; /* Previene scroll horizontal */
+    }
+
+    h1,
+    h2,
+    h3 {
+        color: #2c3e50;
+        word-wrap: break-word; /* Rompe palabras largas */
+    }
+
+    h1 {
+        border-bottom: 3px solid hsl(204, 70%, 53%);
+        padding-bottom: 5px;
+    }
+
+    .teoria, .practica {
+        border-bottom: 3px solid hsl(204, 70%, 53%);
+        padding-bottom: 10px;
+        
+    }
+    
+    p {
+        margin-bottom: 15px;
+        word-wrap: break-word;
+    }
+
+/* Bloques visuales */
+
+
+    #tittle a {
+        margin: 0;
+        height: 30px;
+    }
+
+    .block {
+        background-color: white;
+        padding: 20px;
+        margin: 20px 0;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        width: 100%; /* Asegura que no exceda el contenedor */
+        overflow-wrap: break-word;
+    }
+
+    .sangria {
+        margin-left: 60px;
+    }
+    .sangria2 {
+        margin-left: 30px;
+    }
+    .sangria3 {
+        margin-left: 30px;
+    }
+    .sangria4 {
+        margin-left: 30px;
+    }
+
+    .block img {
+        max-width: 100%;
+        height: auto; /* Mantiene proporción */
+        border-radius: 8px;
+        margin: 15px 0;
+        display: block; /* Evita espacios extra */
+    }
+
+/* Índice de lección */
+    .index, .indext{
+        background-color: #eaf2f8;
+        padding: 15px;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        width: 100%;
+        overflow-wrap: break-word;
+    }
+
+    .indext strong, .index strong {
+        display: block;
+        margin-bottom: 12px;
+    }
+
+    .index a, .indext a {
+        display: block;
+        color: #2980b9;
+        text-decoration: none;
+        margin-bottom: 8px;
+        word-wrap: break-word;
+    }
+
+    .index a:hover, .indext a:hover {
+        text-decoration: underline;
+    }
+
+/* Tabs */
+    .tab-container {
+        background: #fff;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        margin-bottom: 30px;
+        width: 100%;
+    }
+
+    .tabs {
+        display: flex;
+        margin-bottom: 15px;
+        flex-wrap: wrap; /* Permite envolver tabs si son muchos */
+        gap: 5px;
+    }
+
+    .tab-button {
+        flex: 1;
+        min-width: 100px; /* Ancho mínimo */
+        padding: 10px;
+        border: none;
+        background: #eaf2f8;
+        cursor: pointer;
+        border-radius: 5px 5px 0 0;
+        font-weight: bold;
+        color: #0066cc;
+        margin-right: 5px;
+    }
+
+    .tab-button.active {
+        background: #0066cc;
+        color: #fff;
+    }
+
+    .tab-content {
+        padding: 15px;
+        border-top: 2px solid #0066cc;
+        overflow-wrap: break-word;
+    }
+
+/* Botones de navegación */
+    .buttons {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 30px;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    .buttons a {
+        text-decoration: none;
+        background-color: #3498db;
+        color: white;
+        padding: 12px 25px;
+        border-radius: 6px;
+        font-weight: bold;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .buttons a:hover {
+        background-color: #2980b9;
+    }
+
+/* Destacado SEO */
+    .highlight {
+        font-weight: bold;
+        color: #e74c3c;
+    }
+
+/* Video placeholder */
+.video-placeholder {
+    background-color: #dfe6e9;
+    padding: 10px;          /* antes 30px */
+    border-radius: 10px;
+    margin: 20px 0;
+    width: 100%;
+}
+
+.video-placeholder iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border: 0;
+    display: block;
+}
+
+    .contenedor {
+        width: 100%;
+        text-align: center;
+        overflow-x: hidden;
+        overflow-y: visible;
+    }
+
+    .contenedor img {
+        display: inline-block;
+        max-width: 100%;
+        height: auto;
+    }
+
+    img {
+        max-width: 100% !important;
+        width: 100% !important;
+        height: auto !important;
+    }
+
+    .img-ajustada {
+    width: 100%;
+    max-width: 400px; /* Ajusta este valor al tamaño que quieras en escritorio */
+    height: auto;
+    display: block;
+    margin: 0 auto; /* Esto las centra */
+}
+
+    /*claude.html*/
+    header {
+        background-color: #0066cc;
+        border-bottom: 1px solid #ddd;
+        padding: 1.5rem 2rem;
+        font-family: "Poppins", Arial, sans-serif;
+        width: 100%;
+        position: sticky;
+        top: 0;
+        z-index: 999;
+    }
+
+    .header-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .left-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+        flex: 1;
+    }
+
+    .logo-img {           /* ← AQUÍ ESTÁ */
+        width: 400px;
+        max-width: 400px;
+        height: auto;
+    }
+
+    .logo-img{
+        transition: transform 0.4s ease;
+    }
+    
+    .logo-img:hover {
+        transform: scale(1.05);
+    }
+
+
+    .header-text,
+    .header-text2 {
+        font-size: 1.1rem;
+        color: blanchedalmond;
+        margin: 0 0 0.3rem 0;
+        line-height: 1.5;
+        font-weight: 400;
+    }
+
+    .contact-button {
+        background-color:#eaf2f8;
+        color: #0066cc;
+        text-decoration: none;
+        padding: 1rem 2rem;
+        border-radius: 9999px;
+        font-weight: 600;
+        font-size: 1.1rem;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        white-space: nowrap;
+    }
+
+    .index-button {
+        display: block;              /* Hace que cada enlace sea un bloque completo */
+        width: 50%;                  /* Ajusta el ancho (por ejemplo, 80% del contenedor) */
+        margin: 10px auto;           /* Deja espacio arriba/abajo y centra horizontalmente */
+        padding: 7px 0;             /* Espacio interior: 10px arriba/abajo */
+        text-align: center;          /* Centra el texto */
+        background-color: #eaf2f8;     /* Color de fondo */
+        color:#0056d2;       
+        font-weight: bold;                  /* Color del texto */
+        text-decoration: none;       /* Quita el subrayado */
+        border-radius: 8px;          /* Bordes redondeados */
+        border: 1px solid #eaf2f8;      /* Opcional: borde visible */        
+    }
+
+    .contact-button:hover {
+        background-color: white;
+        transform: scale(1.05);
+    }
+
+    .index-button:hover {
+        background-color:  #0066cc;
+        color: white;                
+    }
+
+    a {
+        font-size: 0.85em; 
+    }
+
+    .index-button a:hover {        
+        color: #0066cc !important;               
+    }      
+
+/* Tablets y pantallas medianas */
+    @media (max-width: 950px) {
+        .header-content {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .left-section {
+            flex-direction: column;
+        }
+    }
+
+    @media (min-width: 951px) {
+        .logo-img {
+            width: 450px !important;
+        }
+    }
+
+/* Tablets y pantallas medianas - Logo más grande */
+    @media (min-width: 481px) and (max-width: 950px) {
+        .logo-img {
+            width: 380px !important;
+        }
+    }
+
+/* Móviles grandes */
+    @media (max-width: 600px) {          
+        .header-text,
+        .header-text2 {
+            font-size: 1.3rem;
+        }
+
+        .contact-button {
+            font-size: 1.4rem;
+            padding: 1.2rem 2.4rem;
+        }
+    }
+
+/*fin claude*/
+
+/*Video*/
+.video-placeholder video {
+    width: 100%;        /* Se adapta al espacio disponible */
+    max-width: 640px;   /* Nunca será más grande que tu tamaño ideal */
+    height: auto;       /* Mantiene las proporciones */
+    display: block;     
+    margin: 0 auto;     /* Lo centra dentro del “folio” */
+}
+
+/*Fin Video*/
+
+/*Footer*/
+    footer {   
+        background:#1e293b;
+        color: white;
+        text-align: center;
+        padding: 40px 0;
+        margin-top: 60px;
+    }
+
+    .footer-content {    
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .footer-links {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .social-links {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+    }
+
+    .social-link {
+        display: inline-block;
+        padding: 10px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.1);
+        transition: all 0.3s ease;
+        text-decoration: none;
+    }
+
+    .social-link:hover {
+        background: rgba(255, 255, 255, 0.2);
+        transform: translateY(-2px);
+    }
+
+    .social-icon {
+        width: 24px;
+        height: 24px;
+        fill: white;
+    }
+
+    .footer-logo {
+        display: inline-block;
+        transition: transform 0.3s ease;
+    }
+
+    .footer-logo:hover {
+        transform: scale(1.05);
+    }
+
+    .footer-text {
+        text-align: center;
+}
+
+    .contact-info {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .contact-item {
+        display: flex;
+        align-items: center;    
+        gap: 8px;
+        text-decoration: none;
+        color: var(
+        --accent-color
+    ); 
+    }
+
+    .contact-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+/*Fin Footer */
+
+/* === RESPONSIVE === */
+
+/* Tablets y dispositivos medianos */
+    @media (max-width: 768px) {
+        body {
+            padding: 15px;
+            max-width: 100%;
+        }
+
+        #tittle {
+            flex-direction: column;
+            text-align: center;
+            gap: 10px;
+        }
+
+        #tittle a {
+            height: auto;
+        }
+
+    /* Reducir sangrías */
+        .sangria {
+            margin-left: 20px;
+        }
+        .sangria2,
+        .sangria3,
+        .sangria4 {
+            margin-left: 15px;
+        }
+
+        .block,
+        .tab-container,
+        .index,
+        .video-placeholder {
+            padding: 15px;
+        }
+
+    /* Tabs en columna */
+        .tabs {
+            flex-direction: column;
+        }
+
+        .tab-button {
+            margin-right: 0;
+            margin-bottom: 5px;
+            width: 100%;
+        }
+
+    /* Botones apilados */
+        .buttons {
+            flex-direction: column;
+        }
+
+        .buttons a {
+            width: 100%;
+            text-align: center;
+        }
+    }
+
+/* Móviles pequeños */
+    @media (max-width: 480px) {
+        body {
+            padding: 10px;
+        }
+
+        h1 {
+            font-size: 1.5rem;
+        }
+
+        h2 {
+            font-size: 1.3rem;
+        }
+
+        h3 {
+            font-size: 1.1rem;
+        }
+
+        p {
+            font-size: 0.95rem;
+        }
+    
+        header {
+            padding: 2rem 1rem;
+        }
+
+        .header-content {
+            display: block;
+            text-align: center;
+        }
+
+        .left-section {
+            display: block;
+            margin-bottom: 1.5rem;
+        }
+
+        .logo-img {
+            width: 85vw;
+            max-width: 380px;
+            display: block;
+            margin: 0 auto 1.5rem auto;
+        }
+
+        .text-container {
+            display: block;
+            margin-bottom: 1.5rem;
+        }
+
+        .header-text,
+        .header-text2 {
+            font-size: 0.90rem;
+            line-height: 1.6;
+            color: blanchedalmond;
+            font-weight: 400;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .contact-button {
+            font-size: 0.85rem;
+            padding: 1rem 2rem;
+            display: inline-block;
+        }
+
+    /* Sangrías mínimas */
+        .sangria {
+            margin-left: 10px;
+        }
+        .sangria2,
+        .sangria3,
+        .sangria4 {
+            margin-left: 8px;
+        }
+
+        .block,
+        .tab-container,
+        .index,
+        .video-placeholder {
+            padding: 12px;
+            margin: 15px 0;
+        }
+
+        .buttons a {
+            padding: 10px 15px;
+            font-size: 0.95rem;
+        }
+
+        /* Imágenes adaptadas */
+        .block img,
+        .contenedor img {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+   /*footer*/
+        .contact-icon {
+            width: 25px;
+            height: 25px;
+        }
+        .contact-text {
+            font-size: 12px;
+        }
+    }
+
+/* Móviles muy pequeños */
+    @media (max-width: 340px) {
+        .logo-img {
+            width: 90vw;
+            max-width: 350px;
+        }
+
+        .header-text,
+        .header-text2 {
+            font-size: 0.75rem;
+            line-height: 1.5;
+        }
+
+        .contact-button {
+            font-size: 1.15rem;
+            padding: 0.95rem 1.9rem;
+        }
+/*footer*/
+        .contact-icon {
+            width: 20px;
+            height: 20px;
+        }
+        .contact-text {
+            font-size: 10px;
+        }
+    }
+    #titulo-teoria, #titulo-practica {
+    scroll-margin-top: 140px;
+}
+</style>
+    </head>
+    <body>
+        <header>
+            <div class="header-content">
+                <div class="left-section">
+                    <a 
+                    href="https://www.nexautia.com"
+                    target="_blank"
+                    rel="noopener noreferrer"                    
+                    >
+                        <img 
+                        src="LogoFavicon/logo_nexautia.svg"
+                        alt="NEXAUTIA" 
+                        class="logo-img" />
+                    </a>                    
+                    
+                    <div class="text-container">
+                        <p class="header-text">
+                            © 2025 Nexautia. Transformando empresas con
+                            automatización inteligente.
+                        </p>
+                        <p class="header-text2">
+                            Creado con ❤️ por Nexautia para el traspaso de
+                            conocimiento.
+                        </p>
+                    </div>
+                </div>
+
+                <a
+                    href="#contact_clients"
+                    class="contact-button"
+                >
+                    Contacto
+                </a>
+            </div>
+        </header>
+        <h1>⚙️ Curso Básico de Make y Automatizaciones</h1>
+        <img src="imagenes/make_card.webp" alt="Curso de Make" class="card-svg">
+        <!-- Intro del curso -->
+        <div class="block">
+            <p>
+                Presentamos el <strong>Curso Básico de Make y Automatizaciones</strong>, diseñado para
+                personas que quieren entender la automatización desde cero y aplicarla en casos reales.
+            </p>
+            <p>
+                El curso se divide en <strong>dos partes</strong>:
+            </p>
+            <ul>
+                <li><strong>Parte teórica:</strong> conceptos clave para entender cómo funciona Make.</li>
+                <li><strong>Parte práctica:</strong> creación de automatizaciones reales paso a paso.</li>
+            </ul>
+
+            <h3>👉 Escoge por dónde quieres empezar:</h3>
+
+            <div class="buttons">
+                <a href="javascript:void(0)" onclick="mostrarSeccion('teoria')">Parte teórica</a>
+                <a href="javascript:void(0)" onclick="mostrarSeccion('practica')">Parte práctica</a>
+            </div>
+        </div>
+
+        <div id="seccion-practica" style="display:none;">
+            <h2 class="practica" id="titulo-practica">⚙️ Parte 2. Práctica</h2>
+                <!-- Índice interno de la lección -->
+            <div class="index" id="index">
+                <strong>Índice de la lección:</strong>
+                <a href="#videoPractica1">1. Formulario Tally con Router y Gmail</a>
+                <a href="#videoPractica2">2. Cómo usar Array Aggregator para preparar datos y enviarlos por Gmail</a>
+                <a href="#videoPractica3">3. Automatización en Make para guardar adjuntos de Gmail en Dropbox</a>
+                <a href="#videoPractica4">4. Automatiza noticias RSS en Gmail con Make (escenario básico)</a>
+                <a href="#videoPractica5">5. Automatiza noticias RSS en Gmail con Make usando Text Aggregator</a>
+                <a href="#videoPractica6">6. Cómo procesar datos externos en Make con Iterator (HTTP → Google Sheets)</a>
+                <a href="#videoPractica7">7. Eliminar fondo de imágenes automáticamente con Make y remove.bg</a>
+                <a href="#videoPractica8">8.  Publicar automáticamente en Facebook e Instagram con Make y RSS</a>
+            </div>
+
+            
+            <!-- Bloque 1 -->
+            <div class="block" id="videoPractica1">
+                <div id="tittle">
+                    <h2>1. Automatización con Make: Formulario Tally con Router y Gmail</h2>
+                </div>
+
+                <div class="tab-container">
+                    
+                    <div class="tab-content" id="text1">
+                        <section>
+                            <h3>1. 🛠️ Automatización con Make: Formulario Tally con Router y Gmail</h3>
+                            <div class="sangria">
+                                <p> <b>Automatización creada con Make</b> que permite gestionar <b>formularios de contacto de forma inteligente</b>. </p>
+                                <p><b>A partir de un formulario en Tally</b>, el sistema identifica <b>automáticamente</b> el departamento seleccionado por el usuario (ventas o soporte) y envía el correo al destinatario correspondiente mediante Gmail.</p>    
+                                <p>Una solución sencilla y eficaz para organizar solicitudes, mejorar la atención al cliente y evitar gestiones manuales innecesarias desde el primer contacto.</p>                             
+                            </div>                                                    
+                        </section>
+                    </div>
+                        <div class="video-placeholder">
+                            <iframe
+                                src="https://www.youtube-nocookie.com/embed/53orJI1Nmd4"                                                   
+                                title="Vídeo del curso"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen
+                            ></iframe>
+                        </div>                               
+                    <a href="#titulo-practica" class="index-button">Volver al índice</a>
+            </div>
+        </div>
+
+        <!-- Bloque 2 -->
+        <div class="block" id="videoPractica2">
+            <div id="tittle">
+                <h2>2. Cómo usar Array Aggregator para preparar datos y enviarlos por Gmail</h2>
+            </div>
+
+            <div class="tab-container">
+                
+                <div class="tab-content" id="text2">
+                    <section>
+                        <h3>2. Cómo usar Array Aggregator para preparar datos y enviarlos por Gmail</h3>
+                        <div class="sangria">
+                            <p> En este segundo <b>vídeo del curso práctico de Make</b> entramos en uno de los conceptos más importantes de toda la <b>automatización en Make</b>: el trabajo con <b>arrays</b> y el uso del <b>Array Aggregator</b> para preparar datos antes de enviarlos a otros módulos.</p>
+                            <p>A partir de un caso real y muy sencillo —la obtención de información meteorológica mediante el módulo Weather— aprenderás que muchos módulos de <b>Make</b> no devuelven un único dato, sino <b>conjuntos de datos (arrays)</b>. Estos datos no pueden enviarse directamente a módulos como <b>Gmail</b> sin antes <b>agruparlos, ordenarlos y darles una estructura adecuada.</b></p>                             
+                            <p>Aquí es donde el <b>Array Aggregator</b> se convierte en una pieza clave. Verás cómo recoger múltiples elementos generados por un <b>módulo</b>, cómo convertirlos en un único bloque de información y cómo preparar ese contenido para que pueda ser utilizado correctamente <b>por otros módulos del escenario.</b></p>                             
+                            <p>Este vídeo es fundamental para entender cómo fluye la información dentro de <b>Make</b> y por qué el uso correcto del <b>Array Aggregator</b> marca la diferencia entre una automatización básica y una automatización bien diseñada.</p>                             
+                    </div>                                                    
+                    </section>
+                </div>
+                    <div class="video-placeholder">
+                        <iframe
+                            src="https://www.youtube-nocookie.com/embed/6t4aQ9sA0KY"                                                   
+                            title="Vídeo del curso"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen
+                        ></iframe>
+                    </div>                               
+                <a href="#titulo-practica" class="index-button">Volver al índice</a>
+            </div>
+        </div>
+
+        <!-- Bloque 3 -->
+        <div class="block" id="videoPractica3">
+            <div id="tittle">
+                <h2>3. Automatización en Make para guardar adjuntos de Gmail en Dropbox</h2>
+            </div>
+
+            <div class="tab-container">
+                
+                <div class="tab-content" id="text3">
+                    <section>
+                        <h3>3. Automatización en Make para guardar adjuntos de Gmail en Dropbox</h3>
+                        <div class="sangria">
+                            <p>Esta <b>automatización en Make</b> permite <b>guardar automáticamente los adjuntos de Gmail en Dropbox</b>, eliminando por completo la necesidad de descargar archivos manualmente y mejorando la <b>automatización de procesos</b> en entornos profesionales. </p>
+                            <p>El escenario comienza con el módulo <b>Gmail – Watch Emails</b>, que detecta de forma automática la entrada de nuevos correos electrónicos según la frecuencia configurada. A continuación, el módulo <b>Gmail – List Email Attachments and Media</b> se encarga de <b>recuperar correctamente todos los archivos adjuntos</b>, incluidos <b>adjuntos tradicionales y adjuntos multimedia</b>, algo imprescindible en las automatizaciones actuales con <b>Gmail</b>. </p>
+                            <p>Finalmente, mediante el módulo <b>Dropbox – Upload a File</b>, los archivos se <b>suben automáticamente a una carpeta de Dropbox</b>, previamente creada, permitiendo una <b>gestión documental automatizada</b>, ordenada y segura. </p>
+                            <p>Esta <b>automatización con Make, Gmail y Dropbox</b> es ideal para <b>automatizar la gestión de documentos</b>, centralizar archivos recibidos por correo electrónico y optimizar flujos de trabajo sin código <b>(no-code / low-code)</b>. </p>
+                        </div>                                                    
+                    </section>
+                </div>
+                    <div class="video-placeholder">
+                        <iframe
+                            src="https://www.youtube-nocookie.com/embed/K58VEBBDR7I"                                                   
+                            title="Vídeo del curso"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen
+                        ></iframe>
+                    </div>                               
+                <a href="#titulo-practica" class="index-button">Volver al índice</a>
+            </div>
+        </div>
+
+        <!-- Bloque 4 -->
+        <div class="block" id="videoPractica4">
+            <div id="tittle">
+                <h2>4. Automatiza noticias RSS en Gmail con Make (escenario básico)</h2>
+            </div>
+
+            <div class="tab-container">
+                
+                <div class="tab-content" id="text4">
+                    <section>
+                        <h3>4. Automatiza noticias RSS en Gmail con Make (escenario básico)</h3>
+                        <div class="sangria">
+                            <p> En esta <b>automatización</b> trabajamos con un escenario básico en <b>Make</b>, donde conectamos un <b>módulo RSS</b> con <b>Gmail</b> para recibir automáticamente noticias por correo electrónico.</p>
+                            <p>Cada noticia obtenida desde el <b>módulo RSS</b> se envía de forma individual a <b>Gmail</b>, generando un <b>correo por cada elemento recibido</b>. Este escenario es ideal para entender los conceptos fundamentales de <b>Make</b>, como el <b>flujo entre módulos</b> y el <b>tratamiento de la información en forma de paquetes.</b></p>                             
+                            <p><b>En el siguiente vídeo</b> se muestra cómo <b>optimizar esta misma automatización</b> para hacerla más <b>eficiente y reducir el número de correos enviados.</b></p>                             
+                    </div>                                                    
+                    </section>
+                </div>
+                    <div class="video-placeholder">
+                        <iframe
+                            src="https://www.youtube-nocookie.com/embed/zmn9rM1cbwM"                                                   
+                            title="Vídeo del curso"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen
+                        ></iframe>
+                    </div>                               
+                <a href="#titulo-practica" class="index-button">Volver al índice</a>
+            </div>
+        </div>
+            
+        
+        <!-- Bloque 5 -->
+        <div class="block" id="videoPractica5">
+            <div id="tittle">
+                <h2>5. Automatiza noticias RSS en Gmail con Make usando Text Aggregator </h2>
+            </div>
+
+            <div class="tab-container">
+                
+                <div class="tab-content" id="text5">
+                    <section>
+                        <h3>5. Automatiza noticias RSS en Gmail con Make usando Text Aggregator </h3>
+                        <div class="sangria">
+                            <p>En esta <b>automatización</b> trabajamos con un escenario sencillo pero muy representativo, donde combinamos un <b>módulo RSS</b>, un <b>Text Aggregator</b> y <b>Gmail.</b></p>
+                            <p>El objetivo es recoger varias noticias desde un <b>feed RSS</b> y, en lugar de tratarlas de forma individual, <b>agruparlas previamente utilizando el módulo Text Aggregator</b>, que se convierte en la pieza clave de toda la <b>automatización.</b></p>
+                            <p>De este modo, toda la información obtenida desde el <b>módulo RSS de Make</b> pasa primero por el <b>módulo Text Aggregator de Make</b>, que la unifica en un solo bloque de texto, y es ese resultado el que finalmente se envía a <b>Gmail</b> en un único correo electrónico.</p>
+                            <p>En el vídeo veremos cómo encajar estos tres <b>módulos</b> y cómo cambia el comportamiento del <b>escenario</b> al introducir el <b>módulo Text Aggregator</b> como elemento central.</p>                                                                          
+                </div>                                                    
+                    </section>
+                </div>
+                    <div class="video-placeholder">
+                        <iframe
+                             src="https://www.youtube-nocookie.com/embed/1MGewHdkGX8"                                                                               
+                            title="Vídeo del curso"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen
+                        ></iframe>
+                    </div>                               
+                <a href="#titulo-practica" class="index-button">Volver al índice</a>
+            </div>
+        </div>
+
+        
+        <!-- Bloque 6 -->
+        <div class="block" id="videoPractica6">
+            <div id="tittle">
+                <h2>6. Cómo procesar datos externos en Make con Iterator (HTTP → Google Sheets) </h2>
+            </div>
+
+            <div class="tab-container">
+                
+                <div class="tab-content" id="text6">
+                    <section>
+                        <h3>6. Cómo procesar datos externos en Make con Iterator (HTTP → Google Sheets) </h3>
+                        <div class="sangria">
+                            <p>En este vídeo aprenderás cómo trabajar en <b>Make</b> con información que llega desde una <b>fuente externa</b> y cómo <b>procesarla</b> correctamente dentro de un <b>escenario.</b></p>
+                            <p>Veremos cómo utilizar el <b>módulo Iterator de Make</b> para transformar una lista de usuarios que llega toda junta y poder trabajar con cada elemento de forma individual, guardando finalmente los datos en <b>Google Sheets.</b></p>
+                            <p>Una lección clave para entender cómo fluye la información en <b>automatizaciones reales.</b></p>
+                </div>                                                    
+                    </section>
+                </div>
+                    <div class="video-placeholder">
+                        <iframe
+                            src="https://www.youtube-nocookie.com/embed/hkG8nu8iQRI"                                                                               
+                            title="Vídeo del curso"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen
+                        ></iframe>
+                    </div>                               
+                <a href="#titulo-practica" class="index-button">Volver al índice</a>
+            </div>
+        </div>                     
+
+        <!-- Bloque 7 -->
+        <div class="block" id="videoPractica7">
+            <div id="tittle">
+                <h2>7. Eliminar fondo de imágenes automáticamente con Make y remove.bg</h2>
+            </div>
+
+            <div class="tab-container">                
+                <div class="tab-content" id="text7">
+                    <section>
+                        <h3>7. 🛠️ Eliminar fondo de imágenes automáticamente con Make y remove.bg</h3>
+                        <div class="sangria">
+                            <p> En este vídeo mostramos cómo crear una <b>automatización</b> que <b>elimina automáticamente el fondo de las imágenes</b> utilizando <b>Make</b> y <b>Google Drive.</b></p>
+                            <p><b>Cada vez que se suben nuevas imágenes</b> a una carpeta concreta de <b>Google Drive</b>, la <b>automatización</b> se encarga de procesarlas, <b>quitarles el fondo</b> y guardarlas en otra carpeta de <b>Google Drive</b> diferente, listas para su uso.</p>    
+                            <p>Es un ejemplo práctico y visual de cómo <b>automatizar tareas repetitivas</b> y <b>ahorrar tiempo en el día a día.</b></p>                             
+                        </div>                                                    
+                    </section>
+                </div>
+                    <div class="video-placeholder">
+                        <iframe
+                            src="https://www.youtube-nocookie.com/embed/0bzy1iO180E"                                                   
+                            title="Vídeo del curso"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen
+                        ></iframe>
+                    </div>                               
+                <a href="#titulo-practica" class="index-button">Volver al índice</a>
+            </div>
+        </div>
+
+<!-- Bloque 8 -->
+<div class="block" id="videoPractica8">
+    <div id="tittle">
+        <h2>8. Publicar automáticamente en Facebook e Instagram con Make y RSS</h2>
+    </div>
+
+    <div class="tab-container">                
+        <div class="tab-content" id="text8">
+            <section>
+                <h3>8. 🛠️ Publicar automáticamente en Facebook e Instagram con Make y RSS</h3>
+                <div class="sangria">
+                    <p> <b>En este vídeo vemos cómo crear una automatización</b> sencilla en <b>Make</b> para <b>publicar contenidos automáticamente</b> en <b>Facebook</b> e <b>Instagram</b> a partir de un <b>feed RSS.</b></p>
+                    <p>Trabajaremos con una estructura básica —<b>RSS</b>, <b>router en Make</b> y <b>redes sociales</b>— pensada como punto de partida para entender la lógica del <b>escenario en Make</b> y aprender a reutilizar la información en distintos canales.</p>    
+                    <p>Es un ejemplo práctico y fácil de seguir, ideal para empezar y, a partir de ahí, adaptar y ampliar la <b>automatización</b> según las necesidades reales de cada negocio.</p>                             
+                </div>                                                    
+            </section>
+        </div>
+            <div class="video-placeholder">
+                <iframe
+                    src="https://www.youtube-nocookie.com/embed/ijp7tJbJmBI"                                                   
+                    title="Vídeo del curso"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                ></iframe>
+            </div>                               
+        <a href="#titulo-practica" class="index-button">Volver al índice</a>
+    </div>
+</div>
+</div>
+
+
+        <div id="seccion-teoria">
+            <h2 class="teoria" id="titulo-teoria">⚙️ Parte 1. Teoría</h2>
+            <!-- Índice interno de la lección de teoría-->
+            <div class="indext" id="indext">
+                <strong>Índice de la lección:</strong>                
+                <a href="#conceptos1">1. Que es una automatización</a>
+                <a href="#conceptos2">2. Herramientas de automatización</a>
+                <a href="#conceptos3">3. Cómo se construye una automatización paso a paso</a>
+                <a href="#conceptos4">4. Los Disparadores – El Punto de Arranque de una Automatización</a>
+                <a href="#conceptos5">5. Conexiones: la llave que abre las aplicaciones</a>
+                <a href="#conceptos6">6. Conexiones: Webhooks: la puerta que escucha.</a>
+                <a href="#conceptos7">7. Acciones</a>
+                <a href="#conceptos8">8. Rutas, filtros y lógica: cuando tu escenario toma decisiones</a>
+                <a href="#conceptos9">9. Iterador: desmenuzando datos paso a paso</a>
+                <a href="#conceptos10">10. ArrayAggregator: reunir elementos en un solo paquete</a>
+                <a href="#conceptos11">11. Variables, contadores y funciones – El kit secreto de Make</a>
+            </div>
+
+            <!-- Bloque 1 teoría:  Que es una automatización -->
+            <div class="block" id="conceptos1">
+                <div id="tittle">
+                    <h2>1. Que es una automatización</h2>                    
+                </div>
+                
+                <!-- Pestañas -->
+                <div class="tab-container">                          
+                    
+                    <div class="tab-content" id="text1">
+                        <section>
+                            <h3>1. 📌 ¿Qué es una automatización?</h3>
+                            <div class="sangria">
+                                <p>
+                                <span class="highlight">Una automatización</span> es como tener un ayudante digital
+                                que hace tareas por ti de forma automática.
+                                </p>
+                                <p>
+                                👉 Tú decides la regla: “cuando pase esto 👉 haz
+                                esto otro, automáticamente”.
+                                </p>
+                            </div>
+
+                            <h3>2. 🔧 Herramientas más conocidas</h3>
+                                <div class="sangria">
+                                <p>◉ Zapier → muy fácil de usar, conecta miles de apps. </p>
+                                <p>◉ IFTTT → perfecto para empezar con cosas sencillas. </p>
+                                <p>◉ Make → muy visual, con muchas opciones.  </p>
+                                <p>◉ n8n → muy flexible, incluso lo puedes instalar en tu propio servidor.  </p>
+                                </div>  
+
+                            <h3>3. ✨ Ejemplos sencillos (para empezar) </h3>
+                            <div class="sangria">
+                                <p>◉ Guardar automáticamente tus fotos en la nube cada vez que las haces. </p>
+                                <p>◉ Publicar automáticamente en varias redes sociales con un solo clic. </p>
+                                <p>◉ Recibir automáticamente un WhatsApp cuando alguien rellena tu formulario. </p>
+                                <p>◉ Organizar automáticamente tus facturas: cuando llegan al correo, se guardan en tu carpeta de gastos. </p>
+                                <p>◉ Crear automáticamente un recordatorio en tu calendario cuando te mandan una cita por email.</p>
+                                <p>◉ Anotar automáticamente en tu lista de tareas cada vez que alguien te envía un pedido. </p>
+                            </div>
+
+                            <h3>4. 🚀 Ejemplos más avanzados (para crecer) </h3>
+                            <div class="sangria">
+                                <p>◉ Generar automáticamente facturas a partir de pedidos online y enviarlas al cliente.</p>
+                                <p>◉ Recoger automáticamente datos de correos, formularios y hojas de cálculo → analizarlos → y enviarte un informe semanal. </p>
+                                <p>◉ Coordinar automáticamente clientes, equipo y herramientas: cuando un cliente compra, recibe un email,
+                                se crea una tarea al equipo y se actualiza el CRM. </p>
+                            </div>
+
+                            <h3>5. 🌍 Y más allá… </h3>
+                            <div class="sangria">
+                                <p><b>La automatización</b> no tiene límites. </p>
+                                <p>Puedes empezar con tareas pequeñas y sencillas, pero también crear sistemas automáticos que conecten datos, aplicaciones y equipos completos. </p>
+                                <p>👉 Lo único que hace falta es imaginar lo que quieres lograr, porque hoy la tecnología ya permite casi todo. </p>
+                            </div>
+
+                            <h3>6. ✅ Ventajas de automatizar </h3>
+                            <div class="sangria">
+                                <p>◉ Ahorra tiempo automáticamente ⏳. </p>
+                                <p>◉ Reduce errores automáticamente ❌. </p>
+                                <p>◉ Da tranquilidad automáticamente 🧘. </p>
+                                <p>◉ Te permite enfocarte automáticamente en lo importante 💡. </p>
+                            </div>
+
+                            <h3>7. ✅ 📍 En resumen: </h3>
+                            <div class="sangria">
+                                <p><span class="highlight">La automatización </span>es
+                                como poner tu vida digital en piloto automático. De lo
+                                más sencillo a lo más complejo, las posibilidades son
+                                casi infinitas. La
+                                <span class="highlight">automatización</span> permite
+                                reemplazar tareas repetitivas por procesos automáticos.
+                                <span class="highlight">Make</span> conecta aplicaciones
+                                y servicios para que trabajen de forma coordinada.</p>
+                            </div>                                                
+                        </section>
+                        <div class="video-placeholder">
+                            <iframe
+                                src="https://www.youtube-nocookie.com/embed/gMGKjWjKBGw"                           
+                                title="Vídeo del curso"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen
+                            ></iframe>
+                        </div>                                
+                    <a href="#seccion-teoria" class="index-button">Volver al índice</a>
+                </div>
+            </div>
+            
+
+            <!-- Bloque 2 teoría: Herramientas de automatización -->
+            <div class="block" id="conceptos2">
+                <div id="tittle">
+                    <h2>2. Herramientas de automatización</h2>                    
+                </div>           
+                <div class="tab-container">                    
+                    <div class="tab-content" id="text2">
+                        <section>
+                            <h3>1. 🛠️ Herramientas de Automatización</h3>
+                            <div class="sangria">
+                                <p>
+                                <span class="highlight">La automatización</span> consiste en conectar aplicaciones para que hagan tareas solas, sin que tengas que repetirlas manualmente.
+                                </p>                              
+                            </div>
+
+                            <h3>2. 🔗 ¿Qué son las herramientas de automatización?</h3>
+                                <div class="sangria">
+                                <p><b>Son programas que funcionan como un pegamento digital:</b> unen diferentes aplicaciones y hacen que “hablen” entre sí.
+                                    Con ellas puedes crear flujos de trabajo (llamados workflows o escenarios) que se activan automáticamente cuando ocurre algo.
+                                </p>
+                                <p>👉 <b>Lo mejor es que no necesitas saber programar. </b>Estas herramientas están pensadas para que cualquiera pueda usarlas, incluso si nunca ha tocado una línea de código.
+                                </p>
+                                </div>  
+
+                            <h3>3. 📌 Ejemplo sencillo</h3>
+                            <div class="sangria">
+                                <p>1. Alguien rellena un formulario ✍️.</p>
+                                <p>2. La información escrita (nombre, correo, mensaje…) se guarda en una hoja de cálculo 📊.</p>
+                                <p>3. Automáticamente recibes un aviso por WhatsApp o correo 📩.</p>
+                                <p>👉 Todo esto pasa solo, sin que tengas que copiar y pegar nada.</p>
+                                <p>⚡ Si te fijas, esto ocurre porque <b>la herramienta de automatización</b> hace que el <b>formulario</b>, <b>la hoja de cálculo</b> y <b>WhatsApp</b> <b>puedan comunicarse entre ellos y trabajar en cadena.</b></p>
+                            </div>
+
+                            <h3>4. ⚡ Ejemplos rápidos</h3>
+                            <div class="sangria">
+                                <p>◉ Cuando alguien compra en tu tienda online 🛒 → se genera automáticamente una factura en PDF 📄.</p>
+                                <p>◉ Cuando recibes un email con un adjunto 📧 → ese archivo se guarda en tu Google Drive ☁️.</p>
+                                <p>◉ Cuando publicas en Instagram 📷 → el mismo contenido se comparte en Twitter 🐦 y LinkedIn 💼. </p>
+                                <p>◉ Una academia, por ejemplo, puede automatizar que cuando un alumno se inscribe 🧑‍🎓 → se le envíe un email de bienvenida ✉️ y se le apunte en una hoja de seguimiento 📑.</p>
+                                <p>👉 Estos flujos pueden ser muy simples o tan complejos como quieras.</p>
+                                </div>
+
+                            <h3>5. 🔝 Herramientas más usadas</h3>
+                            <div class="sangria">
+                                <p>◉<b>Zapier </b> → Muy popular y fácil de usar.</p>
+                                <p>◉ <b>Make (antes Integromat) </b>→ Flexible y potente, ideal para escenarios más avanzados.</p>
+                                <p>◉ <b>n8n </b>→ De código abierto, instalable en tu propio servidor, muy personalizable. </p>
+                            </div>
+
+                            <h3>6. 📊 Cuadro resumen Herramientas automatización</h3>
+                            <div class="sangria">
+                                Herramienta
+                                Dificultad
+                                Ventajas principales
+                                Ideal para…
+                                Zapier
+                                ⭐ Fácil
+                                Muy intuitivo, gran cantidad de integraciones
+                                Principiantes y pymes
+                                Make
+                                ⭐⭐ Media
+                                Muy visual, potente, permite flujos complejos
+                                Usuarios que quieren más control
+                                n8n
+                                ⭐⭐⭐ Avanzada
+                                Gratuita, de código abierto, 100% personalizable
+                                Usuarios técnicos o empresas con servidor propio
+                                
+                                
+                            </div>
+
+                            <h3>7. 💡 Beneficios de usar automatización</h3>
+                            <div class="sangria">
+                                <p>◉ <b>Ahorro de tiempo </b>⏳: evitas tareas repetitivas.</p>
+                                <p>◉ <b>Menos errores </b>❌: ya no dependes de copiar y pegar a mano.</p>
+                                <p>◉ <b>Más productividad </b>🚀: puedes centrarte en lo importante.</p>
+                                <p>◉ <b>Escalabilidad </b>📈: empiezas con cosas simples y puedes crecer hasta sistemas complejos.</p>
+                            </div>  
+                            
+                            <h3>8. 📝 En resumen</h3>
+                            <div class="sangria">
+                                <p><b>Las herramientas de automatización </b>son como un pegamento digital que conecta aplicaciones entre sí.
+                                    Te permiten <b>ahorrar tiempo</b> , <b>reducir errores</b> y <b>crear flujos que van desde lo más sencillo (guardar datos en una hoja de cálculo) hasta lo más complejo que puedas imaginar.
+                                        Y lo mejor: no necesitas saber programar para empezar 🚀.</b>
+                                </p>                              
+                            </div>    
+                            
+                        </section> 
+                        <div class="video-placeholder">
+                            <iframe
+                                src="https://www.youtube-nocookie.com/embed/RMV7RsFom-g"                                                    
+                                title="Vídeo del curso"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen
+                            >
+                            </iframe>                   
+                        </div>
+                    
+                    <a href="seccion-teoria" class="index-button">Volver al índice</a>
+                </div>
+            </div>
+
+            <!-- Bloque 3 teoría -->
+            <div class="block" id="conceptos3">
+                <h2>3. Cómo se construye una automatización paso a paso</h2>
+
+                <div class="tab-container">                    
+                    <div class="tab-content" id="text3">
+                        <section>
+                            <h3>1. 🛠️ Cómo se construye una automatización paso a paso</h3>
+                            <div class="sangria">
+                                <p> Hasta ahora hemos visto  <span class="highlight">qué es la automatización</span> y <span class="highlight">qué herramientas existen. </span>Pero puede que todavía tengas la duda: </p>
+                                <p>👉 “Vale, pero ¿cómo funciona esto en la práctica? ¿Qué pinta tiene una automatización real?”</p>    
+                                <p>En esta ficha vamos a descubrir la <b>estructura básica de cualquier automatización,</b> sin entrar todavía en conceptos demasiado técnicos. La idea es que entiendas la lógica general, como si vieras el mapa de un viaje antes de caminarlo.</p>                             
+                            </div>
+
+                            <h3>2. 📦  El escenario o flujo (workflow)</h3>
+                                <div class="sangria">
+                                <p>Cada automatización vive dentro de lo que se suele llamar <b>escenario</b> (en Make), <b>zap</b> (en Zapier) o <b>workflow</b> (flujo de trabajo, en general).</p>
+                                <p>👉 Imagina que es <b>el contenedor o caja donde sucede la magia.</b> Dentro de ese escenario colocamos los pasos que queremos que se ejecuten.</p>
+                                <p>💡 Ejemplo sencillo:</p>
+                                <p>Un escenario podría ser: “Cada vez que alguien rellene un formulario (por ejemplo, con <b>Google Forms</b>), guarda su respuesta en una hoja de cálculo (por ejemplo, <b>Google Sheets o Excel</b>) y envíale un correo de confirmación (por ejemplo, con <b>Gmail o Outlook</b>).”</p>
+                                </div>  
+
+                            <h3>3. 🧩 Los módulos o bloques de acción</h3>
+                            <div class="sangria">
+                                <p>Dentro del escenario añadimos lo que las herramientas llaman <b>módulos</b> (en Make), <b>pasos</b> (en Zapier) o <b>nodos</b> (en n8n).</p>
+                                <p>Un módulo es simplemente un <b>bloque que realiza una tarea concreta dentro del flujo (escenario o workflow).</b></p>
+                                <div class="sangria2">
+                                    <p>⚫ Muchas veces un módulo corresponde a una aplicación externa:</p>  
+                                    <div class="sangria3">
+                                        <p>◉ Ejemplo: un módulo de <b>Gmail</b> para detectar si llega un correo.</p> 
+                                        <p>◉ Ejemplo: un módulo de <b>Google Sheets</b> para añadir una fila en una hoja de cálculo.</p> 
+                                    </div>
+                                    <p>⚫ Pero otras veces un módulo es una función interna de la propia herramienta:</p>
+                                    <div class="sangria3">
+                                        <p>◉ Ejemplo: un módulo que convierte datos a otro formato (como <b>JSON</b> ).</p> 
+                                        <p>◉ Ejemplo: un módulo que cuenta cuántos registros han llegado.</p> 
+                                        <p>◉ Ejemplo: un módulo que agrupa varios datos antes de enviarlos.</p> 
+                                    </div>
+                                    <p>👉 Lo importante es entender que un <b>módulo no siempre es igual a una aplicación</b>, sino que es <b>una pieza del flujo/escenario que hace algo específico:</b> recibe, transforma o envía datos.</p>
+                                </div>
+                                <p>Podrías verlo como una <b>cadena de montaje:</b></p>
+                                    <div class="sangria2">
+                                        <p>1. Entra un dato (por ejemplo, el <b>nombre y correo electrónico</b> de alguien).</p>  
+                                        <p>2. Pasa por un <b>módulo</b> que lo guarda en una hoja de cálculo (aplicación).</p>  
+                                        <p>3. Después pasa por otro <b>módulo</b> que transforma el dato en un formato específico <b>(función interna)</b>.</p>  
+                                        <p>4. Finalmente llega a un <b>módulo</b> que lo envía como correo de bienvenida (aplicación).</p>  
+                                    </div>                   
+                                <p>👉 De este modo, todos los módulos trabajan juntos como engranajes en un mecanismo.</p>
+                            </div>
+                            
+                            <h3>4. 🚀 El viaje de los datos</h3>
+                            <div class="sangria">
+                                <p>La automatización, en el fondo, es un viaje de datos entre aplicaciones.</p>
+                                <div class="sangria2">
+                                    <p>◉ Todo empieza con un <b>evento inicial</b>: alguien rellena un formulario (por ejemplo, con <b>Google Forms</b>), llega un correo (por ejemplo, con <b>Gmail o Outlook</b>) o se añade un nuevo contacto en una base de datos (por ejemplo, en <b>Airtable o Access</b>).</p> 
+                                    <p>◉ Luego, ese dato “viaja” de módulo en módulo (es decir, de aplicación en aplicación o función en función).</p> 
+                                    <p>◉ Finalmente, llega a un destino: guardarse, enviarse o generar una notificación.</p> 
+                                </div>
+                                <p>Lo bonito es que <b>tú decides el camino</b>: puede ser tan sencillo como un par de pasos, o mucho más complejo, con bifurcaciones y condiciones.</p>                     
+                            </div>
+
+                            <h3>5. 📊 Un ejemplo visual y simple</h3>
+                            <div class="sangria">
+                                    <p>Pongamos un ejemplo clásico:</p>
+                                    <p><b>Google Forms (formulario online para recoger datos) → Make (herramienta de automatización) → Google Sheets (hoja de cálculo) → Gmail (correo electrónico).</b></p>
+                                    <div class="sangria2">
+                                        <p>1. Una persona rellena un formulario (por ejemplo, con <b>Google Forms</b>).</p> 
+                                        <p>2. La automatización lo guarda automáticamente en una hoja de cálculo (por ejemplo, <b>Google Sheets</b>).</p> 
+                                        <p>3. En ese mismo instante, se envía un email de bienvenida al nuevo contacto (por ejemplo, con <b>Gmail</b>).</p> 
+                                    </div>
+                                    <p>👉 Todo esto sucede sin que tengas que hacerlo manualmente.</p>
+                                    <p>💡 Ejemplo de automatización sencilla realizada con Make que consiste en que cada vez que se alguien rellena un formulario (en este caso desde la aplicación Tally) se actualiza la Base de Datos de posibles clientes (Airtable) y envía un mail de bienvenida (Gmail) y se vuelve a actualizar la Base datos (Airtable) indicando que el mail ha sido enviado.</p>
+                                    <img src="Imagenes/Esquema Make básico.png" alt="Descripción de la imagen">
+                            </div>
+
+                            <h3>6. 📝 Resumen de la ficha</h3>
+                            <div class="sangria">
+                                <p>En esta ficha hemos aprendido que:</p>
+                                <div class="sangria2">
+                                    <p>◉ Una automatización vive dentro de un <b>escenario o flujo (workflow)</b>.</p>
+                                    <p>◉ Dentro de ese escenario colocamos <b>módulos (que pueden ser aplicaciones externas o funciones internas)</b> que ejecutan tareas.</p>
+                                    <p>◉ Lo que realmente ocurre es un <b>viaje de datos</b> desde un punto de origen hasta un destino, pasando por todos los pasos que hayamos definido.</p>                                
+                                </div>
+                            </div>  
+                            
+                            <h3>7. 🚀 Preparando el terreno para la próxima ficha</h3>
+                            <div class="sangria">
+                                <p>En la siguiente ficha veremos en detalle <b>los componentes técnicos básicos</b> de cualquier flujo:</b></p>                              
+                                <div class="sangria2">
+                                    <p>◉ Qué es un disparador <b>(trigger)</b>.</p>
+                                    <p>◉ Qué es una acción <b>(action)</b>.</p>
+                                    <p>◉ Qué son los <b>filtros</b>, <b>condiciones</b>, <b>bifurcaciones</b> y hasta los famosos <b>webhooks</b>, etc</p>                                
+                                </div>
+                                <p>Así, tendrás ya no solo el mapa, sino también las piezas clave que lo hacen funcionar.</p>
+                                </div>                        
+                        </section>
+
+                        <div class="video-placeholder">
+                            <iframe
+                                src="https://www.youtube-nocookie.com/embed/PNJH5P6Ws0A"                                                   
+                                title="Vídeo del curso"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen
+                            ></iframe>
+                        </div>
+                    </div>                
+                    <a href="#seccion-teoria" class="index-button">Volver al índice</a>
+                </div>
+            </div>
+
+            <!-- Bloque 4 teoría -->
+            <div class="block" id="conceptos4">
+                <h2>4. Los Disparadores – El Punto de Arranque de una Automatización</h2>
+
+                <div class="tab-container">                    
+                    <div class="tab-content" id="text4">
+                        <section>
+                            <h3>1.⚡ Los Disparadores – El Punto de Arranque de una Automatización</h3>
+                            <div class="sangria">
+                                <p> En la ficha anterior vimos que una <B>automatización</B> vive dentro de un <B>escenario</B> y que está formada por <B>módulos</B> que ejecutan tareas. Pero, ¿cómo sabe Make <B>cuándo</B> empezar a ejecutar ese <B>escenario</B>? Aquí entra en juego el <B>disparador (trigger)</B>.</p>
+                                <p>👉 <b>Un disparador o trigger </b>es el <B>evento inicial</B> que <b>activa el escenario</b>. Sin <b>disparador</b>, la <b>automatización nunca arranca</b>.
+                                </p>                             
+                            </div>
+
+                            <h3>2.⚡¿Qué es un disparador o trigger?</h3>
+                                <div class="sangria">
+                                <p>Piensa en él como un <b>“interruptor”</b>.</p>
+                                <p>◉ Algo ocurre → el disparador o trigger lo detecta → y eso pone en marcha todo el escenario.</p>
+                                <p>◉ Sin disparador, el flujo o escenario está dormido.</p>
+                                <p>Ejemplos con aplicaciones sencillas:</p>
+                                <div class="sangria2">
+                                    <p>◉ Alguien envía un formulario en <b>Tally</b>.</p>  
+                                    <p>◉ Te llega un correo de bienvenida en <b>Gmail</b>.</p>  
+                                    </div>
+                                    <p>👉 En <b>Make</b>, el <b>primer módulo del escenario siempre es el disparador</b>. En esta ficha, más adelante se ve un dibujo aclaratorio.</p>
+                                </div>      
+
+                            <h3>3. 🧩 Tipos de disparadores en Make</h3>                        
+                            <div class="sangria">
+                                <p><p><b>Make </b>ofrece dos grandes tipos de disparadores:</p>
+                                <div class="sangria2">
+                                    <p>◉ <b>Disparadores instantáneos (instant triggers)</b>: reaccionan al momento, tan pronto ocurre el evento.</p>  
+                                    <div class="sangria3">
+                                        <p>◉ Ejemplo: un usuario envía un formulario desde Tally, el contenido de dicho formulario llega a <b>Make</b> y, el escenario arranca al instante.  Aquí podemos observar el <b>Trigger de Tally</b> (pero podría ser de otras aplicaciones) en dónde el relámpago indica que el escenario se ejecutará de forma inmediata.</p> 
+                                        <div class="img-ajustada">
+                                            <img src="Imagenes/Trigger Tally.png"  alt="Trigger Tally">
+                                        </div>                                   
+                                        <p>◉ <b>Disparadores programados (scheduled triggers)</b>: Make revisa de forma periódica si hay algo nuevo o si debe ejecutar una tarea en un momento concreto.</p> 
+                                        <p>👉 La frecuencia es <b>totalmente configurable</b>:</p>
+                                        <div class="sangria4">
+                                            <p>🔹 Cada pocos minutos (ej. cada 5, 10, 15, 30…).</p>
+                                            <p>🔹 Una vez al día, a la hora que tú decidas.</p>  
+                                            <p>🔹 En días concretos de la semana (ej. solo lunes y jueves).</p>  
+                                            <p>🔹 En días del mes o fechas específicas (ej. el día 1 de cada mes, el 31 de diciembre…).</p>  
+                                            <p>🔹 etc…….</p> 
+                                        </div>
+                                        <p>En la siguiente figura podemos ver un <b>trigger o disparador</b> para la aplicación de <b>formularios Tally</b>, que en lugar de ejecutar la <b>automatización</b> de forma <b>inmediata (relámpago)</b>, lo hará en <b>base al tiempo o días que lo hayamos configurado (reloj)</b>. Como se puede observar, en este caso no hay un relámpago, sinó un reloj.</p>
+                                        <div class="img-ajustada">
+                                            <img src="Imagenes/Sheduled Tally.png"  alt="Shedulled Tally">
+                                        </div>
+                                        <p><b>Ejemplo</b>: ejecutar un escenario cada día 1 a las 9:00 para generar y enviar un informe mensual en PDF.
+                                            Esta diferencia es importante porque afecta a la rapidez de respuesta y también al consumo de operaciones (ya hablaremos de ello más adelante cuando empecemos a realizar automatizaciones de forma práctica).</p>
+                                    </div>
+                            </div>
+                            
+                            <h3>4. 🖼️ Ejemplo visual con Tally + Airtable + Gmail</h3>
+                            <div class="sangria">
+                                <p>Imagina este escenario sencillo:</p>
+                                <p><b>Tally (formulario) → Make (disparador al detectar respuesta nueva) → Airtable (guardar datos) → Gmail (enviar confirmació)</b></p>
+                                                            
+                                <div class="sangria2">
+                                    <p>◉ Una persona rellena un formulario en <b>Tally</b>.</p> 
+                                    <p>◉ El <b>disparador en Make</b> detecta la nueva respuesta.</p> 
+                                    <p>◉ Los datos se guardan automáticamente en una tabla de <b>Airtable</b>.</p>
+                                    <p>◉ Se envía un correo de confirmación al usuario (o al administrador) a través de <b>Gmail</b>.</p> 
+
+                                </div>
+                                <p>📌 Aquí el <b>primer módulo (Tally) </b>actúa como <b>disparador</b>.</p> 
+                                <div class="contenedor">
+                                    <img src="Imagenes/trigger formulario Tally.png" alt="Trigger Formulario Tally">
+                                </div>                    
+                            </div>
+
+                            <h3>5. 📝 Resumen de la ficha</h3>
+                            <div class="sangria">
+                                <p>En esta ficha hemos aprendido que:</p>
+                                <div class="sangria2">
+                                    <p>◉ Un <b>disparador</b> es lo que inicia la <b>automatización.</b>.</p>
+                                    <p>◉ Siempre <b>es el primer módulo</b> de un escenario.</p>
+                                    <p>◉ Puede ser instantáneo o programado.</p>
+                                    <p>◉ Sin disparador, el escenario nunca empieza.</p> 
+                                    <p>◉ En nuestro ejemplo: <b>Tally → Airtable → Gmail.</b></p>                               
+                                </div>
+                            </div>                                          
+                        </section>
+
+                        <div class="video-placeholder">
+                            <iframe
+                                src="https://www.youtube-nocookie.com/embed/-7cLEtM6QfA"                                                                           
+                                title="Vídeo del curso"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen
+                            ></iframe>
+                        </div>
+                    </div>                
+                    <a href="#seccion-teoria" class="index-button">Volver al índice</a>
+                </div>
+            </div>
+
+            <!-- Bloque 5 teoría -->
+            <div class="block" id="conceptos5">
+                <h2>5. Conexiones: la llave que abre las aplicaciones</h2>        
+
+                <div class="tab-container">                    
+                    <div class="tab-content" id="text5">
+                        <section>
+                            <h3>1. 🔗 ¿Qué es una conexión?</h3>
+                            <div class="sangria">
+                                <p> Cuando añadimos un <b>módulo en Make</b> que corresponde a una <b>aplicación externa</b> (por ejemplo Gmail, Airtable o Telegram), <b>Make</b> necesita un <b>permiso especial</b> para poder trabajar con esa aplicación.</p>
+                                <p>Ese permiso es lo que llamamos <b>conexión</b>.</p>
+                                <p>👉 En otras palabras: una conexión es como darle una <b>llave digital a Make </b>para que pueda entrar en tu aplicación y automatizar tareas en tu nombre.</p>
+                                <p><b>Ejemplo cotidiano:</b> sería como darle a un amigo una copia de la llave de tu casa para que riegue las plantas. No le das tu casa, solo acceso limitado y revocable.</p>  
+                            </div>
+
+                            <h3>2. ❓¿Cuándo necesitas una conexión?</h3>
+                                <div class="sangria">                           
+                                <p>◉ <b>Módulos internos de Make</b> (por ejemplo: Formatter, Delay, Math) <b>no necesitan conexión</b>, porque no dependen de ninguna aplicación externa.</p>
+                                <p>◉ <b>Módulos de aplicaciones externas</b> (por ejemplo: Gmail, Slack, Airtable, Telegram) <b>sí requieren conexión</b>. Antes de poder configurar el módulo, <b>Make te pedirá crear o seleccionar una conexión</b>.</p>
+                                <div class="contenedor">
+                                    <img src="Imagenes/Conexion Airtable.png" alt="Conexión con Airtable">
+                                </div>                       
+                                <p><i>Por ejemplo, la imagen superior muestra que cuando añades el módulo “Watch Records” de Airtable, lo primero que Make te pedirá es elegir/crear una <b>Connection (Conexión)</b>. La imagen muestra exactamente ese campo “Connection” — es el primer paso que verás.</i></p>
+                                <p>📌 <b>Aclaración importante: </b> esta imagen <b>no enseña cómo crear la conexión completa</b>; solo muestra que, para avanzar con un módulo de aplicación, debes tener una conexión. Si quieres ver el paso a paso para crear la conexión, consulta el <b>Anexo: Conexión con Airtable</b> (o el anexo correspondiente a la app que necesites).</p>
+                                </div>      
+
+                            <h3>3. ❓¿Cómo se configuran las conexiones?</h3>                        
+                            <div class="sangria">
+                                <p>Cada <b>aplicación define su propio método de acceso; no eres tú quien decide el método</b>, sino la aplicación (Make se adapta a lo que la app exige). Los métodos más habituales son:</p>
+                                <div class="sangria2">
+                                    <p>◉ <b>OAuth (autenticación moderna)</b></p>  
+                                    <div class="sangria3">
+                                        <p>🔹Se abre una ventana donde inicias sesión y autorizas permisos (ej.: Google, muchas integraciones actuales).</p> 
+                                        <p>🔹Make no te pide claves manuales; gestiona el acceso con tokens que se renuevan.</p>                                 
+                                    </div>
+                                <p>◉ <b>API Key / Token </b>(cada vez menos común)</p>
+                                <div class="sangria3">
+                                    <p>🔹La aplicación te da una clave que copias/pegas en Make.</p> 
+                                    <p>🔹Es más directo pero muchas plataformas lo están sustituyendo por OAuth.</p>                                 
+                                </div>
+                                <p>🔔 <b>Mensaje de calma para principiantes:</b> si ahora estos términos te suenan extraños (OAuth, API Key, token), no te preocupes: en los anexos prácticos veremos, paso a paso, cómo hacer cada conexión.</p>
+                            </div>
+                        
+                            <h3>4. ⚠️ Ojo con las diferencias (ejemplos prácticos)</h3>
+                            <div class="sangria">
+                                <p>◉ <b>Google Gmail </b>→ suele requerir OAuth y procesos de verificación; puede ser más complejo (aceptar permisos, a veces renovar autorizaciones).</p>
+                                <p>◉ <b>Airtable</b> → actualmente usa OAuth (ya no se basa en el método antiguo de API token público).</p>
+                                <p>◉ <b>Telegram</b> → usa un <b>token de bot</b> (lo obtienes desde @BotFather). Es relativamente sencillo y por eso suele usarse para ejemplos rápidos.</p>
+                                
+                                <p><b>Comentario práctico:</b> una automatización conceptual como Google Forms → Google Sheets → Gmail es muy clara como flujo, pero la complejidad real suele estar en la gestión de la conexión con Google (por eso en tus fichas prácticas conviene usar ejemplos fáciles para empezar).</p>
+                            </div>
+
+                            <h3>5. 🧩 Ejemplo práctico (mini): crear una conexión sencilla</h3>
+                            <div class="sangria">
+                                <p>A modo de ejemplo muy breve y directo, para que vean el mínimo imprescindible:</p>
+                                <p><b>Ejemplo con Telegram (token):</b></p>                          
+                                <div class="sangria2">
+                                    <p>1. Añades el módulo <b>Telegram — Send a message</b>.</p>
+                                    <p>2. <b>Make te pide Connection</b> → pulsas Add.</p>
+                                    <p>3. Pegas el <b>token del bot</b> (lo obtienes al crear un bot en @BotFather).</p>
+                                    <p>4. Aceptas y la conexión queda disponible para ese y otros escenarios.</p>                                                           
+                                </div>
+                                <p>(Para Airtable, el flujo será similar conceptualmente, pero la ventana de autorización te llevará por el proceso OAuth; por eso en la ficha no hacemos aquí el tutorial completo).</p>
+                            </div>                     
+                                    
+                            <h3>6. 📝 Resumen (punto rápido)</h3>
+                            <div class="sangria">                        
+                                <p>1. Una <b>conexión</b> es el permiso que das a Make para que acceda a una app externa.</p>
+                                <p>2. Solo los módulos que usan aplicaciones externas la necesitan.</p>
+                                <p>3. El <b>método de conexión </b>lo define la aplicación (OAuth, token, API Key).</p>
+                                <p>4. Algunas conexiones son muy sencillas (Telegram), otras pueden ser más exigentes (Google, Airtable con OAuth).</p>
+                                <p>5. Si quieres el paso a paso completo para una app concreta, consulta el Anexo: Conexión con [NombreApp].</p>                                                         
+                            </div>
+                        </section>
+
+                        <div class="video-placeholder">
+                            <iframe
+                                src="https://www.youtube-nocookie.com/embed/xAZtUTcwLr8"                                                 
+                                title="Vídeo del curso"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen
+                            ></iframe>
+                        </div>
+                    </div>            
+                    <a href="#seccion-teoria" class="index-button">Volver al índice</a>
+                </div>
+            </div>
+
+            <!-- Bloque 6 teoría: Conexiones: Webhooks: la puerta que escucha.  -->
+            <div class="block" id="conceptos6">
+                <h2>6. Conexiones: Webhooks: la puerta que escucha. </h2>        
+
+                <div class="tab-container">                    
+                    <div class="tab-content" id="text6">
+                        <section>
+                            <h3>1. ❓ ¿Qué es un webhook? (resumen claro y relación con triggers)</h3>
+                            <div class="sangria">
+                                <p>1. <b>Un webhook</b> es una forma de trigger en la que una <b>aplicación externa avisa a Make en tiempo real</b> cuando ocurre algo relevante.</p>
+                                <p>2. <b>Recordatorio</b> (conectando con fichas anteriores): en la ficha 4 vimos los <b>triggers</b>: instantáneos (reaccionan en cuanto pasa algo) y programados/scheduled (Make mira cada X tiempo).</p>
+                                <p>3. 👉 <b>El webhook es otro tipo de trigger push</b> : en vez de que Make vaya a preguntar, la aplicación externa empuja la información hacia Make.</p>
+                                <p>4. <b>Importante: no todos los triggers instantáneos son webhooks, y no todos los webhooks requieren que tú los programes manualmente.</b> Algunas integraciones ofrecen triggers “instantáneos” ya preparados en Make (fácil para el usuario); otras aplicaciones requieren que tú configures un webhook explícito.</p>  
+                                <p><b>Ejemplo sencillo</b>: es como si en lugar de bajar cada 10 minutos a preguntar si llegó el paquete, el repartidor tocase el timbre y avisara al instante.</p>  
+                            </div>
+
+                            <h3>2. 🔄 Entrante (incoming) vs saliente (outgoing) — explicado sin jerga</h3>
+
+                            <div class="sangria">                           
+                                <p>◉ 📩 <b>Entrante (incoming webhook):</b> la app externa envía datos a una URL que crea Make → eso dispara el escenario.</p>
+                                <div class="sangria2">
+                                    <p>🔹Ej.: tu plataforma de pagos (Stripe), al confirmar un pago, envía un mensaje a Make para que procese la operación.</b></p>  
+                                </div>
+                                <p>◉ 📤 <b>Saliente (outgoing webhook):</b> Make envía datos hacia una URL externa (esto se hace con el módulo HTTP de Make).</p>
+                                <div class="sangria2">
+                                    <p>🔹Usado cuando quieres notificar a otro sistema desde Make.</p>                
+                                </div>
+                                <p>💬<b>¿Qué es eso de “llamada HTTP”?</b>.</p>
+                                <div class="sangria2">
+                                    <p>🔹Es simplemente la forma en que una app “manda un mensajito por Internet” a otra: una dirección web recibe ese mensajito.</p>                
+                                    <p>🔹No necesitas saber los detalles técnicos ahora; basta entender que <b>es el mecanismo estándar para que apps se hablen por Internet.</b></p>                
+                                </div>
+                                <div class="contenedor">
+                                    <img src="Imagenes/Esquema webhook.png" alt="Esquema de Conexión Webhooks">
+                                </div>                       
+                            </div>      
+
+                            <h3>3. ❓Webhook vs triggers nativos: ¿cuál usar y por qué?</h3>                                       
+                            <div class="sangria">
+                                <p>◉ ⚡ <b>Usa triggers nativos de Make</b> cuando existan y sean instantáneos (p. ej. algunos módulos oficiales como Tally, Stripe u otras integraciones que Make ya tiene). Son más simples: seleccionas el trigger y listo.</p>
+                                <p>◉ 🔌 <b>Usa un webhook</b> cuando la app:</p>
+                                <div class="sangria2">
+                                    <p>🔹No tiene un trigger nativo en Make, o</p>
+                                    <p>🔹Necesitas integrarlo con una app personalizada, o</p>
+                                    <p>🔹Quieres máxima inmediatez y control.</p> 
+                                </div>
+                            </div>
+                                
+                        
+                            <h3>4.❓ Cómo se usa un webhook en Make (versión para principiantes)</h3>
+                            <div class="sangria">
+                                <p>1. Añades en tu escenario el <b>módulo Webhook</b>módulo Webhook (Custom webhook / Webhook response).</p>
+                                <p>2. Make te genera una <b>URL única</b> (tu “timbre digital”).</p>
+                                <p>3. Pegas esa URL en la app externa (o en su panel de webhooks), indicando cuándo debe enviar datos.</p>
+                                <p>4. Haces una prueba (por ejemplo, envías un formulario) y verificas que Make recibe los datos.</p>
+
+                                <p><b>Nota: no hace falta entender todos los tecnicismos ahora; el flujo general es “obtener URL → pegarla en la app que manda eventos → probar”.</b></p>
+                                <div class="contenedor">
+                                    <img src="Imagenes/URL Webhook.png" alt="URL proporcionado por el Webhook de Make">
+                                </div>         
+                            </div>
+
+                            <h3>5. 🧩  Ejemplos prácticos y comparativos (para clarificar casos reales)</h3>
+                            <div class="sangria">
+                                <p>◉ Ej. A (trigger nativo): Tally → Make con trigger oficial: el módulo instantáneo de Tally en Make recibe la respuesta al momento.</p>
+                                <p>◉ Ej. B (webhook manual): Una plataforma sin integración oficial → Make → configuras un webhook en esa plataforma para que envíe datos a Make.</p>
+                                <p>◉ Ej. C (pagos): Stripe → Stripe envía webhook a Make → Make guarda el pago en Airtable y manda confirmación por Telegram.</p>
+                                <p>👉 Si hay un módulo de trigger oficial, úsalo; si no, pide al proveedor que envíe a la URL del webhook.</p>                          
+                            </div>                     
+                                    
+                            <h3>6. 📝 Seguridad y pruebas — explicado simple (sin tecnicismos pesados)</h3>
+                            <div class="sangria">
+                                <p>◉ 🔐 <b>Usa siempre la URL tal cual Make te la da</b> y no la compartas públicamente.</p>
+                                <p>◉ 🔎 Muchas apps permiten firmar/identificar sus mensajes; cuando eso ocurra, lo veremos en un anexo avanzado</p>
+                                <p>◉ 🧪 Para probar sin romper nada, haz siempre una <b>prueba controlada</b> (por ejemplo, envía un formulario de prueba).</p>
+                            </div>
+
+                            <h3>7. 📝 Resumen final — lo esencial que deben recordar</h3>
+                            <div class="sangria">
+                                <p>◉ Un <b>webhook</b> es una forma de trigger push: la app externa avisa a Make al instante.</p>
+                                <p>◉ Existen triggers instantáneos nativos y webhooks; ambos pueden dar inmediatez.</p>
+                                <p>◉ Si Make tiene un trigger oficial, úsalo (es más cómodo). Si no, configura un webhook.</p>
+                                <p>◉ Mantén la seguridad y prueba siempre con datos de test.<p>
+                                <p>◉ Los detalles técnicos (JSON, firmas, idempotencia) van en un anexo para cuando quieras profundizar.</p>                
+                            </div>
+                        </section>
+
+                        <div class="video-placeholder">
+                            <iframe
+                                src="https://www.youtube-nocookie.com/embed/45XARY9iuyU"                                                                 
+                                title="Vídeo del curso"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen
+                            ></iframe>
+                        </div>
+                    </div>        
+                    <a href="#seccion-teoria" class="index-button">Volver al índice</a>
+                </div>
+            </div>
+
+            <!-- Bloque 7 teoría: Acciones-->
+            <div class="block" id="conceptos7">
+                <h2>7. Acciones </h2>        
+
+                <div class="tab-container">                    
+                    <div class="tab-content" id="text7">
+                        <section>
+                            <p>“Si un trigger enciende la mecha… la acción es lo que explota (el resultado visible)”</p>
+                            <h3>1. 🔎 ¿Qué es una acción en Make? </h3>
+                            <div class="sangria">
+                                <p><b>Una acción es lo que hace Make</b> una vez que se dispara el escenario con un trigger (disparador).</p>
+                                <div class="sangria2">
+                                    <p>🔹El trigger (como un webhook o un nuevo registro) <b>es el aviso inicial.</b></p>
+                                    <p>🔹<b>La acción</b> es <b>la tarea concreta que ejecuta Make</b>la tarea concreta que ejecuta Make en respuesta a ese aviso.</b></p>
+                                </div> 
+                                <p>👉 Piensa en esto como una reacción en cadena:</p>
+                                <div class="sangria2">
+                                    <p>🔹<b>Trigger:</b> Suena el timbre de tu casa.</p>
+                                    <p>🔹<b>Acción:</b> Te levantas y abres la puerta.</p>
+                                </div>
+                                <p>El timbre (trigger) no tiene sentido si después nadie abre la puerta (acción).</p> 
+                                </div>
+
+                            <h3>2. 🧩 Ejemplos cotidianos de acciones </h3>
+                            <div class="sangria">                           
+                                <p>1. Alguien compra en tu tienda online → <b>acción:</b> Make envía un email de confirmación al cliente.</p>
+                                <p>2. Recibes un formulario de contacto → <b>acción:</b> Make guarda la información en Airtable.</p>
+                                <p>3. Te llega un pago en Stripe → <b>acción:</b> Make envía un mensaje a tu canal de Telegram avisando al equipo.</p>
+                                <p>Cada una de estas tareas que ocurren después del “disparo” inicial es una acción.</p>                                              
+                            </div>      
+
+                            <h3>3. 📚 Diferencia entre Trigger y Acción </h3>                                       
+                            <div class="sangria">
+                                <p>◉ <b>Trigger (disparador):</b> Detecta un evento. Ejemplo: “Nuevo pedido recibido”.</p>
+                                <p>◉ <b>Acción:</b> Hace algo con esa información. Ejemplo: “Crear un registro en Google Sheets con los datos del pedido”.</p>
+
+                                <p>👉 Regla fácil de recordar:</p>
+                                <p>◉ <b>Trigger = aviso.</b></p>
+                                <p>◉ <b>Acción = reacción.</b></p>
+                            </div>                                
+                        
+                            <h3>4. 🛠️ Tipos de acciones más comunes en Make </h3>
+                            <div class="sangria">
+                                <p>◉ <b>Crear algo:</b> Crear un registro en Airtable, un documento en Google Docs, un evento en Calendar.</p>
+                                <p>◉ <b>Enviar algo:</b> Enviar un email, un mensaje de Slack, una notificación de Telegram, una notificación de Whatssap, etc.</p>
+                                <p>◉ <b>Actualizar algo:</b> Cambiar el estado de un pedido en tu CRM, actualizar el stock en tu base de datos.</p>   
+                                </div>
+
+                            <h3>5. ✅ Resumen de la ficha </h3>
+                            <div class="sangria">
+                                <p>◉ Las <b>acciones</b> son las <b>tareas que Make ejecuta</b> después de un trigger.</p>
+                                <p>◉ Siempre van de la mano: <b>Trigger → Acción → Resultado.</b></p>
+                                <p>◉ Ejemplo sencillo: “Cuando alguien llena un formulario (trigger) → guardar sus datos en una hoja (acción)”.</p>                                                                           
+                            </div> 
+                                <div class="contenedor">
+                                    <img src="Imagenes/Acciones Trigger.png" alt="URL proporcionado por el Webhook de Make">
+                                </div>
+                                <div class="contenedor">
+                                    <img src="Imagenes/Ficha 7 Acciones.png" alt="URL proporcionado por el Webhook de Make">
+                                </div>             
+                        </section>
+
+                        <div class="video-placeholder">
+                            <iframe
+                                src="https://www.youtube-nocookie.com/embed/CIFaPwqEfJs"                                                                               
+                                title="Vídeo del curso"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen
+                            ></iframe>
+                        </div>
+                    </div>        
+                    <a href="#seccion-teoria" class="index-button">Volver al índice</a>
+                </div>
+            </div>
+
+            <!-- Bloque 8 teoría: Rutas, filtros y lógica: cuando tu escenario toma decisiones-->
+            <div class="block" id="conceptos8">
+                <h2>8. Rutas, filtros y lógica: cuando tu escenario toma decisiones </h2>        
+
+                <div class="tab-container">                    
+                    <div class="tab-content" id="text8">
+                        <section>
+                            <h3>1. 💡 ¿Por qué necesitamos lógica en un escenario? </h3>
+                            <div class="sangria">
+                                <p>Hasta ahora, nuestras <b>automatizaciones eran lineales</b>: un trigger → una acción → un resultado.</p>
+                                <p>Pero en la vida real, las cosas rara vez son tan simples.</p>
+                                <p>Ejemplo cotidiano:</p>
+                                <div class="sangria2">
+                                    <p>🔹Si recibes un mensaje de un amigo → lo contestas enseguida.</p>
+                                    <p>🔹Si recibes un mensaje de publicidad → lo ignoras.</p>
+                                </div> 
+
+                                <p>👉 Make también necesita esta <b>capacidad de decidir</b> qué hacer en cada caso.</p>                       
+                                </div>
+                                <div class="contenedor">
+                                <img src="Imagenes/ruts filtros y logica.png" alt="Rutas, Filtros y Lógica">
+                                </div>
+
+                            <h3>2. 🛤️ ¿Qué son las rutas en Make?  </h3>                           
+                            <div class="sangria">                           
+                                <p>Una <b>ruta</b> es como un <b>desvío en la carretera</b> dentro de tu escenario. El flujo puede seguir distintos caminos según lo que ocurra.</p>
+                                <p>En Make, el módulo que permite crear estos desvíos se llama <b>Router</b>. Cada Router abre varios caminos posibles (llamados branches), y tú decides qué ocurre en cada uno.</p>
+                                <p>Ejemplo:</p>
+                                <div class="sangria2">
+                                    <p>🔹Trigger: llega un formulario de contacto.</p>
+                                    <p>🔹Ruta A (con Router): si el tema es “Ventas” → enviar a equipo comercial.</p>
+                                    <p>🔹Ruta B (con Router): si el tema es “Soporte” → enviar a equipo técnico..</p>
+                                </div>
+                                <p>👉 Piensa en el Router como una rotonda: llegas a un punto y eliges qué salida tomar según la información recibida.</p>                                              
+                                <div class="contenedor">
+                                    <img src="Imagenes/Router Make (Ficha 8).png" alt="Router con Make">
+                                </div> 
+                                </div>      
+
+                            <h3>3. 🔽 ¿Qué son los filtros? </h3>                                       
+                            <div class="sangria">
+                                <p>Un <b>filtro</b> es como un <b>semáforo</b>: deja pasar la información solo si cumple una condición.  Si no, la bloquea.</p>
+                                <p><b>En Make</b>, los filtros se aplican dentro de cada camino del <b>Router</b> o entre módulos, para controlar qué datos siguen adelante.</p>
+                                <p>Ejemplo cotidiano:</p>
+                                <p>◉ Solo dejas entrar a casa a personas que conoces → filtro = “¿conozco a esta persona?”.</p>
+                                <p>◉ Solo respondes correos si contienen la palabra “urgente” → filtro aplicado en Make.</p>
+                                <p>👉 Así, cada ruta del Router puede tener su propio filtro, garantizando que cada camino solo se use con la información adecuada.</p>
+                            </div>                                
+                        
+                            <h3>4. ⚖️ Lógica en Make: tomar decisiones </h3>
+                            <div class="sangria">
+                                <p>La lógica es la capacidad de aplicar reglas más complejas dentro de un escenario.</p>
+                                <p>Combina rutas + filtros + condiciones.</p>
+                                <p>Ejemplo:</p> 
+                                <div class="sangria2">
+                                    <p>◉ Trigger: nuevo pedido en la tienda online.</p>
+                                    <p>◉ Lógica aplicada:</p>
+                                    <div class="sangria3">
+                                        <p>🔹 Si el pedido es mayor de 100€ → enviar un cupón de descuento.</p> 
+                                        <p>🔹 Si el pedido es menor → solo enviar confirmación estándar.</p> 
+                                    </div>
+                                </div>
+                                <p>👉 Igual que tú no actúas siempre igual, <b>Make</b> puede reaccionar distinto según la situación.</p>
+                                </div>
+
+                            <h3>5. 📝 Resumen práctico </h3>
+                            <div class="sangria">
+                                <p>◉ <b>Rutas (Router) =</b> desvíos del camino → distintos flujos según los datos.</p>
+                                <p>◉ <b>Filtros = semáforos</b> → dejan pasar solo la información que cumple condiciones.</p>
+                                <p>◉ <b>Lógica =</b> reglas de decisión que combinan rutas y filtros.</p>                                           
+                                <p>Con esto, tus escenarios dejan de ser lineales y se vuelven <b>inteligentes y flexibles.</b></p>
+                                <p>🔖 <b>Nota importante</b></p>
+                                <p>Todos estos ejemplos son <b>introductorios</b> para que entiendas la idea de rutas, filtros y lógica.</p>
+                                <p>👉 Más adelante, haremos juntos escenarios prácticos en Make, donde verás paso a paso cómo aplicarlo en casos reales.</p>
+                                </div>                                 
+                        </section>
+
+                        <div class="video-placeholder">
+                            <iframe
+                                src="https://www.youtube-nocookie.com/embed/huLUdA4mBxc"                                                                                                
+                                title="Vídeo del curso"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen
+                            ></iframe>
+                        </div>
+                    </div>        
+                    <a href="#seccion-teoria" class="index-button">Volver al índice</a>
+                    </div>                
+            </div>
+
+            <!-- Bloque 9 teoría: Iterador: desmenuzando datos paso a paso  -->
+            <div class="block" id="conceptos9">
+                <h2>9. Iterador: desmenuzando datos paso a paso</h2>            
+
+                <div class="tab-container">                    
+                    <div class="tab-content" id="text9">
+                        <section>
+                            <h3>1. ¿Qué es un iterador? </h3>
+                            <div class="sangria">
+                                <p>Un <b>iterador en Make</b> es como una herramienta que toma un “paquete” con varios elementos dentro y los va sacando <b>uno a uno</b> para que Make pueda trabajar con cada elemento por separado.</p>
+                                <div class="sangria2">
+                                    <p>🔹Imagina una <b>caja de galletas:</b> el iterador no te da la caja entera, sino que te va entregando galleta por galleta.</p>
+                                    <p>🔹En Make, este módulo se llama <b>Iterator.</b></p>
+                                </div>                                              
+                            </div>
+                            <div class="contenedor">
+                                <img src="Imagenes/Esquema Iterador.png" alt="Esquema de un Iterador">
+                            </div>
+
+                            <h3>2. 🎯 ¿Por qué es útil? </h3>
+                            
+                            <div class="sangria">                           
+                                <p>En muchos escenarios, los datos no llegan de uno en uno, sino en lotes:</p>
+                                <p>Ejemplos:</p>
+                                <div class="sangria2">
+                                    <p>🔹Un correo con <b>varios adjuntos.</b></p>
+                                    <p>🔹Un formulario donde alguien escribe <b>varias respuestas en una sola pregunta</b> (ej. una lista de hobbies separados por comas).</p>
+                                    <p>🔹Una tienda online que envía un <b>pedido con varios productos.</b></p>
+                                </div>
+                                <p>Con un iterador, puedes procesar cada adjunto, cada respuesta o cada producto de manera individual.</p>                                              
+                                <p>Ejemplo de Make con Iterador (Iterator) que extrae los archivos adjuntos del mail y los copia en un carpeta de Dropbox</p>                                              
+                                <div class="contenedor">
+                                    <img src="Imagenes/Iterador con Make.png" alt="Proyecto con iterador en Make">
+                                </div> 
+                                </div>      
+
+                            <h3>3. 🍪 Ejemplo cotidiano</h3>                                       
+                            <div class="sangria">
+                                <p>Piensa en una bandeja con <b>tres galletas de chocolate.</b></p>
+                                <div class="sangria2">
+                                    <p>🔹Sin iterador → Make ve la bandeja completa y no sabe qué hacer con cada galleta.</p>
+                                    <p>🔹Con iterador → Make saca galleta 1, la procesa; luego galleta 2; luego galleta 3.</p>
+                                </div>
+                                <p>Así puedes aplicar una acción a cada galleta por separado:</p>
+                                <div class="sangria2">
+                                    <p>🔹Guardar cada una en una tabla.</p>
+                                    <p>🔹Enviar un mensaje distinto por cada una.</p>
+                                </div>                     
+                            </div>                                
+                        
+                            <h3>4. 🛠️ Ejemplo sencillo en Make </h3>
+                            <div class="sangria">
+                                <p>Escenario: recibes un pedido de una tienda online con 3 productos.</p>
+                                <div class="sangria2">
+                                    <p>🔹<b>Paso 1:</b> El pedido llega como un bloque de datos con los 3 productos dentro.</p>
+                                    <p>🔹<b>Paso 2:</b> Colocas un módulo <b>Iterator.</b></p>
+                                    <p>🔹<b>Paso 3:</b> El iterador “desarma” el pedido en <b>producto 1, producto 2, producto 3.</b></p>
+                                    <p>🔹<b>Paso 4:</b> Después puedes usar un módulo <b>“Google Sheets → Add Row”</b> para que cada producto se guarde en una fila distinta de la hoja.</p>
+                                </div>
+                            </div>
+
+                            <h3>5. 😉 Nota para ti </h3>
+                            <div class="sangria">
+                                <p><b>No te preocupes si al principio parece algo abstracto. Todos estos ejemplos y muchos más los practicaremos en escenarios reales, para que se entienda de forma visual y no se quede solo en la teoría.</b></p>
+                            </div>             
+                        </section>
+
+                        <div class="video-placeholder">
+                            <iframe
+                                src="https://www.youtube-nocookie.com/embed/Oq6rf4U9Qnk"                                                                                                                   
+                                title="Vídeo del curso"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen
+                            ></iframe>
+                        </div>
+                    </div>        
+                    <a href="#seccion-teoria" class="index-button">Volver al índice</a>
+                </div>
+            </div>
+
+            <!-- Bloque 10 teoría: ArrayAggregator: reunir elementos en un solo paquete 📦  -->
+            <div class="block" id="conceptos10">
+                <h2>10. ArrayAggregator: reunir elementos en un solo paquete 📦</h2>            
+
+                <div class="tab-container">
+                    
+                    <div class="tab-content" id="text10">
+                        <section>
+                            <h3>1.  🔍 ¿Qué es ArrayAggregator? </h3>
+                            
+                            <div class="sangria">
+                                <p> <b>El Array Aggregator de Make</b> es un módulo que <b>reúne varios elementos individuales en un único “grupo” (una lista o array)</b> para que puedas procesarlos todos juntos después.</p>
+                                <div class="sangria2">
+                                    <p>🔹<b>Analogía:</b> imagina que tienes muchas cartas sueltas y el agregador es la carpeta donde las metes todas para enviarlas de una vez.</p>
+                                    <p>🔹<b>Función básica: recoger + empaquetar </b>para envío/uso posterior.</p>
+                                </div>                                              
+                            </div>
+                            
+                            <h3>2. 🎯 ¿Para qué sirve? </h3>
+                            
+                            <div class="sangria">                           
+                                <p>Sirve cuando no quieres procesar cada ítem o elemento de forma aislada, sino <b>hacer algo con el conjunto:</b> un informe diario, un email de resumen, un CSV con todas las entradas, un lote para enviar a otra API, etc.</p>
+                                <div class="sangria2">
+                                    <p>🔹Complementa al Iterator: si <b>el Iterator o módulo iterator divide</b> (saca una galleta cada vez), <b>el Aggregator o módulo Array Aggregator junta</b> (mete galletas en una caja).</p>
+                                    <p>🔹Un formulario donde alguien escribe <b>varias respuestas en una sola pregunta</b> (ej. una lista de hobbies separados por comas).</p>
+                                    <p>🔹Casos típicos: digest diario de correos, agrupar respuestas de formularios del día, juntar adjuntos para enviarlos en un solo paquete.</p>
+                                </div>
+                                <p>Se adjunta ejemplo real creado con Make, el cual  <b>no os preocupéis porque lo veremos en detalle en los casos prácticos</b>, en dónde se puede ver un escenario en dónde todos los archivos que se suben nuevos a una carpeta de Dropbox son enviados a un Array Aggregator, el cual los empaqueta en un único paquete para posteriormente enviar todos esos archivos en un único mail con el módulo de Gmail.</p>                                              
+                                <div class="contenedor">
+                                    <img src="Imagenes/Array Aggregator en Make F10.png" alt="Proyecto con iterador en Make">
+                                </div> 
+                                </div>      
+
+                            <h3>3. 🧩 Ejemplos sencillos y prácticos </h3>                                       
+                            <div class="sangria">
+                                <p><b>Ejemplo A — Digest de correos (resumen diario de leads)</b></p>
+                                <div class="sangria2">
+                                    <p>🔹<b>Objetivo:</b> enviar cada día un único correo con la lista de asuntos y remitentes de los emails entrantes.</p>
+                                    <p>🔹<b>Pasos conceptuales:</b></p>
+                                    <div class="sangria3">
+                                        <p>🔹 <b>Trigger:</b> <b>Módulo de Make Gmail – Watch Emails</b>, configurado para revisar cada 24 horas (o a la hora exacta que quieras).</p> 
+                                        <p>🔹 <b>Aplicamos un Filtro:</b> solo correos de interés (ej. con etiqueta “leads”).</p>
+                                        <p>🔹 <b>Array Aggregator:</b> empaqueta todos los correos detectados en esa ejecución (remitente, asunto, fecha).</p>
+                                        <p>🔹 <b>Acción final:</b> generar un cuerpo de email con la lista y enviarlo en un único correo-resumen.</p>
+                                    </div>
+                                </div>
+                                <p><b>Ejemplo B — Agrupar respuestas de un formulario</b></p>
+                                <div class="sangria2">
+                                    <p>🔹<b>Objetivo:</b> procesar en lote las respuestas de un formulario.</p>
+                                    <p>🔹<b>Pasos conceptuales:</b></p>
+                                    <div class="sangria3">
+                                    <p>🔹 <b>Trigger:</b> <b>Typeform / Tally – Watch Responses</b>, ejecutado cada hora.</p> 
+                                    <p>🔹 <b>Array Aggregator:</b> agrupa todas las respuestas recibidas en ese periodo.</p>
+                                    <p>🔹 <b>Acción final:</b> guardar en bloque en Google Sheets o convertirlas en un CSV y adjuntar a un correo.</p>
+                                </div>
+                                </div>
+                                <p><b>Ejemplo C — Resumen de productos de un pedido (optimizar llamadas a API)</b></p>
+                                <div class="sangria2">
+                                    <p>🔹<b>Objetivo:</b> enviar la información de un pedido con varias líneas de producto en un único bloque.</p>
+                                    <p>🔹<b>Pasos conceptuales:</b></p>
+                                    <div class="sangria3">
+                                    <p>🔹 <b>Trigger:</b> Shopify – Watch Products detecta un nuevo pedido.</p> 
+                                    <p>🔹 <b>Array Aggregator:</b> empaqueta las líneas del pedido (producto, cantidad, precio) en un solo array.</p>
+                                    <p>🔹 <b>Acción final:</b> enviar el paquete completo al ERP o CRM en una única llamada API (en lugar de una por línea).</p>
+                                </div>
+                                </div>
+                                <p>🔔 Recuerda que el Array Aggregator trabaja con los datos recogidos en la ejecución del escenario. No acumula “en tiempo real” mientras llegan los elementos. Por eso, si quieres envíos periódicos (cada día, cada hora…), el control se configura en el <b>trigger de tiempo</b>, no en el agregador.</p>                     
+                            </div>                    
+                        
+                            <h3>4. ⚙️ Cómo funciona conceptualmente en Make (versión para principiantes)</h3>
+                            <div class="sangria">
+                                <p>Imagina que estás organizando tus correos, respuestas de formularios o pedidos de productos: cada uno llega de manera individual, y tú quieres juntarlos todos en un mismo paquete para enviarlos o procesarlos de golpe.</p>
+                                <div class="sangria2">
+                                    <p>◉ <b>Trigger = el detector o disparador:</b></p>
+                                    <div class="sangria3">
+                                        <p>🔹 Puede ser <b>un evento</b> (ejemplo: llega un correo, alguien responde un formulario).</p> 
+                                        <p>🔹 O puede ser <b>un tiempo</b> que tú eliges (ejemplo: cada hora, cada día).</p>
+                                        <p>🔹 Es el que decide <b>cuándo empieza el escenario.</b></p>
+                                    </div>
+                                </div>
+                                <div class="sangria2">
+                                    <p>◉ <b>Array Aggregator = la caja organizadora:</b></p>
+                                    <div class="sangria3">
+                                    <p>🔹 Cada vez que el escenario se activa, el Array Aggregator <b>recoge los elementos que llegan.</b></p> 
+                                    <p>🔹 Los añade a un “paquete”, según lo que el trigger envía.</p>
+                                    <p>🔹 No decide cuándo enviar nada, <b>solo empaqueta lo que llega.</b></p>
+                                    </div>
+                                </div>
+                                <div class="sangria2">
+                                    <p>◉ <b>Array = la lista de todo lo recogido:</b></p>
+                                    <div class="sangria3">
+                                    <p>🔹 Para ti, que empiezas, <b>un array es simplemente una lista de elementos.</b> Por Ejemplo: [Correo1, Correo2, Correo3]. Cada elemento puede ser un correo, una respuesta de formulario, una línea de pedido.</p> 
+                                    <p>🔹 El siguiente módulo del escenario puede usar <b>todos los elementos de la lista a la vez:</b> enviar un email con resumen, crear un CSV, actualizar un Google Sheet…</p>
+                                    </div>
+                                </div>
+                                <p>💡 <b>Analogía visual:</b></p>
+                                <p>Piensa en el trigger como una <b>fuente de objetos</b> que cae sobre una cinta transportadora. El Array Aggregator es un <b>cajón que los va recogiendo.</b> Cuando Make decide pasar <b></b>la caja al siguiente paso, todo lo que hay dentro viaja junto. <b>La caja no tiene voluntad:</b> solo recoge lo que le llega.</p>
+                                <div class="contenedor">
+                                    <img src="Imagenes/Esquema Aggregator F10.png" alt="Esquema Array Aggregator">
+                                </div>
+                                </div>
+
+                            <h3>5. ⚠️ Buenas prácticas y precauciones</h3>
+                            <div class="sangria">
+                                <p>◉ <b>Empieza con poco:</b> prueba con 2–5 elementos antes de enviar grandes cantidades.</p>
+                                <p>◉ <b>Decide la frecuencia en el trigger: </b>si quieres un digest diario, programa el trigger cada día; si quieres procesar todo al momento, programa disparos en tiempo real.</p>             <p>◉ <b>Empieza con poco:</b> prueba con 2–5 elementos antes de enviar grandes cantidades.</p>
+                                <p>◉ <b>Evita cajas gigantes:</b> demasiados elementos juntos pueden ralentizar tu escenario o superar límites de Make.</p>
+                                <p>◉ <b>Mantén el orden si importa:</b> los ítems llegan en el orden que los detecta el trigger; si el orden es importante, revisa que se mantenga.</p>
+                                <p>◉ <b>Evita duplicados:</b> si hay riesgo de repetir elementos, añade lógica de filtrado antes de enviarlos al siguiente módulo.</p>
+                                <p>◉ <b>Registra para depuración:</b> si los datos son importantes, guarda un registro temporal (por ejemplo, en Google Sheets) antes de enviarlos para poder revisar errores.</p>
+                                <p>💡 <b>Consejo de experto:</b> el Array Aggregator es como un <b>empaquetador pasivo: no decide nada, solo organiza.</b> Todo el control de cuándo se ejecuta y qué llega lo determina el trigger y cómo configuras el escenario.</p>                  
+                                </div>
+                                
+                            <h3>6. ✅ Resumen rápido</h3>
+                            <div class="sangria">
+                                <p>◉ <b>Array Aggregator</b> reúne múltiples ítems en una sola lista para procesarlos en <b>bloque.</b></p>
+                                <p>◉ Útil para <b>digest, envío por lotes, crear CSV/resúmenes</b> o reducir llamadas a APIs.</p>
+                                <p>◉ Complementa al <b>Iterator:</b> uno divide, el otro junta.</p>                                        
+                                </div>             
+                        </section>
+                        <div class="video-placeholder">
+                            <iframe
+                                src="https://www.youtube-nocookie.com/embed/lFerjD6WXJQ"                                                                                                                  
+                                title="Vídeo del curso"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen
+                            ></iframe>
+                        </div>
+                    </div>                
+                </div>  
+                <a href="#seccion-teoria" class="index-button">Volver al índice</a>  
+            </div>
+            </div>
+
+            <!-- Bloque 11 teoría: Variables, contadores y funciones – El kit secreto de Make 🧾   -->
+            <div class="block" id="conceptos11">
+                <h2>11. Variables, contadores y funciones – El kit secreto de Make 🧾  </h2>            
+
+                <div class="tab-container">
+                    
+                    <div class="tab-content" id="text11">
+                        <section>
+                            <h3>1.  🔍 Objetivo </h3>
+                            
+                            <div class="sangria">
+                                <p> Comprender que son las <b>variables, contadores y funciones</b> de todo tipo (por ejemplo, booleanas, matemáticas, de texto, de arrays y de fecha/hora) para crear escenarios más dinámicos y controlados. <b>Esta ficha proporciona la base teórica que aplicaremos más adelante en ejercicios prácticos.</b></p>
+                                                                                
+                            </div>
+                            
+                            <h3>2. 🔣 Variables en Make </h3>
+                            
+                            <div class="sangria">                           
+                                <p>◉ <b>Qué son: </b>Las variables son <b>contenedores para almacenar datos.</b> Puedes imaginar cada variable como una “caja” con una etiqueta: guarda un valor que puedes usar y reutilizar en distintos módulos de tu escenario.</p>
+                                <p>◉ <b>Ejemplo sencillo: </b>Guardar el número de ficheros procesados o un nombre de usuario para usarlo en un correo posterior.</p>
+                                <p>◉ <b>Cómo funcionan: </b>Cada variable tiene un nombre único y un valor que puede cambiar. Cuando Make ejecuta un escenario, el nombre de la variable se reemplaza por su valor actual.</p>
+                                <p>💡 Piensa en mudarte a una nueva casa: cada caja tiene una etiqueta (nombre) y un contenido (valor). Cuando necesitas algo, buscas la caja por la etiqueta y obtienes lo que hay dentro.</p>
+                                <p>🔔 <b>No te preocupes si ahora lo ves de forma abstracta, en la parte práctica veremos escenarios reales en dónde verás todos estos conceptos</b></p>
+                            </div>      
+
+                            <h3>3. 🔢 Contadores </h3>                                       
+                            <div class="sangria">                           
+                                <p>◉ <b>Qué son: </b>Los contadores son <b>variables que se incrementan o decrementan</b> para llevar la cuenta de eventos, elementos o iteraciones dentro de un escenario.</p>
+                                <p>◉ <b>Ejemplo real: </b>Enviar un correo únicamente después de que se hayan procesado 5 elementos de un array.</p>
+                                <p>◉ <b>Cómo funcionan: </b>Se definen como variables incrementables y se actualizan con el módulo Herramienta > Función Incrementar.
+                                    Se pueden reiniciar cada ejecución o mantener su valor según lo necesites.</p>
+                            </div>
+
+                            <h3>4. ⚙️ Funciones en Make</h3>
+                            <div class="sangria">                           
+                                <p>◉ <b>Qué son: Make</b> ofrece funciones para <b>transformar y manipular datos dentro de un escenario.</b> No se limitan a funciones matemáticas: también hay funciones de texto, booleanas, para arrays y de fecha/hora.</p>
+                                <p>◉ <b>Tipos principales: </b></p>
+                                <div class="sangria2">
+                                    <p>🔹 <b>Matemáticas: </b>suma, promedio, máximo, mínimo…</p>
+                                    <p>🔹 <b>Booleanas: </b>verdadero/falso, comparaciones, lógicas AND/OR…</p>
+                                    <p>🔹 <b>Texto: </b>concatenar, extraer, reemplazar, longitud…</p>
+                                    <p>🔹 <b>Arrays: </b>unir, filtrar, contar elementos, transformar…</p>
+                                    <p>🔹 <b>Fecha y hora: </b>formatear, sumar/restar días, convertir zonas horarias…</p>
+                                    <p>🔹 <b>Avanzadas: </b>parseo de JSON, manipulación de datos complejos…</p>                        
+                                </div>
+                                <p>Ejemplo sencillo: Limpiar un nombre antes de enviarlo por correo o contar solo los elementos válidos de un array antes de agregarlos a un resumen.</p>
+                            </div>                             
+                        </section>
+                        <div class="video-placeholder">
+                            <iframe
+                                src="https://www.youtube-nocookie.com/embed/wWGXm7DXoUg"                                                                                                                  
+                                title="Vídeo del curso"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen
+                            ></iframe>
+                        </div>
+                    </div>        
+                    <a href="#seccion-teoria" class="index-button">Volver al índice</a>
+                </div>    
+            </div>
+        </div>                
+
+        <footer id="seccion-footer">
+            <div class="container" id="contact_clients">
+                <div class="footer-content">
+                    <div class="footer-links">
+                        <div class="social-links">
+                            <a
+                                href="https://www.facebook.com/profile.php?id=61579981550830"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="social-link"
+                                aria-label="Síguenos en Facebook"
+                            >
+                                <svg class="social-icon" viewBox="0 0 24 24">
+                                    <path
+                                        d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+                                    />
+                                </svg>
+                            </a>
+                            <a
+                                href="#"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="social-link"
+                                aria-label="Síguenos en LinkedIn"
+                            >
+                                <svg class="social-icon" viewBox="0 0 24 24">
+                                    <path
+                                        d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                                    />
+                                </svg>
+                            </a>
+                        </div>
+
+                        <a
+                            href="https://www.nexautia.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="footer-logo"
+                        >
+                            <img
+                                src="LogoFavicon/logo_nexautia.svg"
+                                alt="NEXAUTIA"
+                                width="200"
+                                height="auto"
+                            />
+                        </a>
+                    </div>
+
+                    <!-- Información de contacto -->
+                    <div class="contact-info">
+                        <a href="tel:+34610510642" class="contact-item">
+                            <svg
+                                class="contact-icon"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                            >
+                                <path
+                                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                                ></path>
+                            </svg>
+                            <span class="contact-text">610 510 642</span>
+                        </a>
+
+                        <a
+                            href="mailto:contacto@nexautia.com"
+                            class="contact-item"
+                        >
+                            <svg
+                                class="contact-icon"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                            >
+                                <path
+                                    d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                                ></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                            <span class="contact-text"
+                                >contacto@nexautia.com</span
+                            >
+                        </a>
+                    </div>
+
+                    <div class="footer-text">
+                        <p class="footer-text1">
+                            © 2025 Nexautia. Transformando empresas con automatización inteligente.
+                        </p>
+                        <p class="footer-text2">
+                            Creado con ❤️ por Nexautia para el traspaso de
+                            conocimiento
+                        </p>
+                        <p class="footer-text3">
+                            ¡Sigue explorando el increíble mundo de la automatización de empresas y la
+                            Inteligencia Artificial!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    
+        <script>
+            function mostrarSeccion(seccion) {
+                const teoria = document.getElementById("seccion-teoria");
+                const practica = document.getElementById("seccion-practica");
+                const cabecera = document.getElementById("seccion-footer");
+            
+                if (seccion === "teoria") {
+                    teoria.style.display = "block";
+                    practica.style.display = "none";
+            
+                    // 🔴 CLAVE: scroll al ÍNDICE, no al título
+                    document
+                        .getElementById("index")
+                        .scrollIntoView({ behavior: "smooth", block: "start" });
+                }
+            
+                if (seccion === "practica") {
+                    practica.style.display = "block";
+                    cabecera.style.display="block";
+                    teoria.style.display = "none";
+            
+                    document
+                        .getElementById("titulo-practica")
+                        .scrollIntoView({ behavior: "smooth", block: "start" });
+                }
+            }
+            </script>
+                        
+            
+            
+    </body>
+</html>
