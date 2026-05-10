@@ -42,6 +42,23 @@ const translations = {
         'footer-text3': '¡Sigue explorando el increíble mundo de la automatización de empresas y la Inteligencia Artificial!',
         'footer-text4': 'Este proyecto arranca con una base de recursos y cada mes añadiremos nuevos contenidos prácticos y actualizados. La idea es construir <strong>un espacio potente y útil</strong> para quienes quieran aprender a automatizar de verdad. 🙌',
 
+        // Productos recomendados
+        'productos-title': '⭐ Productos recomendados',
+
+        'producto1-tag': 'Dispositivos IA',
+        'producto1-title': 'Gafas inteligentes con inteligencia artificial',
+        'producto1-desc': 'Gafas inteligentes con funciones de traducción en tiempo real, asistentes IA y control por voz. Un ejemplo interesante de cómo la inteligencia artificial empieza a integrarse en dispositivos cotidianos y experiencias manos libres.',
+
+        'producto2-tag': 'Dispositivos IA',
+        'producto2-title': 'Auriculares inteligentes con traducción IA',
+        'producto2-desc': 'Auriculares con inteligencia artificial capaces de traducir conversaciones en tiempo real entre múltiples idiomas. Un ejemplo práctico de cómo la IA empieza a eliminar barreras de comunicación en viajes, reuniones y trabajo internacional.',
+
+        'producto3-tag': 'Productividad',
+        'producto3-title': 'Dispositivo de IA que graba, transcribe y resume automáticamente',
+        'producto3-desc': 'Graba reuniones, convierte el audio en texto y genera resúmenes automáticamente gracias a la inteligencia artificial. Una herramienta práctica para ahorrar tiempo, organizar ideas y no perder información importante.',
+
+        'amazon-button': 'Ver en Amazon',
+        'productos-more': 'Ver más productos',
 
     },
 
@@ -86,6 +103,24 @@ const translations = {
         'vcard-copy-clipboard': '📋 Copiar al Portapapers',
         'vcard-understood': '✅ Entès',
         'vcard-copied': 'Dades copiades al portapapers!',
+
+        //Poductos recomendados
+        'productos-title': '⭐ Productes recomanats',
+
+        'producto1-tag': 'Dispositius IA',
+        'producto1-title': 'Ulleres intel·ligents amb intel·ligència artificial',
+        'producto1-desc': 'Ulleres intel·ligents amb funcions de traducció en temps real, assistents IA i control per veu. Un exemple interessant de com la intel·ligència artificial comença a integrar-se en dispositius quotidians i experiències mans lliures.',
+
+        'producto2-tag': 'Dispositius IA',
+        'producto2-title': 'Auriculars intel·ligents amb traducció IA',
+        'producto2-desc': 'Auriculars amb intel·ligència artificial capaços de traduir converses en temps real entre múltiples idiomes. Un exemple pràctic de com la IA comença a eliminar barreres de comunicació en viatges, reunions i treball internacional.',
+
+        'producto3-tag': 'Productivitat',
+        'producto3-title': 'Dispositiu d’IA que grava, transcriu i resumeix automàticament',
+        'producto3-desc': 'Grava reunions, converteix l’àudio en text i genera resums automàticament gràcies a la intel·ligència artificial. Una eina pràctica per estalviar temps, organitzar idees i no perdre informació important.',
+
+        'amazon-button': 'Veure a Amazon',
+        'productos-more': 'Veure més productes',
 
     },
 
@@ -132,6 +167,23 @@ const translations = {
         'vcard-understood': '✅ Got it',
         'vcard-copied': 'Data copied to clipboard!',
 
+        //Productos recomendados
+        'productos-title': '⭐ Recommended products',
+
+        'producto1-tag': 'AI Devices',
+        'producto1-title': 'AI-powered smart glasses',
+        'producto1-desc': 'Smart glasses with real-time translation, AI assistants and voice control features. An interesting example of how artificial intelligence is becoming integrated into everyday devices and hands-free experiences.',
+
+        'producto2-tag': 'AI Devices',
+        'producto2-title': 'AI-powered translation earbuds',
+        'producto2-desc': 'AI-powered earbuds capable of translating conversations in real time across multiple languages. A practical example of how artificial intelligence is starting to remove communication barriers in travel, meetings and international work.',
+
+        'producto3-tag': 'Productivity',
+        'producto3-title': 'AI device that records, transcribes and summarizes automatically',
+        'producto3-desc': 'Record meetings, convert audio into text and generate summaries automatically using artificial intelligence. A practical tool to save time, organize ideas and avoid losing important information.',
+
+        'amazon-button': 'View on Amazon',
+        'productos-more': 'View more products',
 
     }
 };
@@ -146,10 +198,16 @@ function t(key) {
 // Función para cambiar idioma
 function changeLanguage(lang) {
     currentLanguage = lang;
+
     localStorage.setItem('preferredLanguage', lang);
+    localStorage.setItem('language', lang);
+    localStorage.setItem('Language', lang.toUpperCase());
+    localStorage.setItem('Preferred Language', lang.toUpperCase());
+    localStorage.setItem('selectedLanguage', lang);
+    localStorage.setItem('currentLanguage', lang);
+
     updateLanguageSelector();
     updateAllTranslations();
-
 }
 //CAMBIOS AÑADIDOS EL 04/08/2025
 // =============================
@@ -212,6 +270,7 @@ function updateAllTranslations() {
     updateStatsSection();
     updateServicesSection();
     updateCursosSection();
+    updateRecommendedProductsSection();
     updateProcessSection();
     updateVCardSection();
     updateFooterSection();
@@ -281,7 +340,12 @@ function initializeLanguageSelector() {
 
         // Guardar el idioma detectado para futuras visitas
         localStorage.setItem('preferredLanguage', currentLanguage);
-    }
+        localStorage.setItem('language', currentLanguage);
+        localStorage.setItem('Language', currentLanguage.toUpperCase());
+        localStorage.setItem('Preferred Language', currentLanguage.toUpperCase());
+        localStorage.setItem('selectedLanguage', currentLanguage);
+        localStorage.setItem('currentLanguage', currentLanguage);
+       }
 
     updateLanguageSelector();
 
@@ -675,6 +739,42 @@ function updateCursosSection() {
     }
 }
 
+function updateRecommendedProductsSection() {
+    const section = document.querySelector("#productos-recomendados");
+    if (!section) return;
+
+    const title = section.querySelector("h2");
+    if (title) title.textContent = t("productos-title");
+
+    const cards = section.querySelectorAll(".product-card");
+
+    if (cards.length >= 3) {
+        const card1 = cards[0];
+        card1.querySelector(".product-tag").textContent = t("producto1-tag");
+        card1.querySelector("h3").textContent = t("producto1-title");
+        card1.querySelector("p").textContent = t("producto1-desc");
+
+        const card2 = cards[1];
+        card2.querySelector(".product-tag").textContent = t("producto2-tag");
+        card2.querySelector("h3").textContent = t("producto2-title");
+        card2.querySelector("p").textContent = t("producto2-desc");
+
+        const card3 = cards[2];
+        card3.querySelector(".product-tag").textContent = t("producto3-tag");
+        card3.querySelector("h3").textContent = t("producto3-title");
+        card3.querySelector("p").textContent = t("producto3-desc");
+    }
+
+    const amazonButtons = section.querySelectorAll(".btn-primary");
+    amazonButtons.forEach(function (btn) {
+        btn.textContent = t("amazon-button");
+    });
+
+    const moreBtn = section.querySelector(".products-more-btn");
+    if (moreBtn) {
+        moreBtn.textContent = t("productos-more");
+    }
+}
 
 function updateServicesSection() {
     const cards = document.querySelectorAll('#servicios .card');

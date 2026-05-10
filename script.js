@@ -31,7 +31,7 @@ const translations = {
         'dmenu-mob-contactoh':'📞 Contacto',
         'dmenu-mob-aprendeh':'🎓 Aprende con Nosotros',
         'dmenu-mob-ejemplosh':'⚙️ Academia Práctica',
-
+        'dmenu-mob-comprah':'🛒 Productos recomendados',
 
 
         // Secciones principales
@@ -136,6 +136,7 @@ const translations = {
         'nav-contacto': 'Contacto',
         'nav-aprende':'Aprende con nosotros',
         'nav-ejemplos':'Academia práctica',
+        'nav-compra':'Productos recomendados',
         
         // Calendarios - Meses
         'month-0': 'Enero',
@@ -195,6 +196,25 @@ const translations = {
         'testimonial-2-author': '— Carlos Ruiz, Director Comercial InnovaRetail',
         'testimonial-2-results': '✅ 0% errores en inventario\n✅ Facturación 24/7 automática\n✅ Flujo de caja mejorado 40%',
 
+        // Productos Destacados
+
+        'featuredTitle': "⭐ Productos destacados IA",
+
+        'gadget1Tag': "IA wearable",
+        'gadget1Title': "Gafas inteligentes con inteligencia artificial",
+        'gadget1Text': "Gafas inteligentes con funciones de traducción en tiempo real, asistentes IA y control por voz. Un ejemplo interesante de cómo la inteligencia artificial empieza a integrarse en dispositivos cotidianos y experiencias manos libres.",
+
+        'gadget2Tag': "IA wearable",
+        'gadget2Title': "Auriculares inteligentes con traducción IA",
+        'gadget2Text': "Auriculares con inteligencia artificial capaces de traducir conversaciones en tiempo real entre múltiples idiomas. Un ejemplo práctico de cómo la IA empieza a eliminar barreras de comunicación en viajes, reuniones y trabajo internacional.",
+
+        'product3Tag': "Productividad",
+        'product3Title': "Dispositivo de IA que graba, transcribe y resume automáticamente",
+        'product3Text': "Graba reuniones, convierte el audio en texto y genera resúmenes automáticamente gracias a la inteligencia artificial. Una herramienta práctica para ahorrar tiempo, organizar ideas y no perder información importante.",
+
+        'amazonButton': "Ver en Amazon",
+
+        'featuredProductsMore': "Ver más productos",
         
         // Calculadora
         'calc-no-slots': 'No hay horarios disponibles para este día',
@@ -383,6 +403,7 @@ const translations = {
        'dmenu-mob-contactoh':'📞 Contacte',
        'dmenu-mob-aprendeh':'🎓 Aprèn amb nosaltres',
        'dmenu-mob-ejemplosh':'⚙️ Acadèmia práctica',
+       'dmenu-mob-comprah':'🛒 Productes recomenats',
 
         // Secciones principales
         'services-title': 'Serveis especialitzats',
@@ -429,7 +450,6 @@ const translations = {
         'aphelpacademiah2':'Necessites ajuda?',
         'aphelpacademia1p':'A més dels vídeos i recursos descarregables, disposaràs d\’un espai on <strong>resoldre dubtes i demanar orientació</strong>. Si una automatització s’ha d’adaptar al teu compte o projecte, podràs preguntar i t’acompanyarem perquè ho puguis resoldre tu mateix.',
         'aphelpacademia2p':'<em>⚠️ Nota:</em> L\’ajuda és acompanyament i orientació, no la realització completa de projectes.',
-
 
 
         // Cursos
@@ -484,6 +504,26 @@ const translations = {
         'testimonial-2-text': '"L\'automatització d\'inventari i facturació va eliminar errors i va accelerar el nostre flux de caixa."',
         'testimonial-2-author': '— Carlos Ruiz, Director Comercial InnovaRetail', 
         'testimonial-2-results': '✅ 0% d\'errors en inventari\n✅ Facturació 24/7 automàtica\n✅ Flux de caixa millorat un 40%',
+
+        // Productes Destacats
+
+        'featuredTitle': "⭐ Productes destacats IA",
+
+        'gadget1Tag': "IA wearable",
+        'gadget1Title': "Ulleres intel·ligents amb intel·ligència artificial",
+        'gadget1Text': "Ulleres intel·ligents amb funcions de traducció en temps real, assistents IA i control per veu. Un exemple interessant de com la intel·ligència artificial comença a integrar-se en dispositius quotidians i experiències mans lliures.",
+
+        'gadget2Tag': "IA wearable",
+        'gadget2Title': "Auriculars intel·ligents amb traducció IA",
+        'gadget2Text': "Auriculars amb intel·ligència artificial capaços de traduir converses en temps real entre múltiples idiomes. Un exemple pràctic de com la IA comença a eliminar barreres de comunicació en viatges, reunions i treball internacional.",
+
+        'product3Tag': "Productivitat",
+        'product3Title': "Dispositiu d'IA que grava, transcriu i resumeix automàticament",
+        'product3Text': "Grava reunions, converteix l'àudio en text i genera resums automàticament gràcies a la intel·ligència artificial. Una eina pràctica per estalviar temps, organitzar idees i no perdre informació important.",
+
+        'amazonButton': "Veure a Amazon",
+
+        'featuredProductsMore': "Veure més productes",
 
         // Calculadora
         'calc-title-pain': '💸 ESTÀS PERDENT:',
@@ -588,6 +628,7 @@ const translations = {
         'nav-contacto': 'Contacte',
         'nav-aprende':'Aprèn amb nosaltres',
         'nav-ejemplos':'Acadèmia pràctica',
+        'nav-compra':'Productes recomanats',
         
         // Calendarios - Meses
         'month-0': 'Gener',
@@ -728,6 +769,7 @@ const translations = {
         'dmenu-mob-contactoh':'📞 Contact',
         'dmenu-mob-aprendeh':'🎓 Learn with us',
         'dmenu-mob-ejemplosh':'⚙️ Practical academy',
+        'dmenu-mob-comprah':'🛒 Recommended products',
 
         // Secciones principales  
         'services-title': 'Specialized Services',
@@ -774,11 +816,7 @@ const translations = {
         'aphelpacademiah2':'Do you need help?',
         'aphelpacademia1p':'In addition to the videos and downloadable resources, you will have a space <strong>to ask questions and request guidance</strong>. If an automation needs to be adapted to your account or project, you can ask and we will guide you so that you solve it yourself.',
         'aphelpacademia2p':'<em>⚠️ Note:</em> The help is guidance and orientation, not the full execution of projects.',
-
-
-
-
-        
+       
         // Cursos
         'p2titulocursos': '¡ Learn with Us !',
         'p2subtitulocursos': 'Pages, courses and useful links',
@@ -831,6 +869,26 @@ const translations = {
         'testimonial-2-text': '"Inventory and billing automation eliminated errors and accelerated our cash flow."',
         'testimonial-2-author': '— Carlos Ruiz, Commercial Director InnovaRetail',
         'testimonial-2-results': '✅ 0% inventory errors\n✅ 24/7 automatic billing\n✅ 40% improved cash flow',
+
+        // Productes Destacats
+
+        'featuredTitle': "⭐ Featured AI products",
+
+        'gadget1Tag': "IA wearable",
+        'gadget1Title': "AI-powered smart glasses",
+        'gadget1Text': "Smart glasses with real-time translation, AI assistants and voice control features. An interesting example of how artificial intelligence is becoming integrated into everyday devices and hands-free experiences.",
+
+        'gadget2Tag': "IA wearable",
+        'gadget2Title': "AI-powered translation earbuds",
+        'gadget2Text': "AI-powered earbuds capable of translating conversations in real time across multiple languages. A practical example of how artificial intelligence is starting to remove communication barriers in travel, meetings and international work.",
+
+        'product3Tag': "Productivity",
+        'product3Title': "AI device that records, transcribes and summarizes automatically",
+        'product3Text': "Record meetings, convert audio into text and generate summaries automatically using artificial intelligence. A practical tool to save time, organize ideas and avoid losing important information.",
+
+        'amazonButton': "View on Amazon",
+
+        'featuredProductsMore': "View more products",
 
         // Calculadora
         'calc-title-pain': '💸 YOU\'RE LOSING:',
@@ -902,6 +960,7 @@ const translations = {
         'nav-contacto': 'Contact',
         'nav-aprende':'Learn with us',
         'nav-ejemplos':'Practical academy',
+        'nav-compra':'Recommended Products',
         
         // Calendar - Months
         'month-0': 'January',
@@ -1204,7 +1263,7 @@ function updateAllTranslations() {
     updateDateAppointment();
     calculateROI();
     updateHamburgerMenu ()     
-    
+    updateFeaturedProductsSection()
 }
 
 // Actualizar textos hardcodeados del calendario
@@ -1330,13 +1389,24 @@ function initializeLanguageSelector() {
     });
     
     // Manejar selección de idioma
-    dropdown.addEventListener('click', (e) => {
-        if (e.target.classList.contains('language-option')) {
-            const lang = e.target.getAttribute('data-lang');
-            changeLanguage(lang);
-            dropdown.classList.remove('show');
-        }
-    });
+   // Manejar selección de idioma
+dropdown.addEventListener('click', (e) => {
+    const option = e.target.closest('.language-option');
+
+    if (option) {
+        const lang = option.getAttribute('data-lang');
+
+        localStorage.setItem('preferredLanguage', lang);
+        localStorage.setItem('language', lang);
+        localStorage.setItem('Language', lang.toUpperCase());
+        localStorage.setItem('Preferred Language', lang.toUpperCase());
+        localStorage.setItem('selectedLanguage', lang);
+        localStorage.setItem('currentLanguage', lang);
+
+        changeLanguage(lang);
+        dropdown.classList.remove('show');
+    }
+});
 }
 
 function updateLanguageSelector() {
@@ -4529,6 +4599,79 @@ function updateServicesSection() {
     }
 }
 
+function updateFeaturedProductsSection() {
+    const section = document.querySelector("#productos-destacados");
+
+    if (!section) return;
+
+    // TÍTULO SECCIÓN
+    const title = section.querySelector("h2");
+
+    if (title) {
+        title.textContent = t("featuredTitle");
+    }
+
+    // CARDS
+    const cards = section.querySelectorAll(".product-card");
+
+    if (cards.length >= 3) {
+
+        // CARD 1 - GAFAS IA
+        const card1 = cards[0];
+
+        card1.querySelector(".product-tag").textContent =
+            t("gadget1Tag");
+
+        card1.querySelector("h3").textContent =
+            t("gadget1Title");
+
+        card1.querySelector("p").textContent =
+            t("gadget1Text");
+
+
+        // CARD 2 - AURICULARES IA
+        const card2 = cards[1];
+
+        card2.querySelector(".product-tag").textContent =
+            t("gadget2Tag");
+
+        card2.querySelector("h3").textContent =
+            t("gadget2Title");
+
+        card2.querySelector("p").textContent =
+            t("gadget2Text");
+
+
+        // CARD 3 - PLAUD
+        const card3 = cards[2];
+
+        card3.querySelector(".product-tag").textContent =
+            t("product3Tag");
+
+        card3.querySelector("h3").textContent =
+            t("product3Title");
+
+        card3.querySelector("p").textContent =
+            t("product3Text");
+    }
+
+    // BOTONES AMAZON
+    const amazonButtons =
+        section.querySelectorAll("[data-i18n-amazon-button]");
+
+    amazonButtons.forEach(function (button) {
+        button.textContent = t("amazonButton");
+    });
+
+    // BOTÓN VER MÁS PRODUCTOS
+    const moreBtn =
+        section.querySelector(".featured-products-more");
+
+    if (moreBtn) {
+        moreBtn.textContent =
+            t("featuredProductsMore");
+    }
+}
 
 function updateProcessSection() {
     const steps = document.querySelectorAll('.process-step');
@@ -4637,6 +4780,10 @@ function updateHamburgerMenu (){
 
     const mhejemplos= document.querySelector('#menu-mob-ejemplosh');
     if (mhejemplos) mhejemplos.textContent = t('dmenu-mob-ejemplosh');
+
+    const mhcompra= document.querySelector('#menu-mob-comprah');
+    if (mhcompra) mhcompra.textContent = t('dmenu-mob-comprah');
+
 
 }
 
