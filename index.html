@@ -120,8 +120,9 @@
                     >
                     <a href="#contacto" data-track="nav-contacto">Contacto</a>
                     <a href="recursos/index.html" data-track="nav-aprende" target="_blank"
-                        >Aprende con Nosotros</a
-                    >                    
+                        >Aprende con Nosotros</a>
+                    <a href="recursos/productos_recomendados/index.html" data-track="nav-compra" target="_blank"
+                        >Productos recomendados</a>                    
                 </nav>
                 <div class="header-controls">
                     <div class="language-selector">
@@ -274,7 +275,15 @@
                         data-track="mobile-menu-aprende"
                     >
                        🎓 Aprende con Nosotros
-                    </a>                    
+                    </a>  
+                    <a
+                    href="recursos/productos_recomendados/index.html"
+                    onclick="window.open('recursos/index.html', '_blank');"
+                    id="menu-mob-comprah"
+                    data-track="mobile-menu-compra"
+                >
+                      🛒 Productos recomendados
+                </a>                                      
                 </nav>
             </div>
         </div>
@@ -478,6 +487,106 @@
             </div>
         </section>
 
+        <section id="productos-destacados" class="section">
+            <h2 data-i18n="featuredTitle">⭐ Recomendados destacados</h2>
+
+            <div class="cards product-grid">
+                <article class="card product-card">
+                    <img
+                        src="imagenes/gafas ia.jpg"
+                        alt="Gafas inteligentes con inteligencia artificial"
+                        class="product-image"
+                    />
+                    <span class="product-tag" data-i18n="product1Tag"
+                        >IA weareable</span
+                    >
+                    <h3 data-i18n="product1Title">
+                        Gafas inteligentes con inteligencia artificial
+                    </h3>
+                    <p data-i18n="product1Text">
+                        Gafas inteligentes con funciones de traducción en
+                        tiempo real, asistentes IA y control por voz. Un                           
+                        ejemplo interesante de cómo la inteligencia
+                        artificial empieza a integrarse en dispositivos
+                        cotidianos y experiencias manos libres.
+                    </p>
+                    <a
+                        href="https://www.amazon.com/-/es/inteligentes-Gemini-2-5-traducciones-compatibles-reproducci%C3%B3n/dp/B0F38995PH?tag=nexautia21-21"
+                        class="btn btn-primary"
+                        target="_blank"
+                        rel="nofollow sponsored noopener"
+                        data-i18n-amazon-button
+                    >
+                        Ver en Amazon
+                    </a>
+                </article>
+
+                <article class="card product-card">
+                    <img
+                        src="imagenes/auricular_IA_traductor.jpg"
+                        alt="Auriculares inteligentes con traducción IA"
+                        class="product-image"
+                    />
+                    <span class="product-tag" data-i18n="product2Tag"
+                        >IA wearable</span
+                    >
+                    <h3 data-i18n="product2Title">
+                        Auriculares inteligentes con traducción IA
+                    </h3>
+                    <p data-i18n="product2Text">
+                        Auriculares con inteligencia artificial capaces de
+                        traducir conversaciones en tiempo real entre
+                        múltiples idiomas. Un ejemplo práctico de cómo la IA
+                        empieza a eliminar barreras de comunicación en
+                        viajes, reuniones y trabajo internacional.
+                    </p>
+                    <a
+                        href="https://www.amazon.es/Auriculares-Traductor-Inalambricos-Traductors-Instantaneo/dp/B0FWJHR1ZW?tag=nexautia21-21"
+                        class="btn btn-primary"
+                        target="_blank"
+                        rel="nofollow sponsored noopener"
+                        data-i18n-amazon-button
+                    >
+                        Ver en Amazon
+                    </a>
+                </article>
+
+                <article class="card product-card">
+                    <img
+                        src="imagenes/plaud_recomendado.jpg"
+                        alt="Dispositivo de IA que graba, transcribe y resume automáticamente"
+                        class="product-image"
+                    />
+                    <span class="product-tag" data-i18n="product3Tag"
+                        >Productividad</span
+                    >
+                    <h3 data-i18n="product3Title">
+                        Dispositivo de IA que graba, transcribe y resume
+                        automáticamente
+                    </h3>
+                    <p data-i18n="product3Text">
+                        Graba reuniones, convierte el audio en texto y
+                        genera resúmenes automáticamente gracias a la
+                        inteligencia artificial. Una herramienta práctica
+                        para ahorrar tiempo, organizar ideas y no perder
+                        información importante.
+                    </p>
+                    <a
+                        href="https://www.amazon.com/-/es/Plaud-Note-Pro-aplicaciones-transcripci%C3%B3n/dp/B0GFDRT84Y?tag=nexautia21-21"
+                        class="btn btn-primary"
+                        target="_blank"
+                        rel="nofollow sponsored noopener"
+                        data-i18n-amazon-button
+                    >
+                        Ver en Amazon
+                    </a>
+                </article>
+            </div>
+            <a href="recursos/productos_recomendados/index.html" class="btn btn-secondary featured-products-more" target="_blank">
+                Ver más productos
+            </a>
+        </section>
+
         <section id="calculadora" class="section">
             <h2>💰 Descubre cuánto dinero estás perdiendo</h2>
             <div class="calculator-container">
@@ -553,6 +662,7 @@
             </div>
         </section>
 
+        
         <!-- SECCIÓN VCARD -->
         <section class="vcard-section" id="vcard">
             <div class="vcard-container">
