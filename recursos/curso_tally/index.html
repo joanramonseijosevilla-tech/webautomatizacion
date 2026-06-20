@@ -3,224 +3,426 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Curso Tally Forms</title>
-        <!-- Favicon -->
-        <link
-            rel="icon"
-            type="image/x-icon"
-            href="LogoFavicon/favicon-v2.ico"
-        />
-        <link
-            rel="icon"
-            type="image/png"
-            sizes="16x16"
-            href="favicon-16x16.png"
-        />
-        <link
-            rel="icon"
-            type="image/png"
-            sizes="32x32"
-            href="favicon-32x32.png"
-        />
+
+        <title>
+            Curso de Tally Forms gratis | Formularios online y automatización |
+            Nexautia
+        </title>
         <meta
             name="description"
-            content="Curso de Tally: aprende a crear formularios de forma gratuita paso a paso."
+            content="Curso gratuito de Tally Forms de Nexautia. Aprende a crear formularios online profesionales desde cero, configurar campos, publicar formularios y entender cómo integrarlos con Make, n8n o Zapier."
         />
-        <style>
-            /* Estilos generales */
-            * {
-                box-sizing: border-box; /* CRÍTICO: previene overflow */
+
+        <link
+            rel="canonical"
+            href="https://www.nexautia.com/recursos/curso_tally/"
+        />
+        <link
+            rel="alternate"
+            hreflang="es"
+            href="https://www.nexautia.com/recursos/curso_tally/"
+        />
+        <link
+            rel="alternate"
+            hreflang="ca"
+            href="https://www.nexautia.com/ca/recursos/curs_tally/"
+        />
+        <link
+            rel="alternate"
+            hreflang="x-default"
+            href="https://www.nexautia.com/recursos/curso_tally/"
+        />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Nexautia" />
+        <meta property="og:locale" content="es_ES" />
+        <meta property="og:locale:alternate" content="ca_ES" />
+        <meta
+            property="og:title"
+            content="Curso de Tally Forms gratis | Nexautia"
+        />
+        <meta
+            property="og:description"
+            content="Aprende a crear formularios online con Tally Forms y entiende cómo integrarlos con herramientas de automatización no-code."
+        />
+        <meta
+            property="og:url"
+            content="https://www.nexautia.com/recursos/curso_tally/"
+        />
+        <meta
+            property="og:image"
+            content="https://www.nexautia.com/imagenes/comunes/curso-tally-card.webp"
+        />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+            name="twitter:title"
+            content="Curso de Tally Forms gratis | Nexautia"
+        />
+        <meta
+            name="twitter:description"
+            content="Curso gratuito para crear formularios profesionales con Tally Forms y conectarlos con automatizaciones no-code."
+        />
+        <meta
+            name="twitter:image"
+            content="https://www.nexautia.com/imagenes/comunes/curso-tally-card.webp"
+        />
+
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            rel="icon"
+            type="image/svg+xml"
+            href="../../imagenes/comunes/favicon.svg?v=4"
+        />
+        <meta name="theme-color" content="#0f172a" />
+
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "Course",
+                "name": "Curso de Tally Forms",
+                "description": "Curso gratuito de Nexautia para aprender a crear formularios online profesionales con Tally Forms desde cero, configurar campos, publicar formularios y entender cómo integrarlos con Make, n8n o Zapier.",
+                "url": "https://www.nexautia.com/recursos/curso_tally/",
+                "inLanguage": "es",
+                "image": "https://www.nexautia.com/imagenes/comunes/curso-tally-card.webp",
+                "thumbnailUrl": "https://www.nexautia.com/imagenes/comunes/curso-tally-card.webp",
+                "provider": {
+                    "@type": "Organization",
+                    "name": "Nexautia",
+                    "url": "https://www.nexautia.com/",
+                    "logo": "https://www.nexautia.com/imagenes/comunes/logo.svg"
+                },
+                "educationalLevel": "Beginner",
+                "isAccessibleForFree": true,
+                "about": [
+                    "Tally Forms",
+                    "formularios online",
+                    "formularios no-code",
+                    "captación de datos",
+                    "automatización de procesos",
+                    "Make",
+                    "n8n",
+                    "Zapier"
+                ]
             }
+        </script>
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Inicio",
+                        "item": "https://www.nexautia.com/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Aprende gratis",
+                        "item": "https://www.nexautia.com/recursos/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 3,
+                        "name": "Curso de Tally Forms",
+                        "item": "https://www.nexautia.com/recursos/curso_tally/"
+                    }
+                ]
+            }
+        </script>
+
+        <style>
+            :root {
+                --nx-bg: #0f172a;
+                --nx-bg-soft: #111827;
+                --nx-card: #ffffff;
+                --nx-text: #0f172a;
+                --nx-muted: #475569;
+                --nx-primary: #2563eb;
+                --nx-primary-dark: #1d4ed8;
+                --nx-cyan: #06b6d4;
+                --nx-border: #bfdbfe;
+            }
+
+            * {
+                box-sizing: border-box;
+            }
+
             html {
+                scroll-behavior: smooth;
                 overflow-x: hidden;
             }
 
             body {
-                font-family: "Arial", sans-serif;
-                max-width: 900px;
-                margin: 0 auto;
-                padding: 20px;
-                line-height: 1.6;
-                background-color: #f0f4f8;
-                overflow-x: hidden; /* Previene scroll horizontal */
-            }
-
-            h1,
-            h2,
-            h3 {
-                color: #2c3e50;
-                word-wrap: break-word; /* Rompe palabras largas */
-            }
-
-            h1 {
-                border-bottom: 3px solid hsl(204, 70%, 53%);
-                padding-bottom: 5px;
-            }
-
-            .teoria,
-            .practica {
-                border-bottom: 3px solid hsl(204, 70%, 53%);
-                padding-bottom: 10px;
-            }
-
-            p {
-                margin-bottom: 15px;
-                word-wrap: break-word;
-            }
-
-            /* Bloques visuales */
-
-            #tittle a {
+                max-width: none;
                 margin: 0;
-                height: 30px;
+                padding: 0;
+                font-family: "Inter", Arial, sans-serif;
+                background: #f1f5f9;
+                color: var(--nx-text);
+                line-height: 1.6;
+                overflow-x: hidden;
             }
 
-            .block {
-                background-color: white;
-                padding: 20px;
-                margin: 20px 0;
-                border-radius: 10px;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-                width: 100%; /* Asegura que no exceda el contenedor */
-                overflow-wrap: break-word;
-            }
-
-            .sangria {
-                margin-left: 60px;
-            }
-            .sangria2 {
-                margin-left: 30px;
-            }
-            .sangria3 {
-                margin-left: 30px;
-            }
-            .sangria4 {
-                margin-left: 30px;
-            }
-
-            .block img {
-                max-width: 100%;
-                height: auto; /* Mantiene proporción */
-                border-radius: 8px;
-                margin: 15px 0;
-                display: block; /* Evita espacios extra */
-            }
-
-            img {
-                max-width: 100% !important;
-                width: 100% !important;
-                height: auto !important;
-            }
-
-            /* Índice de lección */
-            .index,
-            .indext {
-                background-color: #eaf2f8;
-                padding: 15px;
-                border-radius: 8px;
-                margin-bottom: 20px;
-                width: 100%;
-                overflow-wrap: break-word;
-            }
-
-            .indext strong,
-            .index strong {
-                display: block;
-                margin-bottom: 12px;
-            }
-
-            .index a,
-            .indext a {
-                display: block;
-                color: #2980b9;
+            a {
                 text-decoration: none;
-                margin-bottom: 8px;
-                word-wrap: break-word;
             }
 
-            .index a:hover,
-            .indext a:hover {
-                text-decoration: underline;
+            .course-header {
+                background: #0f172a;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                padding: 1rem 1.25rem;
+                position: sticky;
+                top: 0;
+                z-index: 999;
             }
 
-            /* Tabs */
-            .tab-container {
-                background: #fff;
-                border-radius: 10px;
-                padding: 20px;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-                margin-bottom: 30px;
-                width: 100%;
-            }
-
-            .tabs {
+            .course-header-inner {
+                max-width: 1180px;
+                margin: 0 auto;
                 display: flex;
-                margin-bottom: 15px;
-                flex-wrap: wrap; /* Permite envolver tabs si son muchos */
-                gap: 5px;
-            }
-
-            .tab-button {
-                flex: 1;
-                min-width: 100px; /* Ancho mínimo */
-                padding: 10px;
-                border: none;
-                background: #eaf2f8;
-                cursor: pointer;
-                border-radius: 5px 5px 0 0;
-                font-weight: bold;
-                color: #0066cc;
-                margin-right: 5px;
-            }
-
-            .tab-button.active {
-                background: #0066cc;
-                color: #fff;
-            }
-
-            .tab-content {
-                padding: 15px;
-                border-top: 2px solid #0066cc;
-                overflow-wrap: break-word;
-            }
-
-            /* Botones de navegación */
-            .buttons {
-                display: flex;
+                align-items: center;
                 justify-content: space-between;
-                margin-top: 30px;
-                gap: 10px;
+                gap: 1.25rem;
+            }
+
+            .course-logo-link {
+                display: inline-flex;
+                align-items: center;
+            }
+
+            .logo-img {
+                width: 230px;
+                max-width: 230px;
+                height: auto;
+                margin: 0;
+                transition: transform 0.25s ease;
+            }
+
+            .logo-img:hover {
+                transform: scale(1.03);
+            }
+
+            .course-nav {
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                gap: 0.6rem;
                 flex-wrap: wrap;
             }
 
-            .buttons a {
+            .course-nav a,
+            .course-lang-switch a {
+                color: #e5e7eb;
                 text-decoration: none;
-                background-color: #3498db;
-                color: white;
-                padding: 12px 25px;
-                border-radius: 6px;
-                font-weight: bold;
-                white-space: nowrap;
-                overflow: hidden;
-                text-overflow: ellipsis;
+                font-size: 0.9rem;
+                font-weight: 800;
+                padding: 0.55rem 0.75rem;
+                border-radius: 999px;
+                line-height: 1;
             }
 
-            .buttons a:hover {
-                background-color: #2980b9;
+            .course-nav a:hover,
+            .course-lang-switch a:hover {
+                background: rgba(255, 255, 255, 0.1);
+                color: #ffffff;
             }
 
-            /* Destacado SEO */
+            .course-lang-switch {
+                display: inline-flex;
+                align-items: center;
+                gap: 0.25rem;
+                padding-left: 0.4rem;
+                margin-left: 0.25rem;
+                border-left: 1px solid rgba(255, 255, 255, 0.18);
+            }
+
+            .course-lang-switch a {
+                border: 1px solid rgba(255, 255, 255, 0.18);
+                padding: 0.45rem 0.55rem;
+            }
+
+            .course-lang-switch a.active {
+                background: #06b6d4 !important;
+                border-color: rgba(6, 182, 212, 0.75) !important;
+                color: #ffffff !important;
+                box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.18) !important;
+            }
+
+            .course-shell {
+                max-width: none;
+                margin: 0;
+                padding: 0;
+            }
+
+            .course-hero {
+                display: grid;
+                grid-template-columns: minmax(0, 0.92fr) minmax(430px, 0.88fr);
+                gap: 4rem;
+                align-items: center;
+                max-width: 1220px;
+                margin: 0 auto;
+                padding: 4.4rem 1.5rem 4.6rem;
+                color: #ffffff;
+                position: relative;
+            }
+
+            .course-hero::before {
+                content: "";
+                position: absolute;
+                left: 50%;
+                top: 0;
+                width: 100vw;
+                height: 100%;
+                transform: translateX(-50%);
+                background:
+                    radial-gradient(
+                        circle at 20% 0%,
+                        rgba(37, 99, 235, 0.3),
+                        transparent 34rem
+                    ),
+                    linear-gradient(180deg, #0f172a 0%, #111827 100%);
+                z-index: -1;
+            }
+
+            .course-eyebrow {
+                color: #bfdbfe;
+                font-weight: 900;
+                text-transform: uppercase;
+                letter-spacing: 0.08em;
+                font-size: 0.84rem;
+                margin: 0 0 1rem;
+            }
+
+            .course-hero h1 {
+                color: #ffffff;
+                border-bottom: none;
+                font-size: clamp(2.8rem, 4.2vw, 4.35rem);
+                line-height: 1.04;
+                margin: 0 0 1.25rem;
+                padding: 0;
+                max-width: 620px;
+            }
+
+            .course-hero p {
+                color: #dbeafe;
+                font-size: 1.05rem;
+                line-height: 1.65;
+                max-width: 620px;
+                margin-bottom: 0;
+            }
+
+            .course-hero-media {
+                margin: 0;
+                background: rgba(255, 255, 255, 0.08);
+                border: 1px solid rgba(255, 255, 255, 0.16);
+                border-radius: 24px;
+                padding: 0.75rem;
+                box-shadow: 0 24px 70px rgba(0, 0, 0, 0.28);
+            }
+
+            .course-hero-media img {
+                border-radius: 18px;
+                margin: 0;
+                width: 100%;
+                height: auto;
+                display: block;
+            }
+
+            .course-hero-media figcaption {
+                color: #dbeafe;
+                text-align: center;
+                font-size: 0.88rem;
+                margin-top: 0.7rem;
+                font-weight: 600;
+            }
+
+            .buttons {
+                display: flex;
+                justify-content: flex-start;
+                margin-top: 1.6rem;
+                gap: 0.8rem;
+                flex-wrap: wrap;
+            }
+
+            .buttons a,
+            .contact-button,
+            .index-button {
+                background: linear-gradient(135deg, #2563eb, #1d4ed8);
+                color: #ffffff;
+                border: 0;
+                border-radius: 999px;
+                box-shadow: 0 12px 28px rgba(37, 99, 235, 0.22);
+                font-weight: 900;
+                padding: 0.9rem 1.4rem;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .buttons a:hover,
+            .contact-button:hover,
+            .index-button:hover {
+                background: linear-gradient(135deg, #1d4ed8, #1e40af);
+                color: #ffffff;
+                transform: translateY(-1px);
+            }
+
+            .course-intro-block,
+            .course-video-block {
+                max-width: 980px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .course-intro-block {
+                margin-top: 2.7rem;
+            }
+
+            .block,
+            .tab-container,
+            .index,
+            .indext {
+                color: #0f172a;
+                border: 1px solid var(--nx-border);
+                box-shadow: 0 12px 34px rgba(15, 23, 42, 0.1);
+                background: #ffffff;
+                border-radius: 18px;
+            }
+
+            .block {
+                padding: 1.5rem;
+                margin: 1.5rem auto;
+            }
+
+            .block p,
+            .block li {
+                color: #0f172a;
+                font-size: 1rem;
+            }
+
+            .block h2,
+            .block h3 {
+                color: #0f172a;
+                margin-top: 0;
+            }
+
             .highlight {
-                font-weight: bold;
-                color: #e74c3c;
+                font-weight: 900;
+                color: #1d4ed8;
             }
 
-            /* Video placeholder */
             .video-placeholder {
-                background-color: #dfe6e9;
-                padding: 10px; /* antes 30px */
-                border-radius: 10px;
-                margin: 20px 0;
+                background: #e0ecff;
+                border: 1px solid #bfdbfe;
+                padding: 10px;
+                border-radius: 14px;
+                margin: 1.5rem 0 0;
                 width: 100%;
             }
 
@@ -229,181 +431,27 @@
                 aspect-ratio: 16 / 9;
                 border: 0;
                 display: block;
+                border-radius: 10px;
             }
 
-            .imagen-titulo {
-                width: 100%;
-                max-width: 20px; /* Ajusta este valor al tamaño que quieras en escritorio */
-                height: auto;
-                display: block;
-                margin: 0 auto; /* Esto las centra */
-            }
-
-            /*claude.html*/
-            header {
-                background-color: #0066cc;
-                border-bottom: 1px solid #ddd;
-                padding: 1.5rem 2rem;
-                font-family: "Poppins", Arial, sans-serif;
-                width: 100%;
-                position: sticky;
-                top: 0;
-                z-index: 999;
-            }
-
-            .header-content {
-                max-width: 1200px;
-                margin: 0 auto;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-                gap: 2rem;
-            }
-
-            .left-section {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                gap: 1.5rem;
-                flex: 1;
-            }
-
-            .logo-img {
-                /* ← AQUÍ ESTÁ */
-                width: 400px;
-                max-width: 400px;
-                height: auto;
-            }
-
-            .logo-img {
-                transition: transform 0.4s ease;
-            }
-
-            .logo-img:hover {
-                transform: scale(1.05);
-            }
-
-            .header-text,
-            .header-text2 {
-                font-size: 1.1rem;
-                color: blanchedalmond;
-                margin: 0 0 0.3rem 0;
-                line-height: 1.5;
-                font-weight: 400;
-            }
-
-            .contact-button {
-                background-color: #eaf2f8;
-                color: #0066cc;
-                text-decoration: none;
-                padding: 1rem 2rem;
-                border-radius: 9999px;
-                font-weight: 600;
-                font-size: 1.1rem;
-                transition:
-                    background-color 0.3s ease,
-                    transform 0.2s ease;
-                white-space: nowrap;
-            }
-
-            .index-button {
-                display: block; /* Hace que cada enlace sea un bloque completo */
-                width: 50%; /* Ajusta el ancho (por ejemplo, 80% del contenedor) */
-                margin: 10px auto; /* Deja espacio arriba/abajo y centra horizontalmente */
-                padding: 7px 0; /* Espacio interior: 10px arriba/abajo */
-                text-align: center; /* Centra el texto */
-                background-color: #eaf2f8; /* Color de fondo */
-                color: #0056d2;
-                font-weight: bold; /* Color del texto */
-                text-decoration: none; /* Quita el subrayado */
-                border-radius: 8px; /* Bordes redondeados */
-                border: 1px solid #eaf2f8; /* Opcional: borde visible */
-            }
-
-            .contact-button:hover {
-                background-color: white;
-                transform: scale(1.05);
-            }
-
-            .index-button:hover {
-                background-color: #0066cc;
-                color: white;
-            }
-
-            a {
-                font-size: 0.85em;
-            }
-
-            .index-button a:hover {
-                color: #0066cc !important;
-            }
-
-            /* Tablets y pantallas medianas */
-            @media (max-width: 950px) {
-                .header-content {
-                    flex-direction: column;
-                    text-align: center;
-                }
-
-                .left-section {
-                    flex-direction: column;
-                }
-            }
-
-            @media (min-width: 951px) {
-                .logo-img {
-                    width: 450px !important;
-                }
-            }
-
-            /* Tablets y pantallas medianas - Logo más grande */
-            @media (min-width: 481px) and (max-width: 950px) {
-                .logo-img {
-                    width: 380px !important;
-                }
-            }
-
-            /* Móviles grandes */
-            @media (max-width: 600px) {
-                .header-text,
-                .header-text2 {
-                    font-size: 1.3rem;
-                }
-
-                .contact-button {
-                    font-size: 1.4rem;
-                    padding: 1.2rem 2.4rem;
-                }
-            }
-
-            /*fin claude*/
-
-            /*Video*/
-            .video-placeholder video {
-                width: 100%; /* Se adapta al espacio disponible */
-                max-width: 640px; /* Nunca será más grande que tu tamaño ideal */
-                height: auto; /* Mantiene las proporciones */
-                display: block;
-                margin: 0 auto; /* Lo centra dentro del “folio” */
-            }
-
-            /*Fin Video*/
-
-            /*Footer*/
             footer {
-                background: #1e293b;
+                max-width: none;
+                background: #0f172a;
                 color: white;
                 text-align: center;
                 padding: 40px 0;
-                margin-top: 60px;
+                margin-top: 4rem;
             }
 
             .footer-content {
+                max-width: 980px;
+                margin-left: auto;
+                margin-right: auto;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 gap: 30px;
+                padding: 0 1rem;
             }
 
             .footer-links {
@@ -449,14 +497,16 @@
                 transform: scale(1.05);
             }
 
-            .footer-text {
-                text-align: center;
+            .footer-logo img {
+                max-width: 200px;
+                height: auto;
             }
 
             .contact-info {
                 display: flex;
                 gap: 20px;
                 align-items: center;
+                justify-content: center;
                 flex-wrap: wrap;
             }
 
@@ -465,7 +515,8 @@
                 align-items: center;
                 gap: 8px;
                 text-decoration: none;
-                color: var(--accent-color);
+                color: #bfdbfe;
+                font-weight: 700;
             }
 
             .contact-icon {
@@ -473,292 +524,725 @@
                 height: 40px;
             }
 
-            /*Fin Footer */
+            .footer-text p {
+                margin: 0.35rem 0;
+                color: #e5e7eb;
+            }
 
-            /* === RESPONSIVE === */
+            .course-menu-toggle {
+                display: none;
+                width: 42px;
+                height: 42px;
+                border: 1px solid rgba(255, 255, 255, 0.22);
+                border-radius: 14px;
+                background: rgba(255, 255, 255, 0.08);
+                cursor: pointer;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                gap: 5px;
+                padding: 0;
+                z-index: 1002;
+                order: 3;
+            }
 
-            /* Tablets y dispositivos medianos */
-            @media (max-width: 768px) {
-                body {
-                    padding: 15px;
-                    max-width: 100%;
-                }
+            .course-menu-toggle span {
+                display: block;
+                width: 20px;
+                height: 2px;
+                border-radius: 999px;
+                background: #ffffff;
+                transition:
+                    transform 0.2s ease,
+                    opacity 0.2s ease;
+            }
 
-                #tittle {
-                    flex-direction: column;
+            .course-menu-toggle[aria-expanded="true"] span:nth-child(1) {
+                transform: translateY(7px) rotate(45deg);
+            }
+
+            .course-menu-toggle[aria-expanded="true"] span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .course-menu-toggle[aria-expanded="true"] span:nth-child(3) {
+                transform: translateY(-7px) rotate(-45deg);
+            }
+
+            .mobile-nav-icon {
+                display: none;
+            }
+
+            @media (max-width: 1080px) {
+                .course-hero {
+                    grid-template-columns: 1fr;
+                    gap: 2.2rem;
+                    padding-top: 3.2rem;
                     text-align: center;
-                    gap: 10px;
                 }
 
-                #tittle a {
-                    height: auto;
+                .course-hero h1,
+                .course-hero p {
+                    margin-left: auto;
+                    margin-right: auto;
                 }
 
-                /* Reducir sangrías */
-                .sangria {
-                    margin-left: 20px;
-                }
-                .sangria2,
-                .sangria3,
-                .sangria4 {
-                    margin-left: 15px;
-                }
-
-                .block,
-                .tab-container,
-                .index,
-                .video-placeholder {
-                    padding: 15px;
-                }
-
-                /* Tabs en columna */
-                .tabs {
-                    flex-direction: column;
-                }
-
-                .tab-button {
-                    margin-right: 0;
-                    margin-bottom: 5px;
-                    width: 100%;
-                }
-
-                /* Botones apilados */
                 .buttons {
-                    flex-direction: column;
+                    justify-content: center;
                 }
 
-                .buttons a {
-                    width: 100%;
-                    text-align: center;
+                .course-hero-media {
+                    max-width: 680px;
+                    margin-left: auto;
+                    margin-right: auto;
                 }
             }
 
-            /* Móviles pequeños */
-            @media (max-width: 480px) {
-                body {
-                    padding: 10px;
+            @media (max-width: 900px) {
+                .course-header-inner {
+                    flex-direction: row !important;
+                    align-items: center !important;
+                    justify-content: space-between !important;
+                    position: relative !important;
+                    gap: 0.45rem !important;
+                    width: 100% !important;
                 }
 
-                h1 {
-                    font-size: 1.5rem;
+                .course-logo-link {
+                    order: 1 !important;
+                    flex: 1 1 auto !important;
+                    min-width: 0 !important;
                 }
 
-                h2 {
-                    font-size: 1.3rem;
-                }
-
-                h3 {
-                    font-size: 1.1rem;
-                }
-
-                p {
-                    font-size: 0.95rem;
-                }
-
-                header {
-                    padding: 2rem 1rem;
-                }
-
-                .header-content {
-                    display: block;
-                    text-align: center;
-                }
-
-                .left-section {
-                    display: block;
-                    margin-bottom: 1.5rem;
-                }
-
+                .course-logo-link .logo-img,
                 .logo-img {
-                    width: 85vw;
-                    max-width: 380px;
-                    display: block;
-                    margin: 0 auto 1.5rem auto;
+                    width: 190px !important;
+                    max-width: 190px !important;
                 }
 
-                .text-container {
-                    display: block;
-                    margin-bottom: 1.5rem;
+                .course-lang-switch {
+                    order: 2 !important;
+                    display: inline-flex !important;
+                    flex: 0 0 auto !important;
+                    align-items: center !important;
+                    gap: 0.25rem !important;
+                    border-left: 0 !important;
+                    margin-left: 0 !important;
+                    padding-left: 0 !important;
                 }
 
-                .header-text,
-                .header-text2 {
-                    font-size: 0.9rem;
-                    line-height: 1.6;
-                    color: blanchedalmond;
-                    font-weight: 400;
-                    margin-bottom: 0.5rem;
-                    display: block;
+                .course-lang-switch a {
+                    width: auto !important;
+                    min-width: 34px !important;
+                    height: 34px !important;
+                    display: inline-flex !important;
+                    align-items: center !important;
+                    justify-content: center !important;
+                    text-align: center !important;
+                    padding: 0 !important;
+                    font-size: 0.75rem !important;
+                    line-height: 1 !important;
+                    border-radius: 999px !important;
+                    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+                    background: rgba(255, 255, 255, 0.06) !important;
+                    color: #e5e7eb !important;
+                    font-weight: 900 !important;
+                    box-shadow: none !important;
                 }
 
-                .contact-button {
-                    font-size: 0.85rem;
-                    padding: 1rem 2rem;
-                    display: inline-block;
+                .course-lang-switch a.active {
+                    background: #06b6d4 !important;
+                    border-color: rgba(6, 182, 212, 0.75) !important;
+                    color: #ffffff !important;
+                    box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.18) !important;
                 }
 
-                /* Sangrías mínimas */
-                .sangria {
-                    margin-left: 10px;
-                }
-                .sangria2,
-                .sangria3,
-                .sangria4 {
-                    margin-left: 8px;
+                .course-menu-toggle {
+                    display: inline-flex !important;
+                    flex: 0 0 auto !important;
+                    order: 3 !important;
                 }
 
-                .block,
-                .tab-container,
-                .index,
-                .video-placeholder {
-                    padding: 12px;
-                    margin: 15px 0;
+                .course-nav {
+                    display: none !important;
+                    position: fixed !important;
+                    top: 0 !important;
+                    right: 0 !important;
+                    left: auto !important;
+                    width: min(300px, 72vw) !important;
+                    height: 100vh !important;
+                    padding: 1.35rem 1rem !important;
+                    padding-top: 3.8rem !important;
+                    background: #0f172a !important;
+                    border-left: 1px solid rgba(255, 255, 255, 0.14) !important;
+                    border-radius: 0 !important;
+                    box-shadow: -22px 0 55px rgba(0, 0, 0, 0.38) !important;
+                    z-index: 1001 !important;
+                    flex-direction: column !important;
+                    align-items: stretch !important;
+                    justify-content: flex-start !important;
+                    gap: 0.35rem !important;
+                    flex-wrap: nowrap !important;
                 }
 
-                .buttons a {
-                    padding: 10px 15px;
+                .course-nav.is-open {
+                    display: flex !important;
+                }
+
+                .course-nav::before {
+                    content: "Menú";
+                    color: #ffffff;
+                    font-weight: 900;
                     font-size: 0.95rem;
+                    margin-bottom: 1rem;
+                    padding-left: 0.25rem;
                 }
 
-                /* Imágenes adaptadas */
-                .block img,
-                .contenedor img {
-                    width: 100%;
-                    max-width: 100%;
-                    height: auto;
-                    display: block;
+                .course-nav > a {
+                    display: flex !important;
+                    width: 100% !important;
+                    align-items: center !important;
+                    justify-content: flex-start !important;
+                    text-align: left !important;
+                    gap: 0.7rem !important;
+                    padding: 0.78rem 0.65rem !important;
+                    font-size: 0.9rem !important;
+                    line-height: 1.2 !important;
+                    border-radius: 12px !important;
+                    color: #e5e7eb !important;
+                    background: transparent !important;
                 }
 
-                /*footer*/
+                .course-nav > a:hover {
+                    background: rgba(255, 255, 255, 0.1) !important;
+                    color: #ffffff !important;
+                }
+
+                .mobile-nav-icon {
+                    display: inline-flex !important;
+                    width: 1.35rem !important;
+                    min-width: 1.35rem !important;
+                    align-items: center !important;
+                    justify-content: center !important;
+                    font-size: 1rem !important;
+                    line-height: 1 !important;
+                }
+            }
+
+            @media (max-width: 520px) {
+                .course-header-inner {
+                    gap: 0.38rem !important;
+                }
+
+                .course-logo-link .logo-img,
+                .logo-img {
+                    width: 150px !important;
+                    max-width: 150px !important;
+                }
+
+                .course-menu-toggle {
+                    width: 38px !important;
+                    height: 38px !important;
+                    border-radius: 12px !important;
+                }
+
+                .course-menu-toggle span {
+                    width: 18px !important;
+                }
+
+                .course-lang-switch a {
+                    min-width: 30px !important;
+                    height: 30px !important;
+                    font-size: 0.68rem !important;
+                }
+
+                .course-header {
+                    padding-left: 0.65rem !important;
+                    padding-right: 0.65rem !important;
+                }
+
+                .course-nav {
+                    width: min(290px, 76vw) !important;
+                }
+
+                .course-hero {
+                    padding-left: 0.85rem;
+                    padding-right: 0.85rem;
+                }
+
+                .course-hero h1 {
+                    font-size: 2.35rem;
+                }
+
+                .block {
+                    padding: 1rem;
+                    margin-left: 0.85rem;
+                    margin-right: 0.85rem;
+                }
+
                 .contact-icon {
                     width: 25px;
                     height: 25px;
                 }
+
                 .contact-text {
                     font-size: 12px;
                 }
             }
 
-            /* Móviles muy pequeños */
-            @media (max-width: 340px) {
-                .logo-img {
-                    width: 90vw;
-                    max-width: 350px;
+            /* =====================================================
+               NEXAUTIA MENU UNIFICADO - MISMO ESTILO QUE MAKE
+               Solo afecta al header/menu nuevo (.site-header / .nx-resource-menu-*)
+               ===================================================== */
+            :root {
+                --nx-accent: #06b6d4;
+                --nx-green: #22c55e;
+            }
+
+            body.nx-resource-menu-open {
+                overflow: hidden;
+            }
+
+            .site-header .container {
+                width: min(1180px, calc(100% - 40px));
+                margin-inline: auto;
+            }
+
+            .site-header {
+                background: #0f172a;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+                position: sticky;
+                top: 0;
+                z-index: 1000;
+            }
+
+            .header-inner {
+                min-height: 76px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 1rem;
+            }
+
+            .logo a {
+                display: inline-flex;
+                align-items: center;
+                text-decoration: none;
+            }
+
+            .logo img {
+                width: 172px !important;
+                max-width: 172px !important;
+                height: auto !important;
+            }
+
+            .desktop-nav {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 0.15rem;
+                flex: 1 1 auto;
+                flex-wrap: nowrap;
+                white-space: nowrap;
+            }
+
+            .desktop-nav a {
+                position: relative;
+                color: #e5e7eb !important;
+                text-decoration: none !important;
+                font-size: 0.94rem !important;
+                font-weight: 800;
+                line-height: 1;
+                padding: 0.62rem 0.56rem;
+                border-radius: 999px;
+            }
+
+            .desktop-nav a:hover {
+                color: #ffffff !important;
+                background: rgba(255, 255, 255, 0.08);
+            }
+
+            .desktop-nav a.active {
+                color: #ffffff !important;
+            }
+
+            .desktop-nav a.active::after {
+                content: "";
+                position: absolute;
+                left: 0.5rem;
+                right: 0.5rem;
+                bottom: -0.35rem;
+                height: 3px;
+                border-radius: 999px;
+                background: var(--nx-green);
+            }
+
+            .header-actions {
+                display: flex;
+                align-items: center;
+                gap: 0.45rem;
+                flex: 0 0 auto;
+            }
+
+            .lang-switch {
+                display: inline-flex;
+                align-items: center;
+                gap: 0.25rem;
+            }
+
+            .lang-link {
+                width: 34px;
+                height: 34px;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 999px;
+                border: 1px solid rgba(255, 255, 255, 0.22);
+                color: #e5e7eb !important;
+                text-decoration: none !important;
+                font-weight: 900;
+                font-size: 0.75rem !important;
+            }
+
+            .lang-link.active {
+                background: var(--nx-accent) !important;
+                color: #ffffff !important;
+                border-color: rgba(6, 182, 212, 0.75) !important;
+                box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.18) !important;
+            }
+
+            .nx-resource-menu-button {
+                display: none;
+                align-items: center;
+                justify-content: center;
+                width: 42px;
+                height: 42px;
+                border-radius: 14px;
+                border: 1px solid rgba(255, 255, 255, 0.22);
+                background: rgba(255, 255, 255, 0.08);
+                color: #ffffff;
+                font-size: 1.35rem;
+                cursor: pointer;
+                line-height: 1;
+            }
+
+            .nx-resource-menu-overlay {
+                position: fixed;
+                inset: 0;
+                z-index: 10000;
+                display: none !important;
+                justify-content: flex-end;
+                background: rgba(15, 23, 42, 0.62);
+            }
+
+            .nx-resource-menu-overlay.is-open {
+                display: flex !important;
+            }
+
+            .nx-resource-menu-panel {
+                width: min(330px, 84vw);
+                min-height: 100vh;
+                background: #0f172a;
+                color: #ffffff;
+                box-shadow: -22px 0 55px rgba(0, 0, 0, 0.38);
+                padding: 1.2rem;
+                overflow-y: auto;
+            }
+
+            .nx-resource-menu-head {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-bottom: 1rem;
+            }
+
+            .nx-resource-menu-head strong {
+                color: #ffffff;
+                font-size: 1.15rem;
+            }
+
+            .nx-resource-menu-close {
+                background: transparent;
+                color: #ffffff;
+                border: 0;
+                font-size: 2rem;
+                cursor: pointer;
+                line-height: 1;
+            }
+
+            .nx-resource-menu-nav {
+                display: flex;
+                flex-direction: column;
+                gap: 0.35rem;
+            }
+
+            .nx-resource-menu-nav a {
+                color: #e5e7eb !important;
+                text-decoration: none !important;
+                font-weight: 800;
+                padding: 0.78rem 0.65rem;
+                border-radius: 12px;
+            }
+
+            .nx-resource-menu-nav a:hover,
+            .nx-resource-menu-nav a.active {
+                background: rgba(255, 255, 255, 0.1);
+                color: #ffffff !important;
+            }
+
+            @media (max-width: 1120px) {
+                .desktop-nav {
+                    display: none !important;
                 }
 
-                .header-text,
-                .header-text2 {
-                    font-size: 0.75rem;
-                    line-height: 1.5;
+                .nx-resource-menu-button {
+                    display: inline-flex !important;
                 }
 
-                .contact-button {
-                    font-size: 1.15rem;
-                    padding: 0.95rem 1.9rem;
-                }
-                /*footer*/
-                .contact-icon {
-                    width: 20px;
-                    height: 20px;
-                }
-                .contact-text {
-                    font-size: 10px;
+                .logo img {
+                    width: 150px !important;
+                    max-width: 150px !important;
                 }
             }
-            #titulo-teoria,
-            #titulo-practica {
-                scroll-margin-top: 140px;
+
+            @media (max-width: 520px) {
+                .site-header .container {
+                    width: min(100% - 20px, 1180px);
+                }
+
+                .logo img {
+                    width: 138px !important;
+                    max-width: 138px !important;
+                }
+
+                .lang-link {
+                    width: 30px;
+                    height: 30px;
+                    font-size: 0.68rem !important;
+                }
+
+                .nx-resource-menu-button {
+                    width: 38px;
+                    height: 38px;
+                    border-radius: 12px;
+                }
             }
         </style>
+        <!-- CORRECCION_TALLY_FINAL: herramienta Tally y carpeta /recursos/curso_tally/ revisadas -->
     </head>
+
     <body>
-        <header>
-            <div class="header-content">
-                <div class="left-section">
+        <header class="site-header">
+            <div class="container header-inner">
+                <div class="logo">
                     <a
-                        href="https://www.nexautia.com"
-                        target="_blank"
-                        rel="noopener noreferrer"
+                        aria-label="Inicio Nexautia"
+                        data-track="nav-logo"
+                        href="../../index.html"
                     >
                         <img
-                            src="LogoFavicon/logo_nexautia.svg"
                             alt="NEXAUTIA"
-                            class="logo-img"
+                            id="logo"
+                            src="../../imagenes/comunes/logo.svg"
                         />
                     </a>
+                </div>
 
-                    <div class="text-container">
-                        <p class="header-text">
-                            © 2025 Nexautia. Transformando empresas con
-                            automatización inteligente.
-                        </p>
-                        <p class="header-text2">
-                            Creado con ❤️ por Nexautia para el traspaso de
-                            conocimiento.
-                        </p>
+                <nav aria-label="Navegación principal" class="desktop-nav">
+                    <a
+                        data-track="nav-automatizaciones"
+                        href="../../servicios/automatizacion-procesos-empresas.html"
+                        >Automatizaciones</a
+                    >
+                    <a
+                        data-track="nav-ia"
+                        href="../../servicios/inteligencia-artificial-empresas.html"
+                        >IA aplicada</a
+                    >
+                    <a
+                        data-track="nav-web"
+                        href="../../servicios/paginas-web-empresas.html"
+                        >Páginas web</a
+                    >
+                    <a
+                        data-track="nav-formacion"
+                        href="../../servicios/formacion-empresas.html"
+                        >Formación empresas</a
+                    >
+                    <a class="active" data-track="nav-aprende" href="../"
+                        >Aprende gratis</a
+                    >
+                    <a data-track="nav-contact" href="../../contacto/"
+                        >Contacto</a
+                    >
+                </nav>
+
+                <div class="header-actions">
+                    <nav aria-label="Selector de idioma" class="lang-switch">
+                        <a
+                            aria-label="Versión en español"
+                            class="lang-link active"
+                            href="./"
+                            hreflang="es"
+                            lang="es"
+                            >ES</a
+                        >
+                        <a
+                            aria-label="Versió en català"
+                            class="lang-link"
+                            href="../../ca/recursos/curs_tally/"
+                            hreflang="ca"
+                            lang="ca"
+                            >CA</a
+                        >
+                    </nav>
+                    <button
+                        aria-controls="nx-resource-menu-overlay"
+                        aria-expanded="false"
+                        aria-label="Abrir menú"
+                        class="nx-resource-menu-button"
+                        id="nx-resource-menu-button"
+                        type="button"
+                    >
+                        ☰
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <div
+            class="nx-resource-menu-overlay"
+            id="nx-resource-menu-overlay"
+            aria-hidden="true"
+            role="dialog"
+            aria-modal="true"
+            aria-label="Menú principal"
+        >
+            <div class="nx-resource-menu-panel">
+                <div class="nx-resource-menu-head">
+                    <strong>Menú</strong>
+                    <button
+                        aria-label="Cerrar menú"
+                        class="nx-resource-menu-close"
+                        id="nx-resource-menu-close"
+                        type="button"
+                    >
+                        ×
+                    </button>
+                </div>
+                <nav aria-label="Navegación móvil" class="nx-resource-menu-nav">
+                    <a
+                        href="../../servicios/automatizacion-procesos-empresas.html"
+                        >⚙️ Automatizaciones</a
+                    >
+                    <a
+                        href="../../servicios/inteligencia-artificial-empresas.html"
+                        >🧠 IA aplicada</a
+                    >
+                    <a href="../../servicios/paginas-web-empresas.html"
+                        >🌐 Páginas web</a
+                    >
+                    <a href="../../servicios/formacion-empresas.html"
+                        >🎓 Formación empresas</a
+                    >
+                    <a class="active" href="../">📚 Aprende gratis</a>
+                    <a href="../../contacto/">📞 Contacto</a>
+                </nav>
+            </div>
+        </div>
+
+        <main class="course-shell">
+            <section class="course-hero">
+                <div class="course-hero-copy">
+                    <p class="course-eyebrow">
+                        Curso gratuito de formularios no-code
+                    </p>
+                    <h1>Curso de Tally Forms</h1>
+                    <p>
+                        Aprende a crear formularios online profesionales con
+                        Tally Forms, configurar campos, estructurar preguntas y
+                        publicar formularios para captar datos en proyectos
+                        digitales y procesos empresariales.
+                    </p>
+                    <div class="buttons course-hero-buttons">
+                        <a href="#curso-tally">Ver curso gratuito</a>
+                        <a href="#contact_clients">Contactar con Nexautia</a>
                     </div>
                 </div>
 
-                <a href="#contact_clients" class="contact-button"> Contacto </a>
-            </div>
-        </header>
-        <h1>Curso de Tally forms</h1>
-        <img
-            src="imagenes/tally_card.webp"
-            alt="Curso de Tally Forms"
-            class="card-svg"
-        />
-        <!-- Intro del curso -->
-        <div class="block">
-            <p>
-                En este vídeo del curso aprenderás
-                <b>cómo crear un formulario con Tally de forma gratuita</b>,
-                paso a paso y desde cero.
-            </p>
-            <p>
-                Se explica cómo diseñar formularios online profesionales,
-                estructurar preguntas, configurar campos y publicar formularios
-                para captar datos en empresas y proyectos digitales.
-            </p>
-            <p>
-                También se muestra dónde se encuentran algunas funciones
-                avanzadas dentro de <b>Tally</b> y se comenta cómo estos
-                formularios pueden integrarse posteriormente con
-                <b>herramientas de automatización como Make, n8n o Zapier</b>,
-                permitiendo crear flujos automáticos y procesos empresariales
-                más eficientes en otros escenarios.
-            </p>
-            <p>
-                Este tutorial forma parte de la formación en
-                <b
-                    >formularios online, automatización de procesos y
-                    herramientas no-code</b
-                >, enfocada a <b>negocios</b> que quieren
-                <b>digitalizar tareas</b> y <b>mejorar su productividad</b>.
-            </p>
+                <figure class="course-hero-media">
+                    <img
+                        src="../../imagenes/comunes/curso-tally-card.webp"
+                        alt="Curso de Tally Forms de Nexautia"
+                        class="card-svg"
+                    />
+                    <figcaption>
+                        Tally Forms · Formularios online · No-code ·
+                        Automatización
+                    </figcaption>
+                </figure>
+            </section>
 
-            <div class="video-placeholder">
-                <iframe
-                    src="https://www.youtube-nocookie.com/embed/XdHktOau-eo"
-                    title="Vídeo del curso"
-                    frameborder="0"
-                    allow="
-                        accelerometer;
-                        autoplay;
-                        clipboard-write;
-                        encrypted-media;
-                        gyroscope;
-                        picture-in-picture;
-                    "
-                    allowfullscreen
-                >
-                </iframe>
-            </div>
-        </div>
+            <section class="block course-intro-block" id="curso-tally">
+                <h2>Curso gratuito de Tally Forms</h2>
+                <p>
+                    En este vídeo del curso aprenderás
+                    <b>cómo crear un formulario con Tally de forma gratuita</b>,
+                    paso a paso y desde cero.
+                </p>
+                <p>
+                    Se explica cómo diseñar formularios online profesionales,
+                    estructurar preguntas, configurar campos y publicar
+                    formularios para captar datos en empresas y proyectos
+                    digitales.
+                </p>
+                <p>
+                    También se muestra dónde se encuentran algunas funciones
+                    avanzadas dentro de <b>Tally</b> y se comenta cómo estos
+                    formularios pueden integrarse posteriormente con
+                    <b>herramientas de automatización como Make, n8n o Zapier</b
+                    >, permitiendo crear flujos automáticos y procesos
+                    empresariales más eficientes en otros escenarios.
+                </p>
+                <p>
+                    Este tutorial forma parte de la formación en
+                    <b
+                        >formularios online, automatización de procesos y
+                        herramientas no-code</b
+                    >, enfocada a <b>negocios</b> que quieren
+                    <b>digitalizar tareas</b> y <b>mejorar su productividad</b>.
+                </p>
+
+                <div class="video-placeholder">
+                    <iframe
+                        src="https://www.youtube-nocookie.com/embed/XdHktOau-eo"
+                        title="Vídeo del curso: crear formularios con Tally Forms"
+                        frameborder="0"
+                        allow="
+                            accelerometer;
+                            autoplay;
+                            clipboard-write;
+                            encrypted-media;
+                            gyroscope;
+                            picture-in-picture;
+                        "
+                        allowfullscreen
+                    >
+                    </iframe>
+                </div>
+            </section>
+        </main>
 
         <footer id="seccion-footer">
             <div class="container" id="contact_clients">
                 <div class="footer-content">
+                    <a href="../../" class="footer-logo">
+                        <img
+                            src="../../imagenes/comunes/logo.svg"
+                            alt="NEXAUTIA"
+                            width="200"
+                        />
+                    </a>
                     <div class="footer-links">
                         <div class="social-links">
                             <a
@@ -774,37 +1258,9 @@
                                     />
                                 </svg>
                             </a>
-                            <a
-                                href="#"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                class="social-link"
-                                aria-label="Síguenos en LinkedIn"
-                            >
-                                <svg class="social-icon" viewBox="0 0 24 24">
-                                    <path
-                                        d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
-                                    />
-                                </svg>
-                            </a>
                         </div>
-
-                        <a
-                            href="https://www.nexautia.com"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="footer-logo"
-                        >
-                            <img
-                                src="LogoFavicon/logo_nexautia.svg"
-                                alt="NEXAUTIA"
-                                width="200"
-                                height="auto"
-                            />
-                        </a>
                     </div>
 
-                    <!-- Información de contacto -->
                     <div class="contact-info">
                         <a href="tel:+34610510642" class="contact-item">
                             <svg
@@ -845,12 +1301,12 @@
 
                     <div class="footer-text">
                         <p class="footer-text1">
-                            © 2025 Nexautia. Transformando empresas con
+                            © 2026 Nexautia. Transformando empresas con
                             automatización inteligente.
                         </p>
                         <p class="footer-text2">
                             Creado con ❤️ por Nexautia para el traspaso de
-                            conocimiento
+                            conocimiento.
                         </p>
                         <p class="footer-text3">
                             ¡Sigue explorando el increíble mundo de la
@@ -861,5 +1317,81 @@
                 </div>
             </div>
         </footer>
+
+        <script>
+            (function () {
+                "use strict";
+
+                const menuButton = document.getElementById(
+                    "nx-resource-menu-button",
+                );
+                const menuOverlay = document.getElementById(
+                    "nx-resource-menu-overlay",
+                );
+                const menuClose = document.getElementById(
+                    "nx-resource-menu-close",
+                );
+
+                function openMenu() {
+                    if (!menuOverlay || !menuButton) return;
+                    menuOverlay.classList.add("is-open");
+                    menuOverlay.setAttribute("aria-hidden", "false");
+                    menuButton.setAttribute("aria-expanded", "true");
+                    menuButton.setAttribute("aria-label", "Cerrar menú");
+                    document.body.classList.add("nx-resource-menu-open");
+                }
+
+                function closeMenu() {
+                    if (!menuOverlay || !menuButton) return;
+                    menuOverlay.classList.remove("is-open");
+                    menuOverlay.setAttribute("aria-hidden", "true");
+                    menuButton.setAttribute("aria-expanded", "false");
+                    menuButton.setAttribute("aria-label", "Abrir menú");
+                    document.body.classList.remove("nx-resource-menu-open");
+                }
+
+                window.nxToggleResourceMenu = function () {
+                    if (!menuOverlay) return;
+                    if (menuOverlay.classList.contains("is-open")) {
+                        closeMenu();
+                    } else {
+                        openMenu();
+                    }
+                };
+
+                if (menuButton) {
+                    menuButton.addEventListener("click", function (event) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                        window.nxToggleResourceMenu();
+                    });
+                }
+
+                if (menuClose) {
+                    menuClose.addEventListener("click", function (event) {
+                        event.preventDefault();
+                        closeMenu();
+                    });
+                }
+
+                if (menuOverlay) {
+                    menuOverlay.addEventListener("click", function (event) {
+                        if (event.target === menuOverlay) closeMenu();
+                    });
+
+                    menuOverlay.querySelectorAll("a").forEach(function (link) {
+                        link.addEventListener("click", closeMenu);
+                    });
+                }
+
+                document.addEventListener("keydown", function (event) {
+                    if (event.key === "Escape") closeMenu();
+                });
+
+                window.addEventListener("resize", function () {
+                    if (window.innerWidth > 1120) closeMenu();
+                });
+            })();
+        </script>
     </body>
 </html>

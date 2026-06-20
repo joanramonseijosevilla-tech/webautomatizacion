@@ -1,0 +1,343 @@
+/* =====================================================
+   NEXAUTIA - Recursos / Productos recomendados
+   Archivo local para /recursos/productos-recomendados/
+   No afecta a servicios ni landings
+   ===================================================== */
+
+body.nx-v2.resource-products-page {
+    background: #f8fafc;
+    color: #172033;
+}
+
+body.nx-v2.resource-products-page .resource-products-bg {
+    background: linear-gradient(135deg, #07111f 0%, #0d1b31 55%, #0f766e 140%);
+}
+
+body.nx-v2.resource-products-page main {
+    background: #f8fafc;
+}
+
+body.nx-v2.resource-products-page .hero {
+    padding: clamp(70px, 8vw, 120px) 20px clamp(42px, 6vw, 72px);
+    background: linear-gradient(135deg, #07111f 0%, #0d1b31 55%, #0f766e 140%);
+    color: #ffffff;
+    text-align: center;
+}
+
+body.nx-v2.resource-products-page .hero-content {
+    width: min(1120px, calc(100% - 32px));
+    margin: 0 auto;
+}
+
+body.nx-v2.resource-products-page .hero h1 {
+    margin: 0 0 1rem;
+    font-size: clamp(2.1rem, 5vw, 4.6rem);
+    line-height: 1.02;
+    letter-spacing: -0.05em;
+    font-weight: 900;
+}
+
+body.nx-v2.resource-products-page .hero p {
+    max-width: 860px;
+    margin: 0 auto;
+    color: #dbeafe;
+    font-size: clamp(1rem, 1.5vw, 1.18rem);
+}
+
+body.nx-v2.resource-products-page .affiliate-notice {
+    max-width: 920px;
+    margin: 2rem auto 0;
+    padding: 1.1rem 1.25rem;
+    border-radius: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    background: rgba(255, 255, 255, 0.10);
+    color: #f8fafc;
+    text-align: left;
+    box-shadow: 0 18px 42px rgba(0, 0, 0, 0.18);
+}
+
+body.nx-v2.resource-products-page .product-filters {
+    width: min(1120px, calc(100% - 32px));
+    margin: 2rem auto 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+}
+
+body.nx-v2.resource-products-page .filter-btn {
+    border: 1px solid rgba(15, 23, 42, 0.12);
+    background: #ffffff;
+    color: #172033;
+    border-radius: 999px;
+    padding: 0.72rem 1rem;
+    font-weight: 800;
+    cursor: pointer;
+    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+}
+
+body.nx-v2.resource-products-page .filter-btn.active,
+body.nx-v2.resource-products-page .filter-btn:hover {
+    background: linear-gradient(135deg, #0066cc, #168dff);
+    color: #ffffff;
+    border-color: transparent;
+}
+
+body.nx-v2.resource-products-page .section {
+    width: min(1180px, calc(100% - 36px));
+    margin: clamp(42px, 6vw, 72px) auto;
+    padding: 0;
+}
+
+body.nx-v2.resource-products-page .section h2 {
+    color: #0f172a;
+    text-align: center;
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    line-height: 1.1;
+    margin: 0 0 1.8rem;
+    font-weight: 900;
+    letter-spacing: -0.04em;
+}
+
+body.nx-v2.resource-products-page .cards.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.35rem;
+}
+
+body.nx-v2.resource-products-page .product-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+    padding: 1.2rem;
+    border-radius: 24px;
+    background: #ffffff;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    box-shadow: 0 16px 38px rgba(15, 23, 42, 0.08);
+    color: #172033;
+}
+
+body.nx-v2.resource-products-page .product-image {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    border-radius: 18px;
+    background: #e2e8f0;
+}
+
+body.nx-v2.resource-products-page .product-tag {
+    align-self: flex-start;
+    display: inline-flex;
+    padding: 0.42rem 0.7rem;
+    border-radius: 999px;
+    background: rgba(0, 102, 204, 0.10);
+    color: #0057ad;
+    font-size: 0.82rem;
+    font-weight: 900;
+}
+
+body.nx-v2.resource-products-page .product-card h3 {
+    margin: 0;
+    color: #0f172a;
+    font-size: 1.15rem;
+    line-height: 1.25;
+}
+
+body.nx-v2.resource-products-page .product-card p {
+    color: #475569;
+    margin: 0;
+    line-height: 1.6;
+}
+
+body.nx-v2.resource-products-page .product-card .btn {
+    margin-top: auto;
+    justify-content: center;
+    text-align: center;
+}
+
+body.nx-v2.resource-products-page .testimonial {
+    border-radius: 26px;
+    padding: clamp(1.25rem, 2.5vw, 2rem);
+    background: #ffffff;
+    color: #172033;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    box-shadow: 0 16px 38px rgba(15, 23, 42, 0.08);
+}
+
+body.nx-v2.resource-products-page .testimonial h2 {
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 980px) {
+    body.nx-v2.resource-products-page .cards.product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 680px) {
+    body.nx-v2.resource-products-page .hero {
+        padding-top: 58px;
+    }
+
+    body.nx-v2.resource-products-page .cards.product-grid {
+        grid-template-columns: 1fr;
+    }
+
+    body.nx-v2.resource-products-page .section,
+    body.nx-v2.resource-products-page .product-filters {
+        width: min(100% - 24px, 1180px);
+    }
+
+    body.nx-v2.resource-products-page .affiliate-notice {
+        text-align: center;
+    }
+}
+
+
+/* =====================================================
+   Ajustes visuales v2 - productos recomendados
+   Solo afecta a /recursos/productos_recomendados/
+   ===================================================== */
+body.nx-v2.resource-products-page .hero {
+    padding: clamp(56px, 6vw, 88px) 20px clamp(34px, 4.5vw, 54px) !important;
+}
+
+body.nx-v2.resource-products-page .hero h1 {
+    font-size: clamp(2rem, 4vw, 3.45rem) !important;
+    line-height: 1.08 !important;
+    letter-spacing: -0.045em !important;
+    max-width: 980px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+body.nx-v2.resource-products-page .product-filters {
+    margin-top: 2.2rem !important;
+    margin-bottom: 0 !important;
+}
+
+body.nx-v2.resource-products-page .filter-btn {
+    background: #e8f1fb !important;
+    color: #0f172a !important;
+    border: 1px solid rgba(0, 102, 204, 0.18) !important;
+    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.05) !important;
+}
+
+body.nx-v2.resource-products-page .filter-btn.active,
+body.nx-v2.resource-products-page .filter-btn:hover {
+    background: linear-gradient(135deg, #0066cc, #168dff) !important;
+    color: #ffffff !important;
+    border-color: transparent !important;
+}
+
+body.nx-v2.resource-products-page .section h2 {
+    font-size: clamp(1.65rem, 2.6vw, 2.35rem) !important;
+}
+
+body.nx-v2.resource-products-page .product-card {
+    overflow: hidden !important;
+}
+
+body.nx-v2.resource-products-page .product-image {
+    width: 100% !important;
+    height: 220px !important;
+    aspect-ratio: auto !important;
+    object-fit: contain !important;
+    object-position: center center !important;
+    padding: 12px !important;
+    border-radius: 18px !important;
+    background: #ffffff !important;
+    border: 1px solid rgba(15, 23, 42, 0.06) !important;
+}
+
+body.nx-v2.resource-products-page .product-card .btn,
+body.nx-v2.resource-products-page .product-card .btn-primary,
+body.nx-v2.resource-products-page .product-card .btn-secondary {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-height: 50px !important;
+    padding: 0.85rem 1.2rem !important;
+    border-radius: 14px !important;
+    background: linear-gradient(135deg, #0066cc, #168dff) !important;
+    color: #ffffff !important;
+    border: 0 !important;
+    text-decoration: none !important;
+    font-weight: 900 !important;
+    box-shadow: 0 12px 26px rgba(0, 102, 204, 0.18) !important;
+}
+
+body.nx-v2.resource-products-page .product-card .btn:hover {
+    transform: translateY(-1px) !important;
+    filter: brightness(1.03) !important;
+}
+
+@media (max-width: 680px) {
+    body.nx-v2.resource-products-page .hero h1 {
+        font-size: clamp(2rem, 10vw, 2.7rem) !important;
+    }
+
+    body.nx-v2.resource-products-page .product-image {
+        height: 210px !important;
+    }
+}
+
+
+/* =====================================================
+   Ajuste v5 - menú móvil y selector de idioma visibles
+   Solo afecta a productos recomendados
+   ===================================================== */
+body.nx-v2.resource-products-page .mobile-menu-content {
+    background: linear-gradient(135deg, #07111f 0%, #0d1b31 60%, #0f766e 140%) !important;
+    color: #ffffff !important;
+}
+
+body.nx-v2.resource-products-page .mobile-menu-header h3,
+body.nx-v2.resource-products-page .mobile-menu-close {
+    color: #ffffff !important;
+}
+
+body.nx-v2.resource-products-page .mobile-menu-nav a,
+body.nx-v2.resource-products-page .mobile-menu-nav a:visited {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.65rem !important;
+    width: 100% !important;
+    color: #ffffff !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid rgba(255, 255, 255, 0.14) !important;
+    border-radius: 14px !important;
+    padding: 0.95rem 1rem !important;
+    text-decoration: none !important;
+    font-weight: 800 !important;
+}
+
+body.nx-v2.resource-products-page .mobile-menu-nav a:hover,
+body.nx-v2.resource-products-page .mobile-menu-nav a:focus-visible {
+    color: #ffffff !important;
+    background: linear-gradient(135deg, #0066cc, #168dff) !important;
+    border-color: transparent !important;
+}
+
+body.nx-v2.resource-products-page .lang-switch .lang-link,
+body.nx-v2.resource-products-page .lang-switch .lang-link:visited {
+    color: #dbeafe !important;
+}
+
+body.nx-v2.resource-products-page .lang-switch .lang-link:hover,
+body.nx-v2.resource-products-page .lang-switch .lang-link:focus-visible,
+body.nx-v2.resource-products-page .lang-switch .lang-link.active {
+    color: #ffffff !important;
+}
+
+body.nx-v2.resource-products-page .lang-switch .lang-link.active {
+    background: linear-gradient(135deg, #00d4aa, #00bde3) !important;
+}
+
+@media (max-width: 760px) {
+    body.nx-v2.resource-products-page .lang-switch .lang-link:hover,
+    body.nx-v2.resource-products-page .lang-switch .lang-link:focus-visible {
+        color: #ffffff !important;
+        background: rgba(255, 255, 255, 0.12) !important;
+    }
+}

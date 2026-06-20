@@ -1,408 +1,866 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>
-            ¿Qué es la Inteligencia Artificial? - Aventura IA para Niños
-        </title>
 
-        <!-- Favicon personalizado de robot -->
-        <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+        <!-- SEO + GEO NEXAUTIA · IA PARA NIÑOS · RECURSO EDUCATIVO -->
+        <title>
+            IA para niños: aventura educativa sobre Inteligencia Artificial |
+            Nexautia
+        </title>
+        <meta
+            name="description"
+            content="Recurso gratuito de Nexautia para explicar la Inteligencia Artificial a niños y niñas con ejemplos sencillos, curiosidades y un quiz interactivo para aprender jugando."
+        />
+        <meta
+            name="keywords"
+            content="IA para niños, inteligencia artificial para niños, qué es la inteligencia artificial para niños, aprender IA jugando, recursos educativos IA, inteligencia artificial educación, Nexautia"
+        />
+        <meta name="robots" content="index, follow, max-image-preview:large" />
+        <meta
+            name="googlebot"
+            content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+        />
+        <meta
+            name="bingbot"
+            content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+        />
+        <meta name="author" content="Nexautia" />
+        <meta name="language" content="es" />
+        <meta name="application-name" content="Nexautia" />
+        <meta name="format-detection" content="telephone=yes" />
+        <meta name="rating" content="general" />
+        <meta name="theme-color" content="#0f172a" />
+
+        <link
+            rel="canonical"
+            href="https://www.nexautia.com/recursos/ia_para_ninos/"
+        />
+        <link
+            rel="alternate"
+            hreflang="es"
+            href="https://www.nexautia.com/recursos/ia_para_ninos/"
+        />
+        <link
+            rel="alternate"
+            hreflang="ca"
+            href="https://www.nexautia.com/ca/recursos/ia_per_nens/"
+        />
+        <link
+            rel="alternate"
+            hreflang="x-default"
+            href="https://www.nexautia.com/recursos/ia_para_ninos/"
+        />
+
+        <meta name="geo.region" content="ES-CT" />
+        <meta name="geo.placename" content="Barcelona, Cataluña, España" />
+        <meta name="geo.position" content="41.3874;2.1686" />
+        <meta name="ICBM" content="41.3874, 2.1686" />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:locale" content="es_ES" />
+        <meta property="og:locale:alternate" content="ca_ES" />
+        <meta property="og:site_name" content="Nexautia" />
+        <meta
+            property="og:title"
+            content="IA para niños: aprende Inteligencia Artificial jugando | Nexautia"
+        />
+        <meta
+            property="og:description"
+            content="Una aventura educativa gratuita para que niños y niñas entiendan qué es la IA con ejemplos cotidianos, curiosidades y un quiz interactivo."
+        />
+        <meta
+            property="og:url"
+            content="https://www.nexautia.com/recursos/ia_para_ninos/"
+        />
+        <meta
+            property="og:image"
+            content="https://www.nexautia.com/imagenes/comunes/logo.svg"
+        />
+        <meta
+            property="og:image:alt"
+            content="Nexautia: recurso educativo de Inteligencia Artificial para niños"
+        />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+            name="twitter:title"
+            content="IA para niños: aventura educativa | Nexautia"
+        />
+        <meta
+            name="twitter:description"
+            content="Explicación sencilla de la Inteligencia Artificial para niños, con ejemplos, curiosidades y preguntas interactivas."
+        />
+        <meta
+            name="twitter:image"
+            content="https://www.nexautia.com/imagenes/comunes/logo.svg"
+        />
+        <meta name="twitter:image:alt" content="Nexautia: IA para niños" />
         <link
             rel="icon"
-            type="image/png"
-            sizes="32x32"
-            href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiIgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIj4KICA8IS0tIEJhY2tncm91bmQgY2lyY2xlIC0tPgogIDxjaXJjbGUgY3g9IjE2IiBjeT0iMTYiIHI9IjE1IiBmaWxsPSIjMkE0RDY5IiBzdHJva2U9IiNGRjdFNUYiIHN0cm9rZS13aWR0aD0iMSIvPgogIAogIDwhLS0gUm9ib3QgaGVhZCAtLT4KICA8cmVjdCB4PSI4IiB5PSI4IiB3aWR0aD0iMTYiIGhlaWdodD0iMTIiIHJ4PSIzIiBmaWxsPSIjNEJDNkI5Ii8+CiAgCiAgPCEtLSBFeWVzIC0tPgogIDxjaXJjbGUgY3g9IjEyIiBjeT0iMTMiIHI9IjEuNSIgZmlsbD0iIzJBNEQ2OSIvPgogIDxjaXJjbGUgY3g9IjIwIiBjeT0iMTMiIHI9IjEuNSIgZmlsbD0iIzJBNEQ2OSIvPgogIDxjaXJjbGUgY3g9IjEyIiBjeT0iMTMiIHI9IjAuOCIgZmlsbD0id2hpdGUiLz4KICA8Y2lyY2xlIGN4PSIyMCIgY3k9IjEzIiByPSIwLjgiIGZpbGw9IndoaXRlIi8+CiAgCiAgPCEtLSBNb3V0aCAtLT4KICA8cmVjdCB4PSIxNCIgeT0iMTYiIHdpZHRoPSI0IiBoZWlnaHQ9IjEuNSIgcng9IjAuNSIgZmlsbD0iIzJBNEQ2OSIvPgogIAogIDwhLS0gQW50ZW5uYSAtLT4KICA8bGluZSB4MT0iMTYiIHkxPSI4IiB4Mj0iMTYiIHkyPSI1IiBzdHJva2U9IiNGRjdFNUYiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KICA8Y2lyY2xlIGN4PSIxNiIgY3k9IjUiIHI9IjEiIGZpbGw9IiNGRjdFNUYiLz4KICAKICA8IS0tIEJvZHkgLS0+CiAgPHJlY3QgeD0iMTAiIHk9IjIwIiB3aWR0aD0iMTIiIGhlaWdodD0iOCIgcng9IjIiIGZpbGw9IiNGRjdFNUYiLz4KICAKICA8IS0tIENoZXN0IHBhbmVsIC0tPgogIDxyZWN0IHg9IjEyIiB5PSIyMiIgd2lkdGg9IjgiIGhlaWdodD0iNCIgcng9IjEiIGZpbGw9IiMyQTRENjkiLz4KICA8Y2lyY2xlIGN4PSIxNCIgY3k9IjI0IiByPSIwLjgiIGZpbGw9IiM0QkM2QjkiLz4KICA8Y2lyY2xlIGN4PSIxNiIgY3k9IjI0IiByPSIwLjgiIGZpbGw9IiM0QkM2QjkiLz4KICA8Y2lyY2xlIGN4PSIxOCIgY3k9IjI0IiByPSIwLjgiIGZpbGw9IiM0QkM2QjkiLz4KICAKICA8IS0tIEFybXMgLS0+CiAgPHJlY3QgeD0iNiIgeT0iMjEiIHdpZHRoPSI0IiBoZWlnaHQ9IjIiIHJ4PSIxIiBmaWxsPSIjNEJDNkI5Ii8+CiAgPHJlY3QgeD0iMjIiIHk9IjIxIiB3aWR0aD0iNCIgaGVpZ2h0PSIyIiByeD0iMSIgZmlsbD0iIzRCQzZCOSIvPgo8L3N2Zz4="
+            type="image/svg+xml"
+            href="../../imagenes/comunes/favicon.svg?v=4"
         />
-        <link rel="shortcut icon" href="favicon.svg" type="image/svg+xml" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
-            rel="apple-touch-icon"
-            sizes="180x180"
-            href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiIgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIj4KICA8IS0tIEJhY2tncm91bmQgY2lyY2xlIC0tPgogIDxjaXJjbGUgY3g9IjE2IiBjeT0iMTYiIHI9IjE1IiBmaWxsPSIjMkE0RDY5IiBzdHJva2U9IiNGRjdFNUYiIHN0cm9rZS13aWR0aD0iMSIvPgogIAogIDwhLS0gUm9ib3QgaGVhZCAtLT4KICA8cmVjdCB4PSI4IiB5PSI4IiB3aWR0aD0iMTYiIGhlaWdodD0iMTIiIHJ4PSIzIiBmaWxsPSIjNEJDNkI5Ii8+CiAgCiAgPCEtLSBFeWVzIC0tPgogIDxjaXJjbGUgY3g9IjEyIiBjeT0iMTMiIHI9IjEuNSIgZmlsbD0iIzJBNEQ2OSIvPgogIDxjaXJjbGUgY3g9IjIwIiBjeT0iMTMiIHI9IjEuNSIgZmlsbD0iIzJBNEQ2OSIvPgogIDxjaXJjbGUgY3g9IjEyIiBjeT0iMTMiIHI9IjAuOCIgZmlsbD0id2hpdGUiLz4KICA8Y2lyY2xlIGN4PSIyMCIgY3k9IjEzIiByPSIwLjgiIGZpbGw9IndoaXRlIi8+CiAgCiAgPCEtLSBNb3V0aCAtLT4KICA8cmVjdCB4PSIxNCIgeT0iMTYiIHdpZHRoPSI0IiBoZWlnaHQ9IjEuNSIgcng9IjAuNSIgZmlsbD0iIzJBNEQ2OSIvPgogIAogIDwhLS0gQW50ZW5uYSAtLT4KICA8bGluZSB4MT0iMTYiIHkxPSI4IiB4Mj0iMTYiIHkyPSI1IiBzdHJva2U9IiNGRjdFNUYiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KICA8Y2lyY2xlIGN4PSIxNiIgY3k9IjUiIHI9IjEiIGZpbGw9IiNGRjdFNUYiLz4KICAKICA8IS0tIEJvZHkgLS0+CiAgPHJlY3QgeD0iMTAiIHk9IjIwIiB3aWR0aD0iMTIiIGhlaWdodD0iOCIgcng9IjIiIGZpbGw9IiNGRjdFNUYiLz4KICAKICA8IS0tIENoZXN0IHBhbmVsIC0tPgogIDxyZWN0IHg9IjEyIiB5PSIyMiIgd2lkdGg9IjgiIGhlaWdodD0iNCIgcng9IjEiIGZpbGw9IiMyQTRENjkiLz4KICA8Y2lyY2xlIGN4PSIxNCIgY3k9IjI0IiByPSIwLjgiIGZpbGw9IiM0QkM2QjkiLz4KICA8Y2lyY2xlIGN4PSIxNiIgY3k9IjI0IiByPSIwLjgiIGZpbGw9IiM0QkM2QjkiLz4KICA8Y2lyY2xlIGN4PSIxOCIgY3k9IjI0IiByPSIwLjgiIGZpbGw9IiM0QkM2QjkiLz4KICAKICA8IS0tIEFybXMgLS0+CiAgPHJlY3QgeD0iNiIgeT0iMjEiIHdpZHRoPSI0IiBoZWlnaHQ9IjIiIHJ4PSIxIiBmaWxsPSIjNEJDNkI5Ii8+CiAgPHJlY3QgeD0iMjIiIHk9IjIxIiB3aWR0aD0iNCIgaGVpZ2h0PSIyIiByeD0iMSIgZmlsbD0iIzRCQzZCOSIvPgo8L3N2Zz4="
-        />
-
-        <link
-            href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Nunito:wght@400;700&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap"
             rel="stylesheet"
         />
+        <link href="../../styles.css" rel="stylesheet" />
+
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@graph": [
+                    {
+                        "@type": "Organization",
+                        "@id": "https://www.nexautia.com/#organization",
+                        "name": "Nexautia",
+                        "url": "https://www.nexautia.com/",
+                        "logo": {
+                            "@type": "ImageObject",
+                            "url": "https://www.nexautia.com/imagenes/comunes/logo.svg"
+                        },
+                        "email": "contacto@nexautia.com",
+                        "telephone": "+34610510642",
+                        "areaServed": ["España", "Barcelona", "Cataluña"],
+                        "sameAs": [
+                            "https://www.facebook.com/profile.php?id=61579981550830"
+                        ]
+                    },
+                    {
+                        "@type": "WebSite",
+                        "@id": "https://www.nexautia.com/#website",
+                        "name": "Nexautia",
+                        "url": "https://www.nexautia.com/",
+                        "inLanguage": "es",
+                        "publisher": {
+                            "@id": "https://www.nexautia.com/#organization"
+                        }
+                    },
+                    {
+                        "@type": "BreadcrumbList",
+                        "@id": "https://www.nexautia.com/recursos/ia_para_ninos/#breadcrumb",
+                        "itemListElement": [
+                            {
+                                "@type": "ListItem",
+                                "position": 1,
+                                "name": "Inicio",
+                                "item": "https://www.nexautia.com/"
+                            },
+                            {
+                                "@type": "ListItem",
+                                "position": 2,
+                                "name": "Aprende gratis",
+                                "item": "https://www.nexautia.com/recursos/"
+                            },
+                            {
+                                "@type": "ListItem",
+                                "position": 3,
+                                "name": "IA para niños",
+                                "item": "https://www.nexautia.com/recursos/ia_para_ninos/"
+                            }
+                        ]
+                    },
+                    {
+                        "@type": "WebPage",
+                        "@id": "https://www.nexautia.com/recursos/ia_para_ninos/#webpage",
+                        "url": "https://www.nexautia.com/recursos/ia_para_ninos/",
+                        "name": "IA para niños: aventura educativa sobre Inteligencia Artificial",
+                        "description": "Recurso gratuito de Nexautia para explicar la Inteligencia Artificial a niños y niñas con ejemplos sencillos, curiosidades y un quiz interactivo para aprender jugando.",
+                        "inLanguage": "es",
+                        "isPartOf": {
+                            "@id": "https://www.nexautia.com/#website"
+                        },
+                        "publisher": {
+                            "@id": "https://www.nexautia.com/#organization"
+                        },
+                        "breadcrumb": {
+                            "@id": "https://www.nexautia.com/recursos/ia_para_ninos/#breadcrumb"
+                        },
+                        "about": [
+                            "Inteligencia Artificial para niños",
+                            "Educación digital",
+                            "Aprender IA jugando",
+                            "Pensamiento tecnológico",
+                            "Recursos educativos gratuitos"
+                        ]
+                    },
+                    {
+                        "@type": "LearningResource",
+                        "@id": "https://www.nexautia.com/recursos/ia_para_ninos/#learningresource",
+                        "name": "IA para niños: aventura educativa sobre Inteligencia Artificial",
+                        "description": "Contenido educativo gratuito con explicación sencilla, ejemplos cotidianos, curiosidades y preguntas interactivas para aprender qué es la Inteligencia Artificial.",
+                        "url": "https://www.nexautia.com/recursos/ia_para_ninos/",
+                        "inLanguage": "es",
+                        "isAccessibleForFree": true,
+                        "learningResourceType": "actividad interactiva y quiz educativo",
+                        "educationalLevel": "Educación primaria y divulgación familiar",
+                        "audience": {
+                            "@type": "EducationalAudience",
+                            "educationalRole": "student"
+                        },
+                        "about": [
+                            "Inteligencia artificial",
+                            "IA para niños",
+                            "Tecnología educativa",
+                            "Aprendizaje interactivo"
+                        ],
+                        "provider": {
+                            "@id": "https://www.nexautia.com/#organization"
+                        }
+                    }
+                ]
+            }
+        </script>
+
         <style>
+            :root {
+                --nx-bg: #0f172a;
+                --nx-bg-soft: #111827;
+                --nx-card: #ffffff;
+                --nx-text: #0f172a;
+                --nx-muted: #475569;
+                --nx-primary: #2563eb;
+                --nx-primary-dark: #1d4ed8;
+                --nx-accent: #06b6d4;
+                --nx-green: #22c55e;
+                --nx-border: #bfdbfe;
+                --nx-soft: #eaf2ff;
+                --nx-warm: #f97316;
+                --nx-kid-yellow: #facc15;
+                --nx-kid-pink: #ec4899;
+                --nx-kid-lime: #84cc16;
+            }
+
             * {
                 box-sizing: border-box;
-                margin: 0;
-                padding: 0;
             }
-
-            body {
-                font-family: "Nunito", sans-serif;
-                background-color: #f7f7f7;
-                color: #333333;
-                line-height: 1.6;
+            html {
+                scroll-behavior: smooth;
                 overflow-x: hidden;
             }
-
-            .container {
-                max-width: 1100px;
-                margin: 0 auto;
-                padding: 0 20px;
+            body {
+                margin: 0;
+                padding: 0;
+                font-family: "Inter", Arial, sans-serif;
+                background: #f8fbff;
+                color: var(--nx-text);
+                line-height: 1.65;
+                overflow-x: hidden;
             }
-
-            /* Header */
-            header {
-                background: linear-gradient(135deg, #2a4d69 0%, #4bc6b9 100%);
-                color: white;
-                padding: 40px 0;
-                text-align: center;
-                position: relative;
+            body.nx-kids-menu-open {
                 overflow: hidden;
             }
+            a {
+                color: inherit;
+            }
+            img {
+                max-width: 100%;
+                height: auto;
+                display: block;
+            }
+            p {
+                margin: 0 0 15px;
+                overflow-wrap: break-word;
+            }
+            b,
+            strong {
+                font-weight: 800;
+            }
+            h1,
+            h2,
+            h3,
+            h4 {
+                color: var(--nx-text);
+                overflow-wrap: break-word;
+            }
+            .container {
+                width: min(1180px, calc(100% - 40px));
+                margin-inline: auto;
+            }
+            [hidden] {
+                display: none !important;
+            }
 
-            header::before {
+            main#contenido {
+                background: linear-gradient(
+                    180deg,
+                    #f8fbff 0%,
+                    #eef6ff 46%,
+                    #f8fbff 100%
+                ) !important;
+            }
+
+            .site-header {
+                background: #0f172a;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+                position: sticky;
+                top: 0;
+                z-index: 1000;
+            }
+            .site-header .header-inner {
+                min-height: 76px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 1rem;
+            }
+            .logo a {
+                display: inline-flex;
+                align-items: center;
+            }
+            .site-header .logo img {
+                width: 172px !important;
+                max-width: 172px !important;
+                height: auto !important;
+            }
+            .desktop-nav {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 0.15rem;
+                flex: 1 1 auto;
+                flex-wrap: nowrap;
+                white-space: nowrap;
+            }
+            .desktop-nav a {
+                position: relative;
+                color: #e5e7eb !important;
+                text-decoration: none !important;
+                font-size: 0.94rem !important;
+                font-weight: 800;
+                line-height: 1;
+                padding: 0.62rem 0.56rem;
+                border-radius: 999px;
+            }
+            .desktop-nav a:hover {
+                color: #ffffff !important;
+                background: rgba(255, 255, 255, 0.08);
+            }
+            .desktop-nav a.active {
+                color: #ffffff !important;
+            }
+            .desktop-nav a.active::after {
                 content: "";
                 position: absolute;
-                top: -50%;
-                left: -50%;
-                width: 200%;
-                height: 200%;
-                background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/></svg>')
-                    repeat;
-                animation: float 20s infinite linear;
+                left: 0.5rem;
+                right: 0.5rem;
+                bottom: -0.35rem;
+                height: 3px;
+                border-radius: 999px;
+                background: var(--nx-green);
+            }
+            .header-actions {
+                display: flex;
+                align-items: center;
+                gap: 0.45rem;
+                flex: 0 0 auto;
+            }
+            .lang-switch {
+                display: inline-flex;
+                align-items: center;
+                gap: 0.25rem;
+            }
+            .lang-link {
+                width: 34px;
+                height: 34px;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 999px;
+                border: 1px solid rgba(255, 255, 255, 0.22);
+                color: #e5e7eb !important;
+                text-decoration: none !important;
+                font-weight: 900;
+                font-size: 0.75rem !important;
+            }
+            .lang-link.active {
+                background: var(--nx-accent) !important;
+                color: #ffffff !important;
+                border-color: rgba(6, 182, 212, 0.75) !important;
+                box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.18) !important;
+            }
+            .nx-kids-menu-btn {
+                display: none;
+                align-items: center;
+                justify-content: center;
+                width: 42px;
+                height: 42px;
+                border-radius: 14px;
+                border: 1px solid rgba(255, 255, 255, 0.22);
+                background: rgba(255, 255, 255, 0.08);
+                color: #ffffff;
+                font-size: 1.35rem;
+                cursor: pointer;
+                line-height: 1;
             }
 
-            @keyframes float {
-                0% {
-                    transform: translateX(0) translateY(0);
-                }
-                100% {
-                    transform: translateX(-50px) translateY(-50px);
-                }
-            }
-
-            .logo {
+            .hero {
                 position: relative;
-                z-index: 2;
-                margin-bottom: 20px;
+                color: #ffffff;
+                padding: 4.4rem 0 4.7rem;
+                overflow: hidden;
+                background:
+                    radial-gradient(
+                        circle at 15% 15%,
+                        rgba(6, 182, 212, 0.42),
+                        transparent 24rem
+                    ),
+                    radial-gradient(
+                        circle at 86% 8%,
+                        rgba(250, 204, 21, 0.22),
+                        transparent 22rem
+                    ),
+                    radial-gradient(
+                        circle at 72% 74%,
+                        rgba(34, 197, 94, 0.22),
+                        transparent 20rem
+                    ),
+                    linear-gradient(180deg, #0f172a 0%, #111827 100%);
             }
-
-            .logo a {
+            .hero::before {
+                content: "";
+                position: absolute;
+                inset: 0;
+                background-image: radial-gradient(
+                    rgba(255, 255, 255, 0.1) 1px,
+                    transparent 1px
+                );
+                background-size: 28px 28px;
+                opacity: 0.32;
+                pointer-events: none;
+            }
+            .hero-grid {
+                position: relative;
+                z-index: 1;
+                display: grid;
+                grid-template-columns: minmax(0, 0.95fr) minmax(360px, 0.72fr);
+                gap: 3.5rem;
+                align-items: center;
+                max-width: 1220px;
+                margin: 0 auto;
+                padding: 0 1.5rem;
+            }
+            .eyebrow {
+                color: #bfdbfe !important;
+                font-weight: 900;
+                text-transform: uppercase;
+                letter-spacing: 0.08em;
+                font-size: 0.84rem;
+                margin: 0 0 1rem;
+            }
+            .hero h1 {
+                color: #ffffff !important;
+                border-bottom: 0 !important;
+                font-size: clamp(2.65rem, 4.4vw, 4.45rem) !important;
+                line-height: 1.04 !important;
+                margin: 0 0 1.25rem !important;
+                padding: 0 !important;
+                max-width: 700px !important;
+                letter-spacing: -0.045em !important;
+            }
+            .hero h1 span {
+                color: var(--nx-kid-yellow) !important;
+                text-shadow: 0 0 22px rgba(250, 204, 21, 0.22);
+            }
+            .hero p {
+                color: #dbeafe !important;
+                font-size: 1.08rem;
+                line-height: 1.7;
+                max-width: 650px;
+                margin-bottom: 0;
+            }
+            .hero-cta {
+                display: flex;
+                gap: 0.85rem;
+                flex-wrap: wrap;
+                justify-content: flex-start;
+                margin-top: 1.6rem;
+            }
+            .btn {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
                 text-decoration: none;
-                display: inline-block;
-                transition: transform 0.4s ease;
+                border-radius: 999px;
+                padding: 12px 22px;
+                font-weight: 850;
+                transition: 0.18s ease;
             }
-
-            .logo a:hover {
-                transform: scale(1.05);
+            .btn-primary {
+                background: linear-gradient(
+                    135deg,
+                    var(--nx-primary),
+                    var(--nx-accent)
+                ) !important;
+                color: #ffffff !important;
+                box-shadow: 0 12px 28px rgba(37, 99, 235, 0.22);
             }
-
-            .robot-header {
-                position: relative;
-                z-index: 2;
-                margin-bottom: 20px;
+            .btn-secondary {
+                background: rgba(255, 255, 255, 0.1) !important;
+                color: #ffffff !important;
+                border: 1px solid rgba(255, 255, 255, 0.18) !important;
             }
-
-            h1 {
-                font-family: "Poppins", sans-serif;
-                font-weight: 700;
-                font-size: 3.5rem;
-                margin-bottom: 15px;
-                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-                position: relative;
-                z-index: 2;
+            .btn:hover {
+                transform: translateY(-1px);
             }
-
-            .subtitle {
-                font-size: 1.3rem;
-                opacity: 0.95;
-                position: relative;
-                z-index: 2;
+            .hero-card {
+                margin: 0;
+                background: rgba(255, 255, 255, 0.08);
+                border: 1px solid rgba(255, 255, 255, 0.16);
+                border-radius: 24px;
+                padding: 1rem;
+                box-shadow: 0 24px 70px rgba(0, 0, 0, 0.28);
+                text-align: center;
             }
-
-            /* Main content */
-            main {
-                padding: 60px 0;
+            .robot-wrap {
+                min-height: 360px;
+                display: grid;
+                place-items: center;
+                border-radius: 18px;
+                background:
+                    radial-gradient(
+                        circle at 30% 20%,
+                        rgba(34, 197, 94, 0.22),
+                        transparent 18rem
+                    ),
+                    linear-gradient(
+                        135deg,
+                        rgba(255, 255, 255, 0.1),
+                        rgba(255, 255, 255, 0.04)
+                    );
             }
-
-            section {
-                margin-bottom: 60px;
+            .robot-svg {
+                width: min(320px, 82%);
+                height: auto;
+                filter: drop-shadow(0 22px 32px rgba(0, 0, 0, 0.26));
+                animation: nxBounce 2.8s ease-in-out infinite;
             }
-
-            h2 {
-                font-family: "Poppins", sans-serif;
-                font-weight: 600;
-                font-size: 2.5rem;
-                color: #2a4d69;
-                margin-bottom: 30px;
+            @keyframes nxBounce {
+                0%,
+                100% {
+                    transform: translateY(0);
+                }
+                50% {
+                    transform: translateY(-10px);
+                }
+            }
+            .trust-row {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 14px;
+                margin-top: 28px;
+            }
+            .trust-pill {
+                background: rgba(255, 255, 255, 0.1);
+                border: 1px solid rgba(250, 204, 21, 0.28);
+                border-radius: 18px;
+                padding: 14px;
+                color: #ffffff;
+                font-weight: 780;
                 text-align: center;
             }
 
-            h3 {
-                font-family: "Poppins", sans-serif;
-                font-weight: 600;
-                font-size: 1.8rem;
-                color: #2a4d69;
-                margin-bottom: 20px;
+            .section {
+                padding: 42px 0;
             }
-
-            p {
-                font-size: 1.2rem;
-                margin-bottom: 20px;
+            .intro-card,
+            .content-card,
+            .quiz-section {
+                max-width: 980px;
+                margin-left: auto !important;
+                margin-right: auto !important;
+                color: var(--nx-text) !important;
+                background: #ffffff !important;
+                border: 1px solid var(--nx-border) !important;
+                border-radius: 20px !important;
+                box-shadow: 0 12px 34px rgba(15, 23, 42, 0.1) !important;
+            }
+            .intro-card {
+                padding: 30px;
+                border-top: 5px solid var(--nx-kid-yellow) !important;
+            }
+            .intro-card p {
+                color: var(--nx-text) !important;
+                margin: 0;
+                text-align: left;
+                font-size: 1.08rem;
+            }
+            .section-title {
                 text-align: center;
+                color: #0f172a !important;
+                opacity: 1 !important;
+                font-size: clamp(2rem, 3vw, 3rem);
+                line-height: 1.12;
+                margin: 0 0 1rem;
+                letter-spacing: -0.035em;
             }
-
-            pre {
-                font-size: 1.2rem;
-                margin-bottom: 20px;
+            .section-subtitle {
                 text-align: center;
+                color: #334155 !important;
+                opacity: 1 !important;
+                max-width: 820px;
+                margin: 0 auto 2rem;
+                font-size: 1.08rem;
             }
-
-            /* Cards */
             .cards-grid {
                 display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-                gap: 30px;
-                margin: 40px 0;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 22px;
+                max-width: 980px;
+                margin: 32px auto 0;
             }
-
             .card {
-                background: white;
-                padding: 30px;
-                border-radius: 16px;
-                box-shadow: 0px 8px 20px rgba(42, 77, 105, 0.1);
-                text-align: center;
-                transition: transform 0.3s ease, box-shadow 0.3s ease;
-            }
-
-            .card:hover {
-                transform: translateY(-5px);
-                box-shadow: 0px 12px 30px rgba(42, 77, 105, 0.15);
-            }
-
-            .card-icon {
-                width: 80px;
-                height: 80px;
-                margin: 0 auto 20px;
-            }
-
-            .card h3 {
-                color: #ff7e5f;
-                margin-bottom: 15px;
-                text-align: center;
-            }
-
-            .card p {
-                font-size: 1.1rem;
-                text-align: left;
-            }
-
-            /* Curiosidades Section */
-            .curiosidades {
-                background: #2a4d69;
-                color: white;
-                padding: 50px 30px;
+                background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+                border: 1px solid var(--nx-border);
+                border-top: 5px solid var(--nx-accent);
                 border-radius: 20px;
-                margin: 60px 0;
+                padding: 26px;
+                box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
+                transition:
+                    transform 0.18s ease,
+                    box-shadow 0.18s ease;
+            }
+            .card:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 18px 40px rgba(15, 23, 42, 0.12);
+            }
+            .card:nth-child(2) {
+                border-top-color: var(--nx-green);
+            }
+            .card:nth-child(3) {
+                border-top-color: var(--nx-kid-yellow);
+            }
+            .card:nth-child(4) {
+                border-top-color: var(--nx-kid-pink);
+            }
+            .card-icon {
+                width: 82px;
+                height: 82px;
+                margin: 0 auto 18px;
+            }
+            .card h3 {
+                text-align: center;
+                margin: 0 0 12px;
+                color: var(--nx-primary) !important;
+                font-size: 1.35rem;
+            }
+            .card p {
+                font-size: 1.04rem;
+                text-align: left;
+                color: var(--nx-text);
+                margin: 0;
             }
 
+            .curiosidades {
+                max-width: 1080px;
+                margin: 0 auto;
+                background:
+                    radial-gradient(
+                        circle at 15% 10%,
+                        rgba(6, 182, 212, 0.22),
+                        transparent 20rem
+                    ),
+                    linear-gradient(180deg, #0f172a 0%, #111827 100%);
+                color: #ffffff;
+                padding: 44px 30px;
+                border-radius: 24px;
+                box-shadow: 0 24px 54px rgba(15, 23, 42, 0.18);
+            }
             .curiosidades h2 {
-                color: white;
-                margin-bottom: 40px;
+                color: #ffffff !important;
+                text-align: center;
+                margin: 0 0 30px;
+                font-size: clamp(1.8rem, 3vw, 2.7rem);
             }
-
             .curiosidades-grid {
                 display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-                gap: 25px;
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+                gap: 18px;
             }
-
             .curiosidad-item {
-                background: rgba(255, 255, 255, 0.1);
-                padding: 25px;
-                border-radius: 12px;
-                border-top: 5px solid #4bc6b9;
-                backdrop-filter: blur(10px);
+                background: rgba(255, 255, 255, 0.08);
+                border: 1px solid rgba(255, 255, 255, 0.16);
+                border-top: 5px solid var(--nx-accent);
+                padding: 22px;
+                border-radius: 16px;
             }
-
-            .curiosidad-item h4 {
-                font-family: "Poppins", sans-serif;
-                color: #4bc6b9;
-                font-size: 1.3rem;
-                margin-bottom: 10px;
+            .curiosidad-item h3 {
+                color: #67e8f9 !important;
+                font-size: 1.08rem;
+                margin: 0 0 10px;
             }
-
             .curiosidad-item p {
-                font-size: 1.1rem;
+                color: #dbeafe;
                 text-align: left;
+                font-size: 1rem;
+                margin: 0;
             }
 
-            /* Quiz Section */
             .quiz-section {
-                background: white;
-                padding: 50px 30px;
-                border-radius: 20px;
-                box-shadow: 0px 8px 30px rgba(42, 77, 105, 0.1);
+                padding: 34px;
                 text-align: center;
             }
-
             .quiz-container {
-                max-width: 700px;
+                max-width: 760px;
                 margin: 0 auto;
             }
-
             .question-counter {
-                background: #4bc6b9;
-                color: white;
+                background: var(--nx-accent);
+                color: #ffffff;
                 padding: 10px 20px;
-                border-radius: 20px;
+                border-radius: 999px;
                 display: inline-block;
-                margin-bottom: 30px;
-                font-weight: 700;
+                margin-bottom: 24px;
+                font-weight: 850;
             }
-
+            .quiz-progress {
+                background: #e2e8f0;
+                border-radius: 999px;
+                height: 10px;
+                margin-bottom: 28px;
+                overflow: hidden;
+            }
+            .quiz-progress-bar {
+                background: linear-gradient(
+                    90deg,
+                    var(--nx-primary),
+                    var(--nx-accent)
+                );
+                height: 100%;
+                width: 0%;
+                transition: width 0.3s ease;
+            }
             .question-title {
-                font-size: 1.6rem;
-                margin-bottom: 30px;
-                color: #2a4d69;
+                font-size: clamp(1.35rem, 2.4vw, 1.85rem);
+                margin: 0 0 26px;
+                color: var(--nx-text) !important;
             }
-
             .answer-buttons {
                 display: grid;
-                gap: 15px;
-                margin-bottom: 30px;
+                gap: 14px;
+                margin-bottom: 24px;
             }
-
             .answer-btn {
-                background: #ff7e5f;
-                color: white;
-                border: none;
-                padding: 20px 30px;
-                border-radius: 30px;
-                font-family: "Nunito", sans-serif;
-                font-weight: 700;
-                font-size: 1.2rem;
+                background: linear-gradient(
+                    135deg,
+                    var(--nx-primary),
+                    var(--nx-primary-dark)
+                );
+                color: #ffffff;
+                border: 0;
+                padding: 18px 24px;
+                border-radius: 18px;
+                font-family: "Inter", Arial, sans-serif;
+                font-weight: 850;
+                font-size: 1.05rem;
                 cursor: pointer;
-                transition: all 0.3s ease;
-                text-transform: none;
+                transition:
+                    transform 0.18s ease,
+                    box-shadow 0.18s ease,
+                    opacity 0.18s ease;
             }
-
             .answer-btn:hover {
-                background: #e56a50;
-                transform: translateY(-2px);
-                box-shadow: 0px 6px 20px rgba(255, 126, 95, 0.3);
+                transform: translateY(-1px);
+                box-shadow: 0 10px 24px rgba(37, 99, 235, 0.22);
             }
-
             .answer-btn:disabled {
                 cursor: not-allowed;
-                opacity: 0.7;
+                opacity: 0.85;
             }
-
             .answer-btn.correct {
-                background: #5cb85c;
+                background: linear-gradient(135deg, #16a34a, #15803d);
             }
-
             .answer-btn.incorrect {
-                background: #d9534f;
+                background: linear-gradient(135deg, #dc2626, #b91c1c);
             }
-
             .feedback-message {
-                min-height: 60px;
-                padding: 20px;
-                margin: 20px 0;
-                border-radius: 15px;
-                font-weight: 700;
-                font-size: 1.2rem;
+                min-height: 64px;
+                padding: 18px;
+                margin: 18px 0 0;
+                border-radius: 16px;
+                font-weight: 800;
+                font-size: 1.02rem;
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 opacity: 0;
                 transition: opacity 0.3s ease;
             }
-
             .feedback-message.show {
                 opacity: 1;
             }
-
             .feedback-message.success {
-                background: #d4edda;
-                color: #155724;
-                border: 2px solid #5cb85c;
+                background: #dcfce7;
+                color: #14532d;
+                border: 2px solid #22c55e;
             }
-
             .feedback-message.error {
-                background: #f8d7da;
-                color: #721c24;
-                border: 2px solid #d9534f;
+                background: #fee2e2;
+                color: #7f1d1d;
+                border: 2px solid #ef4444;
             }
-
-            .quiz-progress {
-                background: #e9ecef;
-                border-radius: 10px;
-                height: 8px;
-                margin-bottom: 30px;
-                overflow: hidden;
-            }
-
-            .quiz-progress-bar {
-                background: linear-gradient(90deg, #ff7e5f, #4bc6b9);
-                height: 100%;
-                width: 0%;
-                transition: width 0.3s ease;
-            }
-
             .quiz-results {
                 text-align: center;
-                padding: 40px;
+                padding: 34px 10px 6px;
             }
-
             .score-circle {
-                width: 120px;
-                height: 120px;
+                width: 126px;
+                height: 126px;
                 border-radius: 50%;
-                background: linear-gradient(45deg, #ff7e5f, #4bc6b9);
+                background: linear-gradient(
+                    135deg,
+                    var(--nx-primary),
+                    var(--nx-accent)
+                );
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                margin: 0 auto 30px;
-                color: white;
+                margin: 0 auto 24px;
+                color: #ffffff;
                 font-size: 2rem;
-                font-weight: 700;
+                font-weight: 900;
+                box-shadow: 0 16px 34px rgba(37, 99, 235, 0.2);
             }
-
             .restart-btn {
-                background: #2a4d69;
-                color: white;
-                border: none;
-                padding: 15px 30px;
-                border-radius: 25px;
-                font-family: "Nunito", sans-serif;
-                font-weight: 700;
-                font-size: 1.1rem;
+                background: #0f172a;
+                color: #ffffff;
+                border: 0;
+                padding: 14px 26px;
+                border-radius: 999px;
+                font-family: "Inter", Arial, sans-serif;
+                font-weight: 850;
+                font-size: 1rem;
                 cursor: pointer;
-                margin-top: 20px;
-                transition: all 0.3s ease;
+                margin-top: 12px;
+                transition:
+                    transform 0.18s ease,
+                    box-shadow 0.18s ease;
             }
-
             .restart-btn:hover {
-                background: #1e3a52;
-                transform: translateY(-2px);
-                box-shadow: 0px 6px 20px rgba(42, 77, 105, 0.3);
+                transform: translateY(-1px);
+                box-shadow: 0 10px 24px rgba(15, 23, 42, 0.22);
             }
 
-            /* Footer */
             footer {
-                background: #2a4d69;
-                color: white;
+                max-width: none !important;
+                background: #0f172a !important;
+                color: #ffffff;
                 text-align: center;
                 padding: 40px 0;
-                margin-top: 60px;
+                margin-top: 4rem !important;
             }
-
             .footer-content {
+                max-width: 980px;
+                margin-inline: auto;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 gap: 30px;
             }
-
             .footer-links {
                 display: flex;
                 align-items: center;
@@ -410,13 +868,11 @@
                 flex-wrap: wrap;
                 justify-content: center;
             }
-
             .social-links {
                 display: flex;
                 gap: 20px;
                 align-items: center;
             }
-
             .social-link {
                 display: inline-block;
                 padding: 10px;
@@ -425,458 +881,566 @@
                 transition: all 0.3s ease;
                 text-decoration: none;
             }
-
             .social-link:hover {
                 background: rgba(255, 255, 255, 0.2);
                 transform: translateY(-2px);
             }
-
             .social-icon {
                 width: 24px;
                 height: 24px;
-                fill: white;
+                fill: #ffffff;
             }
-
             .footer-logo {
                 display: inline-block;
                 transition: transform 0.3s ease;
             }
-
             .footer-logo:hover {
                 transform: scale(1.05);
             }
-
-            .footer-text {
-                text-align: center;
+            .footer-logo img {
+                max-width: 200px !important;
+                height: auto !important;
             }
-
             .contact-info {
                 display: flex;
                 gap: 20px;
                 align-items: center;
+                justify-content: center;
                 flex-wrap: wrap;
             }
-
             .contact-item {
                 display: flex;
                 align-items: center;
                 gap: 8px;
                 text-decoration: none;
-                color: var(
-                    --accent-color
-                ); /* Verde que contrasta bien con fondo oscuro */
+                color: var(--nx-accent);
             }
-
             .contact-icon {
                 width: 40px;
                 height: 40px;
             }
+            .footer-text {
+                text-align: center;
+            }
+            .footer-text p {
+                margin: 0 0 8px;
+                color: #e5e7eb;
+            }
 
-            /* Responsive Design */
-            @media (max-width: 768px) {
-                h1 {
-                    font-size: 2.5rem;
+            .nx-kids-mobile-overlay {
+                position: fixed !important;
+                inset: 0 !important;
+                background: rgba(15, 23, 42, 0.62) !important;
+                z-index: 10000 !important;
+                display: none !important;
+                justify-content: flex-end !important;
+            }
+            .nx-kids-mobile-overlay.is-open {
+                display: flex !important;
+            }
+            .nx-kids-mobile-content {
+                width: min(325px, 84vw);
+                min-height: 100vh;
+                background: #0f172a;
+                color: #ffffff;
+                padding: 1.2rem;
+                box-shadow: -22px 0 55px rgba(0, 0, 0, 0.38);
+                overflow-y: auto;
+            }
+            .nx-kids-mobile-header {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-bottom: 1rem;
+            }
+            .nx-kids-mobile-header h2 {
+                color: #ffffff !important;
+                margin: 0;
+                font-size: 1.3rem;
+            }
+            .nx-kids-mobile-close {
+                background: transparent;
+                color: #ffffff;
+                border: 0;
+                font-size: 2rem;
+                cursor: pointer;
+                line-height: 1;
+            }
+            .nx-kids-mobile-nav {
+                display: flex;
+                flex-direction: column;
+                gap: 0.35rem;
+            }
+            .nx-kids-mobile-nav a {
+                color: #e5e7eb !important;
+                text-decoration: none !important;
+                font-weight: 800;
+                padding: 0.78rem 0.65rem;
+                border-radius: 12px;
+            }
+            .nx-kids-mobile-nav a:hover,
+            .nx-kids-mobile-nav a.active {
+                background: rgba(255, 255, 255, 0.1);
+                color: #ffffff !important;
+            }
+
+            .answer-btn:focus-visible,
+            .restart-btn:focus-visible,
+            .social-link:focus-visible,
+            .nx-kids-menu-btn:focus-visible,
+            .nx-kids-mobile-close:focus-visible,
+            .desktop-nav a:focus-visible,
+            .lang-link:focus-visible {
+                outline: 3px solid var(--nx-accent);
+                outline-offset: 3px;
+            }
+
+            @media (max-width: 1120px) {
+                .desktop-nav {
+                    display: none !important;
                 }
-
-                h2 {
-                    font-size: 2rem;
+                .nx-kids-menu-btn {
+                    display: inline-flex !important;
                 }
-
-                .cards-grid {
+                .site-header .logo img {
+                    width: 150px !important;
+                    max-width: 150px !important;
+                }
+            }
+            @media (max-width: 1080px) {
+                .hero-grid {
                     grid-template-columns: 1fr;
-                    gap: 20px;
+                    gap: 2.2rem;
+                    text-align: center;
                 }
-
+                .hero h1,
+                .hero p {
+                    margin-left: auto !important;
+                    margin-right: auto !important;
+                }
+                .hero-cta {
+                    justify-content: center;
+                }
+                .hero-card {
+                    max-width: 680px;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+                .curiosidades-grid {
+                    grid-template-columns: repeat(2, minmax(0, 1fr));
+                }
+            }
+            @media (max-width: 760px) {
+                .container {
+                    width: min(100% - 28px, 1180px);
+                }
+                .site-header .header-inner {
+                    min-height: 66px;
+                }
+                .hero {
+                    padding: 3.2rem 0 3.4rem;
+                }
+                .hero-grid {
+                    padding: 0 0.85rem;
+                }
+                .hero h1 {
+                    font-size: 2.35rem !important;
+                }
+                .hero-cta {
+                    flex-direction: column;
+                }
+                .btn {
+                    width: 100%;
+                }
+                .trust-row,
+                .cards-grid,
                 .curiosidades-grid {
                     grid-template-columns: 1fr;
                 }
-
-                .container {
-                    padding: 0 15px;
+                .intro-card,
+                .quiz-section {
+                    padding: 22px;
                 }
-
-                .answer-buttons {
-                    grid-template-columns: 1fr;
-                }
-
-                .footer-links {
-                    flex-direction: column;
-                    gap: 20px;
-                }
-
-                .social-links {
-                    flex-wrap: wrap;
-                }
-            }
-
-            @media (max-width: 480px) {
-                h1 {
-                    font-size: 2rem;
-                }
-
-                p {
-                    font-size: 1.1rem;
-                }
-
-                pre {
-                    font-size: 1.1rem;
-                }
-
-                .card {
-                    padding: 20px;
-                }
-
                 .curiosidades {
                     padding: 30px 20px;
                 }
-
-                .quiz-section {
-                    padding: 30px 20px;
+                .robot-wrap {
+                    min-height: 280px;
                 }
-
-                /* Centrar el contenedor de información de contacto */
+            }
+            @media (max-width: 520px) {
+                .site-header .container {
+                    width: min(100% - 20px, 1180px);
+                }
+                .site-header .logo img {
+                    width: 138px !important;
+                    max-width: 138px !important;
+                }
+                .lang-link {
+                    width: 30px;
+                    height: 30px;
+                    font-size: 0.68rem !important;
+                }
+                .nx-kids-menu-btn {
+                    width: 38px;
+                    height: 38px;
+                    border-radius: 12px;
+                }
                 .contact-info {
-                    display: flex;
                     flex-direction: column;
-                    align-items: center;
-                    text-align: center;
-                    width: 100%;
                 }
-
-                /* Centrar cada elemento de contacto (teléfono y email) */
-                .contact-item {
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    text-align: center;
-                    width: 100%;
-                    margin: 8px 0; /* Espacio entre elementos */
-                }
-
-                /* Asegurar que el icono y texto estén centrados */
                 .contact-icon {
-                    margin-right: 8px; /* Espacio entre icono y texto */
+                    width: 25px;
+                    height: 25px;
                 }
-
                 .contact-text {
-                    text-align: center;
+                    font-size: 12px;
                 }
-
-                /* Si el footer completo necesita centrado adicional */
-                .footer-content {
-                    border: yellow 2px solid;
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    text-align: center;
-                }
-
-                /* Centrar también los enlaces sociales y logo si es necesario */
                 .footer-links {
-                    display: flex;
                     flex-direction: column;
-                    align-items: center;
-                    width: 100%;
-                }
-
-                .social-links {
-                    display: flex;
-                    justify-content: center;
-                    margin-bottom: 16px;
-                }
-
-                .footer-logo {
-                    display: flex;
-                    justify-content: center;
-                    margin-bottom: 16px;
-                }
-            }
-
-            /* Accessibility */
-            .answer-btn:focus-visible {
-                outline: 3px solid #ff7e5f;
-                outline-offset: 2px;
-            }
-
-            .restart-btn:focus-visible {
-                outline: 3px solid #4bc6b9;
-                outline-offset: 2px;
-            }
-
-            .social-link:focus-visible {
-                outline: 3px solid #4bc6b9;
-                outline-offset: 2px;
-            }
-
-            /* Robot SVG Animation */
-            .robot-svg {
-                animation: bounce 2s ease-in-out infinite;
-            }
-
-            @keyframes bounce {
-                0%,
-                20%,
-                50%,
-                80%,
-                100% {
-                    transform: translateY(0);
-                }
-                40% {
-                    transform: translateY(-10px);
-                }
-                60% {
-                    transform: translateY(-5px);
+                    gap: 20px;
                 }
             }
         </style>
     </head>
-    <body>
-        <header>
-            <div class="container">
+    <body class="nx-v2 resource-page ia-para-ninos" id="top">
+        <header class="site-header">
+            <div class="container header-inner">
                 <div class="logo">
                     <a
-                        href="https://www.nexautia.com"
-                        target="_blank"
-                        rel="noopener noreferrer"
+                        aria-label="Inicio Nexautia"
                         data-track="nav-logo"
+                        href="../../index.html"
                     >
                         <img
-                            src="logo.svg"
                             alt="NEXAUTIA"
-                            width="340"
-                            height="auto"
                             id="logo"
+                            src="../../imagenes/comunes/logo.svg"
+                            width="172"
                         />
                     </a>
                 </div>
-                <div class="robot-header">
-                    <svg
-                        class="robot-svg"
-                        width="120"
-                        height="120"
-                        viewBox="0 0 120 120"
-                        xmlns="http://www.w3.org/2000/svg"
+                <nav aria-label="Navegación principal" class="desktop-nav">
+                    <a
+                        data-track="nav-automatizaciones"
+                        href="../../servicios/automatizacion-procesos-empresas.html"
+                        >Automatizaciones</a
                     >
-                        <!-- Robot Body -->
-                        <rect
-                            x="35"
-                            y="45"
-                            width="50"
-                            height="60"
-                            rx="10"
-                            fill="#FF7E5F"
-                            stroke="#2A4D69"
-                            stroke-width="3"
-                        />
-
-                        <!-- Robot Head -->
-                        <rect
-                            x="40"
-                            y="15"
-                            width="40"
-                            height="40"
-                            rx="8"
-                            fill="#4BC6B9"
-                            stroke="#2A4D69"
-                            stroke-width="3"
-                        />
-
-                        <!-- Eyes -->
-                        <circle cx="48" cy="30" r="4" fill="#2A4D69" />
-                        <circle cx="72" cy="30" r="4" fill="#2A4D69" />
-                        <circle cx="48" cy="30" r="2" fill="white" />
-                        <circle cx="72" cy="30" r="2" fill="white" />
-
-                        <!-- Mouth -->
-                        <rect
-                            x="55"
-                            y="38"
-                            width="10"
-                            height="4"
-                            rx="2"
-                            fill="#2A4D69"
-                        />
-
-                        <!-- Antenna -->
-                        <line
-                            x1="60"
-                            y1="15"
-                            x2="60"
-                            y2="5"
-                            stroke="#2A4D69"
-                            stroke-width="3"
-                            stroke-linecap="round"
-                        />
-                        <circle cx="60" cy="5" r="3" fill="#FF7E5F" />
-
-                        <!-- Arms -->
-                        <rect
-                            x="20"
-                            y="55"
-                            width="15"
-                            height="8"
-                            rx="4"
-                            fill="#4BC6B9"
-                            stroke="#2A4D69"
-                            stroke-width="2"
-                        />
-                        <rect
-                            x="85"
-                            y="55"
-                            width="15"
-                            height="8"
-                            rx="4"
-                            fill="#4BC6B9"
-                            stroke="#2A4D69"
-                            stroke-width="2"
-                        />
-
-                        <!-- Hands -->
-                        <circle
-                            cx="20"
-                            cy="59"
-                            r="6"
-                            fill="#FF7E5F"
-                            stroke="#2A4D69"
-                            stroke-width="2"
-                        />
-                        <circle
-                            cx="100"
-                            cy="59"
-                            r="6"
-                            fill="#FF7E5F"
-                            stroke="#2A4D69"
-                            stroke-width="2"
-                        />
-
-                        <!-- Legs -->
-                        <rect
-                            x="45"
-                            y="105"
-                            width="8"
-                            height="12"
-                            rx="4"
-                            fill="#4BC6B9"
-                            stroke="#2A4D69"
-                            stroke-width="2"
-                        />
-                        <rect
-                            x="67"
-                            y="105"
-                            width="8"
-                            height="12"
-                            rx="4"
-                            fill="#4BC6B9"
-                            stroke="#2A4D69"
-                            stroke-width="2"
-                        />
-
-                        <!-- Chest panel -->
-                        <rect
-                            x="42"
-                            y="60"
-                            width="36"
-                            height="25"
-                            rx="5"
-                            fill="#2A4D69"
-                        />
-                        <circle cx="50" cy="67" r="3" fill="#4BC6B9" />
-                        <circle cx="60" cy="67" r="3" fill="#FF7E5F" />
-                        <circle cx="70" cy="67" r="3" fill="#4BC6B9" />
-                        <rect
-                            x="45"
-                            y="75"
-                            width="30"
-                            height="3"
-                            rx="1"
-                            fill="#4BC6B9"
-                        />
-                        <rect
-                            x="45"
-                            y="80"
-                            width="20"
-                            height="2"
-                            rx="1"
-                            fill="#FF7E5F"
-                        />
-                    </svg>
+                    <a
+                        data-track="nav-ia"
+                        href="../../servicios/inteligencia-artificial-empresas.html"
+                        >IA aplicada</a
+                    >
+                    <a
+                        data-track="nav-web"
+                        href="../../servicios/paginas-web-empresas.html"
+                        >Páginas web</a
+                    >
+                    <a
+                        data-track="nav-formacion"
+                        href="../../servicios/formacion-empresas.html"
+                        >Formación empresas</a
+                    >
+                    <a class="active" data-track="nav-aprende" href="../"
+                        >Aprende gratis</a
+                    >
+                    <a data-track="nav-contact" href="../../contacto/"
+                        >Contacto</a
+                    >
+                </nav>
+                <div class="header-actions">
+                    <nav aria-label="Selector de idioma" class="lang-switch">
+                        <a
+                            aria-label="Versión en español"
+                            class="lang-link active"
+                            href="./"
+                            hreflang="es"
+                            lang="es"
+                            >ES</a
+                        >
+                        <a
+                            aria-label="Versió en català"
+                            class="lang-link"
+                            href="../../ca/recursos/ia_per_nens/"
+                            hreflang="ca"
+                            lang="ca"
+                            >CA</a
+                        >
+                    </nav>
+                    <button
+                        aria-controls="nx-kids-mobile-menu"
+                        aria-expanded="false"
+                        aria-label="Abrir menú"
+                        class="nx-kids-menu-btn"
+                        id="nx-kids-menu-button"
+                        type="button"
+                    >
+                        ☰
+                    </button>
                 </div>
-                <h1>¿Qué es la Inteligencia Artificial?</h1>
-                <p class="subtitle">
-                    ¡Descubre el fascinante mundo de las máquinas que pueden
-                    pensar!
-                </p>
             </div>
         </header>
 
-        <main>
-            <div class="container">
-                <section id="introduccion">
-                    <h2>¡Bienvenido a tu Aventura IA!</h2>
-                    <p>
-                        ¿Te has preguntado alguna vez cómo Alexa sabe qué música
-                        te gusta? ¿O cómo YouTube encuentra videos perfectos
-                        para ti? ¡Esto es gracias a la Inteligencia Artificial!
-                        Vamos a descubrir juntos este increíble mundo donde las
-                        máquinas pueden aprender y ayudarnos de maneras
-                        sorprendentes.
-                    </p>
-                </section>
+        <main id="contenido">
+            <section class="hero">
+                <div class="container hero-grid">
+                    <div>
+                        <div class="eyebrow">
+                            Recurso gratuito · IA para niños
+                        </div>
+                        <h1>
+                            ¿Qué es la <span>Inteligencia Artificial?</span>
+                        </h1>
+                        <p>
+                            Una aventura sencilla y visual para que niños, niñas
+                            y familias descubran cómo la IA aprende, recomienda,
+                            reconoce patrones y nos ayuda en la vida cotidiana.
+                        </p>
+                        <div class="hero-cta">
+                            <a class="btn btn-primary" href="#introduccion"
+                                >Empezar la aventura</a
+                            >
+                            <a class="btn btn-secondary" href="#quiz"
+                                >Ir al quiz</a
+                            >
+                        </div>
+                        <div class="trust-row" aria-label="Temas principales">
+                            <div class="trust-pill">Explicación sencilla</div>
+                            <div class="trust-pill">Ejemplos cotidianos</div>
+                            <div class="trust-pill">Quiz interactivo</div>
+                        </div>
+                    </div>
+                    <div
+                        class="hero-card"
+                        aria-label="Robot educativo de Inteligencia Artificial"
+                    >
+                        <div class="robot-wrap">
+                            <svg
+                                class="robot-svg"
+                                viewBox="0 0 120 120"
+                                xmlns="http://www.w3.org/2000/svg"
+                                role="img"
+                                aria-labelledby="robot-title robot-desc"
+                            >
+                                <title id="robot-title">
+                                    Robot educativo de Inteligencia Artificial
+                                </title>
+                                <desc id="robot-desc">
+                                    Ilustración de un robot amable para una
+                                    aventura educativa sobre IA para niños.
+                                </desc>
+                                <rect
+                                    x="35"
+                                    y="45"
+                                    width="50"
+                                    height="60"
+                                    rx="10"
+                                    fill="#2563eb"
+                                    stroke="#0f172a"
+                                    stroke-width="3"
+                                />
+                                <rect
+                                    x="40"
+                                    y="15"
+                                    width="40"
+                                    height="40"
+                                    rx="8"
+                                    fill="#06b6d4"
+                                    stroke="#0f172a"
+                                    stroke-width="3"
+                                />
+                                <circle cx="48" cy="30" r="4" fill="#0f172a" />
+                                <circle cx="72" cy="30" r="4" fill="#0f172a" />
+                                <circle cx="48" cy="30" r="2" fill="#ffffff" />
+                                <circle cx="72" cy="30" r="2" fill="#ffffff" />
+                                <rect
+                                    x="54"
+                                    y="38"
+                                    width="12"
+                                    height="4"
+                                    rx="2"
+                                    fill="#0f172a"
+                                />
+                                <line
+                                    x1="60"
+                                    y1="15"
+                                    x2="60"
+                                    y2="5"
+                                    stroke="#67e8f9"
+                                    stroke-width="3"
+                                    stroke-linecap="round"
+                                />
+                                <circle cx="60" cy="5" r="4" fill="#22c55e" />
+                                <rect
+                                    x="20"
+                                    y="55"
+                                    width="15"
+                                    height="8"
+                                    rx="4"
+                                    fill="#06b6d4"
+                                    stroke="#0f172a"
+                                    stroke-width="2"
+                                />
+                                <rect
+                                    x="85"
+                                    y="55"
+                                    width="15"
+                                    height="8"
+                                    rx="4"
+                                    fill="#06b6d4"
+                                    stroke="#0f172a"
+                                    stroke-width="2"
+                                />
+                                <circle
+                                    cx="20"
+                                    cy="59"
+                                    r="6"
+                                    fill="#22c55e"
+                                    stroke="#0f172a"
+                                    stroke-width="2"
+                                />
+                                <circle
+                                    cx="100"
+                                    cy="59"
+                                    r="6"
+                                    fill="#22c55e"
+                                    stroke="#0f172a"
+                                    stroke-width="2"
+                                />
+                                <rect
+                                    x="45"
+                                    y="105"
+                                    width="8"
+                                    height="12"
+                                    rx="4"
+                                    fill="#06b6d4"
+                                    stroke="#0f172a"
+                                    stroke-width="2"
+                                />
+                                <rect
+                                    x="67"
+                                    y="105"
+                                    width="8"
+                                    height="12"
+                                    rx="4"
+                                    fill="#06b6d4"
+                                    stroke="#0f172a"
+                                    stroke-width="2"
+                                />
+                                <rect
+                                    x="42"
+                                    y="60"
+                                    width="36"
+                                    height="25"
+                                    rx="5"
+                                    fill="#0f172a"
+                                />
+                                <circle cx="50" cy="67" r="3" fill="#06b6d4" />
+                                <circle cx="60" cy="67" r="3" fill="#22c55e" />
+                                <circle cx="70" cy="67" r="3" fill="#06b6d4" />
+                                <rect
+                                    x="45"
+                                    y="75"
+                                    width="30"
+                                    height="3"
+                                    rx="1"
+                                    fill="#67e8f9"
+                                />
+                                <rect
+                                    x="45"
+                                    y="80"
+                                    width="20"
+                                    height="2"
+                                    rx="1"
+                                    fill="#22c55e"
+                                />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-                <section id="explicacion">
-                    <h2>¿Qué es la Inteligencia Artificial?</h2>
-                    <p>
-                        La Inteligencia Artificial, o IA para los amigos, es
-                        como darle un cerebro super inteligente a las
-                        computadoras. ¡Es como si las máquinas pudieran pensar,
-                        aprender y tomar decisiones como nosotros!
+            <section class="section" id="introduccion">
+                <div class="container">
+                    <div class="intro-card">
+                        <p>
+                            <b>¡Bienvenido a tu aventura IA!</b><br /><br />¿Te
+                            has preguntado alguna vez cómo Alexa entiende lo que
+                            dices? ¿O cómo YouTube encuentra vídeos que parecen
+                            hechos para ti? Eso ocurre gracias a la
+                            <b>Inteligencia Artificial</b>.<br /><br />En esta
+                            página vas a descubrir, de forma sencilla, que la IA
+                            no es magia: son programas capaces de
+                            <b
+                                >aprender de datos, reconocer patrones y ayudar
+                                a tomar decisiones</b
+                            >. Lo veremos con ejemplos fáciles, curiosidades y
+                            un pequeño quiz final.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section" id="explicacion">
+                <div class="container">
+                    <h2 class="section-title">
+                        ¿Qué es la Inteligencia Artificial?
+                    </h2>
+                    <p class="section-subtitle">
+                        La IA es como darle a un ordenador una forma de
+                        aprender. No piensa igual que una persona, pero puede
+                        encontrar pistas en la información y usar esas pistas
+                        para ayudarnos.
                     </p>
 
                     <div class="cards-grid">
-                        <div class="card">
+                        <article class="card">
                             <svg
                                 class="card-icon"
                                 viewBox="0 0 100 100"
                                 xmlns="http://www.w3.org/2000/svg"
+                                aria-hidden="true"
                             >
                                 <circle
                                     cx="50"
                                     cy="50"
                                     r="45"
-                                    fill="#4BC6B9"
-                                    stroke="#2A4D69"
+                                    fill="#eaf2ff"
+                                    stroke="#2563eb"
                                     stroke-width="3"
                                 />
                                 <path
                                     d="M25 45 Q50 25 75 45"
-                                    stroke="#2A4D69"
+                                    stroke="#0f172a"
                                     stroke-width="4"
                                     fill="none"
                                     stroke-linecap="round"
                                 />
                                 <path
                                     d="M25 55 Q50 75 75 55"
-                                    stroke="#2A4D69"
+                                    stroke="#0f172a"
                                     stroke-width="4"
                                     fill="none"
                                     stroke-linecap="round"
                                 />
-                                <circle cx="35" cy="40" r="3" fill="#FF7E5F" />
-                                <circle cx="65" cy="40" r="3" fill="#FF7E5F" />
+                                <circle cx="35" cy="40" r="3" fill="#06b6d4" />
+                                <circle cx="65" cy="40" r="3" fill="#22c55e" />
                             </svg>
-                            <h3>Asistentes de Voz</h3>
+                            <h3>Asistentes de voz</h3>
                             <p>
-                                Alexa, Siri y Google Assistant usan IA para
-                                entender lo que dices y responderte. ¡Es como
-                                tener un amigo robot que siempre te escucha!
+                                Alexa, Siri o Google Assistant usan IA para
+                                entender palabras, buscar información y
+                                responder. Es como hablar con un ayudante
+                                digital.
                             </p>
-                        </div>
+                        </article>
 
-                        <div class="card">
+                        <article class="card">
                             <svg
                                 class="card-icon"
                                 viewBox="0 0 100 100"
                                 xmlns="http://www.w3.org/2000/svg"
+                                aria-hidden="true"
                             >
                                 <rect
                                     x="15"
@@ -884,8 +1448,8 @@
                                     width="70"
                                     height="50"
                                     rx="5"
-                                    fill="#FF7E5F"
-                                    stroke="#2A4D69"
+                                    fill="#eaf2ff"
+                                    stroke="#2563eb"
                                     stroke-width="3"
                                 />
                                 <rect
@@ -893,264 +1457,323 @@
                                     y="30"
                                     width="60"
                                     height="35"
-                                    fill="#2A4D69"
+                                    rx="3"
+                                    fill="#0f172a"
                                 />
                                 <rect
                                     x="25"
                                     y="35"
                                     width="15"
                                     height="8"
-                                    fill="#4BC6B9"
+                                    fill="#06b6d4"
                                 />
                                 <rect
                                     x="45"
                                     y="35"
                                     width="15"
                                     height="8"
-                                    fill="#4BC6B9"
+                                    fill="#22c55e"
                                 />
                                 <rect
                                     x="65"
                                     y="35"
-                                    width="15"
+                                    width="10"
                                     height="8"
-                                    fill="#4BC6B9"
+                                    fill="#06b6d4"
                                 />
                                 <rect
                                     x="25"
-                                    y="50"
+                                    y="52"
                                     width="50"
                                     height="3"
-                                    fill="#4BC6B9"
+                                    fill="#67e8f9"
                                 />
                                 <rect
                                     x="25"
-                                    y="57"
+                                    y="58"
                                     width="35"
                                     height="3"
-                                    fill="#FF7E5F"
+                                    fill="#22c55e"
                                 />
                             </svg>
-                            <h3>Videos y Entretenimiento</h3>
+                            <h3>Vídeos y entretenimiento</h3>
                             <p>
-                                YouTube y Netflix usan IA para recomendarte
-                                videos que te van a encantar. ¡Es como si
-                                supieran exactamente lo que quieres ver!
+                                YouTube o Netflix usan IA para recomendar
+                                contenidos parecidos a los que sueles ver.
+                                Aprenden de tus gustos para sugerirte opciones.
                             </p>
-                        </div>
+                        </article>
 
-                        <div class="card">
+                        <article class="card">
                             <svg
                                 class="card-icon"
                                 viewBox="0 0 100 100"
                                 xmlns="http://www.w3.org/2000/svg"
+                                aria-hidden="true"
                             >
                                 <rect
                                     x="20"
                                     y="20"
                                     width="60"
                                     height="60"
-                                    rx="5"
-                                    fill="#4BC6B9"
-                                    stroke="#2A4D69"
+                                    rx="6"
+                                    fill="#eaf2ff"
+                                    stroke="#2563eb"
                                     stroke-width="3"
                                 />
-                                <g fill="#2A4D69">
-                                    <rect x="30" y="30" width="8" height="8" />
-                                    <rect x="45" y="30" width="8" height="8" />
-                                    <rect x="60" y="30" width="8" height="8" />
-                                    <rect x="30" y="45" width="8" height="8" />
-                                    <rect x="45" y="45" width="8" height="8" />
-                                    <rect x="60" y="45" width="8" height="8" />
-                                    <rect x="30" y="60" width="8" height="8" />
-                                    <rect x="45" y="60" width="8" height="8" />
-                                    <rect x="60" y="60" width="8" height="8" />
+                                <g fill="#0f172a">
+                                    <rect
+                                        x="30"
+                                        y="30"
+                                        width="8"
+                                        height="8"
+                                        rx="1"
+                                    />
+                                    <rect
+                                        x="45"
+                                        y="30"
+                                        width="8"
+                                        height="8"
+                                        rx="1"
+                                    />
+                                    <rect
+                                        x="60"
+                                        y="30"
+                                        width="8"
+                                        height="8"
+                                        rx="1"
+                                    />
+                                    <rect
+                                        x="30"
+                                        y="45"
+                                        width="8"
+                                        height="8"
+                                        rx="1"
+                                    />
+                                    <rect
+                                        x="45"
+                                        y="45"
+                                        width="8"
+                                        height="8"
+                                        rx="1"
+                                    />
+                                    <rect
+                                        x="60"
+                                        y="45"
+                                        width="8"
+                                        height="8"
+                                        rx="1"
+                                    />
+                                    <rect
+                                        x="30"
+                                        y="60"
+                                        width="8"
+                                        height="8"
+                                        rx="1"
+                                    />
+                                    <rect
+                                        x="45"
+                                        y="60"
+                                        width="8"
+                                        height="8"
+                                        rx="1"
+                                    />
+                                    <rect
+                                        x="60"
+                                        y="60"
+                                        width="8"
+                                        height="8"
+                                        rx="1"
+                                    />
                                 </g>
-                                <circle cx="34" cy="34" r="2" fill="#FF7E5F" />
-                                <circle cx="49" cy="49" r="2" fill="#FF7E5F" />
+                                <circle cx="34" cy="34" r="2" fill="#06b6d4" />
+                                <circle cx="49" cy="49" r="2" fill="#22c55e" />
                             </svg>
-                            <h3>Robots Jugadores</h3>
+                            <h3>Robots jugadores</h3>
                             <p>
-                                Hay robots que pueden jugar ajedrez y ganar a
-                                los mejores jugadores del mundo. ¡Pueden
-                                calcular millones de movimientos en segundos!
+                                Algunos programas con IA pueden jugar al ajedrez
+                                calculando muchísimas posibilidades. No hacen
+                                magia: comparan opciones muy rápido.
                             </p>
-                        </div>
+                        </article>
 
-                        <div class="card">
+                        <article class="card">
                             <svg
                                 class="card-icon"
                                 viewBox="0 0 100 100"
                                 xmlns="http://www.w3.org/2000/svg"
+                                aria-hidden="true"
                             >
                                 <circle
                                     cx="50"
                                     cy="35"
                                     r="25"
-                                    fill="#FF7E5F"
-                                    stroke="#2A4D69"
+                                    fill="#eaf2ff"
+                                    stroke="#2563eb"
                                     stroke-width="3"
                                 />
                                 <path
                                     d="M35 45 Q50 55 65 45"
-                                    stroke="#2A4D69"
+                                    stroke="#0f172a"
                                     stroke-width="3"
                                     fill="none"
                                 />
-                                <circle cx="42" cy="30" r="3" fill="#2A4D69" />
-                                <circle cx="58" cy="30" r="3" fill="#2A4D69" />
+                                <circle cx="42" cy="30" r="3" fill="#0f172a" />
+                                <circle cx="58" cy="30" r="3" fill="#0f172a" />
                                 <path
                                     d="M30 65 Q50 85 70 65"
-                                    stroke="#2A4D69"
+                                    stroke="#06b6d4"
                                     stroke-width="4"
                                     fill="none"
                                     stroke-linecap="round"
                                 />
                                 <path
                                     d="M35 70 Q50 80 65 70"
-                                    stroke="#4BC6B9"
+                                    stroke="#22c55e"
                                     stroke-width="3"
                                     fill="none"
                                     stroke-linecap="round"
                                 />
                             </svg>
-                            <h3>Reconocimiento de Caras</h3>
+                            <h3>Reconocimiento de caras</h3>
                             <p>
-                                Tu teléfono puede reconocer tu cara para
-                                desbloquearse. ¡La IA aprende cómo luces y te
-                                reconoce entre millones de personas!
+                                Algunos móviles reconocen tu cara buscando
+                                patrones: ojos, distancias y formas. La IA
+                                aprende a diferenciar una cara de otra.
                             </p>
-                        </div>
+                        </article>
                     </div>
-                </section>
+                </div>
+            </section>
 
-                <section class="curiosidades">
-                    <div class="container">
-                        <h2>¡Datos Curiosos sobre IA!</h2>
+            <section class="section" aria-labelledby="curiosidades-title">
+                <div class="container">
+                    <div class="curiosidades">
+                        <h2 id="curiosidades-title">Datos curiosos sobre IA</h2>
                         <div class="curiosidades-grid">
-                            <div class="curiosidad-item">
-                                <h4>¡Más rápida que el rayo!</h4>
+                            <article class="curiosidad-item">
+                                <h3>Muy rápida</h3>
                                 <p>
-                                    Una computadora con IA puede procesar
-                                    información 1,000,000 de veces más rápido
-                                    que un cerebro humano.
+                                    Una IA puede revisar muchísimos datos en
+                                    segundos, aunque eso no significa que
+                                    siempre entienda el mundo como una persona.
                                 </p>
-                            </div>
-                            <div class="curiosidad-item">
-                                <h4>Artista Digital</h4>
+                            </article>
+                            <article class="curiosidad-item">
+                                <h3>Creativa con ayuda</h3>
                                 <p>
-                                    Hay IA que pueden crear pinturas, música y
-                                    hasta cuentos. ¡Algunas de sus obras se
-                                    venden por millones!
+                                    Hay herramientas de IA que crean imágenes,
+                                    música o cuentos a partir de instrucciones
+                                    humanas.
                                 </p>
-                            </div>
-                            <div class="curiosidad-item">
-                                <h4>Doctora Robot</h4>
+                            </article>
+                            <article class="curiosidad-item">
+                                <h3>Apoyo en medicina</h3>
                                 <p>
-                                    La IA puede ayudar a los doctores a detectar
-                                    enfermedades mirando radiografías mejor que
-                                    muchos humanos.
+                                    La IA puede ayudar a encontrar señales en
+                                    radiografías o pruebas médicas, siempre con
+                                    supervisión profesional.
                                 </p>
-                            </div>
-                            <div class="curiosidad-item">
-                                <h4>Traducción Mágica</h4>
+                            </article>
+                            <article class="curiosidad-item">
+                                <h3>Traducción automática</h3>
                                 <p>
-                                    Google Translate puede entender más de 100
-                                    idiomas diferentes. ¡Es como tener un
-                                    diccionario mágico!
+                                    Los traductores usan IA para comparar
+                                    idiomas y proponer frases parecidas en otra
+                                    lengua.
                                 </p>
-                            </div>
-                            <div class="curiosidad-item">
-                                <h4>Coches que se Manejan Solos</h4>
+                            </article>
+                            <article class="curiosidad-item">
+                                <h3>Coches inteligentes</h3>
                                 <p>
-                                    Ya existen autos que pueden conducirse solos
-                                    usando IA. ¡Es como tener un chofer robot
-                                    invisible!
+                                    Algunos vehículos usan sensores e IA para
+                                    detectar carriles, señales, peatones y
+                                    obstáculos.
                                 </p>
-                            </div>
-                            <div class="curiosidad-item">
-                                <h4>Predicción del Clima</h4>
+                            </article>
+                            <article class="curiosidad-item">
+                                <h3>Previsión del tiempo</h3>
                                 <p>
-                                    La IA puede predecir el clima analizando
-                                    millones de datos del cielo, viento y
-                                    temperatura.
+                                    La IA puede ayudar a analizar datos de
+                                    nubes, viento, lluvia y temperatura para
+                                    mejorar predicciones.
                                 </p>
-                            </div>
+                            </article>
                         </div>
                     </div>
-                </section>
+                </div>
+            </section>
 
-                <section id="quiz" class="quiz-section">
-                    <h2>¡Ponte a Prueba!</h2>
-                    <div class="quiz-container">
-                        <div class="question-counter">
-                            Pregunta <span id="current-question">1</span> de
-                            <span id="total-questions">5</span>
-                        </div>
+            <section class="section" id="quiz">
+                <div class="container">
+                    <div class="quiz-section">
+                        <h2 class="section-title">¡Ponte a prueba!</h2>
+                        <p class="section-subtitle">
+                            Responde estas preguntas y comprueba cuánto has
+                            aprendido sobre Inteligencia Artificial.
+                        </p>
 
-                        <div class="quiz-progress">
+                        <div class="quiz-container" id="quiz-container">
+                            <div class="question-counter">
+                                Pregunta <span id="current-question">1</span> de
+                                <span id="total-questions">5</span>
+                            </div>
+                            <div class="quiz-progress" aria-hidden="true">
+                                <div
+                                    class="quiz-progress-bar"
+                                    id="progress-bar"
+                                ></div>
+                            </div>
+                            <h3 class="question-title" id="question-title">
+                                ¿Cuál de estos usa Inteligencia Artificial?
+                            </h3>
                             <div
-                                class="quiz-progress-bar"
-                                id="progress-bar"
+                                class="answer-buttons"
+                                id="answer-buttons"
+                            ></div>
+                            <div
+                                class="feedback-message"
+                                id="feedback-message"
+                                aria-live="polite"
                             ></div>
                         </div>
 
-                        <h3 class="question-title" id="question-title">
-                            ¿Cuál de estos usa Inteligencia Artificial?
-                        </h3>
-
-                        <div class="answer-buttons" id="answer-buttons">
+                        <div class="quiz-results" id="quiz-results" hidden>
+                            <div class="score-circle">
+                                <span id="final-score">5/5</span>
+                            </div>
+                            <h3 id="results-title">¡Increíble!</h3>
+                            <p id="results-message">
+                                Eres todo un experto en Inteligencia Artificial.
+                                ¡Sigue explorando este fascinante mundo!
+                            </p>
                             <button
-                                class="answer-btn"
-                                onclick="selectAnswer(0)"
+                                class="restart-btn"
+                                id="restart-quiz"
+                                type="button"
                             >
-                                Alexa de Amazon
-                            </button>
-                            <button
-                                class="answer-btn"
-                                onclick="selectAnswer(1)"
-                            >
-                                Una piedra
-                            </button>
-                            <button
-                                class="answer-btn"
-                                onclick="selectAnswer(2)"
-                            >
-                                Un lápiz
+                                Intentar de nuevo
                             </button>
                         </div>
-
-                        <div
-                            class="feedback-message"
-                            id="feedback-message"
-                            aria-live="polite"
-                        ></div>
                     </div>
-
-                    <div
-                        class="quiz-results"
-                        id="quiz-results"
-                        style="display: none"
-                    >
-                        <div class="score-circle">
-                            <span id="final-score">5/5</span>
-                        </div>
-                        <h3 id="results-title">¡Increíble!</h3>
-                        <p id="results-message">
-                            Eres todo un experto en Inteligencia Artificial.
-                            ¡Sigue explorando este fascinante mundo!
-                        </p>
-                        <button class="restart-btn" onclick="restartQuiz()">
-                            Intentar de Nuevo
-                        </button>
-                    </div>
-                </section>
-            </div>
+                </div>
+            </section>
         </main>
 
-        <footer>
-            <div class="container">
+        <footer id="seccion-footer">
+            <div class="container" id="contact_clients">
                 <div class="footer-content">
+                    <a
+                        href="../../"
+                        class="footer-logo"
+                        aria-label="Inicio Nexautia"
+                    >
+                        <img
+                            src="../../imagenes/comunes/logo.svg"
+                            alt="NEXAUTIA"
+                            width="200"
+                        />
+                    </a>
                     <div class="footer-links">
                         <div class="social-links">
                             <a
@@ -1160,43 +1783,19 @@
                                 class="social-link"
                                 aria-label="Síguenos en Facebook"
                             >
-                                <svg class="social-icon" viewBox="0 0 24 24">
+                                <svg
+                                    class="social-icon"
+                                    viewBox="0 0 24 24"
+                                    aria-hidden="true"
+                                >
                                     <path
                                         d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
                                     />
                                 </svg>
                             </a>
-                            <a
-                                href="#"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                class="social-link"
-                                aria-label="Síguenos en LinkedIn"
-                            >
-                                <svg class="social-icon" viewBox="0 0 24 24">
-                                    <path
-                                        d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
-                                    />
-                                </svg>
-                            </a>
                         </div>
-
-                        <a
-                            href="https://www.nexautia.com"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="footer-logo"
-                        >
-                            <img
-                                src="logo.svg"
-                                alt="NEXAUTIA"
-                                width="200"
-                                height="auto"
-                            />
-                        </a>
                     </div>
 
-                    <!-- Información de contacto -->
                     <div class="contact-info">
                         <a href="tel:+34610510642" class="contact-item">
                             <svg
@@ -1205,6 +1804,7 @@
                                 fill="none"
                                 stroke="currentColor"
                                 stroke-width="2"
+                                aria-hidden="true"
                             >
                                 <path
                                     d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
@@ -1212,7 +1812,6 @@
                             </svg>
                             <span class="contact-text">610 510 642</span>
                         </a>
-
                         <a
                             href="mailto:contacto@nexautia.com"
                             class="contact-item"
@@ -1223,6 +1822,7 @@
                                 fill="none"
                                 stroke="currentColor"
                                 stroke-width="2"
+                                aria-hidden="true"
                             >
                                 <path
                                     d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
@@ -1236,357 +1836,396 @@
                     </div>
 
                     <div class="footer-text">
-                        <p>
-                            ¡Sigue explorando el increíble mundo de la
-                            Inteligencia Artificial!
+                        <p class="footer-text1">
+                            © 2026 Nexautia. Transformando empresas con
+                            automatización inteligente.
                         </p>
-                        <p>
+                        <p class="footer-text2">
                             Creado con ❤️ por Nexautia para el traspaso de
                             conocimiento
                         </p>
-                        <p>
-                            Nexautia, Transformando empresas con automatización
-                            inteligente.
+                        <p class="footer-text3">
+                            ¡Sigue explorando el mundo de la automatización, la
+                            Inteligencia Artificial y el aprendizaje digital!
                         </p>
                     </div>
                 </div>
             </div>
         </footer>
 
-        <script defer>
-            // Quiz Data
-            const quizData = [
-                {
-                    question: "¿Cuál de estos usa Inteligencia Artificial?",
-                    options: ["Alexa de Amazon", "Una piedra", "Un lápiz"],
-                    correct: 0,
-                    feedback: {
-                        correct:
-                            "¡Excelente! Alexa usa IA para entender tu voz y responder preguntas.",
-                        incorrect:
-                            "¡Casi! Alexa usa IA para entender lo que dices y ayudarte.",
-                    },
-                },
-                {
-                    question: "¿Cómo sabe YouTube qué videos recomendarte?",
-                    options: [
-                        "Adivina al azar",
-                        "Usa Inteligencia Artificial",
-                        "Le pregunta a tu mamá",
-                    ],
-                    correct: 1,
-                    feedback: {
-                        correct:
-                            "¡Correcto! YouTube usa IA para aprender qué te gusta y sugerirte videos similares.",
-                        incorrect:
-                            "¡Buen intento! YouTube usa IA para analizar lo que te gusta ver.",
-                    },
-                },
-                {
-                    question:
-                        "¿Qué hace especial a un robot que juega ajedrez?",
-                    options: [
-                        "Tiene manos muy rápidas",
-                        "Puede calcular millones de movimientos",
-                        "Conoce trucos secretos",
-                    ],
-                    correct: 1,
-                    feedback: {
-                        correct:
-                            "¡Fantástico! Los robots de ajedrez pueden analizar millones de posibilidades en segundos.",
-                        incorrect:
-                            "¡Casi aciertas! Los robots usan IA para calcular millones de movimientos posibles.",
-                    },
-                },
-                {
-                    question:
-                        "¿Verdadero o Falso? La IA puede crear arte como pinturas y música.",
-                    options: ["Verdadero", "Falso"],
-                    correct: 0,
-                    feedback: {
-                        correct:
-                            "¡Súper! Hay IA que crean obras de arte increíbles, música y hasta poemas.",
-                        incorrect:
-                            "¡En realidad es verdadero! La IA puede crear arte, música y muchas cosas creativas.",
-                    },
-                },
-                {
-                    question:
-                        "¿Cuál es la principal diferencia entre una computadora normal y una con IA?",
-                    options: [
-                        "La IA es más colorida",
-                        "La IA puede aprender y tomar decisiones",
-                        "La IA es más grande",
-                    ],
-                    correct: 1,
-                    feedback: {
-                        correct:
-                            "¡Perfecto! La IA puede aprender de la información y tomar decisiones inteligentes.",
-                        incorrect:
-                            "¡Buena reflexión! La IA se diferencia porque puede aprender y decidir como nosotros.",
-                    },
-                },
-            ];
+        <div
+            class="nx-kids-mobile-overlay"
+            id="nx-kids-mobile-menu"
+            aria-hidden="true"
+            role="dialog"
+            aria-modal="true"
+            aria-label="Menú principal"
+        >
+            <div class="nx-kids-mobile-content">
+                <div class="nx-kids-mobile-header">
+                    <h2>Menú</h2>
+                    <button
+                        aria-label="Cerrar menú"
+                        class="nx-kids-mobile-close"
+                        id="nx-kids-mobile-close"
+                        type="button"
+                    >
+                        ×
+                    </button>
+                </div>
+                <nav aria-label="Navegación móvil" class="nx-kids-mobile-nav">
+                    <a
+                        href="../../servicios/automatizacion-procesos-empresas.html"
+                        >⚙️ Automatizaciones</a
+                    >
+                    <a
+                        href="../../servicios/inteligencia-artificial-empresas.html"
+                        >🧠 IA aplicada</a
+                    >
+                    <a href="../../servicios/paginas-web-empresas.html"
+                        >🌐 Páginas web</a
+                    >
+                    <a href="../../servicios/formacion-empresas.html"
+                        >🎓 Formación empresas</a
+                    >
+                    <a class="active" href="../">🎓 Aprende gratis</a>
+                    <a href="../../contacto/">📞 Contacto</a>
+                </nav>
+            </div>
+        </div>
 
-            // Quiz State
-            let currentQuestion = 0;
-            let score = 0;
-            let answered = false;
+        <script>
+            (function () {
+                "use strict";
 
-            // DOM Elements
-            const questionTitle = document.getElementById("question-title");
-            const answerButtons = document.getElementById("answer-buttons");
-            const feedbackMessage = document.getElementById("feedback-message");
-            const currentQuestionSpan =
-                document.getElementById("current-question");
-            const totalQuestionsSpan =
-                document.getElementById("total-questions");
-            const progressBar = document.getElementById("progress-bar");
-            const quizResults = document.getElementById("quiz-results");
-            const finalScore = document.getElementById("final-score");
-            const resultsTitle = document.getElementById("results-title");
-            const resultsMessage = document.getElementById("results-message");
-
-            // Initialize Quiz
-            function initQuiz() {
-                currentQuestion = 0;
-                score = 0;
-                answered = false;
-                totalQuestionsSpan.textContent = quizData.length;
-                quizResults.style.display = "none";
-                document.querySelector(".quiz-container").style.display =
-                    "block";
-                loadQuestion();
-            }
-
-            // Load Current Question
-            function loadQuestion() {
-                if (currentQuestion >= quizData.length) {
-                    showResults();
-                    return;
-                }
-
-                const question = quizData[currentQuestion];
-                answered = false;
-
-                // Update UI
-                questionTitle.textContent = question.question;
-                currentQuestionSpan.textContent = currentQuestion + 1;
-
-                // Update progress bar
-                const progress = (currentQuestion / quizData.length) * 100;
-                progressBar.style.width = progress + "%";
-
-                // Clear previous feedback
-                feedbackMessage.className = "feedback-message";
-                feedbackMessage.textContent = "";
-
-                // Create answer buttons
-                answerButtons.innerHTML = "";
-                question.options.forEach((option, index) => {
-                    const button = document.createElement("button");
-                    button.className = "answer-btn";
-                    button.textContent = option;
-                    button.onclick = () => selectAnswer(index);
-                    answerButtons.appendChild(button);
-                });
-            }
-
-            // Handle Answer Selection
-            function selectAnswer(selectedIndex) {
-                if (answered) return;
-
-                answered = true;
-                const question = quizData[currentQuestion];
-                const buttons = answerButtons.querySelectorAll(".answer-btn");
-
-                // Disable all buttons
-                buttons.forEach((btn) => (btn.disabled = true));
-
-                // Check if answer is correct
-                const isCorrect = selectedIndex === question.correct;
-
-                if (isCorrect) {
-                    score++;
-                    buttons[selectedIndex].classList.add("correct");
-                    showFeedback(question.feedback.correct, true);
-                } else {
-                    buttons[selectedIndex].classList.add("incorrect");
-                    buttons[question.correct].classList.add("correct");
-                    showFeedback(question.feedback.incorrect, false);
-                }
-
-                // Move to next question after delay
-                setTimeout(() => {
-                    currentQuestion++;
-                    loadQuestion();
-                }, 2500);
-            }
-
-            // Show Feedback Message
-            function showFeedback(message, isCorrect) {
-                feedbackMessage.textContent = message;
-                feedbackMessage.className = `feedback-message show ${
-                    isCorrect ? "success" : "error"
-                }`;
-            }
-
-            // Show Final Results
-            function showResults() {
-                document.querySelector(".quiz-container").style.display =
-                    "none";
-                quizResults.style.display = "block";
-
-                // Update progress bar to 100%
-                progressBar.style.width = "100%";
-
-                // Calculate percentage
-                const percentage = Math.round((score / quizData.length) * 100);
-                finalScore.textContent = `${score}/${quizData.length}`;
-
-                // Show appropriate message based on score
-                if (percentage === 100) {
-                    resultsTitle.textContent =
-                        "¡Increíble! ¡Eres un Genio de la IA!";
-                    resultsMessage.textContent =
-                        "¡Perfecto! Conoces muy bien la Inteligencia Artificial. ¡Eres todo un experto!";
-                } else if (percentage >= 80) {
-                    resultsTitle.textContent = "¡Excelente! ¡Casi Perfecto!";
-                    resultsMessage.textContent =
-                        "¡Muy bien! Entiendes súper bien qué es la IA. ¡Sigue aprendiendo!";
-                } else if (percentage >= 60) {
-                    resultsTitle.textContent =
-                        "¡Muy Bien! ¡Vas por Buen Camino!";
-                    resultsMessage.textContent =
-                        "¡Buen trabajo! Ya sabes bastante sobre IA. ¡Puedes mejorar aún más!";
-                } else {
-                    resultsTitle.textContent =
-                        "¡Buen Intento! ¡Sigue Practicando!";
-                    resultsMessage.textContent =
-                        "¡No te preocupes! Aprender sobre IA es divertido. ¡Inténtalo de nuevo!";
-                }
-            }
-
-            // Restart Quiz
-            function restartQuiz() {
-                initQuiz();
-            }
-
-            // Initialize quiz when page loads
-            document.addEventListener("DOMContentLoaded", initQuiz);
-
-            // Smooth scrolling for better UX
-            document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-                anchor.addEventListener("click", function (e) {
-                    e.preventDefault();
-                    const target = document.querySelector(
-                        this.getAttribute("href")
+                function initMobileMenu() {
+                    const button = document.getElementById(
+                        "nx-kids-menu-button",
                     );
-                    if (target) {
-                        target.scrollIntoView({
-                            behavior: "smooth",
-                            block: "start",
+                    const overlay = document.getElementById(
+                        "nx-kids-mobile-menu",
+                    );
+                    const closeButton = document.getElementById(
+                        "nx-kids-mobile-close",
+                    );
+                    if (!button || !overlay) return;
+
+                    function isOpen() {
+                        return overlay.classList.contains("is-open");
+                    }
+
+                    function openMenu() {
+                        overlay.classList.add("is-open");
+                        overlay.setAttribute("aria-hidden", "false");
+                        document.body.classList.add("nx-kids-menu-open");
+                        button.setAttribute("aria-expanded", "true");
+                        button.setAttribute("aria-label", "Cerrar menú");
+                    }
+
+                    function closeMenu() {
+                        overlay.classList.remove("is-open");
+                        overlay.setAttribute("aria-hidden", "true");
+                        document.body.classList.remove("nx-kids-menu-open");
+                        button.setAttribute("aria-expanded", "false");
+                        button.setAttribute("aria-label", "Abrir menú");
+                    }
+
+                    button.addEventListener("click", function (event) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                        isOpen() ? closeMenu() : openMenu();
+                    });
+
+                    if (closeButton) {
+                        closeButton.addEventListener("click", function (event) {
+                            event.preventDefault();
+                            closeMenu();
                         });
                     }
-                });
-            });
 
-            // Add keyboard navigation for accessibility
-            document.addEventListener("keydown", function (e) {
-                if (e.key === "Enter" || e.key === " ") {
+                    overlay.addEventListener("click", function (event) {
+                        if (event.target === overlay) closeMenu();
+                    });
+
+                    overlay.querySelectorAll("a").forEach(function (link) {
+                        link.addEventListener("click", closeMenu);
+                    });
+
+                    document.addEventListener("keydown", function (event) {
+                        if (event.key === "Escape") closeMenu();
+                    });
+
+                    window.addEventListener("resize", function () {
+                        if (window.innerWidth > 1120) closeMenu();
+                    });
+                }
+
+                const quizData = [
+                    {
+                        question: "¿Cuál de estos usa Inteligencia Artificial?",
+                        options: ["Alexa de Amazon", "Una piedra", "Un lápiz"],
+                        correct: 0,
+                        feedback: {
+                            correct:
+                                "¡Excelente! Alexa usa IA para entender tu voz y responder preguntas.",
+                            incorrect:
+                                "¡Casi! Alexa usa IA para entender lo que dices y ayudarte.",
+                        },
+                    },
+                    {
+                        question: "¿Cómo sabe YouTube qué vídeos recomendarte?",
+                        options: [
+                            "Adivina al azar",
+                            "Usa Inteligencia Artificial",
+                            "Le pregunta a tu familia",
+                        ],
+                        correct: 1,
+                        feedback: {
+                            correct:
+                                "¡Correcto! YouTube usa IA para aprender qué te gusta y sugerirte vídeos similares.",
+                            incorrect:
+                                "¡Buen intento! YouTube usa IA para analizar lo que te gusta ver.",
+                        },
+                    },
+                    {
+                        question:
+                            "¿Qué hace especial a un robot que juega al ajedrez?",
+                        options: [
+                            "Tiene manos muy rápidas",
+                            "Puede calcular muchos movimientos",
+                            "Conoce trucos secretos",
+                        ],
+                        correct: 1,
+                        feedback: {
+                            correct:
+                                "¡Fantástico! Los programas de ajedrez pueden analizar muchísimas posibilidades en poco tiempo.",
+                            incorrect:
+                                "¡Casi aciertas! Los robots usan IA para calcular muchos movimientos posibles.",
+                        },
+                    },
+                    {
+                        question:
+                            "¿Verdadero o falso? La IA puede ayudar a crear imágenes, música o cuentos.",
+                        options: ["Verdadero", "Falso"],
+                        correct: 0,
+                        feedback: {
+                            correct:
+                                "¡Súper! Hay herramientas de IA que ayudan a crear imágenes, música, cuentos y otras ideas.",
+                            incorrect:
+                                "¡En realidad es verdadero! La IA puede ayudar a crear contenido, aunque la idea y el uso responsable siguen siendo humanos.",
+                        },
+                    },
+                    {
+                        question:
+                            "¿Cuál es una diferencia importante entre un programa normal y uno con IA?",
+                        options: [
+                            "La IA es más colorida",
+                            "La IA puede aprender de datos",
+                            "La IA siempre es más grande",
+                        ],
+                        correct: 1,
+                        feedback: {
+                            correct:
+                                "¡Perfecto! La IA puede aprender de la información y encontrar patrones.",
+                            incorrect:
+                                "¡Buena reflexión! Lo especial es que la IA puede aprender de datos y encontrar patrones.",
+                        },
+                    },
+                ];
+
+                let currentQuestion = 0;
+                let score = 0;
+                let answered = false;
+
+                function initQuiz() {
+                    const totalQuestionsSpan =
+                        document.getElementById("total-questions");
+                    const quizContainer =
+                        document.getElementById("quiz-container");
+                    const quizResults = document.getElementById("quiz-results");
+                    if (!totalQuestionsSpan || !quizContainer || !quizResults)
+                        return;
+
+                    currentQuestion = 0;
+                    score = 0;
+                    answered = false;
+                    totalQuestionsSpan.textContent = String(quizData.length);
+                    quizResults.hidden = true;
+                    quizContainer.hidden = false;
+                    loadQuestion();
+                }
+
+                function loadQuestion() {
+                    const questionTitle =
+                        document.getElementById("question-title");
+                    const answerButtons =
+                        document.getElementById("answer-buttons");
+                    const feedbackMessage =
+                        document.getElementById("feedback-message");
+                    const currentQuestionSpan =
+                        document.getElementById("current-question");
+                    const progressBar = document.getElementById("progress-bar");
                     if (
-                        e.target.classList.contains("answer-btn") &&
-                        !answered
-                    ) {
-                        e.target.click();
+                        !questionTitle ||
+                        !answerButtons ||
+                        !feedbackMessage ||
+                        !currentQuestionSpan ||
+                        !progressBar
+                    )
+                        return;
+
+                    if (currentQuestion >= quizData.length) {
+                        showResults();
+                        return;
+                    }
+
+                    const question = quizData[currentQuestion];
+                    answered = false;
+                    questionTitle.textContent = question.question;
+                    currentQuestionSpan.textContent = String(
+                        currentQuestion + 1,
+                    );
+                    progressBar.style.width =
+                        (currentQuestion / quizData.length) * 100 + "%";
+                    feedbackMessage.className = "feedback-message";
+                    feedbackMessage.textContent = "";
+                    answerButtons.innerHTML = "";
+
+                    question.options.forEach(function (option, index) {
+                        const button = document.createElement("button");
+                        button.className = "answer-btn";
+                        button.type = "button";
+                        button.textContent = option;
+                        button.addEventListener("click", function () {
+                            selectAnswer(index);
+                        });
+                        answerButtons.appendChild(button);
+                    });
+                }
+
+                function selectAnswer(selectedIndex) {
+                    if (answered) return;
+                    answered = true;
+
+                    const question = quizData[currentQuestion];
+                    const answerButtons =
+                        document.getElementById("answer-buttons");
+                    if (!answerButtons) return;
+
+                    const buttons =
+                        answerButtons.querySelectorAll(".answer-btn");
+                    buttons.forEach(function (btn) {
+                        btn.disabled = true;
+                    });
+
+                    const isCorrect = selectedIndex === question.correct;
+                    if (isCorrect) {
+                        score += 1;
+                        buttons[selectedIndex].classList.add("correct");
+                        showFeedback(question.feedback.correct, true);
+                    } else {
+                        buttons[selectedIndex].classList.add("incorrect");
+                        buttons[question.correct].classList.add("correct");
+                        showFeedback(question.feedback.incorrect, false);
+                    }
+
+                    window.setTimeout(function () {
+                        currentQuestion += 1;
+                        loadQuestion();
+                    }, 2200);
+                }
+
+                function showFeedback(message, isCorrect) {
+                    const feedbackMessage =
+                        document.getElementById("feedback-message");
+                    if (!feedbackMessage) return;
+                    feedbackMessage.textContent = message;
+                    feedbackMessage.className =
+                        "feedback-message show " +
+                        (isCorrect ? "success" : "error");
+                }
+
+                function showResults() {
+                    const quizContainer =
+                        document.getElementById("quiz-container");
+                    const quizResults = document.getElementById("quiz-results");
+                    const progressBar = document.getElementById("progress-bar");
+                    const finalScore = document.getElementById("final-score");
+                    const resultsTitle =
+                        document.getElementById("results-title");
+                    const resultsMessage =
+                        document.getElementById("results-message");
+                    if (
+                        !quizContainer ||
+                        !quizResults ||
+                        !progressBar ||
+                        !finalScore ||
+                        !resultsTitle ||
+                        !resultsMessage
+                    )
+                        return;
+
+                    quizContainer.hidden = true;
+                    quizResults.hidden = false;
+                    progressBar.style.width = "100%";
+                    finalScore.textContent = score + "/" + quizData.length;
+
+                    const percentage = Math.round(
+                        (score / quizData.length) * 100,
+                    );
+                    if (percentage === 100) {
+                        resultsTitle.textContent =
+                            "¡Increíble! ¡Eres un genio de la IA!";
+                        resultsMessage.textContent =
+                            "¡Perfecto! Has entendido muy bien qué es la Inteligencia Artificial.";
+                    } else if (percentage >= 80) {
+                        resultsTitle.textContent =
+                            "¡Excelente! ¡Casi perfecto!";
+                        resultsMessage.textContent =
+                            "¡Muy bien! Entiendes muy bien la IA. Sigue aprendiendo.";
+                    } else if (percentage >= 60) {
+                        resultsTitle.textContent =
+                            "¡Muy bien! Vas por buen camino";
+                        resultsMessage.textContent =
+                            "Buen trabajo. Ya sabes bastante sobre IA y puedes seguir mejorando.";
+                    } else {
+                        resultsTitle.textContent =
+                            "¡Buen intento! Sigue practicando";
+                        resultsMessage.textContent =
+                            "Aprender sobre IA lleva tiempo. Puedes volver a intentarlo cuando quieras.";
                     }
                 }
-            });
+
+                function initSmoothScroll() {
+                    document
+                        .querySelectorAll('a[href^="#"]')
+                        .forEach(function (anchor) {
+                            anchor.addEventListener("click", function (event) {
+                                const selector = anchor.getAttribute("href");
+                                if (!selector || selector === "#") return;
+                                const target = document.querySelector(selector);
+                                if (!target) return;
+                                event.preventDefault();
+                                target.scrollIntoView({
+                                    behavior: "smooth",
+                                    block: "start",
+                                });
+                            });
+                        });
+                }
+
+                document.addEventListener("DOMContentLoaded", function () {
+                    initMobileMenu();
+                    initQuiz();
+                    initSmoothScroll();
+
+                    const restartButton =
+                        document.getElementById("restart-quiz");
+                    if (restartButton) {
+                        restartButton.addEventListener("click", initQuiz);
+                    }
+                });
+            })();
         </script>
     </body>
 </html>
-
-<!-- Robot Head -->
-<rect
-    x="40"
-    y="15"
-    width="40"
-    height="40"
-    rx="8"
-    fill="#4BC6B9"
-    stroke="#2A4D69"
-    stroke-width="3"
-/>
-
-<!-- Eyes -->
-<circle cx="48" cy="30" r="4" fill="#2A4D69" />
-<circle cx="72" cy="30" r="4" fill="#2A4D69" />
-<circle cx="48" cy="30" r="2" fill="white" />
-<circle cx="72" cy="30" r="2" fill="white" />
-
-<!-- Mouth -->
-<rect x="55" y="38" width="10" height="4" rx="2" fill="#2A4D69" />
-
-<!-- Antenna -->
-<line
-    x1="60"
-    y1="15"
-    x2="60"
-    y2="5"
-    stroke="#2A4D69"
-    stroke-width="3"
-    stroke-linecap="round"
-/>
-<circle cx="60" cy="5" r="3" fill="#FF7E5F" />
-
-<!-- Arms -->
-<rect
-    x="20"
-    y="55"
-    width="15"
-    height="8"
-    rx="4"
-    fill="#4BC6B9"
-    stroke="#2A4D69"
-    stroke-width="2"
-/>
-<rect
-    x="85"
-    y="55"
-    width="15"
-    height="8"
-    rx="4"
-    fill="#4BC6B9"
-    stroke="#2A4D69"
-    stroke-width="2"
-/>
-
-<!-- Hands -->
-<circle
-    cx="20"
-    cy="59"
-    r="6"
-    fill="#FF7E5F"
-    stroke="#2A4D69"
-    stroke-width="2"
-/>
-<circle
-    cx="100"
-    cy="59"
-    r="6"
-    fill="#FF7E5F"
-    stroke="#2A4D69"
-    stroke-width="2"
-/>
-
-<!-- Legs -->
-<rect
-    x="45"
-    y="105"
-    width="8"
-    height="12"
-    rx="4"
-    fill="#4BC6B9"
-    stroke="#2A4D69"
-    stroke-width="2"
-/>

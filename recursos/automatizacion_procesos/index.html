@@ -1,511 +1,1007 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!-- SEO + GEO NEXAUTIA · GUÍA EDUCATIVA AUTOMATIZACIÓN DE PROCESOS E IA -->
         <title>
-            Automatización Empresarial e Inteligencia Artificial - Guía
-            Educativa
+            Automatización de procesos e IA: guía educativa | Nexautia
         </title>
-        <!-- Favicon -->
-        <link rel="icon" type="image/x-icon" href="imagenes/favicon.ico" />
-        <link
-            rel="icon"
-            type="image/png"
-            sizes="16x16"
-            href="favicon-16x16.png"
-        />
-        <link
-            rel="icon"
-            type="image/png"
-            sizes="32x32"
-            href="favicon-32x32.png"
-        />
         <meta
             name="description"
-            content="Automatización empresarial: aprende los conceptos de automatización en formato texto y vídeo."
+            content="Guía educativa gratuita sobre automatización de procesos e inteligencia artificial: conceptos, evolución, RPA, IA generativa, ejemplos por áreas y quiz interactivo."
         />
-        <!-- Google Fonts -->
+        <meta
+            name="keywords"
+            content="automatización de procesos, inteligencia artificial, guía educativa automatización, RPA, IA generativa, hiperautomatización, automatización cognitiva, automatización de procesos, Nexautia recursos"
+        />
+        <meta name="robots" content="index, follow, max-image-preview:large" />
+        <meta
+            name="googlebot"
+            content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+        />
+        <meta
+            name="bingbot"
+            content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+        />
+        <meta name="author" content="Nexautia" />
+        <meta name="language" content="es" />
+        <meta name="application-name" content="Nexautia" />
+        <meta name="theme-color" content="#0f172a" />
+        <meta name="rating" content="general" />
+        <meta name="format-detection" content="telephone=yes" />
+
         <link
-            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Lato:wght@400;700&display=swap"
+            rel="canonical"
+            href="https://www.nexautia.com/recursos/automatizacion_procesos/"
+        />
+        <link
+            rel="alternate"
+            hreflang="es"
+            href="https://www.nexautia.com/recursos/automatizacion_procesos/"
+        />
+        <link
+            rel="alternate"
+            hreflang="ca"
+            href="https://www.nexautia.com/ca/recursos/automatitzacio_processos/"
+        />
+        <link
+            rel="alternate"
+            hreflang="x-default"
+            href="https://www.nexautia.com/recursos/automatizacion_procesos/"
+        />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Nexautia" />
+        <meta property="og:locale" content="es_ES" />
+        <meta property="og:locale:alternate" content="ca_ES" />
+        <meta
+            property="og:title"
+            content="Automatización de procesos e IA: guía educativa | Nexautia"
+        />
+        <meta
+            property="og:description"
+            content="Recurso gratuito para aprender qué es la automatización de procesos, cómo se relaciona con la inteligencia artificial y cómo está cambiando los flujos de trabajo."
+        />
+        <meta
+            property="og:url"
+            content="https://www.nexautia.com/recursos/automatizacion_procesos/"
+        />
+        <meta
+            property="og:image"
+            content="https://www.nexautia.com/imagenes/comunes/logo.svg"
+        />
+        <meta
+            property="og:image:alt"
+            content="Guía educativa de Nexautia sobre automatización de procesos e inteligencia artificial"
+        />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+            name="twitter:title"
+            content="Automatización de procesos e IA: guía educativa | Nexautia"
+        />
+        <meta
+            name="twitter:description"
+            content="Aprende automatización de procesos, RPA, IA generativa e hiperautomatización con una guía educativa gratuita y un quiz interactivo."
+        />
+        <meta
+            name="twitter:image"
+            content="https://www.nexautia.com/imagenes/comunes/logo.svg"
+        />
+        <meta
+            name="twitter:image:alt"
+            content="Guía educativa de Nexautia sobre automatización de procesos e IA"
+        />
+
+        <meta name="geo.region" content="ES-CT" />
+        <meta name="geo.placename" content="Barcelona, Cataluña, España" />
+        <meta name="geo.position" content="41.3874;2.1686" />
+        <meta name="ICBM" content="41.3874, 2.1686" />
+        <link
+            rel="icon"
+            type="image/svg+xml"
+            href="../../imagenes/comunes/favicon.svg?v=4"
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap"
             rel="stylesheet"
         />
+        <link href="../../styles.css" rel="stylesheet" />
 
-        <!-- Feather Icons -->
-        <script src="https://unpkg.com/feather-icons@4.29.0/dist/feather.min.js"></script>
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@graph": [
+                    {
+                        "@type": "Organization",
+                        "@id": "https://www.nexautia.com/#organization",
+                        "name": "Nexautia",
+                        "url": "https://www.nexautia.com/",
+                        "logo": {
+                            "@type": "ImageObject",
+                            "url": "https://www.nexautia.com/imagenes/comunes/logo.svg"
+                        },
+                        "email": "contacto@nexautia.com",
+                        "telephone": "+34610510642",
+                        "areaServed": ["España", "Barcelona", "Cataluña"],
+                        "sameAs": [
+                            "https://www.facebook.com/profile.php?id=61579981550830"
+                        ]
+                    },
+                    {
+                        "@type": "WebSite",
+                        "@id": "https://www.nexautia.com/#website",
+                        "name": "Nexautia",
+                        "url": "https://www.nexautia.com/",
+                        "publisher": {
+                            "@id": "https://www.nexautia.com/#organization"
+                        },
+                        "inLanguage": "es"
+                    },
+                    {
+                        "@type": "BreadcrumbList",
+                        "@id": "https://www.nexautia.com/recursos/automatizacion_procesos/#breadcrumb",
+                        "itemListElement": [
+                            {
+                                "@type": "ListItem",
+                                "position": 1,
+                                "name": "Inicio",
+                                "item": "https://www.nexautia.com/"
+                            },
+                            {
+                                "@type": "ListItem",
+                                "position": 2,
+                                "name": "Aprende gratis",
+                                "item": "https://www.nexautia.com/recursos/"
+                            },
+                            {
+                                "@type": "ListItem",
+                                "position": 3,
+                                "name": "Automatización de procesos e IA",
+                                "item": "https://www.nexautia.com/recursos/automatizacion_procesos/"
+                            }
+                        ]
+                    },
+                    {
+                        "@type": "WebPage",
+                        "@id": "https://www.nexautia.com/recursos/automatizacion_procesos/#webpage",
+                        "url": "https://www.nexautia.com/recursos/automatizacion_procesos/",
+                        "name": "Automatización de procesos e inteligencia artificial: guía educativa",
+                        "description": "Guía educativa gratuita de Nexautia para aprender conceptos de automatización de procesos, RPA, inteligencia artificial, IA generativa, hiperautomatización y automatización cognitiva.",
+                        "inLanguage": "es",
+                        "isPartOf": {
+                            "@id": "https://www.nexautia.com/#website"
+                        },
+                        "publisher": {
+                            "@id": "https://www.nexautia.com/#organization"
+                        },
+                        "breadcrumb": {
+                            "@id": "https://www.nexautia.com/recursos/automatizacion_procesos/#breadcrumb"
+                        },
+                        "about": [
+                            "Automatización de procesos",
+                            "Inteligencia artificial",
+                            "RPA",
+                            "IA generativa",
+                            "Hiperautomatización",
+                            "Automatización cognitiva",
+                            "Automatización empresarial"
+                        ],
+                        "audience": {
+                            "@type": "Audience",
+                            "audienceType": "Personas interesadas en aprender automatización de procesos e inteligencia artificial"
+                        }
+                    },
+                    {
+                        "@type": "LearningResource",
+                        "@id": "https://www.nexautia.com/recursos/automatizacion_procesos/#learning-resource",
+                        "name": "Guía educativa de automatización de procesos e inteligencia artificial",
+                        "description": "Recurso gratuito para aprender los conceptos básicos y la evolución de la automatización de procesos y su relación con la inteligencia artificial.",
+                        "url": "https://www.nexautia.com/recursos/automatizacion_procesos/",
+                        "inLanguage": "es",
+                        "isAccessibleForFree": true,
+                        "learningResourceType": "guía educativa interactiva",
+                        "educationalLevel": "Divulgativo",
+                        "provider": {
+                            "@id": "https://www.nexautia.com/#organization"
+                        },
+                        "teaches": [
+                            "Qué es la automatización de procesos",
+                            "Historia de la automatización",
+                            "Diferencia entre RPA e inteligencia artificial",
+                            "Aplicaciones de IA en procesos empresariales",
+                            "Conceptos de hiperautomatización y automatización cognitiva"
+                        ]
+                    },
+                    {
+                        "@type": "ItemList",
+                        "@id": "https://www.nexautia.com/recursos/automatizacion_procesos/#sections",
+                        "name": "Secciones de la guía de automatización de procesos e IA",
+                        "itemListElement": [
+                            {
+                                "@type": "ListItem",
+                                "position": 1,
+                                "name": "Qué es la automatización de procesos",
+                                "url": "https://www.nexautia.com/recursos/automatizacion_procesos/#introduccion"
+                            },
+                            {
+                                "@type": "ListItem",
+                                "position": 2,
+                                "name": "Historia y evolución de la automatización",
+                                "url": "https://www.nexautia.com/recursos/automatizacion_procesos/#historia"
+                            },
+                            {
+                                "@type": "ListItem",
+                                "position": 3,
+                                "name": "El papel de la inteligencia artificial",
+                                "url": "https://www.nexautia.com/recursos/automatizacion_procesos/#ia"
+                            },
+                            {
+                                "@type": "ListItem",
+                                "position": 4,
+                                "name": "Quiz interactivo",
+                                "url": "https://www.nexautia.com/recursos/automatizacion_procesos/#quiz"
+                            }
+                        ]
+                    }
+                ]
+            }
+        </script>
 
         <style>
-            /* --- Variables CSS --- */
             :root {
-                --primary-color: #0a2540;
-                --secondary-color: #425466;
-                --accent-color: #00c853;
-                --accent-hover: #009624;
-                --background-primary: #f8f9fa;
-                --background-components: #ffffff;
-                --text-primary: #212529;
-                --text-secondary: #6c757d;
-                --border-color: #e0e0e0;
-                --success-bg: #e0f8e6;
-                --error-bg: #fdeded;
-                --error-border: #dc3545;
-
-                --font-heading: "Montserrat", sans-serif;
-                --font-body: "Lato", sans-serif;
-
-                --space-xs: 4px;
-                --space-sm: 8px;
-                --space-md: 16px;
-                --space-lg: 32px;
-                --space-xl: 64px;
+                --nx-bg: #0f172a;
+                --nx-bg-2: #111827;
+                --nx-card: #ffffff;
+                --nx-text: #0f172a;
+                --nx-muted: #475569;
+                --nx-soft: #eaf2ff;
+                --nx-line: #bfdbfe;
+                --nx-primary: #2563eb;
+                --nx-primary-dark: #1d4ed8;
+                --nx-accent: #06b6d4;
+                --nx-green: #22c55e;
+                --nx-yellow: #facc15;
+                --nx-danger: #dc2626;
+                --nx-danger-soft: #fee2e2;
+                --nx-success-soft: #dcfce7;
             }
 
-            /* --- Reset y Base --- */
             * {
-                margin: 0;
-                padding: 0;
                 box-sizing: border-box;
             }
-
             html {
                 scroll-behavior: smooth;
-                overflow-x: hidden; /* Prevenir scroll horizontal */
+                overflow-x: hidden;
             }
-
             body {
-                font-family: var(--font-body);
-                font-size: 1.1rem;
-                line-height: 1.6;
-                color: var(--text-primary);
-                background-color: var(--background-primary);
-                overflow-x: hidden; /* Prevenir scroll horizontal */
-            }
-
-            .container {
-                max-width: 1200px;
-                margin: 0 auto;
-                padding: 0 var(--space-lg);
-                width: 100%;
-                box-sizing: border-box;
-            }
-
-            .container h1 {
-                margin-top: 30px;
-            }
-
-            /* Prevenir overflow horizontal en todas las secciones */
-            .section {
+                margin: 0;
+                font-family: "Inter", Arial, sans-serif;
+                color: var(--nx-text);
+                background: #f1f5f9;
+                line-height: 1.65;
                 overflow-x: hidden;
-                width: 100%;
             }
-
-            .content-section {
-                overflow-x: hidden;
-                width: 100%;
-                box-sizing: border-box;
+            body.nx-resource-menu-open {
+                overflow: hidden;
             }
-
-            /* --- Tipografía --- */
-            h1 {
-                font-family: var(--font-heading);
-                font-weight: 700;
-                font-size: 3.5rem;
-                color: var(--primary-color);
-                margin-bottom: 1.5rem;
-            }
-
-            h2 {
-                font-family: var(--font-heading);
-                font-weight: 600;
-                font-size: 2.5rem;
-                color: var(--primary-color);
-                margin-bottom: 1.5rem;
-            }
-
-            h3 {
-                font-family: var(--font-heading);
-                font-weight: 500;
-                font-size: 1.75rem;
-                color: var(--secondary-color);
-                margin-bottom: 1rem;
-            }
-
             a {
-                color: var(--accent-color);
-                text-decoration: none;
-                font-weight: 700;
-                transition: color 0.3s ease;
+                color: inherit;
+            }
+            img {
+                display: block;
+                max-width: 100%;
+                height: auto;
+            }
+            p {
+                margin: 0 0 1rem;
+            }
+            strong,
+            b {
+                font-weight: 850;
+            }
+            ul {
+                margin: 0.75rem 0 0;
+                padding-left: 1.25rem;
+            }
+            li {
+                margin-bottom: 0.45rem;
+            }
+            .container {
+                width: min(1180px, calc(100% - 40px));
+                margin-inline: auto;
             }
 
-            a:hover {
-                color: var(--accent-hover);
-            }
-
-            /* --- Navegación --- */
-            .navbar {
-                background-color: var(--background-components);
-                box-shadow: 0 2px 10px rgba(10, 37, 64, 0.1);
-                position: fixed;
+            .site-header {
+                background: #0f172a;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+                position: sticky;
                 top: 0;
-                width: 100%;
                 z-index: 1000;
             }
-
-            .nav-container {
+            .header-inner {
+                min-height: 76px;
                 display: flex;
+                align-items: center;
                 justify-content: space-between;
+                gap: 1rem;
+            }
+            .logo a {
+                display: inline-flex;
                 align-items: center;
-                padding: 1rem var(--space-lg);
-            }
-
-            .logo {
-                font-family: var(--font-heading);
-                font-size: 1.5rem;
-                font-weight: 700;
-                color: var(--primary-color);
-            }
-
-            .logo img {
-                transition: transform 0.4s ease;
-            }
-
-            .logo img:hover {
-                transform: scale(1.05);
-            }
-
-            .nav-menu {
-                display: flex;
-                list-style: none;
-                gap: 2rem;
-            }
-
-            .nav-link {
-                color: var(--secondary-color);
-                font-weight: 400;
-                transition: color 0.3s ease;
-            }
-
-            .nav-link:hover {
-                color: var(--accent-color);
-            }
-
-            .cta-button {
-                background-color: var(--accent-color);
-                color: var(--background-components);
-                padding: 12px 24px;
-                border-radius: 8px;
-                border: none;
-                box-shadow: 0 4px 15px rgba(0, 200, 83, 0.2);
-                transition: all 0.3s ease;
-                cursor: pointer;
                 text-decoration: none;
-                font-weight: 700;
-                display: inline-block;
             }
-
-            .cta-button:hover {
-                transform: translateY(-2px);
-                box-shadow: 0 6px 20px rgba(0, 200, 83, 0.3);
-                color: var(--background-components);
+            .logo img {
+                width: 172px !important;
+                max-width: 172px !important;
+                height: auto !important;
             }
-
-            /* Menú móvil */
-            .menu-toggle {
-                display: none;
-                flex-direction: column;
-                cursor: pointer;
-            }
-
-            .menu-toggle span {
-                width: 25px;
-                height: 3px;
-                background-color: var(--primary-color);
-                margin: 3px 0;
-                transition: 0.3s;
-            }
-
-            /* --- Secciones Principales --- */
-            .section {
-                padding: var(--space-xl) 0;
-                min-height: 100vh;
+            .desktop-nav {
                 display: flex;
                 align-items: center;
+                justify-content: center;
+                gap: 0.15rem;
+                flex: 1 1 auto;
+                flex-wrap: nowrap;
+                white-space: nowrap;
+            }
+            .desktop-nav a {
+                position: relative;
+                color: #e5e7eb !important;
+                text-decoration: none !important;
+                font-size: 0.94rem !important;
+                font-weight: 800;
+                line-height: 1;
+                padding: 0.62rem 0.56rem;
+                border-radius: 999px;
+            }
+            .desktop-nav a:hover {
+                color: #ffffff !important;
+                background: rgba(255, 255, 255, 0.08);
+            }
+            .desktop-nav a.active {
+                color: #ffffff !important;
+            }
+            .desktop-nav a.active::after {
+                content: "";
+                position: absolute;
+                left: 0.5rem;
+                right: 0.5rem;
+                bottom: -0.35rem;
+                height: 3px;
+                border-radius: 999px;
+                background: var(--nx-green);
+            }
+            .header-actions {
+                display: flex;
+                align-items: center;
+                gap: 0.45rem;
+                flex: 0 0 auto;
+            }
+            .lang-switch {
+                display: inline-flex;
+                align-items: center;
+                gap: 0.25rem;
+            }
+            .lang-link {
+                width: 34px;
+                height: 34px;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 999px;
+                border: 1px solid rgba(255, 255, 255, 0.22);
+                color: #e5e7eb !important;
+                text-decoration: none !important;
+                font-weight: 900;
+                font-size: 0.75rem !important;
+            }
+            .lang-link.active {
+                background: var(--nx-accent) !important;
+                color: #ffffff !important;
+                border-color: rgba(6, 182, 212, 0.75) !important;
+                box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.18) !important;
             }
 
-            .hero-section {
-                background: linear-gradient(
-                    135deg,
-                    var(--primary-color),
-                    var(--secondary-color)
-                );
-                color: var(--background-components);
-                text-align: center;
-                padding-top: 120px;
+            .nx-resource-menu-button {
+                display: none;
+                align-items: center;
+                justify-content: center;
+                width: 42px;
+                height: 42px;
+                border-radius: 14px;
+                border: 1px solid rgba(255, 255, 255, 0.22);
+                background: rgba(255, 255, 255, 0.08);
+                color: #ffffff;
+                font-size: 1.35rem;
+                cursor: pointer;
+                line-height: 1;
             }
-
-            .hero-section h1 {
-                color: var(--background-components);
+            .nx-resource-menu-overlay {
+                position: fixed;
+                inset: 0;
+                z-index: 10000;
+                display: none !important;
+                justify-content: flex-end;
+                background: rgba(15, 23, 42, 0.62);
             }
-
-            .hero-section p {
-                font-size: 1.3rem;
-                margin-bottom: 2rem;
-                opacity: 0.9;
+            .nx-resource-menu-overlay.is-open {
+                display: flex !important;
             }
-
-            .content-section {
-                background-color: var(--background-components);
-                margin: var(--space-lg) 0;
-                padding: var(--space-xl);
-                border-radius: 12px;
-                box-shadow: 0 5px 25px rgba(10, 37, 64, 0.1);
+            .nx-resource-menu-panel {
+                width: min(330px, 84vw);
+                min-height: 100vh;
+                background: #0f172a;
+                color: #ffffff;
+                box-shadow: -22px 0 55px rgba(0, 0, 0, 0.38);
+                padding: 1.2rem;
+                overflow-y: auto;
             }
-
-            .content-grid {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-                gap: var(--space-lg);
-                margin-top: var(--space-lg);
-            }
-
-            .content-card {
-                background-color: var(--background-components);
-                padding: var(--space-lg);
-                border-radius: 12px;
-                border: 1px solid var(--border-color);
-                transition: transform 0.3s ease, box-shadow 0.3s ease;
-            }
-
-            .content-card:hover {
-                transform: translateY(-5px);
-                box-shadow: 0 10px 30px rgba(10, 37, 64, 0.15);
-            }
-
-            .content-card .icon {
-                width: 48px;
-                height: 48px;
-                color: var(--accent-color);
+            .nx-resource-menu-head {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
                 margin-bottom: 1rem;
             }
-
-            /* --- Línea de Tiempo --- */
-            .timeline {
-                position: relative;
-                padding: var(--space-lg) 0;
-                width: 100%;
-                overflow-x: hidden; /* Prevenir overflow horizontal */
+            .nx-resource-menu-head strong {
+                color: #ffffff;
+                font-size: 1.15rem;
+            }
+            .nx-resource-menu-close {
+                background: transparent;
+                color: #ffffff;
+                border: 0;
+                font-size: 2rem;
+                cursor: pointer;
+                line-height: 1;
+            }
+            .nx-resource-menu-nav {
+                display: flex;
+                flex-direction: column;
+                gap: 0.35rem;
+            }
+            .nx-resource-menu-nav a {
+                color: #e5e7eb !important;
+                text-decoration: none !important;
+                font-weight: 800;
+                padding: 0.78rem 0.65rem;
+                border-radius: 12px;
+            }
+            .nx-resource-menu-nav a:hover,
+            .nx-resource-menu-nav a.active {
+                background: rgba(255, 255, 255, 0.1);
+                color: #ffffff !important;
             }
 
+            .hero {
+                position: relative;
+                color: #ffffff;
+                overflow: hidden;
+                background:
+                    radial-gradient(
+                        circle at 22% 0%,
+                        rgba(37, 99, 235, 0.35),
+                        transparent 34rem
+                    ),
+                    radial-gradient(
+                        circle at 82% 18%,
+                        rgba(6, 182, 212, 0.22),
+                        transparent 28rem
+                    ),
+                    linear-gradient(180deg, #0f172a 0%, #111827 100%);
+                padding: 4.6rem 0 4.8rem;
+            }
+            .hero::before {
+                content: "";
+                position: absolute;
+                inset: 0;
+                opacity: 0.25;
+                background-image: radial-gradient(
+                    rgba(255, 255, 255, 0.18) 1px,
+                    transparent 1px
+                );
+                background-size: 28px 28px;
+                pointer-events: none;
+            }
+            .hero-grid {
+                position: relative;
+                z-index: 1;
+                display: grid;
+                grid-template-columns: minmax(0, 0.95fr) minmax(340px, 0.8fr);
+                align-items: center;
+                gap: 3.5rem;
+            }
+            .eyebrow {
+                color: #bfdbfe;
+                font-weight: 900;
+                text-transform: uppercase;
+                letter-spacing: 0.08em;
+                font-size: 0.84rem;
+                margin-bottom: 1rem;
+            }
+            .hero h1 {
+                color: #ffffff !important;
+                font-size: clamp(2.45rem, 4.2vw, 4.35rem);
+                line-height: 1.04;
+                letter-spacing: -0.045em;
+                margin: 0 0 1.15rem;
+                max-width: 760px;
+            }
+            .hero h1 span {
+                color: #93f6ff;
+            }
+            .hero p {
+                color: #dbeafe;
+                font-size: 1.08rem;
+                max-width: 690px;
+                margin: 0;
+            }
+            .hero-actions {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.85rem;
+                margin-top: 1.6rem;
+            }
+            .btn {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                text-decoration: none;
+                border-radius: 999px;
+                padding: 12px 22px;
+                font-weight: 900;
+                transition: 0.18s ease;
+            }
+            .btn:hover {
+                transform: translateY(-1px);
+            }
+            .btn-primary {
+                background: linear-gradient(
+                    135deg,
+                    var(--nx-primary),
+                    var(--nx-primary-dark)
+                );
+                color: #ffffff !important;
+                box-shadow: 0 12px 28px rgba(37, 99, 235, 0.24);
+            }
+            .btn-secondary {
+                background: rgba(255, 255, 255, 0.1);
+                color: #ffffff !important;
+                border: 1px solid rgba(255, 255, 255, 0.18);
+            }
+            .hero-card {
+                background: rgba(255, 255, 255, 0.08);
+                border: 1px solid rgba(255, 255, 255, 0.16);
+                border-radius: 26px;
+                padding: 1rem;
+                box-shadow: 0 24px 70px rgba(0, 0, 0, 0.28);
+            }
+            .hero-visual {
+                border-radius: 20px;
+                background: linear-gradient(
+                    145deg,
+                    rgba(255, 255, 255, 0.95),
+                    rgba(239, 246, 255, 0.92)
+                );
+                color: var(--nx-text);
+                padding: 1.35rem;
+                min-height: 320px;
+                display: grid;
+                align-items: center;
+                overflow: hidden;
+            }
+            .automation-svg {
+                width: 100%;
+                height: auto;
+                animation: floatSoft 4s ease-in-out infinite;
+            }
+            .hero-visual-label {
+                font:
+                    700 18px/1.2 "Inter",
+                    Arial,
+                    sans-serif;
+                fill: #0f172a;
+            }
+            .hero-visual-sub {
+                font:
+                    600 12px/1.2 "Inter",
+                    Arial,
+                    sans-serif;
+                fill: #475569;
+                letter-spacing: 0.02em;
+            }
+            @keyframes floatSoft {
+                0%,
+                100% {
+                    transform: translateY(0);
+                }
+                50% {
+                    transform: translateY(-8px);
+                }
+            }
+
+            .section {
+                padding: 46px 0;
+            }
+            .intro-card,
+            .content-section,
+            .quiz-card {
+                background: #ffffff;
+                border: 1px solid var(--nx-line);
+                border-radius: 22px;
+                box-shadow: 0 12px 34px rgba(15, 23, 42, 0.1);
+            }
+            .intro-card {
+                max-width: 980px;
+                margin: 0 auto;
+                padding: 30px;
+                font-size: 1.06rem;
+                color: var(--nx-text) !important;
+            }
+            .intro-card p,
+            .intro-card strong,
+            .intro-card b,
+            .content-section p,
+            .content-section li,
+            .content-section strong,
+            .content-section b,
+            .card p,
+            .card li,
+            .card strong,
+            .card b,
+            .timeline-content p,
+            .timeline-content li,
+            .note-box p,
+            .note-box li {
+                color: inherit;
+                opacity: 1 !important;
+                filter: none !important;
+                visibility: visible !important;
+            }
+            .section-title {
+                text-align: center;
+                max-width: 880px;
+                margin: 0 auto 1.6rem;
+            }
+            .section-title h2 {
+                color: var(--nx-text) !important;
+                font-size: clamp(1.85rem, 3vw, 2.7rem);
+                line-height: 1.12;
+                margin: 0 0 0.7rem;
+                letter-spacing: -0.025em;
+            }
+            .section-title p {
+                color: var(--nx-muted) !important;
+                font-size: 1.05rem;
+                margin: 0;
+                opacity: 1 !important;
+            }
+            .content-section {
+                padding: 32px;
+            }
+            .cards-grid {
+                display: grid;
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+                gap: 20px;
+                margin-top: 24px;
+            }
+            .card {
+                background: #ffffff;
+                border: 1px solid #dbeafe;
+                border-radius: 18px;
+                padding: 24px;
+                box-shadow: 0 8px 22px rgba(15, 23, 42, 0.07);
+            }
+            .card:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 13px 30px rgba(15, 23, 42, 0.1);
+            }
+            .card-icon {
+                width: 52px;
+                height: 52px;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 16px;
+                background: var(--nx-soft);
+                border: 1px solid #bfdbfe;
+                font-size: 1.55rem;
+                margin-bottom: 0.9rem;
+            }
+            .card h3 {
+                color: var(--nx-text);
+                font-size: 1.2rem;
+                line-height: 1.25;
+                margin: 0 0 0.65rem;
+            }
+            .card p {
+                color: var(--nx-muted) !important;
+                margin: 0;
+                opacity: 1 !important;
+            }
+            .card ul,
+            .content-section ul,
+            .timeline-content ul {
+                color: var(--nx-muted) !important;
+            }
+            .card li,
+            .content-section li,
+            .timeline-content li {
+                color: var(--nx-muted) !important;
+                opacity: 1 !important;
+            }
+
+            .timeline {
+                position: relative;
+                margin-top: 26px;
+                padding: 8px 0;
+            }
             .timeline::before {
                 content: "";
                 position: absolute;
                 left: 50%;
                 top: 0;
                 bottom: 0;
-                width: 2px;
-                background: var(--secondary-color);
+                width: 3px;
+                border-radius: 999px;
+                background: linear-gradient(
+                    180deg,
+                    var(--nx-primary),
+                    var(--nx-accent),
+                    var(--nx-green)
+                );
                 transform: translateX(-50%);
             }
-
             .timeline-item {
                 position: relative;
-                margin: var(--space-lg) 0;
                 width: 50%;
-                overflow: hidden; /* Prevenir contenido que se desborde */
-                box-sizing: border-box;
+                margin: 26px 0;
             }
-
             .timeline-item:nth-child(odd) {
                 left: 0;
-                padding-right: var(--space-xl);
+                padding-right: 44px;
                 text-align: right;
             }
-
             .timeline-item:nth-child(even) {
                 left: 50%;
-                padding-left: var(--space-xl);
+                padding-left: 44px;
                 text-align: left;
             }
-
-            .timeline-content {
-                background-color: var(--background-components);
-                padding: var(--space-lg);
-                border-radius: 12px;
-                box-shadow: 0 5px 25px rgba(10, 37, 64, 0.1);
-                border: 1px solid var(--border-color);
-                width: 100%;
-                box-sizing: border-box;
-                overflow-wrap: break-word; /* Asegurar que el texto largo se ajuste */
-                word-wrap: break-word;
-            }
-
             .timeline-marker {
                 position: absolute;
-                top: 20px;
-                width: 16px;
-                height: 16px;
-                background-color: var(--accent-color);
-                border-radius: 50%;
-                border: 3px solid var(--background-components);
+                top: 24px;
+                width: 18px;
+                height: 18px;
+                border-radius: 999px;
+                background: var(--nx-green);
+                border: 4px solid #ffffff;
+                box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.2);
             }
-
             .timeline-item:nth-child(odd) .timeline-marker {
-                right: -8px;
+                right: -9px;
             }
-
             .timeline-item:nth-child(even) .timeline-marker {
-                left: -8px;
+                left: -9px;
             }
-
+            .timeline-content {
+                background: #ffffff;
+                border: 1px solid #dbeafe;
+                border-radius: 18px;
+                padding: 22px;
+                box-shadow: 0 9px 28px rgba(15, 23, 42, 0.09);
+            }
             .timeline-year {
-                font-family: var(--font-heading);
-                font-weight: 600;
-                color: var(--accent-color);
-                font-size: 1.2rem;
+                color: var(--nx-primary);
+                font-weight: 900;
+                font-size: 0.9rem;
+                letter-spacing: 0.04em;
+                margin-bottom: 0.45rem;
+            }
+            .timeline-content h3 {
+                color: var(--nx-text);
+                font-size: 1.18rem;
+                margin: 0 0 0.55rem;
+            }
+            .timeline-content p {
+                color: var(--nx-muted) !important;
+                margin: 0;
+                opacity: 1 !important;
             }
 
-            /* --- Quiz --- */
-            .quiz-container {
-                background-color: var(--background-components);
-                padding: var(--space-xl);
-                border-radius: 12px;
-                box-shadow: 0 5px 25px rgba(10, 37, 64, 0.1);
-                border: 1px solid var(--border-color);
-                max-width: 800px;
+            .highlight-section {
+                background:
+                    radial-gradient(
+                        circle at 18% 0%,
+                        rgba(37, 99, 235, 0.16),
+                        transparent 24rem
+                    ),
+                    linear-gradient(180deg, #ffffff, #eff6ff);
+            }
+            .note-box {
+                margin-top: 22px;
+                background: #0f172a;
+                color: #e5e7eb;
+                border-radius: 20px;
+                padding: 24px;
+                border: 1px solid rgba(255, 255, 255, 0.14);
+            }
+            .note-box,
+            .note-box * {
+                color: #dbeafe !important;
+                opacity: 1 !important;
+            }
+            .note-box h3 {
+                color: #ffffff !important;
+                margin-top: 0;
+            }
+            .note-box strong,
+            .note-box b {
+                color: #ffffff !important;
+                font-weight: 900;
+            }
+            .note-box ul,
+            .note-box li,
+            .note-box p {
+                color: #dbeafe !important;
+            }
+
+            #quiz {
+                background:
+                    radial-gradient(
+                        circle at 18% 0%,
+                        rgba(37, 99, 235, 0.18),
+                        transparent 26rem
+                    ),
+                    radial-gradient(
+                        circle at 82% 10%,
+                        rgba(6, 182, 212, 0.12),
+                        transparent 24rem
+                    ),
+                    linear-gradient(180deg, #061224 0%, #0b1730 100%);
+            }
+            #quiz .section-title h2 {
+                color: #ffffff !important;
+                opacity: 1 !important;
+            }
+            #quiz .section-title p {
+                color: #dbeafe !important;
+                opacity: 1 !important;
+            }
+            #quiz .quiz-results h3,
+            #quiz .quiz-results p,
+            #quiz #score-message {
+                color: var(--nx-text) !important;
+                opacity: 1 !important;
+            }
+
+            .quiz-card {
+                max-width: 860px;
                 margin: 0 auto;
+                padding: 32px;
             }
-
-            .quiz-question {
-                font-size: 1.3rem;
-                font-weight: 600;
-                margin-bottom: var(--space-lg);
-                color: var(--primary-color);
-            }
-
-            .quiz-options {
-                display: flex;
-                flex-direction: column;
-                gap: var(--space-md);
-                margin-bottom: var(--space-lg);
-            }
-
-            .quiz-option {
-                padding: 1rem;
-                border: 2px solid var(--border-color);
-                border-radius: 8px;
-                background-color: var(--background-components);
-                cursor: pointer;
-                transition: all 0.3s ease;
-                text-align: left;
-                font-size: 1rem;
-            }
-
-            .quiz-option:hover {
-                border-color: var(--accent-color);
-                background-color: #f8f9fa;
-            }
-
-            .quiz-option.selected {
-                border-color: var(--accent-color);
-                background-color: var(--success-bg);
-            }
-
-            .quiz-option.correct {
-                border-color: var(--accent-color);
-                background-color: var(--success-bg);
-            }
-
-            .quiz-option.incorrect {
-                border-color: var(--error-border);
-                background-color: var(--error-bg);
-            }
-
-            .quiz-feedback {
-                margin: var(--space-lg) 0;
-                padding: var(--space-md);
-                border-radius: 8px;
-                font-weight: 600;
-                display: none;
-            }
-
-            .quiz-feedback.show {
-                display: block;
-            }
-
-            .quiz-feedback.correct {
-                background-color: var(--success-bg);
-                color: var(--primary-color);
-            }
-
-            .quiz-feedback.incorrect {
-                background-color: var(--error-bg);
-                color: var(--primary-color);
-            }
-
             .quiz-stats {
                 display: flex;
                 justify-content: space-between;
-                margin-bottom: var(--space-lg);
-                font-weight: 600;
+                gap: 1rem;
+                flex-wrap: wrap;
+                margin-bottom: 18px;
+                font-weight: 900;
             }
-
             .quiz-score {
-                color: var(--accent-color);
+                color: var(--nx-primary);
             }
-
             .quiz-progress {
-                color: var(--secondary-color);
+                color: var(--nx-muted);
             }
-
-            .quiz-results {
-                text-align: center;
+            .quiz-question {
+                color: var(--nx-text);
+                font-size: 1.28rem;
+                font-weight: 900;
+                line-height: 1.35;
+                margin-bottom: 18px;
+            }
+            .quiz-options {
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+                margin-bottom: 18px;
+            }
+            .quiz-option {
+                width: 100%;
+                padding: 15px 16px;
+                border: 2px solid #dbeafe;
+                border-radius: 14px;
+                background: #ffffff;
+                color: var(--nx-text);
+                cursor: pointer;
+                text-align: left;
+                font: inherit;
+                font-weight: 800;
+                transition: 0.18s ease;
+            }
+            .quiz-option:hover {
+                border-color: var(--nx-accent);
+                background: #f8fbff;
+                transform: translateY(-1px);
+            }
+            .quiz-option.correct {
+                border-color: var(--nx-green);
+                background: var(--nx-success-soft);
+            }
+            .quiz-option.incorrect {
+                border-color: var(--nx-danger);
+                background: var(--nx-danger-soft);
+            }
+            .quiz-feedback {
                 display: none;
+                margin: 18px 0;
+                padding: 16px;
+                border-radius: 14px;
+                font-weight: 850;
             }
-
+            .quiz-feedback.show {
+                display: block;
+            }
+            .quiz-feedback.correct {
+                background: var(--nx-success-soft);
+                color: #14532d;
+                border: 1px solid #86efac;
+            }
+            .quiz-feedback.incorrect {
+                background: var(--nx-danger-soft);
+                color: #7f1d1d;
+                border: 1px solid #fecaca;
+            }
+            .quiz-results {
+                display: none;
+                text-align: center;
+            }
             .quiz-results.show {
                 display: block;
             }
-
             .quiz-score-display {
+                color: var(--nx-primary);
                 font-size: 3rem;
-                font-weight: 700;
-                color: var(--accent-color);
-                margin: var(--space-lg) 0;
+                font-weight: 950;
+                margin: 1rem 0;
             }
-
             .secondary-button {
-                background-color: transparent;
-                color: var(--primary-color);
-                border: 2px solid var(--primary-color);
-                padding: 12px 24px;
-                border-radius: 8px;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 999px;
+                padding: 12px 22px;
+                font-weight: 900;
+                background: #ffffff;
+                color: var(--nx-text);
+                border: 2px solid #dbeafe;
                 cursor: pointer;
-                transition: all 0.3s ease;
-                font-weight: 700;
-                margin: 0 var(--space-sm);
+                margin: 0.4rem;
             }
-
             .secondary-button:hover {
-                background-color: var(--primary-color);
-                color: var(--background-components);
+                background: #eff6ff;
             }
 
-            /* Footer */
             footer {
-                background: #2a4d69;
-                color: white;
+                max-width: none !important;
+                background: #0f172a !important;
+                color: #ffffff;
                 text-align: center;
                 padding: 40px 0;
-                margin-top: 60px;
+                margin-top: 4rem !important;
             }
-
             .footer-content {
+                max-width: 980px;
+                margin-inline: auto;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 gap: 30px;
             }
-
             .footer-links {
                 display: flex;
                 align-items: center;
@@ -513,13 +1009,11 @@
                 flex-wrap: wrap;
                 justify-content: center;
             }
-
             .social-links {
                 display: flex;
                 gap: 20px;
                 align-items: center;
             }
-
             .social-link {
                 display: inline-block;
                 padding: 10px;
@@ -528,774 +1022,1011 @@
                 transition: all 0.3s ease;
                 text-decoration: none;
             }
-
             .social-link:hover {
                 background: rgba(255, 255, 255, 0.2);
                 transform: translateY(-2px);
             }
-
             .social-icon {
                 width: 24px;
                 height: 24px;
-                fill: white;
+                fill: #ffffff;
             }
-
             .footer-logo {
                 display: inline-block;
                 transition: transform 0.3s ease;
             }
-
             .footer-logo:hover {
                 transform: scale(1.05);
             }
-
-            .footer-text {
-                text-align: center;
+            .footer-logo img {
+                max-width: 200px !important;
+                height: auto !important;
             }
-
             .contact-info {
                 display: flex;
                 gap: 20px;
                 align-items: center;
+                justify-content: center;
                 flex-wrap: wrap;
             }
-
             .contact-item {
                 display: flex;
                 align-items: center;
                 gap: 8px;
                 text-decoration: none;
-                color: var(
-                    --accent-color
-                ); /* Verde que contrasta bien con fondo oscuro */
+                color: var(--nx-accent);
             }
-
             .contact-icon {
                 width: 40px;
                 height: 40px;
             }
-
-            /* --- Responsive Design --- */
-            @media (max-width: 991px) {
-                /* Timeline responsive - cambio a diseño vertical */
-                .timeline::before {
-                    left: 32px;
-                    transform: none;
-                }
-
-                .timeline-item {
-                    width: 100% !important;
-                    left: 0 !important;
-                    padding-left: 64px !important;
-                    padding-right: 16px !important;
-                    text-align: left !important;
-                    margin-bottom: 2rem;
-                }
-
-                .timeline-item:nth-child(odd),
-                .timeline-item:nth-child(even) {
-                    left: 0 !important;
-                    width: 100% !important;
-                    padding-left: 64px !important;
-                    padding-right: 16px !important;
-                    text-align: left !important;
-                }
-
-                .timeline-marker {
-                    left: 24px !important;
-                    right: auto !important;
-                }
-
-                .timeline-content {
-                    width: 100%;
-                    margin: 0;
-                    max-width: none;
-                }
+            .footer-text {
+                text-align: center;
+            }
+            .footer-text p {
+                margin: 0 0 8px;
+                color: #e5e7eb;
             }
 
-            @media (max-width: 768px) {
-                h1 {
-                    font-size: 2.5rem;
+            @media (max-width: 1120px) {
+                .desktop-nav {
+                    display: none !important;
                 }
-
-                h2 {
-                    font-size: 2rem;
+                .nx-resource-menu-button {
+                    display: inline-flex !important;
                 }
-
-                .nav-menu {
-                    position: fixed;
-                    left: -100%;
-                    top: 70px;
-                    flex-direction: column;
-                    background-color: var(--background-components);
-                    width: 100%;
+                .logo img {
+                    width: 150px !important;
+                    max-width: 150px !important;
+                }
+            }
+            @media (max-width: 980px) {
+                .hero-grid {
+                    grid-template-columns: 1fr;
+                    gap: 2.3rem;
                     text-align: center;
-                    transition: 0.3s;
-                    box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
-                    padding: var(--space-lg);
                 }
-
-                .nav-menu.active {
-                    left: 0;
+                .hero-actions {
+                    justify-content: center;
                 }
-
-                .menu-toggle {
-                    display: flex;
+                .hero p {
+                    margin-inline: auto;
                 }
-
-                .content-grid {
+                .cards-grid {
                     grid-template-columns: 1fr;
                 }
-
-                .section {
-                    min-height: auto;
-                    padding: var(--space-lg) 0;
-                }
-
-                .container {
-                    padding: 0 var(--space-md);
-                }
-
-                /* Timeline optimizada para tablets */
                 .timeline::before {
                     left: 24px;
+                    transform: none;
                 }
-
-                .timeline-item {
-                    padding-left: 56px !important;
+                .timeline-item,
+                .timeline-item:nth-child(odd),
+                .timeline-item:nth-child(even) {
+                    width: 100%;
+                    left: 0;
+                    padding-left: 56px;
+                    padding-right: 0;
+                    text-align: left;
                 }
-
-                .timeline-marker {
-                    left: 16px !important;
-                }
-
-                .timeline-content {
-                    padding: var(--space-md);
-                }
-
-                .timeline-year {
-                    font-size: 1.1rem;
+                .timeline-item:nth-child(odd) .timeline-marker,
+                .timeline-item:nth-child(even) .timeline-marker {
+                    left: 15px;
+                    right: auto;
                 }
             }
-
-            @media (max-width: 480px) {
-                /* Optimización específica para móviles pequeños */
-                h1 {
-                    font-size: 2rem;
-                }
-
-                h2 {
-                    font-size: 1.75rem;
-                }
-
-                h3 {
-                    font-size: 1.5rem;
-                }
-
+            @media (max-width: 680px) {
                 .container {
-                    padding: 0 var(--space-sm);
+                    width: min(100% - 28px, 1180px);
                 }
-
-                .logo img {
-                    width: 100px;
-                    height: 70px;
+                .hero {
+                    padding: 3.2rem 0 3.5rem;
                 }
-
-                .content-section {
-                    padding: var(--space-lg);
-                    margin: var(--space-md) 0;
+                .hero h1 {
+                    font-size: 2.35rem;
                 }
-
-                /* Timeline completamente optimizada para móviles */
-                .timeline {
-                    padding: var(--space-md) 0;
+                .hero-actions {
+                    flex-direction: column;
                 }
-
+                .btn {
+                    width: 100%;
+                }
+                .intro-card,
+                .content-section,
+                .quiz-card {
+                    padding: 22px;
+                    border-radius: 18px;
+                }
+                .section {
+                    padding: 34px 0;
+                }
+                .timeline-item,
+                .timeline-item:nth-child(odd),
+                .timeline-item:nth-child(even) {
+                    padding-left: 42px;
+                }
                 .timeline::before {
-                    left: 16px;
-                    width: 2px;
+                    left: 15px;
                 }
-
-                .timeline-item {
-                    padding-left: 40px !important;
-                    padding-right: 8px !important;
-                    margin-bottom: 1.5rem;
+                .timeline-item:nth-child(odd) .timeline-marker,
+                .timeline-item:nth-child(even) .timeline-marker {
+                    left: 6px;
                 }
-
-                .timeline-marker {
-                    left: 8px !important;
-                    width: 16px;
-                    height: 16px;
-                }
-
-                .timeline-content {
-                    padding: var(--space-md);
-                    border-radius: 8px;
-                }
-
-                .timeline-year {
-                    font-size: 1rem;
-                    margin-bottom: 0.5rem;
-                }
-
-                .timeline-content h3 {
-                    font-size: 1.25rem;
-                    margin-bottom: 0.75rem;
-                }
-
-                .timeline-content p {
-                    font-size: 0.95rem;
-                    line-height: 1.5;
-                }
-
-                /* Quiz responsive para móviles */
-                .quiz-container {
-                    padding: var(--space-md);
-                }
-
-                .quiz-question {
-                    font-size: 1.1rem;
-                }
-
-                .quiz-option {
-                    padding: 0.75rem;
-                    font-size: 0.95rem;
-                }
-
                 .quiz-stats {
                     flex-direction: column;
-                    gap: 0.5rem;
-                    text-align: center;
+                    gap: 0.35rem;
                 }
-
-                .quiz-score-display {
-                    font-size: 2.5rem;
-                }
-
-                .cta-button,
-                .secondary-button {
-                    padding: 10px 20px;
-                    font-size: 0.9rem;
-                    margin: 0.25rem;
-                }
-                /* Centrar el contenedor de información de contacto */
                 .contact-info {
-                    display: flex;
                     flex-direction: column;
-                    align-items: center;
-                    text-align: center;
-                    width: 100%;
                 }
-
-                /* Centrar cada elemento de contacto (teléfono y email) */
-                .contact-item {
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    text-align: center;
-                    width: 100%;
-                    margin: 8px 0; /* Espacio entre elementos */
+            }
+            @media (max-width: 520px) {
+                .site-header .container {
+                    width: min(100% - 20px, 1180px);
                 }
-
-                /* Asegurar que el icono y texto estén centrados */
+                .logo img {
+                    width: 138px !important;
+                    max-width: 138px !important;
+                }
+                .lang-link {
+                    width: 30px;
+                    height: 30px;
+                    font-size: 0.68rem !important;
+                }
+                .nx-resource-menu-button {
+                    width: 38px;
+                    height: 38px;
+                    border-radius: 12px;
+                }
                 .contact-icon {
-                    margin-right: 8px; /* Espacio entre icono y texto */
+                    width: 25px;
+                    height: 25px;
                 }
-
                 .contact-text {
-                    text-align: center;
+                    font-size: 12px;
                 }
-
-                /* Si el footer completo necesita centrado adicional */
-                .footer-content {
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    text-align: center;
-                }
-
-                /* Centrar también los enlaces sociales y logo si es necesario */
-                .footer-links {
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    width: 100%;
-                }
-
-                .social-links {
-                    display: flex;
-                    justify-content: center;
-                    margin-bottom: 16px;
-                }
-
-                .footer-logo {
-                    display: flex;
-                    justify-content: center;
-                    margin-bottom: 16px;
-                }
-            }
-
-            @media (max-width: 320px) {
-                /* Optimización para móviles ultra pequeños */
-                .container {
-                    padding: 0 var(--space-xs);
-                }
-
-                .timeline::before {
-                    left: 12px;
-                }
-
-                .timeline-item {
-                    padding-left: 32px !important;
-                    padding-right: 4px !important;
-                }
-
-                .timeline-marker {
-                    left: 4px !important;
-                    width: 14px;
-                    height: 14px;
-                }
-
-                .timeline-content {
-                    padding: 12px;
-                }
-
-                .timeline-year {
-                    font-size: 0.9rem;
-                }
-
-                .timeline-content h3 {
-                    font-size: 1.1rem;
-                }
-
-                .timeline-content p {
-                    font-size: 0.9rem;
-                }
-            }
-
-            /* --- Animaciones --- */
-            @keyframes fadeInUp {
-                from {
-                    opacity: 0;
-                    transform: translateY(30px);
-                }
-                to {
-                    opacity: 1;
-                    transform: translateY(0);
-                }
-            }
-
-            .fade-in {
-                animation: fadeInUp 0.6s ease-out;
-            }
-
-            /* --- Estados de Focus --- */
-            .cta-button:focus,
-            .secondary-button:focus,
-            .quiz-option:focus {
-                outline: 3px solid var(--accent-color);
-                outline-offset: 2px;
-            }
-
-            .nav-link:focus {
-                outline: 2px solid var(--accent-color);
-                outline-offset: 2px;
-                border-radius: 4px;
             }
         </style>
     </head>
-    <body>
-        <!-- Navegación -->
-        <nav class="navbar">
-            <div class="container">
-                <div class="nav-container">
-                    <div class="logo">
+
+    <body class="nx-v2 resource-page" id="top">
+        <header class="site-header">
+            <div class="container header-inner">
+                <div class="logo">
+                    <a
+                        aria-label="Inicio Nexautia"
+                        data-track="nav-logo"
+                        href="../../index.html"
+                    >
+                        <img
+                            alt="NEXAUTIA"
+                            id="logo"
+                            src="../../imagenes/comunes/logo.svg"
+                        />
+                    </a>
+                </div>
+
+                <nav aria-label="Navegación principal" class="desktop-nav">
+                    <a
+                        data-track="nav-automatizaciones"
+                        href="../../servicios/automatizacion-procesos-empresas.html"
+                        >Automatizaciones</a
+                    >
+                    <a
+                        data-track="nav-ia"
+                        href="../../servicios/inteligencia-artificial-empresas.html"
+                        >IA aplicada</a
+                    >
+                    <a
+                        data-track="nav-web"
+                        href="../../servicios/paginas-web-empresas.html"
+                        >Páginas web</a
+                    >
+                    <a
+                        data-track="nav-formacion"
+                        href="../../servicios/formacion-empresas.html"
+                        >Formación empresas</a
+                    >
+                    <a class="active" data-track="nav-aprende" href="../"
+                        >Aprende gratis</a
+                    >
+                    <a data-track="nav-contact" href="../../contacto/"
+                        >Contacto</a
+                    >
+                </nav>
+
+                <div class="header-actions">
+                    <nav aria-label="Selector de idioma" class="lang-switch">
                         <a
-                            href="https://www.nexautia.com"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            data-track="nav-logo"
+                            aria-label="Versión en español"
+                            class="lang-link active"
+                            href="./"
+                            hreflang="es"
+                            lang="es"
+                            >ES</a
                         >
-                            <img
-                                src="imagenes/Logo_negro.svg"
-                                alt="NEXAUTIA"
-                                width="150"
-                                height="100"
-                                id="logo"
-                            />
-                        </a>
-                    </div>
+                        <a
+                            aria-label="Versió en català"
+                            class="lang-link"
+                            href="../../ca/recursos/automatitzacio_processos/"
+                            hreflang="ca"
+                            lang="ca"
+                            >CA</a
+                        >
+                    </nav>
+                    <button
+                        aria-controls="nx-resource-menu-overlay"
+                        aria-expanded="false"
+                        aria-label="Abrir menú"
+                        class="nx-resource-menu-button"
+                        id="nx-resource-menu-button"
+                        type="button"
+                    >
+                        ☰
+                    </button>
+                </div>
+            </div>
+        </header>
 
-                    <ul class="nav-menu" id="nav-menu">
-                        <li>
-                            <a href="#introduccion" class="nav-link"
-                                >Introducción</a
+        <div
+            class="nx-resource-menu-overlay"
+            id="nx-resource-menu-overlay"
+            aria-hidden="true"
+            role="dialog"
+            aria-modal="true"
+            aria-label="Menú principal"
+        >
+            <div class="nx-resource-menu-panel">
+                <div class="nx-resource-menu-head">
+                    <strong>Menú</strong>
+                    <button
+                        aria-label="Cerrar menú"
+                        class="nx-resource-menu-close"
+                        id="nx-resource-menu-close"
+                        type="button"
+                    >
+                        ×
+                    </button>
+                </div>
+                <nav aria-label="Navegación móvil" class="nx-resource-menu-nav">
+                    <a
+                        href="../../servicios/automatizacion-procesos-empresas.html"
+                        >⚙️ Automatizaciones</a
+                    >
+                    <a
+                        href="../../servicios/inteligencia-artificial-empresas.html"
+                        >🧠 IA aplicada</a
+                    >
+                    <a href="../../servicios/paginas-web-empresas.html"
+                        >🌐 Páginas web</a
+                    >
+                    <a href="../../servicios/formacion-empresas.html"
+                        >🎓 Formación empresas</a
+                    >
+                    <a class="active" href="../">📚 Aprende gratis</a>
+                    <a href="../../contacto/">📞 Contacto</a>
+                </nav>
+            </div>
+        </div>
+
+        <main id="contenido">
+            <section class="hero">
+                <div class="container hero-grid">
+                    <div>
+                        <div class="eyebrow">
+                            Recurso gratuito · Automatización, IA y empresa
+                        </div>
+                        <h1>
+                            Automatización de procesos e
+                            <span>Inteligencia Artificial</span>
+                        </h1>
+                        <p>
+                            Una guía educativa para entender cómo la
+                            automatización, el RPA, la IA generativa y la
+                            automatización cognitiva están cambiando los
+                            procesos de trabajo sin convertir esta página en una
+                            landing comercial.
+                        </p>
+                        <div class="hero-actions">
+                            <a class="btn btn-primary" href="#introduccion"
+                                >Empezar la guía</a
                             >
-                        </li>
-                        <li>
-                            <a href="#historia" class="nav-link">Historia</a>
-                        </li>
-                        <li><a href="#ia" class="nav-link">IA</a></li>
-                        <li><a href="#quiz" class="nav-link">Quiz</a></li>
-                    </ul>
-
-                    <a href="#quiz" class="cta-button">Hacer el Quiz</a>
-
-                    <div class="menu-toggle" id="menu-toggle">
-                        <span></span>
-                        <span></span>
-                        <span></span>
+                            <a class="btn btn-secondary" href="#quiz"
+                                >Hacer el quiz</a
+                            >
+                        </div>
                     </div>
-                </div>
-            </div>
-        </nav>
 
-        <!-- Sección Hero -->
-        <section class="hero-section">
-            <div class="container">
-                <h1>Automatización Empresarial e Inteligencia Artificial</h1>
-                <p>
-                    Descubre cómo la tecnología está transformando los procesos
-                    empresariales y el futuro del trabajo
-                </p>
-                <a href="#introduccion" class="cta-button"
-                    >Comenzar Aprendizaje</a
-                >
-            </div>
-        </section>
-
-        <!-- Introducción -->
-        <section id="introduccion" class="section">
-            <div class="container">
-                <div class="content-section fade-in">
-                    <h2>¿Qué es la Automatización Empresarial?</h2>
-                    <p>
-                        La automatización empresarial se refiere al uso de
-                        tecnología para ejecutar procesos o procedimientos
-                        recurrentes en una empresa, con el objetivo de minimizar
-                        los costos, incrementar la eficiencia y agilizar los
-                        procesos. Esta disciplina abarca desde tareas simples
-                        hasta complejos flujos de trabajo que tradicionalmente
-                        requerían intervención humana.
-                    </p>
-
-                    <div class="content-grid">
-                        <div class="content-card">
-                            <i data-feather="trending-up" class="icon"></i>
-                            <h3>Beneficios Principales</h3>
-                            <ul>
-                                <li>
-                                    Reducción de costos operativos hasta 60%
-                                </li>
-                                <li>Eliminación de errores humanos</li>
-                                <li>Mejora en la velocidad de procesamiento</li>
-                                <li>
-                                    Liberación de talento humano para tareas
-                                    estratégicas
-                                </li>
-                                <li>Disponibilidad 24/7 sin interrupciones</li>
-                            </ul>
-                        </div>
-
-                        <div class="content-card">
-                            <i data-feather="alert-triangle" class="icon"></i>
-                            <h3>Desafíos Actuales</h3>
-                            <ul>
-                                <li>Resistencia al cambio organizacional</li>
-                                <li>Inversión inicial significativa</li>
-                                <li>Necesidad de capacitación del personal</li>
-                                <li>Integración con sistemas legacy</li>
-                                <li>Preocupaciones sobre seguridad de datos</li>
-                            </ul>
-                        </div>
-
-                        <div class="content-card">
-                            <i data-feather="layers" class="icon"></i>
-                            <h3>Tipos de Automatización</h3>
-                            <ul>
-                                <li>
-                                    <strong>Automatización de Procesos:</strong>
-                                    RPA, workflows
-                                </li>
-                                <li>
-                                    <strong>Automatización Cognitiva:</strong>
-                                    IA, ML, NLP
-                                </li>
-                                <li>
-                                    <strong>Automatización Física:</strong>
-                                    Robótica, IoT
-                                </li>
-                                <li>
-                                    <strong
-                                        >Automatización de Decisiones:</strong
+                    <div class="hero-card" aria-hidden="true">
+                        <div class="hero-visual">
+                            <svg
+                                class="automation-svg"
+                                viewBox="0 0 720 480"
+                                xmlns="http://www.w3.org/2000/svg"
+                                role="img"
+                                aria-label="Ilustración de un flujo de automatización con herramientas conectadas, inteligencia artificial y panel de resultados"
+                            >
+                                <defs>
+                                    <linearGradient
+                                        id="heroFlowA"
+                                        x1="0"
+                                        x2="1"
+                                        y1="0"
+                                        y2="1"
                                     >
-                                    Sistemas expertos
-                                </li>
-                            </ul>
+                                        <stop
+                                            offset="0%"
+                                            stop-color="#2563eb"
+                                        />
+                                        <stop
+                                            offset="100%"
+                                            stop-color="#06b6d4"
+                                        />
+                                    </linearGradient>
+                                    <linearGradient
+                                        id="heroFlowB"
+                                        x1="0"
+                                        x2="1"
+                                        y1="0"
+                                        y2="1"
+                                    >
+                                        <stop
+                                            offset="0%"
+                                            stop-color="#22c55e"
+                                        />
+                                        <stop
+                                            offset="100%"
+                                            stop-color="#93f6ff"
+                                        />
+                                    </linearGradient>
+                                </defs>
+                                <rect
+                                    x="38"
+                                    y="44"
+                                    width="644"
+                                    height="390"
+                                    rx="34"
+                                    fill="#f8fbff"
+                                    stroke="#bfdbfe"
+                                    stroke-width="4"
+                                />
+                                <text x="72" y="88" class="hero-visual-label">
+                                    Flujo de automatización
+                                </text>
+                                <text x="72" y="110" class="hero-visual-sub">
+                                    Captura datos → decide → ejecuta → informa
+                                </text>
+
+                                <rect
+                                    x="72"
+                                    y="145"
+                                    width="150"
+                                    height="84"
+                                    rx="18"
+                                    fill="#ffffff"
+                                    stroke="#bfdbfe"
+                                    stroke-width="3"
+                                />
+                                <rect
+                                    x="88"
+                                    y="161"
+                                    width="34"
+                                    height="34"
+                                    rx="10"
+                                    fill="#eaf2ff"
+                                />
+                                <path
+                                    d="M97 178h16M105 170v16"
+                                    stroke="#2563eb"
+                                    stroke-width="4"
+                                    stroke-linecap="round"
+                                />
+                                <text
+                                    x="136"
+                                    y="177"
+                                    class="hero-visual-label"
+                                    style="font-size: 16px"
+                                >
+                                    Formulario
+                                </text>
+                                <text x="136" y="199" class="hero-visual-sub">
+                                    Entrada de datos
+                                </text>
+
+                                <rect
+                                    x="285"
+                                    y="132"
+                                    width="150"
+                                    height="110"
+                                    rx="22"
+                                    fill="url(#heroFlowA)"
+                                />
+                                <rect
+                                    x="331"
+                                    y="154"
+                                    width="58"
+                                    height="58"
+                                    rx="16"
+                                    fill="#ffffff"
+                                    opacity=".96"
+                                />
+                                <circle
+                                    cx="350"
+                                    cy="173"
+                                    r="7"
+                                    fill="#2563eb"
+                                />
+                                <circle
+                                    cx="370"
+                                    cy="173"
+                                    r="7"
+                                    fill="#06b6d4"
+                                />
+                                <circle
+                                    cx="350"
+                                    cy="193"
+                                    r="7"
+                                    fill="#22c55e"
+                                />
+                                <circle
+                                    cx="370"
+                                    cy="193"
+                                    r="7"
+                                    fill="#0f172a"
+                                />
+                                <path
+                                    d="M350 173h20M350 193h20M350 173v20M370 173v20"
+                                    stroke="#dbeafe"
+                                    stroke-width="3"
+                                />
+                                <text
+                                    x="320"
+                                    y="228"
+                                    text-anchor="middle"
+                                    class="hero-visual-sub"
+                                    fill="#ffffff"
+                                >
+                                    Capa inteligente
+                                </text>
+                                <text
+                                    x="360"
+                                    y="264"
+                                    text-anchor="middle"
+                                    class="hero-visual-label"
+                                >
+                                    IA + lógica
+                                </text>
+
+                                <rect
+                                    x="498"
+                                    y="145"
+                                    width="150"
+                                    height="84"
+                                    rx="18"
+                                    fill="#ffffff"
+                                    stroke="#bfdbfe"
+                                    stroke-width="3"
+                                />
+                                <rect
+                                    x="514"
+                                    y="161"
+                                    width="34"
+                                    height="34"
+                                    rx="10"
+                                    fill="#dcfce7"
+                                />
+                                <path
+                                    d="M522 178l7 7 12-14"
+                                    stroke="#16a34a"
+                                    stroke-width="4"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    fill="none"
+                                />
+                                <text
+                                    x="562"
+                                    y="177"
+                                    class="hero-visual-label"
+                                    style="font-size: 16px"
+                                >
+                                    Acción
+                                </text>
+                                <text x="562" y="199" class="hero-visual-sub">
+                                    Correo / CRM / aviso
+                                </text>
+
+                                <path
+                                    d="M222 187h51"
+                                    stroke="#2563eb"
+                                    stroke-width="8"
+                                    stroke-linecap="round"
+                                />
+                                <path
+                                    d="M273 187l-13-10M273 187l-13 10"
+                                    stroke="#2563eb"
+                                    stroke-width="8"
+                                    stroke-linecap="round"
+                                />
+                                <path
+                                    d="M435 187h51"
+                                    stroke="#06b6d4"
+                                    stroke-width="8"
+                                    stroke-linecap="round"
+                                />
+                                <path
+                                    d="M486 187l-13-10M486 187l-13 10"
+                                    stroke="#06b6d4"
+                                    stroke-width="8"
+                                    stroke-linecap="round"
+                                />
+
+                                <rect
+                                    x="92"
+                                    y="286"
+                                    width="536"
+                                    height="104"
+                                    rx="22"
+                                    fill="#ffffff"
+                                    stroke="#bfdbfe"
+                                    stroke-width="3"
+                                />
+                                <text
+                                    x="118"
+                                    y="318"
+                                    class="hero-visual-label"
+                                    style="font-size: 17px"
+                                >
+                                    Panel de seguimiento
+                                </text>
+                                <text x="118" y="339" class="hero-visual-sub">
+                                    Procesos, alertas y resultados
+                                </text>
+                                <rect
+                                    x="118"
+                                    y="354"
+                                    width="128"
+                                    height="12"
+                                    rx="6"
+                                    fill="#dbeafe"
+                                />
+                                <rect
+                                    x="118"
+                                    y="374"
+                                    width="92"
+                                    height="12"
+                                    rx="6"
+                                    fill="#bfdbfe"
+                                />
+                                <rect
+                                    x="286"
+                                    y="332"
+                                    width="88"
+                                    height="38"
+                                    rx="12"
+                                    fill="#eaf2ff"
+                                />
+                                <text
+                                    x="330"
+                                    y="356"
+                                    text-anchor="middle"
+                                    class="hero-visual-sub"
+                                    style="font-size: 13px"
+                                >
+                                    RPA
+                                </text>
+                                <rect
+                                    x="390"
+                                    y="332"
+                                    width="88"
+                                    height="38"
+                                    rx="12"
+                                    fill="#dcfce7"
+                                />
+                                <text
+                                    x="434"
+                                    y="356"
+                                    text-anchor="middle"
+                                    class="hero-visual-sub"
+                                    style="font-size: 13px"
+                                >
+                                    IA
+                                </text>
+                                <rect
+                                    x="494"
+                                    y="332"
+                                    width="104"
+                                    height="38"
+                                    rx="12"
+                                    fill="#fef3c7"
+                                />
+                                <text
+                                    x="546"
+                                    y="356"
+                                    text-anchor="middle"
+                                    class="hero-visual-sub"
+                                    style="font-size: 13px"
+                                >
+                                    Reporting
+                                </text>
+
+                                <circle
+                                    cx="268"
+                                    cy="374"
+                                    r="8"
+                                    fill="#2563eb"
+                                />
+                                <circle
+                                    cx="268"
+                                    cy="352"
+                                    r="8"
+                                    fill="#06b6d4"
+                                />
+                                <circle
+                                    cx="614"
+                                    cy="332"
+                                    r="8"
+                                    fill="#22c55e"
+                                />
+                            </svg>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- Historia y Evolución -->
-        <section id="historia" class="section">
-            <div class="container">
-                <div class="content-section fade-in">
-                    <h2>Historia y Evolución de la Automatización</h2>
-                    <p>
-                        La automatización empresarial ha evolucionado
-                        dramáticamente desde sus inicios industriales hasta la
-                        era digital actual, impulsada por avances tecnológicos
-                        revolucionarios.
-                    </p>
+            <section class="section" id="introduccion">
+                <div class="container">
+                    <div class="intro-card">
+                        <p>
+                            <strong>La automatización de procesos</strong>
+                            consiste en usar tecnología para ejecutar tareas
+                            repetitivas, conectar herramientas, reducir errores
+                            y liberar tiempo de las personas. Puede ir desde una
+                            automatización sencilla —por ejemplo, enviar un
+                            aviso cuando llega un formulario— hasta flujos
+                            completos que conectan CRM, correo, facturación,
+                            atención al cliente o informes internos.
+                        </p>
+                        <p>
+                            Esta guía está pensada como
+                            <strong>recurso educativo gratuito</strong>: explica
+                            conceptos, evolución histórica, diferencias entre
+                            automatización de procesos e inteligencia
+                            artificial, ejemplos por departamentos y un pequeño
+                            quiz final para repasar.
+                        </p>
+                    </div>
+                </div>
+            </section>
 
-                    <div class="timeline">
-                        <div class="timeline-item">
-                            <div class="timeline-marker"></div>
-                            <div class="timeline-content">
-                                <div class="timeline-year">1960s-1970s</div>
-                                <h3>Era de los Mainframes</h3>
-                                <p>
-                                    Primeros sistemas de procesamiento de datos
-                                    empresariales. IBM introduce los conceptos
-                                    de procesamiento por lotes y sistemas de
-                                    gestión de bases de datos.
-                                </p>
-                            </div>
+            <section class="section" aria-labelledby="conceptos-title">
+                <div class="container">
+                    <div class="content-section">
+                        <div class="section-title">
+                            <h2 id="conceptos-title">
+                                ¿Qué es la automatización de procesos?
+                            </h2>
+                            <p>
+                                No se trata solo de “poner robots”, sino de
+                                diseñar procesos más claros, medibles y menos
+                                dependientes de tareas manuales.
+                            </p>
                         </div>
 
-                        <div class="timeline-item">
-                            <div class="timeline-marker"></div>
-                            <div class="timeline-content">
-                                <div class="timeline-year">1980s-1990s</div>
-                                <h3>Sistemas ERP y CRM</h3>
-                                <p>
-                                    SAP lanza R/2 y R/3, revolucionando la
-                                    gestión empresarial. Aparecen los primeros
-                                    sistemas CRM para automatizar la gestión de
-                                    clientes.
-                                </p>
-                            </div>
-                        </div>
+                        <div class="cards-grid">
+                            <article class="card">
+                                <div class="card-icon">📈</div>
+                                <h3>Beneficios principales</h3>
+                                <ul>
+                                    <li>Menos tareas repetitivas.</li>
+                                    <li>Reducción de errores humanos.</li>
+                                    <li>Procesos más rápidos y trazables.</li>
+                                    <li>
+                                        Más tiempo para trabajo estratégico.
+                                    </li>
+                                    <li>Disponibilidad de procesos 24/7.</li>
+                                </ul>
+                            </article>
 
-                        <div class="timeline-item">
-                            <div class="timeline-marker"></div>
-                            <div class="timeline-content">
-                                <div class="timeline-year">2000s</div>
-                                <h3>Servicios Web y SOA</h3>
-                                <p>
-                                    Arquitectura Orientada a Servicios (SOA)
-                                    permite la integración de sistemas. Aparecen
-                                    los primeros servicios web y APIs para
-                                    automatización de procesos.
-                                </p>
-                            </div>
-                        </div>
+                            <article class="card">
+                                <div class="card-icon">⚠️</div>
+                                <h3>Desafíos habituales</h3>
+                                <ul>
+                                    <li>Resistencia al cambio.</li>
+                                    <li>
+                                        Procesos mal definidos antes de
+                                        automatizar.
+                                    </li>
+                                    <li>Necesidad de formación interna.</li>
+                                    <li>
+                                        Integración con herramientas antiguas.
+                                    </li>
+                                    <li>Seguridad y gobernanza de datos.</li>
+                                </ul>
+                            </article>
 
-                        <div class="timeline-item">
-                            <div class="timeline-marker"></div>
-                            <div class="timeline-content">
-                                <div class="timeline-year">2010s</div>
-                                <h3>RPA y Cloud Computing</h3>
-                                <p>
-                                    UiPath, Blue Prism y Automation Anywhere
-                                    popularizan RPA. La nube permite
-                                    automatización escalable y accesible para
-                                    empresas de todos los tamaños.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="timeline-item">
-                            <div class="timeline-marker"></div>
-                            <div class="timeline-content">
-                                <div class="timeline-year">2018-2020</div>
-                                <h3>IA y Machine Learning</h3>
-                                <p>
-                                    Integración masiva de IA en procesos
-                                    empresariales. Automatización inteligente
-                                    que puede tomar decisiones y aprender de los
-                                    datos.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="timeline-item">
-                            <div class="timeline-marker"></div>
-                            <div class="timeline-content">
-                                <div class="timeline-year">2020-2022</div>
-                                <h3>Hiperautomatización</h3>
-                                <p>
-                                    COVID-19 acelera la adopción digital.
-                                    Gartner identifica la hiperautomatización
-                                    como tendencia tecnológica principal,
-                                    combinando RPA, IA, y orquestación de
-                                    procesos.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="timeline-item">
-                            <div class="timeline-marker"></div>
-                            <div class="timeline-content">
-                                <div class="timeline-year">2023-2025</div>
-                                <h3>
-                                    IA Generativa y Automatización Cognitiva
-                                </h3>
-                                <p>
-                                    ChatGPT y GPT-4 revolucionan la
-                                    automatización cognitiva. Las empresas
-                                    integran IA generativa para automatizar
-                                    creación de contenido, análisis y toma de
-                                    decisiones complejas.
-                                </p>
-                            </div>
+                            <article class="card">
+                                <div class="card-icon">🧩</div>
+                                <h3>Tipos de automatización</h3>
+                                <ul>
+                                    <li>
+                                        <strong>Procesos:</strong> workflows,
+                                        RPA, integraciones.
+                                    </li>
+                                    <li>
+                                        <strong>Cognitiva:</strong> IA, lenguaje
+                                        natural, visión.
+                                    </li>
+                                    <li>
+                                        <strong>Decisiones:</strong> reglas,
+                                        scoring, modelos.
+                                    </li>
+                                    <li>
+                                        <strong>Física:</strong> robótica,
+                                        sensores e IoT.
+                                    </li>
+                                </ul>
+                            </article>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- El Papel de la IA -->
-        <section id="ia" class="section">
-            <div class="container">
-                <div class="content-section fade-in">
-                    <h2>El Papel de la Inteligencia Artificial</h2>
-                    <p>
-                        La IA ha transformado la automatización empresarial de
-                        procesos mecánicos a sistemas inteligentes capaces de
-                        aprender, adaptar y tomar decisiones complejas.
-                    </p>
-
-                    <div class="content-grid">
-                        <div class="content-card">
-                            <i data-feather="cpu" class="icon"></i>
-                            <h3>Automatización Cognitiva</h3>
+            <section
+                class="section"
+                id="historia"
+                aria-labelledby="historia-title"
+            >
+                <div class="container">
+                    <div class="content-section">
+                        <div class="section-title">
+                            <h2 id="historia-title">
+                                Historia y evolución de la automatización
+                            </h2>
                             <p>
-                                La IA permite que los sistemas procesen
-                                información no estructurada, comprendan contexto
-                                y tomen decisiones basadas en patrones
-                                complejos. Incluye procesamiento de lenguaje
-                                natural, visión por computadora y análisis
-                                predictivo.
+                                La automatización de procesos no nació con la IA
+                                generativa. Es una evolución larga que va desde
+                                los sistemas de gestión hasta la automatización
+                                inteligente actual.
                             </p>
                         </div>
 
-                        <div class="content-card">
-                            <i data-feather="settings" class="icon"></i>
-                            <h3>Automatización de Procesos</h3>
-                            <p>
-                                RPA tradicional ejecuta tareas repetitivas
-                                siguiendo reglas predefinidas. Es ideal para
-                                procesos estructurados como entrada de datos,
-                                generación de reportes y transferencias entre
-                                sistemas.
-                            </p>
-                        </div>
+                        <div class="timeline">
+                            <article class="timeline-item">
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content">
+                                    <div class="timeline-year">1960s-1970s</div>
+                                    <h3>Era de los mainframes</h3>
+                                    <p>
+                                        Primeros sistemas empresariales para
+                                        procesar grandes volúmenes de datos y
+                                        automatizar tareas administrativas
+                                        básicas.
+                                    </p>
+                                </div>
+                            </article>
 
-                        <div class="content-card">
-                            <i data-feather="brain" class="icon"></i>
-                            <h3>IA Generativa en Empresas</h3>
-                            <p>
-                                Desde 2023, herramientas como ChatGPT
-                                Enterprise, Claude for Business y GitHub Copilot
-                                han automatizado la creación de contenido,
-                                código, documentación y análisis, transformando
-                                sectores completos.
-                            </p>
+                            <article class="timeline-item">
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content">
+                                    <div class="timeline-year">1980s-1990s</div>
+                                    <h3>ERP y CRM</h3>
+                                    <p>
+                                        Los sistemas de planificación
+                                        empresarial y gestión de clientes
+                                        permiten organizar información y
+                                        procesos de forma más integrada.
+                                    </p>
+                                </div>
+                            </article>
+
+                            <article class="timeline-item">
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content">
+                                    <div class="timeline-year">2000s</div>
+                                    <h3>APIs y servicios web</h3>
+                                    <p>
+                                        Las aplicaciones empiezan a conectarse
+                                        mejor entre sí mediante servicios web,
+                                        integraciones y arquitecturas orientadas
+                                        a servicios.
+                                    </p>
+                                </div>
+                            </article>
+
+                            <article class="timeline-item">
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content">
+                                    <div class="timeline-year">2010s</div>
+                                    <h3>RPA y nube</h3>
+                                    <p>
+                                        El RPA populariza bots de software para
+                                        tareas repetitivas, mientras la nube
+                                        hace más accesibles las herramientas de
+                                        automatización.
+                                    </p>
+                                </div>
+                            </article>
+
+                            <article class="timeline-item">
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content">
+                                    <div class="timeline-year">2018-2022</div>
+                                    <h3>IA y machine learning</h3>
+                                    <p>
+                                        Los modelos de aprendizaje automático
+                                        empiezan a apoyar predicciones,
+                                        clasificación de datos, análisis de
+                                        documentos y decisiones asistidas.
+                                    </p>
+                                </div>
+                            </article>
+
+                            <article class="timeline-item">
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content">
+                                    <div class="timeline-year">
+                                        2023 en adelante
+                                    </div>
+                                    <h3>
+                                        IA generativa y automatización cognitiva
+                                    </h3>
+                                    <p>
+                                        La IA generativa abre nuevas
+                                        posibilidades: redactar, resumir,
+                                        clasificar, analizar, crear código,
+                                        atender consultas y actuar como capa
+                                        inteligente sobre procesos existentes.
+                                    </p>
+                                </div>
+                            </article>
                         </div>
                     </div>
+                </div>
+            </section>
 
-                    <h3>Impacto de la IA en Procesos Empresariales</h3>
+            <section
+                class="section highlight-section"
+                id="ia"
+                aria-labelledby="ia-title"
+            >
+                <div class="container">
+                    <div class="content-section">
+                        <div class="section-title">
+                            <h2 id="ia-title">
+                                El papel de la inteligencia artificial
+                            </h2>
+                            <p>
+                                La IA no sustituye a toda automatización: la
+                                amplía. Permite trabajar con lenguaje,
+                                documentos, imágenes, patrones y decisiones más
+                                complejas.
+                            </p>
+                        </div>
 
-                    <div class="content-grid">
-                        <div class="content-card">
-                            <i data-feather="user-check" class="icon"></i>
-                            <h3>Recursos Humanos</h3>
+                        <div class="cards-grid">
+                            <article class="card">
+                                <div class="card-icon">🧠</div>
+                                <h3>Automatización cognitiva</h3>
+                                <p>
+                                    Procesa información no estructurada,
+                                    interpreta contexto y ayuda a tomar
+                                    decisiones basadas en patrones, no solo en
+                                    reglas fijas.
+                                </p>
+                            </article>
+
+                            <article class="card">
+                                <div class="card-icon">⚙️</div>
+                                <h3>Automatización de procesos</h3>
+                                <p>
+                                    Ejecuta pasos repetitivos siguiendo reglas:
+                                    mover datos, enviar correos, crear
+                                    registros, generar avisos o sincronizar
+                                    herramientas.
+                                </p>
+                            </article>
+
+                            <article class="card">
+                                <div class="card-icon">✨</div>
+                                <h3>IA generativa</h3>
+                                <p>
+                                    Puede ayudar a redactar textos, resumir
+                                    información, clasificar mensajes, preparar
+                                    respuestas, generar documentación o asistir
+                                    en análisis.
+                                </p>
+                            </article>
+                        </div>
+
+                        <div class="section-title" style="margin-top: 34px">
+                            <h2>Ejemplos por áreas de empresa</h2>
+                            <p>
+                                Una misma lógica de automatización puede
+                                aplicarse a departamentos muy distintos.
+                            </p>
+                        </div>
+
+                        <div class="cards-grid">
+                            <article class="card">
+                                <div class="card-icon">👥</div>
+                                <h3>Recursos humanos</h3>
+                                <ul>
+                                    <li>
+                                        Clasificación inicial de candidaturas.
+                                    </li>
+                                    <li>
+                                        Respuestas automáticas a preguntas
+                                        frecuentes.
+                                    </li>
+                                    <li>
+                                        Encuestas internas y análisis de clima.
+                                    </li>
+                                </ul>
+                            </article>
+
+                            <article class="card">
+                                <div class="card-icon">💶</div>
+                                <h3>Finanzas y administración</h3>
+                                <ul>
+                                    <li>Procesamiento de facturas.</li>
+                                    <li>Conciliaciones y alertas.</li>
+                                    <li>Informes periódicos automáticos.</li>
+                                </ul>
+                            </article>
+
+                            <article class="card">
+                                <div class="card-icon">💬</div>
+                                <h3>Atención al cliente</h3>
+                                <ul>
+                                    <li>Clasificación de tickets.</li>
+                                    <li>Respuestas sugeridas con IA.</li>
+                                    <li>
+                                        Priorización según urgencia o
+                                        sentimiento.
+                                    </li>
+                                </ul>
+                            </article>
+                        </div>
+
+                        <div class="note-box">
+                            <h3>Tendencias que conviene entender</h3>
                             <ul>
-                                <li>Screening automatizado de CVs con IA</li>
-                                <li>Chatbots para preguntas frecuentes</li>
                                 <li>
-                                    Análisis predictivo de rotación de personal
+                                    <strong>Hiperautomatización:</strong>
+                                    combinación de RPA, IA, integraciones y
+                                    orquestación de procesos.
                                 </li>
                                 <li>
-                                    Automatización de encuestas de clima laboral
+                                    <strong>No-code y low-code:</strong>
+                                    herramientas que permiten crear
+                                    automatizaciones sin programar desde cero.
+                                </li>
+                                <li>
+                                    <strong>IA explicable:</strong> sistemas que
+                                    deben justificar mejor sus decisiones cuando
+                                    afectan a personas o procesos críticos.
+                                </li>
+                                <li>
+                                    <strong>Automatización sostenible:</strong>
+                                    optimización de procesos también desde el
+                                    punto de vista energético y operativo.
                                 </li>
                             </ul>
                         </div>
-
-                        <div class="content-card">
-                            <i data-feather="dollar-sign" class="icon"></i>
-                            <h3>Finanzas y Contabilidad</h3>
-                            <ul>
-                                <li>Procesamiento inteligente de facturas</li>
-                                <li>Detección automática de fraudes</li>
-                                <li>Reconciliación bancaria automatizada</li>
-                                <li>Análisis predictivo de flujo de caja</li>
-                            </ul>
-                        </div>
-
-                        <div class="content-card">
-                            <i data-feather="users" class="icon"></i>
-                            <h3>Atención al Cliente</h3>
-                            <ul>
-                                <li>Chatbots conversacionales avanzados</li>
-                                <li>Análisis de sentimientos en tiempo real</li>
-                                <li>Routing inteligente de tickets</li>
-                                <li>Personalización automática de ofertas</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <h3>Tendencias Futuras hasta 2025</h3>
-                    <div class="content-card">
-                        <ul>
-                            <li>
-                                <strong>Autonomous Enterprise:</strong> Empresas
-                                que operan con mínima intervención humana
-                            </li>
-                            <li>
-                                <strong>AI-First Processes:</strong> Diseño de
-                                procesos centrados en IA desde el inicio
-                            </li>
-                            <li>
-                                <strong>Democratización de la IA:</strong>
-                                Herramientas no-code/low-code para
-                                automatización
-                            </li>
-                            <li>
-                                <strong>IA Explicable:</strong> Sistemas que
-                                pueden justificar sus decisiones para cumplir
-                                regulaciones
-                            </li>
-                            <li>
-                                <strong>Edge AI:</strong> Procesamiento de IA en
-                                dispositivos locales para automatización en
-                                tiempo real
-                            </li>
-                            <li>
-                                <strong>Automatización Sostenible:</strong> IA
-                                optimizada para eficiencia energética y
-                                sostenibilidad
-                            </li>
-                        </ul>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- Quiz Interactivo -->
-        <section id="quiz" class="section">
-            <div class="container">
-                <div class="content-section fade-in">
-                    <h2>Quiz Interactivo</h2>
-                    <p>
-                        Pon a prueba tus conocimientos sobre automatización
-                        empresarial e inteligencia artificial
-                    </p>
+            <section class="section" id="quiz" aria-labelledby="quiz-title">
+                <div class="container">
+                    <div class="section-title">
+                        <h2 id="quiz-title">Quiz interactivo</h2>
+                        <p>
+                            Pon a prueba lo aprendido sobre automatización de
+                            procesos e inteligencia artificial.
+                        </p>
+                    </div>
 
-                    <div class="quiz-container">
+                    <div class="quiz-card">
                         <div class="quiz-stats">
                             <div class="quiz-score">
                                 Puntuación: <span id="current-score">0</span>
@@ -1310,54 +2041,58 @@
                             <div class="quiz-question" id="question-text">
                                 Cargando pregunta...
                             </div>
-
-                            <div class="quiz-options" id="quiz-options">
-                                <!-- Opciones se llenarán dinámicamente -->
-                            </div>
-
-                            <div class="quiz-feedback" id="quiz-feedback">
-                                <!-- Retroalimentación aparecerá aquí -->
-                            </div>
-
+                            <div class="quiz-options" id="quiz-options"></div>
+                            <div
+                                class="quiz-feedback"
+                                id="quiz-feedback"
+                                aria-live="polite"
+                            ></div>
                             <button
-                                class="cta-button"
+                                class="btn btn-primary"
                                 id="next-button"
                                 style="display: none"
+                                type="button"
                             >
-                                Siguiente Pregunta
+                                Siguiente pregunta
                             </button>
                         </div>
 
                         <div class="quiz-results" id="quiz-results">
-                            <h3>¡Quiz Completado!</h3>
+                            <h3>¡Quiz completado!</h3>
                             <div class="quiz-score-display" id="final-score">
                                 0/5
                             </div>
-                            <p id="score-message">¡Excelente trabajo!</p>
-                            <div style="margin-top: var(--space-lg)">
-                                <button
-                                    class="cta-button"
-                                    onclick="Quiz.restart()"
-                                >
-                                    Repetir Quiz
-                                </button>
-                                <button
-                                    class="secondary-button"
-                                    onclick="location.href='#introduccion'"
-                                >
-                                    Repasar Contenido
-                                </button>
-                            </div>
+                            <p id="score-message">¡Buen trabajo!</p>
+                            <button
+                                class="btn btn-primary"
+                                id="restart-button"
+                                type="button"
+                            >
+                                Repetir quiz
+                            </button>
+                            <button
+                                class="secondary-button"
+                                id="review-button"
+                                type="button"
+                            >
+                                Repasar contenido
+                            </button>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        </main>
 
-        <!-- Footer -->
-        <footer class="footer">
-            <div class="container">
+        <footer id="seccion-footer">
+            <div class="container" id="contact_clients">
                 <div class="footer-content">
+                    <a href="../../" class="footer-logo">
+                        <img
+                            src="../../imagenes/comunes/logo.svg"
+                            alt="NEXAUTIA"
+                            width="200"
+                        />
+                    </a>
                     <div class="footer-links">
                         <div class="social-links">
                             <a
@@ -1367,43 +2102,19 @@
                                 class="social-link"
                                 aria-label="Síguenos en Facebook"
                             >
-                                <svg class="social-icon" viewBox="0 0 24 24">
+                                <svg
+                                    class="social-icon"
+                                    viewBox="0 0 24 24"
+                                    aria-hidden="true"
+                                >
                                     <path
                                         d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
                                     />
                                 </svg>
                             </a>
-                            <a
-                                href="#"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                class="social-link"
-                                aria-label="Síguenos en LinkedIn"
-                            >
-                                <svg class="social-icon" viewBox="0 0 24 24">
-                                    <path
-                                        d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
-                                    />
-                                </svg>
-                            </a>
                         </div>
-
-                        <a
-                            href="https://www.nexautia.com"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="footer-logo"
-                        >
-                            <img
-                                src="imagenes/logo.svg"
-                                alt="NEXAUTIA"
-                                width="200"
-                                height="auto"
-                            />
-                        </a>
                     </div>
 
-                    <!-- Información de contacto -->
                     <div class="contact-info">
                         <a href="tel:+34610510642" class="contact-item">
                             <svg
@@ -1412,6 +2123,7 @@
                                 fill="none"
                                 stroke="currentColor"
                                 stroke-width="2"
+                                aria-hidden="true"
                             >
                                 <path
                                     d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
@@ -1419,7 +2131,6 @@
                             </svg>
                             <span class="contact-text">610 510 642</span>
                         </a>
-
                         <a
                             href="mailto:contacto@nexautia.com"
                             class="contact-item"
@@ -1430,6 +2141,7 @@
                                 fill="none"
                                 stroke="currentColor"
                                 stroke-width="2"
+                                aria-hidden="true"
                             >
                                 <path
                                     d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
@@ -1444,565 +2156,477 @@
 
                     <div class="footer-text">
                         <p>
-                            ¡Sigue explorando el increíble mundo de la
-                            Inteligencia Artificial!
+                            © 2026 Nexautia. Transformando empresas con
+                            automatización inteligente.
                         </p>
                         <p>
                             Creado con ❤️ por Nexautia para el traspaso de
-                            conocimiento
+                            conocimiento.
                         </p>
                         <p>
-                            Nexautia, Transformando empresas con automatización
-                            inteligente.
+                            ¡Sigue explorando el mundo de la automatización de
+                            procesos y la Inteligencia Artificial!
                         </p>
                     </div>
                 </div>
             </div>
         </footer>
 
-        <script defer>
-            // --- Quiz Application ---
-            const Quiz = {
-                // Estado del quiz
-                state: {
-                    score: 0,
-                    currentQuestionIndex: 0,
-                    quizQuestions: [],
-                    selectedAnswer: null,
-                    answered: false,
-                },
+        <script>
+            (function () {
+                "use strict";
 
-                // Pool completo de preguntas
-                questionPool: [
-                    {
-                        question:
-                            "¿Qué significa RPA en el contexto de automatización empresarial?",
-                        options: [
-                            "Robotic Process Automation",
-                            "Real-time Process Analysis",
-                            "Rapid Project Allocation",
-                            "Remote Process Administration",
-                        ],
-                        correctAnswer: 0,
-                        explanation:
-                            "RPA (Robotic Process Automation) se refiere a la tecnología que utiliza software robots para automatizar tareas repetitivas y basadas en reglas.",
-                    },
-                    {
-                        question:
-                            "¿Cuál es el principal beneficio de la automatización empresarial?",
-                        options: [
-                            "Reducir el número de empleados",
-                            "Incrementar la eficiencia y reducir errores",
-                            "Complicar los procesos",
-                            "Aumentar los costos",
-                        ],
-                        correctAnswer: 1,
-                        explanation:
-                            "La automatización empresarial busca principalmente incrementar la eficiencia operativa y reducir errores humanos, liberando talento para tareas estratégicas.",
-                    },
-                    {
-                        question:
-                            "¿En qué década se popularizaron los sistemas ERP?",
-                        options: ["1970s", "1980s-1990s", "2000s", "2010s"],
-                        correctAnswer: 1,
-                        explanation:
-                            "Los sistemas ERP se popularizaron en las décadas de 1980s y 1990s, con SAP lanzando sus sistemas R/2 y R/3 que revolucionaron la gestión empresarial.",
-                    },
-                    {
-                        question:
-                            "¿Qué diferencia principal existe entre automatización cognitiva y automatización de procesos?",
-                        options: [
-                            "No hay diferencias",
-                            "La cognitiva puede procesar información no estructurada",
-                            "La de procesos es más cara",
-                            "La cognitiva solo funciona en la nube",
-                        ],
-                        correctAnswer: 1,
-                        explanation:
-                            "La automatización cognitiva utiliza IA para procesar información no estructurada y tomar decisiones complejas, mientras que la de procesos sigue reglas predefinidas.",
-                    },
-                    {
-                        question:
-                            "¿Cuál ha sido el impacto principal de ChatGPT en la automatización empresarial desde 2023?",
-                        options: [
-                            "Eliminó todos los empleos",
-                            "Revolucionó la automatización cognitiva",
-                            "Solo afectó a las redes sociales",
-                            "No tuvo impacto empresarial",
-                        ],
-                        correctAnswer: 1,
-                        explanation:
-                            "ChatGPT y la IA generativa han revolucionado la automatización cognitiva, permitiendo automatizar la creación de contenido, análisis y decisiones complejas.",
-                    },
-                    {
-                        question:
-                            "¿Qué es la hiperautomatización según Gartner?",
-                        options: [
-                            "Automatización muy rápida",
-                            "Combinación de RPA, IA y orquestación de procesos",
-                            "Solo automatización con robots",
-                            "Automatización en la nube",
-                        ],
-                        correctAnswer: 1,
-                        explanation:
-                            "La hiperautomatización combina múltiples tecnologías como RPA, IA, machine learning y orquestación de procesos para automatizar tanto como sea posible.",
-                    },
-                    {
-                        question:
-                            "¿Cuál es un desafío común en la implementación de automatización empresarial?",
-                        options: [
-                            "Es demasiado barata",
-                            "Resistencia al cambio organizacional",
-                            "Solo funciona en computadoras viejas",
-                            "No tiene beneficios reales",
-                        ],
-                        correctAnswer: 1,
-                        explanation:
-                            "La resistencia al cambio organizacional es uno de los principales desafíos, junto con la inversión inicial y la necesidad de capacitación del personal.",
-                    },
-                    {
-                        question:
-                            "¿Qué tecnología permitió la integración de sistemas en los años 2000?",
-                        options: [
-                            "RPA",
-                            "Servicios Web y SOA",
-                            "Mainframes",
-                            "IA Generativa",
-                        ],
-                        correctAnswer: 1,
-                        explanation:
-                            "Los Servicios Web y la Arquitectura Orientada a Servicios (SOA) permitieron la integración de sistemas y el desarrollo de APIs para automatización.",
-                    },
-                    {
-                        question:
-                            "En el contexto de RRHH, ¿qué puede automatizar la IA?",
-                        options: [
-                            "Solo el pago de salarios",
-                            "Screening de CVs y análisis predictivo de rotación",
-                            "Únicamente entrevistas",
-                            "Solo la contratación",
-                        ],
-                        correctAnswer: 1,
-                        explanation:
-                            "La IA en RRHH puede automatizar el screening de CVs, análisis predictivo de rotación, chatbots para consultas y encuestas de clima laboral.",
-                    },
-                    {
-                        question:
-                            "¿Qué es Edge AI en el contexto de automatización?",
-                        options: [
-                            "IA solo para navegadores web",
-                            "Procesamiento de IA en dispositivos locales",
-                            "IA que funciona solo en el borde de la ciudad",
-                            "IA muy rápida",
-                        ],
-                        correctAnswer: 1,
-                        explanation:
-                            "Edge AI se refiere al procesamiento de inteligencia artificial en dispositivos locales, permitiendo automatización en tiempo real sin depender de la nube.",
-                    },
-                    {
-                        question:
-                            "¿Cuál es una característica de los sistemas ERP?",
-                        options: [
-                            "Solo manejan ventas",
-                            "Integran múltiples procesos empresariales",
-                            "Solo funcionan offline",
-                            "Son solo para empresas pequeñas",
-                        ],
-                        correctAnswer: 1,
-                        explanation:
-                            "Los sistemas ERP (Enterprise Resource Planning) integran múltiples procesos empresariales como finanzas, recursos humanos, ventas y operaciones en un solo sistema.",
-                    },
-                    {
-                        question:
-                            "¿Qué porcentaje de reducción de costos puede lograr la automatización empresarial?",
-                        options: [
-                            "5%",
-                            "Hasta 60%",
-                            "Solo 10%",
-                            "No reduce costos",
-                        ],
-                        correctAnswer: 1,
-                        explanation:
-                            "La automatización empresarial puede lograr una reducción de costos operativos de hasta el 60%, según estudios de implementación en diversas industrias.",
-                    },
-                    {
-                        question: "¿Qué permite la automatización sostenible?",
-                        options: [
-                            "Usar más energía",
-                            "Optimización para eficiencia energética",
-                            "Solo trabajar de día",
-                            "Funcionar sin electricidad",
-                        ],
-                        correctAnswer: 1,
-                        explanation:
-                            "La automatización sostenible se enfoca en la optimización de IA para lograr eficiencia energética y contribuir a objetivos de sostenibilidad empresarial.",
-                    },
-                    {
-                        question: "¿Qué es un 'Autonomous Enterprise'?",
-                        options: [
-                            "Una empresa sin empleados",
-                            "Empresa que opera con mínima intervención humana",
-                            "Solo empresas de tecnología",
-                            "Empresas que funcionan solas sin gerencia",
-                        ],
-                        correctAnswer: 1,
-                        explanation:
-                            "Un Autonomous Enterprise es una organización que puede operar la mayoría de sus procesos con mínima intervención humana, utilizando IA y automatización avanzada.",
-                    },
-                    {
-                        question:
-                            "¿Cuál es una aplicación de IA en finanzas y contabilidad?",
-                        options: [
-                            "Solo calcular impuestos",
-                            "Detección automática de fraudes",
-                            "Solo imprimir facturas",
-                            "Únicamente contar dinero",
-                        ],
-                        correctAnswer: 1,
-                        explanation:
-                            "La IA en finanzas puede detectar automáticamente fraudes, procesar facturas inteligentemente, realizar reconciliación bancaria y análisis predictivo de flujo de caja.",
-                    },
-                    {
-                        question:
-                            "¿Qué caracteriza a la IA explicable en automatización?",
-                        options: [
-                            "Es más costosa",
-                            "Puede justificar sus decisiones",
-                            "Solo funciona en inglés",
-                            "Es más lenta",
-                        ],
-                        correctAnswer: 1,
-                        explanation:
-                            "La IA explicable puede justificar sus decisiones y procesos de razonamiento, lo cual es crucial para cumplir con regulaciones y generar confianza empresarial.",
-                    },
-                    {
-                        question:
-                            "¿Qué evento aceleró masivamente la adopción de automatización en 2020-2022?",
-                        options: [
-                            "Una nueva ley",
-                            "La pandemia COVID-19",
-                            "Un descubrimiento científico",
-                            "Cambios climáticos",
-                        ],
-                        correctAnswer: 1,
-                        explanation:
-                            "La pandemia COVID-19 aceleró dramáticamente la adopción digital y de automatización, ya que las empresas necesitaron adaptarse rápidamente al trabajo remoto y nuevos procesos.",
-                    },
-                    {
-                        question:
-                            "¿Qué permite las herramientas no-code/low-code en automatización?",
-                        options: [
-                            "Solo programar en Python",
-                            "Democratizar el acceso a la IA",
-                            "Complicar los procesos",
-                            "Aumentar los costos",
-                        ],
-                        correctAnswer: 1,
-                        explanation:
-                            "Las herramientas no-code/low-code democratizan el acceso a la IA y automatización, permitiendo que usuarios sin conocimientos técnicos profundos puedan crear soluciones automatizadas.",
-                    },
-                    {
-                        question:
-                            "¿Cuál es una ventaja de la automatización 24/7?",
-                        options: [
-                            "Solo funciona de noche",
-                            "Disponibilidad continua sin interrupciones",
-                            "Necesita más empleados",
-                            "Es más cara",
-                        ],
-                        correctAnswer: 1,
-                        explanation:
-                            "La automatización proporciona disponibilidad 24/7 sin interrupciones, lo que permite procesar tareas y atender servicios de manera continua sin limitaciones de horario.",
-                    },
-                    {
-                        question:
-                            "¿Qué es el análisis de sentimientos en automatización de atención al cliente?",
-                        options: [
-                            "Analizar emociones en tiempo real",
-                            "Solo contar palabras",
-                            "Traducir idiomas",
-                            "Enviar emails",
-                        ],
-                        correctAnswer: 0,
-                        explanation:
-                            "El análisis de sentimientos utiliza IA para analizar emociones y actitudes de los clientes en tiempo real, permitiendo respuestas más apropiadas y escalación automática cuando es necesario.",
-                    },
-                ],
+                const menuButton = document.getElementById(
+                    "nx-resource-menu-button",
+                );
+                const menuOverlay = document.getElementById(
+                    "nx-resource-menu-overlay",
+                );
+                const menuClose = document.getElementById(
+                    "nx-resource-menu-close",
+                );
 
-                // Inicializar quiz
-                init() {
-                    this.setupEventListeners();
-                    this.generateQuizQuestions();
-                    this.renderCurrentQuestion();
-                },
+                function openMenu() {
+                    if (!menuOverlay || !menuButton) return;
+                    menuOverlay.classList.add("is-open");
+                    menuOverlay.setAttribute("aria-hidden", "false");
+                    menuButton.setAttribute("aria-expanded", "true");
+                    menuButton.setAttribute("aria-label", "Cerrar menú");
+                    document.body.classList.add("nx-resource-menu-open");
+                }
 
-                // Configurar event listeners
-                setupEventListeners() {
-                    document
-                        .getElementById("next-button")
-                        .addEventListener("click", () => this.nextQuestion());
-                },
+                function closeMenu() {
+                    if (!menuOverlay || !menuButton) return;
+                    menuOverlay.classList.remove("is-open");
+                    menuOverlay.setAttribute("aria-hidden", "true");
+                    menuButton.setAttribute("aria-expanded", "false");
+                    menuButton.setAttribute("aria-label", "Abrir menú");
+                    document.body.classList.remove("nx-resource-menu-open");
+                }
 
-                // Generar preguntas aleatorias para la ronda
-                generateQuizQuestions() {
-                    const shuffled = [...this.questionPool].sort(
-                        () => 0.5 - Math.random()
-                    );
-                    this.state.quizQuestions = shuffled.slice(0, 5); // 5 preguntas por ronda
-                    document.getElementById("total-questions").textContent =
-                        this.state.quizQuestions.length;
-                },
+                window.nxToggleResourceMenu = function () {
+                    if (!menuOverlay) return;
+                    if (menuOverlay.classList.contains("is-open")) {
+                        closeMenu();
+                    } else {
+                        openMenu();
+                    }
+                };
 
-                // Renderizar pregunta actual
-                renderCurrentQuestion() {
-                    const currentQ =
-                        this.state.quizQuestions[
-                            this.state.currentQuestionIndex
-                        ];
+                if (menuButton) {
+                    menuButton.addEventListener("click", function (event) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                        window.nxToggleResourceMenu();
+                    });
+                }
 
-                    document.getElementById("question-text").textContent =
-                        currentQ.question;
-                    document.getElementById("current-question").textContent =
-                        this.state.currentQuestionIndex + 1;
+                if (menuClose) {
+                    menuClose.addEventListener("click", function (event) {
+                        event.preventDefault();
+                        closeMenu();
+                    });
+                }
 
-                    const optionsContainer =
-                        document.getElementById("quiz-options");
-                    optionsContainer.innerHTML = "";
-
-                    currentQ.options.forEach((option, index) => {
-                        const optionElement = document.createElement("button");
-                        optionElement.className = "quiz-option";
-                        optionElement.textContent = option;
-                        optionElement.addEventListener("click", () =>
-                            this.selectAnswer(index)
-                        );
-                        optionsContainer.appendChild(optionElement);
+                if (menuOverlay) {
+                    menuOverlay.addEventListener("click", function (event) {
+                        if (event.target === menuOverlay) closeMenu();
                     });
 
-                    // Reset estado
-                    this.state.selectedAnswer = null;
-                    this.state.answered = false;
-                    document.getElementById("quiz-feedback").style.display =
-                        "none";
-                    document.getElementById("quiz-feedback").className =
-                        "quiz-feedback";
-                    document.getElementById("next-button").style.display =
-                        "none";
-                },
+                    menuOverlay.querySelectorAll("a").forEach(function (link) {
+                        link.addEventListener("click", closeMenu);
+                    });
+                }
 
-                // Seleccionar respuesta
-                selectAnswer(selectedIndex) {
-                    if (this.state.answered) return;
+                document.addEventListener("keydown", function (event) {
+                    if (event.key === "Escape") closeMenu();
+                });
 
-                    const currentQ =
-                        this.state.quizQuestions[
-                            this.state.currentQuestionIndex
-                        ];
-                    const options = document.querySelectorAll(".quiz-option");
-                    const isCorrect = selectedIndex === currentQ.correctAnswer;
+                window.addEventListener("resize", function () {
+                    if (window.innerWidth > 1120) closeMenu();
+                });
 
-                    this.state.selectedAnswer = selectedIndex;
-                    this.state.answered = true;
-
-                    // Actualizar estilos de opciones
-                    options.forEach((option, index) => {
-                        option.style.pointerEvents = "none";
-                        if (index === currentQ.correctAnswer) {
-                            option.classList.add("correct");
-                        } else if (index === selectedIndex && !isCorrect) {
-                            option.classList.add("incorrect");
-                        }
+                document
+                    .querySelectorAll('a[href^="#"]')
+                    .forEach(function (anchor) {
+                        anchor.addEventListener("click", function (event) {
+                            const targetId = anchor.getAttribute("href");
+                            if (!targetId || targetId === "#") return;
+                            const target = document.querySelector(targetId);
+                            if (!target) return;
+                            event.preventDefault();
+                            const header =
+                                document.querySelector(".site-header");
+                            const offset = header
+                                ? header.offsetHeight + 14
+                                : 0;
+                            const top =
+                                target.getBoundingClientRect().top +
+                                window.scrollY -
+                                offset;
+                            window.scrollTo({ top, behavior: "smooth" });
+                        });
                     });
 
-                    // Mostrar feedback
-                    this.showFeedback(isCorrect, currentQ.explanation);
-
-                    // Actualizar puntuación
-                    if (isCorrect) {
-                        this.state.score++;
-                        document.getElementById("current-score").textContent =
-                            this.state.score;
-                    }
-
-                    // Mostrar botón siguiente
-                    document.getElementById("next-button").style.display =
-                        "inline-block";
-                },
-
-                // Mostrar retroalimentación
-                showFeedback(isCorrect, explanation) {
-                    const feedback = document.getElementById("quiz-feedback");
-                    feedback.style.display = "block";
-                    feedback.className = `quiz-feedback show ${
-                        isCorrect ? "correct" : "incorrect"
-                    }`;
-
-                    const feedbackText = isCorrect
-                        ? `¡Correcto! ${explanation}`
-                        : `Incorrecto. ${explanation}`;
-
-                    feedback.textContent = feedbackText;
-                },
-
-                // Siguiente pregunta
-                nextQuestion() {
-                    this.state.currentQuestionIndex++;
-
-                    if (
-                        this.state.currentQuestionIndex >=
-                        this.state.quizQuestions.length
-                    ) {
-                        this.showResults();
-                    } else {
-                        this.renderCurrentQuestion();
-                    }
-                },
-
-                // Mostrar resultados
-                showResults() {
-                    const quizContent = document.getElementById("quiz-content");
-                    const quizResults = document.getElementById("quiz-results");
-
-                    quizContent.style.display = "none";
-                    quizResults.classList.add("show");
-
-                    const finalScore = this.state.score;
-                    const totalQuestions = this.state.quizQuestions.length;
-                    const percentage = Math.round(
-                        (finalScore / totalQuestions) * 100
-                    );
-
-                    document.getElementById(
-                        "final-score"
-                    ).textContent = `${finalScore}/${totalQuestions}`;
-
-                    let message = "";
-                    if (percentage >= 90) {
-                        message =
-                            "¡Excelente! Dominas el tema de automatización empresarial e IA.";
-                    } else if (percentage >= 70) {
-                        message =
-                            "¡Muy bien! Tienes buenos conocimientos sobre automatización.";
-                    } else if (percentage >= 50) {
-                        message =
-                            "Bien. Te recomendamos repasar algunos conceptos.";
-                    } else {
-                        message =
-                            "Te sugerimos revisar el contenido antes de repetir el quiz.";
-                    }
-
-                    document.getElementById("score-message").textContent =
-                        message;
-                },
-
-                // Reiniciar quiz
-                restart() {
-                    this.state = {
+                const Quiz = {
+                    state: {
                         score: 0,
                         currentQuestionIndex: 0,
                         quizQuestions: [],
                         selectedAnswer: null,
                         answered: false,
-                    };
+                    },
 
-                    document.getElementById("current-score").textContent = "0";
-                    document.getElementById("quiz-content").style.display =
-                        "block";
-                    document
-                        .getElementById("quiz-results")
-                        .classList.remove("show");
+                    questionPool: [
+                        {
+                            question:
+                                "¿Qué significa RPA en automatización de procesos?",
+                            options: [
+                                "Robotic Process Automation",
+                                "Real-time Process Analysis",
+                                "Rapid Project Allocation",
+                                "Remote Process Administration",
+                            ],
+                            correctAnswer: 0,
+                            explanation:
+                                "RPA significa Robotic Process Automation: software que automatiza tareas repetitivas basadas en reglas.",
+                        },
+                        {
+                            question:
+                                "¿Cuál es un objetivo principal de la automatización de procesos?",
+                            options: [
+                                "Complicar los procesos",
+                                "Incrementar eficiencia y reducir errores",
+                                "Eliminar toda decisión humana",
+                                "Aumentar trabajo manual",
+                            ],
+                            correctAnswer: 1,
+                            explanation:
+                                "La automatización busca mejorar eficiencia, reducir errores y liberar tiempo para tareas de más valor.",
+                        },
+                        {
+                            question:
+                                "¿Qué diferencia a la automatización cognitiva de una automatización basada solo en reglas?",
+                            options: [
+                                "No hay ninguna diferencia",
+                                "Puede trabajar con información no estructurada y contexto",
+                                "Solo sirve para cambiar colores",
+                                "Siempre sustituye a las personas",
+                            ],
+                            correctAnswer: 1,
+                            explanation:
+                                "La automatización cognitiva usa IA para interpretar lenguaje, documentos, patrones o contexto.",
+                        },
+                        {
+                            question:
+                                "¿Qué tecnología facilitó mucho la integración de sistemas en los años 2000?",
+                            options: [
+                                "APIs y servicios web",
+                                "Papel y archivadores",
+                                "Máquinas de escribir",
+                                "Solo hojas impresas",
+                            ],
+                            correctAnswer: 0,
+                            explanation:
+                                "Las APIs y servicios web facilitaron que las aplicaciones pudieran comunicarse y automatizar flujos.",
+                        },
+                        {
+                            question:
+                                "¿Qué aporta la IA generativa a la automatización?",
+                            options: [
+                                "Solo hace cálculos simples",
+                                "Puede ayudar a redactar, resumir, clasificar y analizar información",
+                                "Solo sirve para videojuegos",
+                                "Impide automatizar procesos",
+                            ],
+                            correctAnswer: 1,
+                            explanation:
+                                "La IA generativa puede actuar como capa inteligente para texto, análisis, clasificación, documentación y asistencia.",
+                        },
+                        {
+                            question: "¿Qué es la hiperautomatización?",
+                            options: [
+                                "Automatizar muy deprisa sin analizar nada",
+                                "Combinar RPA, IA, integraciones y orquestación de procesos",
+                                "Usar solo robots físicos",
+                                "No usar datos",
+                            ],
+                            correctAnswer: 1,
+                            explanation:
+                                "La hiperautomatización combina tecnologías para automatizar procesos de forma más amplia y coordinada.",
+                        },
+                        {
+                            question:
+                                "¿Cuál es un riesgo habitual al automatizar?",
+                            options: [
+                                "Automatizar un proceso mal diseñado",
+                                "Documentar demasiado bien",
+                                "Tener demasiada claridad",
+                                "Reducir errores",
+                            ],
+                            correctAnswer: 0,
+                            explanation:
+                                "Automatizar un mal proceso puede hacer que el error se repita más rápido. Primero hay que entender y ordenar el flujo.",
+                        },
+                        {
+                            question:
+                                "¿Qué puede hacer la IA en atención al cliente?",
+                            options: [
+                                "Clasificar tickets y sugerir respuestas",
+                                "Romper el correo",
+                                "Borrar todos los clientes",
+                                "Solo cambiar el logo",
+                            ],
+                            correctAnswer: 0,
+                            explanation:
+                                "La IA puede ayudar a clasificar mensajes, priorizar casos y sugerir respuestas, siempre con control adecuado.",
+                        },
+                        {
+                            question:
+                                "¿Qué es una herramienta no-code o low-code?",
+                            options: [
+                                "Una herramienta que exige programar todo desde cero",
+                                "Una herramienta para crear soluciones con poca o ninguna programación",
+                                "Un sistema sin interfaz",
+                                "Un tipo de antivirus",
+                            ],
+                            correctAnswer: 1,
+                            explanation:
+                                "No-code y low-code permiten crear automatizaciones e integraciones con menos barrera técnica.",
+                        },
+                        {
+                            question:
+                                "¿Por qué es importante la IA explicable?",
+                            options: [
+                                "Porque puede ayudar a justificar decisiones relevantes",
+                                "Porque hace la pantalla más bonita",
+                                "Porque evita usar datos",
+                                "Porque no necesita supervisión",
+                            ],
+                            correctAnswer: 0,
+                            explanation:
+                                "La IA explicable es clave cuando las decisiones afectan a personas, cumplimiento normativo o procesos críticos.",
+                        },
+                    ],
 
-                    this.generateQuizQuestions();
-                    this.renderCurrentQuestion();
-                },
-            };
+                    init() {
+                        const nextButton =
+                            document.getElementById("next-button");
+                        const restartButton =
+                            document.getElementById("restart-button");
+                        const reviewButton =
+                            document.getElementById("review-button");
 
-            // --- Navegación y UI ---
-            const App = {
-                init() {
-                    this.setupNavigation();
-                    this.setupAnimations();
-                    Quiz.init();
-
-                    // Inicializar iconos de Feather
-                    if (typeof feather !== "undefined") {
-                        feather.replace();
-                    }
-                },
-
-                setupNavigation() {
-                    // Menu toggle para móvil
-                    const menuToggle = document.getElementById("menu-toggle");
-                    const navMenu = document.getElementById("nav-menu");
-
-                    menuToggle?.addEventListener("click", () => {
-                        navMenu.classList.toggle("active");
-                    });
-
-                    // Cerrar menú al hacer click en enlaces (móvil)
-                    document.querySelectorAll(".nav-link").forEach((link) => {
-                        link.addEventListener("click", () => {
-                            navMenu.classList.remove("active");
-                        });
-                    });
-
-                    // Smooth scroll para navegación
-                    document
-                        .querySelectorAll('a[href^="#"]')
-                        .forEach((anchor) => {
-                            anchor.addEventListener("click", function (e) {
-                                e.preventDefault();
-                                const target = document.querySelector(
-                                    this.getAttribute("href")
-                                );
-                                if (target) {
-                                    const navbarHeight =
-                                        document.querySelector(
-                                            ".navbar"
-                                        ).offsetHeight;
-                                    const targetPosition =
-                                        target.offsetTop - navbarHeight;
-
-                                    window.scrollTo({
-                                        top: targetPosition,
+                        if (nextButton)
+                            nextButton.addEventListener("click", () =>
+                                this.nextQuestion(),
+                            );
+                        if (restartButton)
+                            restartButton.addEventListener("click", () =>
+                                this.restart(),
+                            );
+                        if (reviewButton) {
+                            reviewButton.addEventListener("click", () => {
+                                const intro =
+                                    document.getElementById("introduccion");
+                                if (intro)
+                                    intro.scrollIntoView({
                                         behavior: "smooth",
+                                        block: "start",
                                     });
-                                }
                             });
+                        }
+
+                        this.generateQuizQuestions();
+                        this.renderCurrentQuestion();
+                    },
+
+                    generateQuizQuestions() {
+                        const shuffled = [...this.questionPool].sort(
+                            () => 0.5 - Math.random(),
+                        );
+                        this.state.quizQuestions = shuffled.slice(0, 5);
+                        const total =
+                            document.getElementById("total-questions");
+                        if (total)
+                            total.textContent = this.state.quizQuestions.length;
+                    },
+
+                    renderCurrentQuestion() {
+                        const currentQ =
+                            this.state.quizQuestions[
+                                this.state.currentQuestionIndex
+                            ];
+                        const questionText =
+                            document.getElementById("question-text");
+                        const currentQuestion =
+                            document.getElementById("current-question");
+                        const optionsContainer =
+                            document.getElementById("quiz-options");
+                        const feedback =
+                            document.getElementById("quiz-feedback");
+                        const nextButton =
+                            document.getElementById("next-button");
+
+                        if (!currentQ || !questionText || !optionsContainer)
+                            return;
+
+                        questionText.textContent = currentQ.question;
+                        if (currentQuestion)
+                            currentQuestion.textContent =
+                                this.state.currentQuestionIndex + 1;
+                        optionsContainer.innerHTML = "";
+
+                        currentQ.options.forEach((option, index) => {
+                            const optionElement =
+                                document.createElement("button");
+                            optionElement.className = "quiz-option";
+                            optionElement.type = "button";
+                            optionElement.textContent = option;
+                            optionElement.addEventListener("click", () =>
+                                this.selectAnswer(index),
+                            );
+                            optionsContainer.appendChild(optionElement);
                         });
-                },
 
-                setupAnimations() {
-                    // Intersection Observer para animaciones de entrada
-                    const observerOptions = {
-                        threshold: 0.1,
-                        rootMargin: "0px 0px -100px 0px",
-                    };
+                        this.state.selectedAnswer = null;
+                        this.state.answered = false;
+                        if (feedback) {
+                            feedback.style.display = "none";
+                            feedback.className = "quiz-feedback";
+                            feedback.textContent = "";
+                        }
+                        if (nextButton) nextButton.style.display = "none";
+                    },
 
-                    const observer = new IntersectionObserver((entries) => {
-                        entries.forEach((entry) => {
-                            if (entry.isIntersecting) {
-                                entry.target.classList.add("fade-in");
+                    selectAnswer(selectedIndex) {
+                        if (this.state.answered) return;
+
+                        const currentQ =
+                            this.state.quizQuestions[
+                                this.state.currentQuestionIndex
+                            ];
+                        const options =
+                            document.querySelectorAll(".quiz-option");
+                        const isCorrect =
+                            selectedIndex === currentQ.correctAnswer;
+
+                        this.state.selectedAnswer = selectedIndex;
+                        this.state.answered = true;
+
+                        options.forEach((option, index) => {
+                            option.disabled = true;
+                            if (index === currentQ.correctAnswer) {
+                                option.classList.add("correct");
+                            } else if (index === selectedIndex && !isCorrect) {
+                                option.classList.add("incorrect");
                             }
                         });
-                    }, observerOptions);
 
-                    // Observar elementos con animación
-                    document
-                        .querySelectorAll(".content-section, .timeline-item")
-                        .forEach((el) => {
-                            observer.observe(el);
-                        });
-                },
-            };
+                        this.showFeedback(isCorrect, currentQ.explanation);
 
-            // Inicializar aplicación cuando el DOM esté listo
-            document.addEventListener("DOMContentLoaded", () => {
-                App.init();
-            });
+                        if (isCorrect) {
+                            this.state.score += 1;
+                            const score =
+                                document.getElementById("current-score");
+                            if (score) score.textContent = this.state.score;
+                        }
 
-            // Función global para reiniciar quiz (accesible desde HTML)
-            window.restartQuiz = () => Quiz.restart();
+                        const nextButton =
+                            document.getElementById("next-button");
+                        if (nextButton)
+                            nextButton.style.display = "inline-flex";
+                    },
+
+                    showFeedback(isCorrect, explanation) {
+                        const feedback =
+                            document.getElementById("quiz-feedback");
+                        if (!feedback) return;
+                        feedback.style.display = "block";
+                        feedback.className = `quiz-feedback show ${isCorrect ? "correct" : "incorrect"}`;
+                        feedback.textContent = isCorrect
+                            ? `¡Correcto! ${explanation}`
+                            : `Incorrecto. ${explanation}`;
+                    },
+
+                    nextQuestion() {
+                        this.state.currentQuestionIndex += 1;
+                        if (
+                            this.state.currentQuestionIndex >=
+                            this.state.quizQuestions.length
+                        ) {
+                            this.showResults();
+                        } else {
+                            this.renderCurrentQuestion();
+                        }
+                    },
+
+                    showResults() {
+                        const quizContent =
+                            document.getElementById("quiz-content");
+                        const quizResults =
+                            document.getElementById("quiz-results");
+                        const finalScore =
+                            document.getElementById("final-score");
+                        const scoreMessage =
+                            document.getElementById("score-message");
+
+                        if (quizContent) quizContent.style.display = "none";
+                        if (quizResults) quizResults.classList.add("show");
+
+                        const final = this.state.score;
+                        const total = this.state.quizQuestions.length;
+                        const percentage = Math.round((final / total) * 100);
+
+                        if (finalScore)
+                            finalScore.textContent = `${final}/${total}`;
+
+                        let message = "";
+                        if (percentage >= 90) {
+                            message =
+                                "¡Excelente! Dominas muy bien los conceptos básicos de automatización de procesos e IA.";
+                        } else if (percentage >= 70) {
+                            message =
+                                "¡Muy bien! Tienes una base sólida sobre automatización e inteligencia artificial.";
+                        } else if (percentage >= 50) {
+                            message =
+                                "Bien. Te recomiendo repasar algunos conceptos y volver a intentarlo.";
+                        } else {
+                            message =
+                                "Te sugiero revisar la guía antes de repetir el quiz. Lo importante es entender la lógica.";
+                        }
+
+                        if (scoreMessage) scoreMessage.textContent = message;
+                    },
+
+                    restart() {
+                        this.state = {
+                            score: 0,
+                            currentQuestionIndex: 0,
+                            quizQuestions: [],
+                            selectedAnswer: null,
+                            answered: false,
+                        };
+
+                        const score = document.getElementById("current-score");
+                        const quizContent =
+                            document.getElementById("quiz-content");
+                        const quizResults =
+                            document.getElementById("quiz-results");
+
+                        if (score) score.textContent = "0";
+                        if (quizContent) quizContent.style.display = "block";
+                        if (quizResults) quizResults.classList.remove("show");
+
+                        this.generateQuizQuestions();
+                        this.renderCurrentQuestion();
+                    },
+                };
+
+                document.addEventListener("DOMContentLoaded", function () {
+                    Quiz.init();
+                });
+            })();
         </script>
     </body>
 </html>

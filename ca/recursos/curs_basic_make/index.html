@@ -1,0 +1,2849 @@
+<!DOCTYPE html>
+<html lang="ca">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <title>Curs bàsic de Make i automatitzacions | Nexautia</title>
+        <meta
+            name="description"
+            content="Curs bàsic de Make i automatitzacions de Nexautia. Aprèn des de zero què és una automatització, com funcionen els mòduls, triggers, routers, filtres, webhooks, iteradors i agregadors, amb vídeos pràctics pas a pas."
+        />
+
+        <link rel="canonical" href="https://www.nexautia.com/ca/recursos/curs_basic_make/" />
+        <link rel="alternate" hreflang="ca" href="https://www.nexautia.com/ca/recursos/curs_basic_make/" />
+        <link rel="alternate" hreflang="es" href="https://www.nexautia.com/recursos/curso_basico_make/" />
+        <link rel="alternate" hreflang="x-default" href="https://www.nexautia.com/recursos/curso_basico_make/" />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Nexautia" />
+        <meta property="og:locale" content="ca_ES" />
+        <meta property="og:locale:alternate" content="es_ES" />
+        <meta property="og:title" content="Curs bàsic de Make i automatitzacions | Nexautia" />
+        <meta
+            property="og:description"
+            content="Aprèn Make des de zero amb teoria, vídeos i exemples pràctics d’automatització no-code."
+        />
+        <meta property="og:url" content="https://www.nexautia.com/ca/recursos/curs_basic_make/" />
+        <meta property="og:image" content="https://www.nexautia.com/imagenes/comunes/curso-make-card.webp" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Curs bàsic de Make i automatitzacions | Nexautia" />
+        <meta
+            name="twitter:description"
+            content="Curs gratuït per entendre Make, automatitzacions, triggers, mòduls, routers, filtres, webhooks, iteradors i agregadors."
+        />
+        <meta name="twitter:image" content="https://www.nexautia.com/imagenes/comunes/curso-make-card.webp" />
+
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            rel="icon"
+            type="image/svg+xml"
+            href="../../../imagenes/comunes/favicon.svg?v=4"
+        />
+        <meta name="theme-color" content="#0f172a" />
+
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "Course",
+                "name": "Curs bàsic de Make i automatitzacions",
+                "description": "Curs gratuït de Nexautia per aprendre Make i automatització des de zero, amb teoria, vídeos pràctics i exemples sobre triggers, mòduls, routers, filtres, webhooks, iteradors i agregadors.",
+                "url": "https://www.nexautia.com/ca/recursos/curs_basic_make/",
+                "inLanguage": "ca",
+                "image": "https://www.nexautia.com/imagenes/comunes/curso-make-card.webp",
+                "thumbnailUrl": "https://www.nexautia.com/imagenes/comunes/curso-make-card.webp",
+                "provider": {
+                    "@type": "Organization",
+                    "name": "Nexautia",
+                    "url": "https://www.nexautia.com/",
+                    "logo": "https://www.nexautia.com/imagenes/comunes/logo.svg"
+                },
+                "educationalLevel": "Beginner",
+                "isAccessibleForFree": true,
+                "about": [
+                    "Make",
+                    "automatització no-code",
+                    "automatització de processos",
+                    "triggers",
+                    "webhooks",
+                    "routers",
+                    "filtres",
+                    "iteradors",
+                    "Array Aggregator"
+                ]
+            }
+        </script>
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Inici",
+                        "item": "https://www.nexautia.com/ca/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Aprèn gratis",
+                        "item": "https://www.nexautia.com/ca/recursos/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 3,
+                        "name": "Curs bàsic de Make",
+                        "item": "https://www.nexautia.com/ca/recursos/curs_basic_make/"
+                    }
+                ]
+            }
+        </script>
+        <style>
+
+            /* Estilos generales */
+    * {
+    box-sizing: border-box; /* CRÍTICO: previene overflow */
+    }
+    html {
+        overflow-x: hidden;
+    }
+
+    body {
+        font-family: "Arial", sans-serif;
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 20px;
+        line-height: 1.6;
+        background-color: #f0f4f8;
+        overflow-x: hidden; /* Previene scroll horizontal */
+    }
+
+    h1,
+    h2,
+    h3 {
+        color: #2c3e50;
+        word-wrap: break-word; /* Rompe palabras largas */
+    }
+
+    h1 {
+        border-bottom: 3px solid hsl(204, 70%, 53%);
+        padding-bottom: 5px;
+    }
+
+    .teoria, .practica {
+        border-bottom: 3px solid hsl(204, 70%, 53%);
+        padding-bottom: 10px;
+        
+    }
+    
+    p {
+        margin-bottom: 15px;
+        word-wrap: break-word;
+    }
+
+/* Bloques visuales */
+
+
+    #tittle a {
+        margin: 0;
+        height: 30px;
+    }
+
+    .block {
+        background-color: white;
+        padding: 20px;
+        margin: 20px 0;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        width: 100%; /* Asegura que no exceda el contenedor */
+        overflow-wrap: break-word;
+    }
+
+    .sangria {
+        margin-left: 60px;
+    }
+    .sangria2 {
+        margin-left: 30px;
+    }
+    .sangria3 {
+        margin-left: 30px;
+    }
+    .sangria4 {
+        margin-left: 30px;
+    }
+
+    .block img {
+        max-width: 100%;
+        height: auto; /* Mantiene proporción */
+        border-radius: 8px;
+        margin: 15px 0;
+        display: block; /* Evita espacios extra */
+    }
+
+/* Índice de lección */
+    .index, .indext{
+        background-color: #eaf2f8;
+        padding: 15px;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        width: 100%;
+        overflow-wrap: break-word;
+    }
+
+    .indext strong, .index strong {
+        display: block;
+        margin-bottom: 12px;
+    }
+
+    .index a, .indext a {
+        display: block;
+        color: #2980b9;
+        text-decoration: none;
+        margin-bottom: 8px;
+        word-wrap: break-word;
+    }
+
+    .index a:hover, .indext a:hover {
+        text-decoration: underline;
+    }
+
+/* Tabs */
+    .tab-container {
+        background: #fff;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        margin-bottom: 30px;
+        width: 100%;
+    }
+
+    .tabs {
+        display: flex;
+        margin-bottom: 15px;
+        flex-wrap: wrap; /* Permite envolver tabs si son muchos */
+        gap: 5px;
+    }
+
+    .tab-button {
+        flex: 1;
+        min-width: 100px; /* Ancho mínimo */
+        padding: 10px;
+        border: none;
+        background: #eaf2f8;
+        cursor: pointer;
+        border-radius: 5px 5px 0 0;
+        font-weight: bold;
+        color: #0066cc;
+        margin-right: 5px;
+    }
+
+    .tab-button.active {
+        background: #0066cc;
+        color: #fff;
+    }
+
+    .tab-content {
+        padding: 15px;
+        border-top: 2px solid #0066cc;
+        overflow-wrap: break-word;
+    }
+
+/* Botones de navegación */
+    .buttons {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 30px;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    .buttons a {
+        text-decoration: none;
+        background-color: #3498db;
+        color: white;
+        padding: 12px 25px;
+        border-radius: 6px;
+        font-weight: bold;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .buttons a:hover {
+        background-color: #2980b9;
+    }
+
+/* Destacado SEO */
+    .highlight {
+        font-weight: bold;
+        color: #e74c3c;
+    }
+
+/* Video placeholder */
+.video-placeholder {
+    background-color: #dfe6e9;
+    padding: 10px;          /* antes 30px */
+    border-radius: 10px;
+    margin: 20px 0;
+    width: 100%;
+}
+
+.video-placeholder iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border: 0;
+    display: block;
+}
+
+    .contenedor {
+        width: 100%;
+        text-align: center;
+        overflow-x: hidden;
+        overflow-y: visible;
+    }
+
+    .contenedor img {
+        display: inline-block;
+        max-width: 100%;
+        height: auto;
+    }
+
+    img {
+        max-width: 100% !important;
+        width: 100% !important;
+        height: auto !important;
+    }
+
+    .img-ajustada {
+    width: 100%;
+    max-width: 400px; /* Ajusta este valor al tamaño que quieras en escritorio */
+    height: auto;
+    display: block;
+    margin: 0 auto; /* Esto las centra */
+}
+
+/* =====================================================
+   NEXAUTIA RESOURCE HEADER / MENU
+   Copiado desde la página de referencia correcta.
+   No modifica hero, contenido, vídeos, SEO ni footer.
+   ===================================================== */
+:root {
+      --nx-accent: #06b6d4;
+      --nx-green: #22c55e;
+    }
+    body.nx-resource-menu-open { overflow: hidden; }
+    .container { width: min(1180px, calc(100% - 40px)); margin-inline: auto; }
+
+    .site-header {
+      background: #0f172a;
+      border-bottom: 1px solid rgba(255,255,255,.12);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .header-inner {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .logo a { display: inline-flex; align-items: center; text-decoration: none; }
+    .logo img {
+      width: 172px !important;
+      max-width: 172px !important;
+      height: auto !important;
+    }
+    .desktop-nav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: .15rem;
+      flex: 1 1 auto;
+      flex-wrap: nowrap;
+      white-space: nowrap;
+    }
+    .desktop-nav a {
+      position: relative;
+      color: #e5e7eb !important;
+      text-decoration: none !important;
+      font-size: .94rem !important;
+      font-weight: 800;
+      line-height: 1;
+      padding: .62rem .56rem;
+      border-radius: 999px;
+    }
+    .desktop-nav a:hover {
+      color: #ffffff !important;
+      background: rgba(255,255,255,.08);
+    }
+    .desktop-nav a.active { color: #ffffff !important; }
+    .desktop-nav a.active::after {
+      content: "";
+      position: absolute;
+      left: .5rem;
+      right: .5rem;
+      bottom: -.35rem;
+      height: 3px;
+      border-radius: 999px;
+      background: var(--nx-green);
+    }
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: .45rem;
+      flex: 0 0 auto;
+    }
+    .lang-switch { display: inline-flex; align-items: center; gap: .25rem; }
+    .lang-link {
+      width: 34px;
+      height: 34px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.22);
+      color: #e5e7eb !important;
+      text-decoration: none !important;
+      font-weight: 900;
+      font-size: .75rem !important;
+    }
+    .lang-link.active {
+      background: var(--nx-accent) !important;
+      color: #ffffff !important;
+      border-color: rgba(6,182,212,.75) !important;
+      box-shadow: 0 0 0 3px rgba(6,182,212,.18) !important;
+    }
+
+    .nx-resource-menu-button {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.22);
+      background: rgba(255,255,255,.08);
+      color: #ffffff;
+      font-size: 1.35rem;
+      cursor: pointer;
+      line-height: 1;
+    }
+    .nx-resource-menu-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 10000;
+      display: none !important;
+      justify-content: flex-end;
+      background: rgba(15,23,42,.62);
+    }
+    .nx-resource-menu-overlay.is-open { display: flex !important; }
+    .nx-resource-menu-panel {
+      width: min(330px, 84vw);
+      min-height: 100vh;
+      background: #0f172a;
+      color: #ffffff;
+      box-shadow: -22px 0 55px rgba(0,0,0,.38);
+      padding: 1.2rem;
+      overflow-y: auto;
+    }
+    .nx-resource-menu-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+    }
+    .nx-resource-menu-head strong {
+      color: #ffffff;
+      font-size: 1.15rem;
+    }
+    .nx-resource-menu-close {
+      background: transparent;
+      color: #ffffff;
+      border: 0;
+      font-size: 2rem;
+      cursor: pointer;
+      line-height: 1;
+    }
+    .nx-resource-menu-nav {
+      display: flex;
+      flex-direction: column;
+      gap: .35rem;
+    }
+    .nx-resource-menu-nav a {
+      color: #e5e7eb !important;
+      text-decoration: none !important;
+      font-weight: 800;
+      padding: .78rem .65rem;
+      border-radius: 12px;
+    }
+    .nx-resource-menu-nav a:hover,
+    .nx-resource-menu-nav a.active {
+      background: rgba(255,255,255,.10);
+      color: #ffffff !important;
+    }
+
+
+
+    /* Botón Volver al índice conservado del curso original. */
+    .index-button {
+        display: block;
+        width: 50%;
+        margin: 10px auto;
+        padding: 7px 0;
+        text-align: center;
+        background-color: #eaf2f8;
+        color:#0056d2;
+        font-weight: bold;
+        text-decoration: none;
+        border-radius: 8px;
+        border: 1px solid #eaf2f8;
+    }
+
+    .index-button:hover {
+        background-color:  #0066cc;
+        color: white;
+    }
+
+    .index-button a:hover {
+        color: #0066cc !important;
+    }
+
+    @media (max-width: 1120px) {
+      .desktop-nav { display: none !important; }
+      .nx-resource-menu-button { display: inline-flex !important; }
+      .logo img { width: 150px !important; max-width: 150px !important; }
+    }
+    @media (max-width: 520px) {
+      .site-header .container { width: min(100% - 20px, 1180px); }
+      .logo img { width: 138px !important; max-width: 138px !important; }
+      .lang-link { width: 30px; height: 30px; font-size: .68rem !important; }
+      .nx-resource-menu-button { width: 38px; height: 38px; border-radius: 12px; }
+    }
+
+
+/*Video*/
+.video-placeholder video {
+    width: 100%;        /* Se adapta al espacio disponible */
+    max-width: 640px;   /* Nunca será más grande que tu tamaño ideal */
+    height: auto;       /* Mantiene las proporciones */
+    display: block;     
+    margin: 0 auto;     /* Lo centra dentro del “folio” */
+}
+
+/*Fin Video*/
+
+/*Footer*/
+    footer {   
+        background:#1e293b;
+        color: white;
+        text-align: center;
+        padding: 40px 0;
+        margin-top: 60px;
+    }
+
+    .footer-content {    
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .footer-links {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .social-links {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+    }
+
+    .social-link {
+        display: inline-block;
+        padding: 10px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.1);
+        transition: all 0.3s ease;
+        text-decoration: none;
+    }
+
+    .social-link:hover {
+        background: rgba(255, 255, 255, 0.2);
+        transform: translateY(-2px);
+    }
+
+    .social-icon {
+        width: 24px;
+        height: 24px;
+        fill: white;
+    }
+
+    .footer-logo {
+        display: inline-block;
+        transition: transform 0.3s ease;
+    }
+
+    .footer-logo:hover {
+        transform: scale(1.05);
+    }
+
+    .footer-text {
+        text-align: center;
+}
+
+    .contact-info {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .contact-item {
+        display: flex;
+        align-items: center;    
+        gap: 8px;
+        text-decoration: none;
+        color: var(
+        --accent-color
+    ); 
+    }
+
+    .contact-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+/*Fin Footer */
+
+/* === RESPONSIVE === */
+
+/* Tablets y dispositivos medianos */
+    @media (max-width: 768px) {
+        body {
+            padding: 15px;
+            max-width: 100%;
+        }
+
+        #tittle {
+            flex-direction: column;
+            text-align: center;
+            gap: 10px;
+        }
+
+        #tittle a {
+            height: auto;
+        }
+
+    /* Reducir sangrías */
+        .sangria {
+            margin-left: 20px;
+        }
+        .sangria2,
+        .sangria3,
+        .sangria4 {
+            margin-left: 15px;
+        }
+
+        .block,
+        .tab-container,
+        .index,
+        .video-placeholder {
+            padding: 15px;
+        }
+
+    /* Tabs en columna */
+        .tabs {
+            flex-direction: column;
+        }
+
+        .tab-button {
+            margin-right: 0;
+            margin-bottom: 5px;
+            width: 100%;
+        }
+
+    /* Botones apilados */
+        .buttons {
+            flex-direction: column;
+        }
+
+        .buttons a {
+            width: 100%;
+            text-align: center;
+        }
+    }
+
+/* Móviles pequeños */
+    @media (max-width: 480px) {
+        body {
+            padding: 10px;
+        }
+
+        h1 {
+            font-size: 1.5rem;
+        }
+
+        h2 {
+            font-size: 1.3rem;
+        }
+
+        h3 {
+            font-size: 1.1rem;
+        }
+
+        p {
+            font-size: 0.95rem;
+        }
+    
+        header {
+            padding: 2rem 1rem;
+        }
+
+        .header-content {
+            display: block;
+            text-align: center;
+        }
+
+        .left-section {
+            display: block;
+            margin-bottom: 1.5rem;
+        }
+
+        .logo-img {
+            width: 85vw;
+            max-width: 380px;
+            display: block;
+            margin: 0 auto 1.5rem auto;
+        }
+
+        .text-container {
+            display: block;
+            margin-bottom: 1.5rem;
+        }
+
+        .header-text,
+        .header-text2 {
+            font-size: 0.90rem;
+            line-height: 1.6;
+            color: blanchedalmond;
+            font-weight: 400;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .contact-button {
+            font-size: 0.85rem;
+            padding: 1rem 2rem;
+            display: inline-block;
+        }
+
+    /* Sangrías mínimas */
+        .sangria {
+            margin-left: 10px;
+        }
+        .sangria2,
+        .sangria3,
+        .sangria4 {
+            margin-left: 8px;
+        }
+
+        .block,
+        .tab-container,
+        .index,
+        .video-placeholder {
+            padding: 12px;
+            margin: 15px 0;
+        }
+
+        .buttons a {
+            padding: 10px 15px;
+            font-size: 0.95rem;
+        }
+
+        /* Imágenes adaptadas */
+        .block img,
+        .contenedor img {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+   /*footer*/
+        .contact-icon {
+            width: 25px;
+            height: 25px;
+        }
+        .contact-text {
+            font-size: 12px;
+        }
+    }
+
+/* Móviles muy pequeños */
+    @media (max-width: 340px) {
+        .logo-img {
+            width: 90vw;
+            max-width: 350px;
+        }
+
+        .header-text,
+        .header-text2 {
+            font-size: 0.75rem;
+            line-height: 1.5;
+        }
+
+        .contact-button {
+            font-size: 1.15rem;
+            padding: 0.95rem 1.9rem;
+        }
+/*footer*/
+        .contact-icon {
+            width: 20px;
+            height: 20px;
+        }
+        .contact-text {
+            font-size: 10px;
+        }
+    }
+    #titulo-teoria, #titulo-practica {
+    scroll-margin-top: 140px;
+}
+
+/* =====================================================
+   NEXAUTIA COURSE VISUAL V3
+   Corrige solapamiento hero, elimina exceso visual
+   y mejora contraste de bloques blancos.
+   ===================================================== */
+:root {
+    --nx-bg: #0f172a;
+    --nx-bg-soft: #111827;
+    --nx-card: #ffffff;
+    --nx-text: #0f172a;
+    --nx-muted: #475569;
+    --nx-primary: #2563eb;
+    --nx-primary-dark: #1d4ed8;
+    --nx-border: #bfdbfe;
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body {
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    font-family: "Inter", Arial, sans-serif !important;
+    background: #f1f5f9 !important;
+    color: var(--nx-text) !important;
+}
+
+.course-header {
+    background: #0f172a !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.10) !important;
+    padding: 1rem 1.25rem !important;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.course-header-inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.25rem;
+}
+
+.course-logo-link {
+    display: inline-flex;
+    align-items: center;
+}
+
+.logo-img {
+    width: 230px !important;
+    max-width: 230px !important;
+    height: auto !important;
+    margin: 0 !important;
+}
+
+.course-nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+}
+
+.course-nav a,
+.course-lang-switch a {
+    color: #e5e7eb !important;
+    text-decoration: none !important;
+    font-size: 0.9rem !important;
+    font-weight: 800;
+    padding: 0.55rem 0.75rem;
+    border-radius: 999px;
+    line-height: 1;
+}
+
+.course-nav a:hover,
+.course-lang-switch a:hover {
+    background: rgba(255, 255, 255, 0.10);
+    color: #ffffff !important;
+}
+
+.course-lang-switch {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding-left: 0.4rem;
+    margin-left: 0.25rem;
+    border-left: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.course-lang-switch a {
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    padding: 0.45rem 0.55rem;
+}
+
+.course-lang-switch a.active {
+    background: #06b6d4 !important;
+    border-color: rgba(6, 182, 212, 0.75) !important;
+    color: #ffffff !important;
+    box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.18) !important;
+}
+
+.course-shell {
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.course-hero {
+    display: grid;
+    grid-template-columns: minmax(0, 0.92fr) minmax(430px, 0.88fr);
+    gap: 4rem;
+    align-items: center;
+    max-width: 1220px;
+    margin: 0 auto;
+    padding: 4.4rem 1.5rem 4.6rem;
+    color: #ffffff;
+    position: relative;
+}
+
+.course-hero::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    right: auto;
+    top: 0;
+    width: 100vw;
+    height: 100%;
+    transform: translateX(-50%);
+    background:
+        radial-gradient(circle at 20% 0%, rgba(37, 99, 235, 0.30), transparent 34rem),
+        linear-gradient(180deg, #0f172a 0%, #111827 100%);
+    z-index: -1;
+}
+
+.course-eyebrow {
+    color: #bfdbfe !important;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.84rem;
+    margin: 0 0 1rem;
+}
+
+.course-hero h1 {
+    color: #ffffff !important;
+    border-bottom: none !important;
+    font-size: clamp(2.8rem, 4.2vw, 4.35rem) !important;
+    line-height: 1.04 !important;
+    margin: 0 0 1.25rem !important;
+    padding: 0 !important;
+    max-width: 620px !important;
+    word-break: normal !important;
+    overflow-wrap: normal !important;
+}
+
+.course-hero p {
+    color: #dbeafe !important;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    max-width: 620px;
+    margin-bottom: 0;
+}
+
+.course-hero-media {
+    margin: 0;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 24px;
+    padding: 0.75rem;
+    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.28);
+}
+
+.course-hero-media img {
+    border-radius: 18px !important;
+    margin: 0 !important;
+    width: 100% !important;
+    height: auto !important;
+    display: block !important;
+}
+
+.course-hero-media figcaption {
+    color: #dbeafe !important;
+    text-align: center;
+    font-size: 0.88rem;
+    margin-top: 0.7rem;
+    font-weight: 600;
+}
+
+.course-hero-buttons {
+    justify-content: flex-start !important;
+    margin-top: 1.6rem !important;
+}
+
+.course-intro-block,
+#seccion-practica,
+#seccion-teoria,
+body > .block,
+body > .tab-container {
+    max-width: 980px;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.course-intro-block {
+    margin-top: 2.7rem !important;
+}
+
+.block,
+.tab-container,
+.index,
+.indext {
+    color: #0f172a !important;
+    border: 1px solid var(--nx-border) !important;
+    box-shadow: 0 12px 34px rgba(15, 23, 42, 0.10) !important;
+}
+
+.block {
+    background: #ffffff !important;
+    border-radius: 18px !important;
+}
+
+.block p,
+.block li,
+.tab-content p,
+.tab-content li {
+    color: #0f172a !important;
+}
+
+.index,
+.indext {
+    background: #eaf2ff !important;
+    border-radius: 16px !important;
+}
+
+.index strong,
+.indext strong {
+    color: #0f172a !important;
+}
+
+.index a,
+.indext a {
+    color: #1d4ed8 !important;
+    font-weight: 800;
+}
+
+h1,
+h2,
+h3 {
+    color: #0f172a !important;
+}
+
+.teoria,
+.practica,
+body > h1 {
+    border-bottom-color: var(--nx-primary) !important;
+}
+
+.buttons a,
+.contact-button,
+.index-button {
+    background: linear-gradient(135deg, #2563eb, #1d4ed8) !important;
+    color: #ffffff !important;
+    border: 0 !important;
+    border-radius: 999px !important;
+    box-shadow: 0 12px 28px rgba(37, 99, 235, 0.22);
+}
+
+.buttons a:hover,
+.contact-button:hover,
+.index-button:hover {
+    background: linear-gradient(135deg, #1d4ed8, #1e40af) !important;
+    color: #ffffff !important;
+    transform: translateY(-1px);
+}
+
+.video-placeholder {
+    background: #e0ecff !important;
+    border: 1px solid #bfdbfe;
+}
+
+footer {
+    max-width: none !important;
+    background: #0f172a !important;
+    margin-top: 4rem !important;
+}
+
+.footer-content {
+    max-width: 980px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.footer-logo img {
+    max-width: 200px !important;
+    height: auto !important;
+}
+
+@media (max-width: 1080px) {
+    .course-hero {
+        grid-template-columns: 1fr;
+        gap: 2.2rem;
+        padding-top: 3.2rem;
+        text-align: center;
+    }
+
+    .course-hero h1,
+    .course-hero p {
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    .course-hero-buttons {
+        justify-content: center !important;
+    }
+
+    .course-hero-media {
+        max-width: 680px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (max-width: 760px) {
+    .course-header-inner {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .course-nav {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 520px) {
+    .course-hero {
+        padding-left: 0.85rem;
+        padding-right: 0.85rem;
+    }
+
+    .course-nav a,
+    .course-lang-switch a {
+        font-size: 0.76rem !important;
+        padding: 0.45rem 0.52rem;
+    }
+
+    .course-lang-switch {
+        border-left: 0;
+        margin-left: 0;
+        padding-left: 0;
+    }
+
+    .logo-img {
+        width: 210px !important;
+    }
+
+    .course-hero h1 {
+        font-size: 2.35rem !important;
+    }
+}
+.course-logo-link .logo-img,
+    .logo-img {
+        width: 150px !important;
+        max-width: 150px !important;
+    }
+
+    .course-menu-toggle {
+        width: 38px !important;
+        height: 38px !important;
+        border-radius: 12px !important;
+    }
+
+    .course-menu-toggle span {
+        width: 18px !important;
+    }
+
+    .course-lang-switch a {
+        min-width: 30px !important;
+        height: 30px !important;
+        font-size: 0.68rem !important;
+    }
+
+    .course-header {
+        padding-left: 0.65rem !important;
+        padding-right: 0.65rem !important;
+    }
+
+    .course-nav {
+        width: min(290px, 76vw) !important;
+    }
+}
+
+</style>
+    </head>
+    <body class="nx-v2 resource-page" id="top">
+        <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">
+        <a aria-label="Inici Nexautia" data-track="nav-logo" href="../../index.html">
+          <img alt="NEXAUTIA" id="logo" src="../../../imagenes/comunes/logo.svg" />
+        </a>
+      </div>
+
+      <nav aria-label="Navegació principal" class="desktop-nav">
+        <a data-track="nav-automatizaciones" href="../../serveis/automatitzacio-processos-empreses.html">Automatitzacions</a>
+        <a data-track="nav-ia" href="../../serveis/intelligencia-artificial-empreses.html">IA aplicada</a>
+        <a data-track="nav-web" href="../../serveis/pagines-web-empreses.html">Pàgines web</a>
+        <a data-track="nav-formacion" href="../../serveis/formacio-empreses.html">Formació empreses</a>
+        <a class="active" data-track="nav-aprende" href="../">Aprèn gratis</a>
+        <a data-track="nav-contact" href="../../contacte/">Contacte</a>
+      </nav>
+
+      <div class="header-actions">
+        <nav aria-label="Selector d’idioma" class="lang-switch">
+          <a aria-label="Versión en español" class="lang-link" href="../../../recursos/curso_basico_make/" hreflang="es" lang="es">ES</a>
+          <a aria-label="Versió en català" class="lang-link active" href="./" hreflang="ca" lang="ca">CA</a>
+        </nav>
+        <button aria-controls="nx-resource-menu-overlay" aria-expanded="false" aria-label="Obrir menú" class="nx-resource-menu-button" id="nx-resource-menu-button" type="button">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="nx-resource-menu-overlay" id="nx-resource-menu-overlay" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Menú principal">
+    <div class="nx-resource-menu-panel">
+      <div class="nx-resource-menu-head">
+        <strong>Menú</strong>
+        <button aria-label="Tancar menú" class="nx-resource-menu-close" id="nx-resource-menu-close" type="button">×</button>
+      </div>
+      <nav aria-label="Navegació mòbil" class="nx-resource-menu-nav">
+        <a href="../../serveis/automatitzacio-processos-empreses.html">⚙️ Automatitzacions</a>
+        <a href="../../serveis/intelligencia-artificial-empreses.html">🧠 IA aplicada</a>
+        <a href="../../serveis/pagines-web-empreses.html">🌐 Pàgines web</a>
+        <a href="../../serveis/formacio-empreses.html">🎓 Formació empreses</a>
+        <a class="active" href="../">📚 Aprèn gratis</a>
+        <a href="../../contacte/">📞 Contacte</a>
+      </nav>
+    </div>
+  </div>
+
+        <main class="course-shell">
+            <section class="course-hero">
+                <div class="course-hero-copy">
+                    <p class="course-eyebrow">Curs gratuït d’automatització no-code</p>
+                    <h1>Curs bàsic de Make i automatitzacions</h1>
+                    <p>
+                        Aprèn des de zero com funciona Make, què és una automatització,
+                        com es construeixen escenaris i com aplicar mòduls, triggers,
+                        routers, filtres, webhooks, iteradors i agregadors en casos reals.
+                    </p>
+                    <div class="buttons course-hero-buttons">
+                        <a href="javascript:void(0)" onclick="mostrarSeccion('teoria')">Veure part teòrica</a>
+                        <a href="javascript:void(0)" onclick="mostrarSeccion('practica')">Veure part pràctica</a>
+                    </div>
+                </div>
+                <figure class="course-hero-media">
+                    <img src="../../../imagenes/comunes/curso-make-card.webp" alt="Curs bàsic de Make i automatitzacions" class="card-svg">
+                    <figcaption>Make · Automatització · No-code · Casos pràctics</figcaption>
+                </figure>
+            </section>
+
+            <!-- Intro del curso -->
+            <div class="block course-intro-block">
+                <p>
+                    Presentem el <strong>Curs bàsic de Make i automatitzacions</strong>, dissenyat per a
+                    persones que volen entendre l’automatització des de zero i aplicar-la en casos reals.
+                </p>
+                <p>
+                    El curs es divideix en <strong>dues parts</strong>:
+                </p>
+                <ul>
+                    <li><strong>Part teòrica:</strong> conceptes clau per entendre com funciona Make.</li>
+                    <li><strong>Part pràctica:</strong> creació d’automatitzacions reals pas a pas.</li>
+                </ul>
+            </div>
+
+        
+        <!--
+        TRADUCCIÓN CATALANA - FASE 1 COMPLETADA:
+        SEO/GEO + header + hero + introducción + índices de teoría y práctica.
+        FASE 15 COMPLETADA: traducida toda la parte teórica id="conceptos1" a id="conceptos11" y toda la parte práctica id="videoPractica1" a id="videoPractica8".
+        -->
+
+        <div id="seccion-practica" style="display:none;">
+            <h2 class="practica" id="titulo-practica">⚙️ Part 2. Pràctica</h2>
+                <!-- Índice interno de la lección -->
+            <div class="index" id="index">
+                <strong>Índex de la lliçó:</strong>
+                <a href="#videoPractica1">1. Formulari Tally amb Router i Gmail</a>
+                <a href="#videoPractica2">2. Com utilitzar Array Aggregator per preparar dades i enviar-les per Gmail</a>
+                <a href="#videoPractica3">3. Automatització a Make per guardar adjunts de Gmail a Dropbox</a>
+                <a href="#videoPractica4">4. Automatitza notícies RSS a Gmail amb Make (escenari bàsic)</a>
+                <a href="#videoPractica5">5. Automatitza notícies RSS a Gmail amb Make utilitzant Text Aggregator</a>
+                <a href="#videoPractica6">6. Com processar dades externes a Make amb Iterator (HTTP → Google Sheets)</a>
+                <a href="#videoPractica7">7. Eliminar el fons d’imatges automàticament amb Make i remove.bg</a>
+                <a href="#videoPractica8">8. Publicar automàticament a Facebook i Instagram amb Make i RSS</a>
+            </div>
+
+            
+            <!-- Bloque 1 pràctica -->
+            <div class="block" id="videoPractica1">
+                <div id="tittle">
+                    <h2>1. Automatització amb Make: formulari Tally amb Router i Gmail</h2>
+                </div>
+
+                <div class="tab-container">
+
+                    <div class="tab-content" id="text1">
+                        <section>
+                            <h3>1. 🛠️ Automatització amb Make: formulari Tally amb Router i Gmail</h3>
+                            <div class="sangria">
+                                <p><b>Automatització creada amb Make</b> que permet gestionar <b>formularis de contacte de manera intel·ligent</b>.</p>
+                                <p><b>A partir d’un formulari a Tally</b>, el sistema identifica <b>automàticament</b> el departament seleccionat per l’usuari, vendes o suport, i envia el correu al destinatari corresponent mitjançant Gmail.</p>    
+                                <p>Una solució senzilla i eficaç per organitzar sol·licituds, millorar l’atenció al client i evitar gestions manuals innecessàries des del primer contacte.</p>                             
+                            </div>                                                    
+                        </section>
+                    </div>
+                        <div class="video-placeholder">
+                            <iframe
+                                src="https://www.youtube-nocookie.com/embed/53orJI1Nmd4"                                                   
+                                title="Vídeo del curs: automatització amb Make, Tally, Router i Gmail"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen
+                            ></iframe>
+                        </div>                               
+                    <a href="#titulo-practica" class="index-button">Tornar a l’índex</a>
+            </div>
+        </div>
+
+        
+
+        <!-- Bloque 2 pràctica -->
+        <div class="block" id="videoPractica2">
+            <div id="tittle">
+                <h2>2. Com utilitzar Array Aggregator per preparar dades i enviar-les per Gmail</h2>
+            </div>
+
+            <div class="tab-container">
+
+                <div class="tab-content" id="text2">
+                    <section>
+                        <h3>2. Com utilitzar Array Aggregator per preparar dades i enviar-les per Gmail</h3>
+                        <div class="sangria">
+                            <p>En aquest segon <b>vídeo del curs pràctic de Make</b> entrem en un dels conceptes més importants de tota l’<b>automatització a Make</b>: el treball amb <b>arrays</b> i l’ús de l’<b>Array Aggregator</b> per preparar dades abans d’enviar-les a altres mòduls.</p>
+                            <p>A partir d’un cas real i molt senzill —l’obtenció d’informació meteorològica mitjançant el mòdul Weather— aprendràs que molts mòduls de <b>Make</b> no retornen una única dada, sinó <b>conjunts de dades, és a dir, arrays</b>. Aquestes dades no es poden enviar directament a mòduls com <b>Gmail</b> sense abans <b>agrupar-les, ordenar-les i donar-los una estructura adequada.</b></p>                             
+                            <p>Aquí és on l’<b>Array Aggregator</b> es converteix en una peça clau. Veuràs com recollir múltiples elements generats per un <b>mòdul</b>, com convertir-los en un únic bloc d’informació i com preparar aquest contingut perquè pugui ser utilitzat correctament <b>per altres mòduls de l’escenari.</b></p>                             
+                            <p>Aquest vídeo és fonamental per entendre com flueix la informació dins de <b>Make</b> i per què l’ús correcte de l’<b>Array Aggregator</b> marca la diferència entre una automatització bàsica i una automatització ben dissenyada.</p>                             
+                    </div>                                                    
+                    </section>
+                </div>
+                    <div class="video-placeholder">
+                        <iframe
+                            src="https://www.youtube-nocookie.com/embed/6t4aQ9sA0KY"                                                   
+                            title="Vídeo del curs: Array Aggregator per preparar dades i enviar-les per Gmail"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen
+                        ></iframe>
+                    </div>                               
+                <a href="#titulo-practica" class="index-button">Tornar a l’índex</a>
+            </div>
+        </div>
+
+        
+
+        <!-- Bloque 3 pràctica -->
+        <div class="block" id="videoPractica3">
+            <div id="tittle">
+                <h2>3. Automatització a Make per guardar adjunts de Gmail a Dropbox</h2>
+            </div>
+
+            <div class="tab-container">
+
+                <div class="tab-content" id="text3">
+                    <section>
+                        <h3>3. Automatització a Make per guardar adjunts de Gmail a Dropbox</h3>
+                        <div class="sangria">
+                            <p>Aquesta <b>automatització a Make</b> permet <b>guardar automàticament els adjunts de Gmail a Dropbox</b>, eliminant per complet la necessitat de descarregar arxius manualment i millorant l’<b>automatització de processos</b> en entorns professionals.</p>
+                            <p>L’escenari comença amb el mòdul <b>Gmail – Watch Emails</b>, que detecta de manera automàtica l’entrada de nous correus electrònics segons la freqüència configurada. A continuació, el mòdul <b>Gmail – List Email Attachments and Media</b> s’encarrega de <b>recuperar correctament tots els arxius adjunts</b>, inclosos <b>adjunts tradicionals i adjunts multimèdia</b>, una cosa imprescindible en les automatitzacions actuals amb <b>Gmail</b>.</p>
+                            <p>Finalment, mitjançant el mòdul <b>Dropbox – Upload a File</b>, els arxius es <b>pugen automàticament a una carpeta de Dropbox</b>, prèviament creada, permetent una <b>gestió documental automatitzada</b>, ordenada i segura.</p>
+                            <p>Aquesta <b>automatització amb Make, Gmail i Dropbox</b> és ideal per <b>automatitzar la gestió de documents</b>, centralitzar arxius rebuts per correu electrònic i optimitzar fluxos de treball sense codi <b>(no-code / low-code)</b>.</p>
+                        </div>                                                    
+                    </section>
+                </div>
+                    <div class="video-placeholder">
+                        <iframe
+                            src="https://www.youtube-nocookie.com/embed/K58VEBBDR7I"                                                   
+                            title="Vídeo del curs: guardar adjunts de Gmail a Dropbox amb Make"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen
+                        ></iframe>
+                    </div>                               
+                <a href="#titulo-practica" class="index-button">Tornar a l’índex</a>
+            </div>
+        </div>
+
+        
+
+        <!-- Bloque 4 pràctica -->
+        <div class="block" id="videoPractica4">
+            <div id="tittle">
+                <h2>4. Automatitza notícies RSS a Gmail amb Make (escenari bàsic)</h2>
+            </div>
+
+            <div class="tab-container">
+
+                <div class="tab-content" id="text4">
+                    <section>
+                        <h3>4. Automatitza notícies RSS a Gmail amb Make (escenari bàsic)</h3>
+                        <div class="sangria">
+                            <p>En aquesta <b>automatització</b> treballem amb un escenari bàsic a <b>Make</b>, on connectem un <b>mòdul RSS</b> amb <b>Gmail</b> per rebre automàticament notícies per correu electrònic.</p>
+                            <p>Cada notícia obtinguda des del <b>mòdul RSS</b> s’envia de manera individual a <b>Gmail</b>, generant un <b>correu per cada element rebut</b>. Aquest escenari és ideal per entendre els conceptes fonamentals de <b>Make</b>, com el <b>flux entre mòduls</b> i el <b>tractament de la informació en forma de paquets.</b></p>                             
+                            <p><b>En el vídeo següent</b> es mostra com <b>optimitzar aquesta mateixa automatització</b> per fer-la més <b>eficient i reduir el nombre de correus enviats.</b></p>                             
+                    </div>                                                    
+                    </section>
+                </div>
+                    <div class="video-placeholder">
+                        <iframe
+                            src="https://www.youtube-nocookie.com/embed/zmn9rM1cbwM"                                                   
+                            title="Vídeo del curs: automatitzar notícies RSS a Gmail amb Make"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen
+                        ></iframe>
+                    </div>                               
+                <a href="#titulo-practica" class="index-button">Tornar a l’índex</a>
+            </div>
+        </div>
+
+
+        
+            
+        
+        <!-- Bloque 5 pràctica -->
+        <div class="block" id="videoPractica5">
+            <div id="tittle">
+                <h2>5. Automatitza notícies RSS a Gmail amb Make utilitzant Text Aggregator</h2>
+            </div>
+
+            <div class="tab-container">
+
+                <div class="tab-content" id="text5">
+                    <section>
+                        <h3>5. Automatitza notícies RSS a Gmail amb Make utilitzant Text Aggregator</h3>
+                        <div class="sangria">
+                            <p>En aquesta <b>automatització</b> treballem amb un escenari senzill però molt representatiu, on combinem un <b>mòdul RSS</b>, un <b>Text Aggregator</b> i <b>Gmail</b>.</p>
+                            <p>L’objectiu és recollir diverses notícies des d’un <b>feed RSS</b> i, en lloc de tractar-les de manera individual, <b>agrupar-les prèviament utilitzant el mòdul Text Aggregator</b>, que es converteix en la peça clau de tota l’<b>automatització</b>.</p>
+                            <p>D’aquesta manera, tota la informació obtinguda des del <b>mòdul RSS de Make</b> passa primer pel <b>mòdul Text Aggregator de Make</b>, que la unifica en un sol bloc de text, i aquest resultat és el que finalment s’envia a <b>Gmail</b> en un únic correu electrònic.</p>
+                            <p>En el vídeo veurem com encaixar aquests tres <b>mòduls</b> i com canvia el comportament de l’<b>escenari</b> en introduir el <b>mòdul Text Aggregator</b> com a element central.</p>                                                                          
+                </div>                                                    
+                    </section>
+                </div>
+                    <div class="video-placeholder">
+                        <iframe
+                             src="https://www.youtube-nocookie.com/embed/1MGewHdkGX8"                                                                               
+                            title="Vídeo del curs: notícies RSS a Gmail amb Text Aggregator"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen
+                        ></iframe>
+                    </div>                               
+                <a href="#titulo-practica" class="index-button">Tornar a l’índex</a>
+            </div>
+        </div>
+
+
+        
+
+        
+        <!-- Bloque 6 pràctica -->
+        <div class="block" id="videoPractica6">
+            <div id="tittle">
+                <h2>6. Com processar dades externes a Make amb Iterator (HTTP → Google Sheets)</h2>
+            </div>
+
+            <div class="tab-container">
+
+                <div class="tab-content" id="text6">
+                    <section>
+                        <h3>6. Com processar dades externes a Make amb Iterator (HTTP → Google Sheets)</h3>
+                        <div class="sangria">
+                            <p>En aquest vídeo aprendràs com treballar a <b>Make</b> amb informació que arriba des d’una <b>font externa</b> i com <b>processar-la</b> correctament dins d’un <b>escenari</b>.</p>
+                            <p>Veurem com utilitzar el <b>mòdul Iterator de Make</b> per transformar una llista d’usuaris que arriba tota junta i poder treballar amb cada element de manera individual, guardant finalment les dades a <b>Google Sheets</b>.</p>
+                            <p>Una lliçó clau per entendre com flueix la informació en <b>automatitzacions reals</b>.</p>
+                </div>                                                    
+                    </section>
+                </div>
+                    <div class="video-placeholder">
+                        <iframe
+                            src="https://www.youtube-nocookie.com/embed/hkG8nu8iQRI"                                                                               
+                            title="Vídeo del curs: processar dades externes amb Iterator i Google Sheets"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen
+                        ></iframe>
+                    </div>                               
+                <a href="#titulo-practica" class="index-button">Tornar a l’índex</a>
+            </div>
+        </div>                     
+
+        
+
+        <!-- Bloque 7 pràctica -->
+        <div class="block" id="videoPractica7">
+            <div id="tittle">
+                <h2>7. Eliminar el fons d’imatges automàticament amb Make i remove.bg</h2>
+            </div>
+
+            <div class="tab-container">                
+                <div class="tab-content" id="text7">
+                    <section>
+                        <h3>7. 🛠️ Eliminar el fons d’imatges automàticament amb Make i remove.bg</h3>
+                        <div class="sangria">
+                            <p>En aquest vídeo mostrem com crear una <b>automatització</b> que <b>elimina automàticament el fons de les imatges</b> utilitzant <b>Make</b> i <b>Google Drive</b>.</p>
+                            <p><b>Cada vegada que es pugen noves imatges</b> a una carpeta concreta de <b>Google Drive</b>, l’<b>automatització</b> s’encarrega de processar-les, <b>treure’ls el fons</b> i guardar-les en una altra carpeta de <b>Google Drive</b>, llestes per utilitzar-les.</p>    
+                            <p>És un exemple pràctic i visual de com <b>automatitzar tasques repetitives</b> i <b>estalviar temps en el dia a dia</b>.</p>                             
+                        </div>                                                    
+                    </section>
+                </div>
+                    <div class="video-placeholder">
+                        <iframe
+                            src="https://www.youtube-nocookie.com/embed/0bzy1iO180E"                                                   
+                            title="Vídeo del curs: eliminar fons d’imatges amb Make i remove.bg"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen
+                        ></iframe>
+                    </div>                               
+                <a href="#titulo-practica" class="index-button">Tornar a l’índex</a>
+            </div>
+        </div>
+
+
+
+<!-- Bloque 8 pràctica -->
+<div class="block" id="videoPractica8">
+    <div id="tittle">
+        <h2>8. Publicar automàticament a Facebook i Instagram amb Make i RSS</h2>
+    </div>
+
+    <div class="tab-container">                
+        <div class="tab-content" id="text8">
+            <section>
+                <h3>8. 🛠️ Publicar automàticament a Facebook i Instagram amb Make i RSS</h3>
+                <div class="sangria">
+                    <p><b>En aquest vídeo veiem com crear una automatització</b> senzilla a <b>Make</b> per <b>publicar continguts automàticament</b> a <b>Facebook</b> i <b>Instagram</b> a partir d’un <b>feed RSS</b>.</p>
+                    <p>Treballarem amb una estructura bàsica —<b>RSS</b>, <b>router a Make</b> i <b>xarxes socials</b>— pensada com a punt de partida per entendre la lògica de l’<b>escenari a Make</b> i aprendre a reutilitzar la informació en diferents canals.</p>    
+                    <p>És un exemple pràctic i fàcil de seguir, ideal per començar i, a partir d’aquí, adaptar i ampliar l’<b>automatització</b> segons les necessitats reals de cada negoci.</p>                             
+                </div>                                                    
+            </section>
+        </div>
+            <div class="video-placeholder">
+                <iframe
+                    src="https://www.youtube-nocookie.com/embed/ijp7tJbJmBI"                                                   
+                    title="Vídeo del curs: publicar automàticament a Facebook i Instagram amb Make i RSS"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                ></iframe>
+            </div>                               
+        <a href="#titulo-practica" class="index-button">Tornar a l’índex</a>
+    </div>
+</div>
+
+</div>
+</div>
+
+
+        <div id="seccion-teoria">
+            <h2 class="teoria" id="titulo-teoria">⚙️ Part 1. Teoria</h2>
+            <!-- Índice interno de la lección de teoría-->
+            <div class="indext" id="indext">
+                <strong>Índex de la lliçó:</strong>                
+                <a href="#conceptos1">1. Què és una automatització</a>
+                <a href="#conceptos2">2. Eines d’automatització</a>
+                <a href="#conceptos3">3. Com es construeix una automatització pas a pas</a>
+                <a href="#conceptos4">4. Els disparadors – El punt d’arrencada d’una automatització</a>
+                <a href="#conceptos5">5. Connexions: la clau que obre les aplicacions</a>
+                <a href="#conceptos6">6. Connexions: Webhooks: la porta que escolta.</a>
+                <a href="#conceptos7">7. Accions</a>
+                <a href="#conceptos8">8. Rutes, filtres i lògica: quan el teu escenari pren decisions</a>
+                <a href="#conceptos9">9. Iterador: desgranant dades pas a pas</a>
+                <a href="#conceptos10">10. ArrayAggregator: reunir elements en un sol paquet</a>
+                <a href="#conceptos11">11. Variables, comptadors i funcions – El kit secret de Make</a>
+            </div>
+
+            <!-- Bloque 1 teoria: Què és una automatització -->
+            <div class="block" id="conceptos1">
+                <div id="tittle">
+                    <h2>1. Què és una automatització</h2>                    
+                </div>
+
+                <!-- Pestanyes -->
+                <div class="tab-container">                          
+
+                    <div class="tab-content" id="text1">
+                        <section>
+                            <h3>1. 📌 Què és una automatització?</h3>
+                            <div class="sangria">
+                                <p>
+                                <span class="highlight">Una automatització</span> és com tenir un ajudant digital
+                                que fa tasques per tu de manera automàtica.
+                                </p>
+                                <p>
+                                👉 Tu decideixes la regla: “quan passi això 👉 fes
+                                això altre, automàticament”.
+                                </p>
+                            </div>
+
+                            <h3>2. 🔧 Eines més conegudes</h3>
+                                <div class="sangria">
+                                <p>◉ Zapier → molt fàcil d’utilitzar, connecta milers d’apps. </p>
+                                <p>◉ IFTTT → perfecte per començar amb coses senzilles. </p>
+                                <p>◉ Make → molt visual, amb moltes opcions.  </p>
+                                <p>◉ n8n → molt flexible, fins i tot el pots instal·lar al teu propi servidor.  </p>
+                                </div>  
+
+                            <h3>3. ✨ Exemples senzills per començar </h3>
+                            <div class="sangria">
+                                <p>◉ Guardar automàticament les teves fotos al núvol cada vegada que les fas. </p>
+                                <p>◉ Publicar automàticament en diverses xarxes socials amb un sol clic. </p>
+                                <p>◉ Rebre automàticament un WhatsApp quan algú omple el teu formulari. </p>
+                                <p>◉ Organitzar automàticament les teves factures: quan arriben al correu, es guarden a la teva carpeta de despeses. </p>
+                                <p>◉ Crear automàticament un recordatori al teu calendari quan et manden una cita per email.</p>
+                                <p>◉ Anotar automàticament a la teva llista de tasques cada vegada que algú t’envia una comanda. </p>
+                            </div>
+
+                            <h3>4. 🚀 Exemples més avançats per créixer </h3>
+                            <div class="sangria">
+                                <p>◉ Generar automàticament factures a partir de comandes online i enviar-les al client.</p>
+                                <p>◉ Recollir automàticament dades de correus, formularis i fulls de càlcul → analitzar-les → i enviar-te un informe setmanal. </p>
+                                <p>◉ Coordinar automàticament clients, equip i eines: quan un client compra, rep un email,
+                                es crea una tasca per a l’equip i s’actualitza el CRM. </p>
+                            </div>
+
+                            <h3>5. 🌍 I més enllà… </h3>
+                            <div class="sangria">
+                                <p><b>L’automatització</b> no té límits. </p>
+                                <p>Pots començar amb tasques petites i senzilles, però també crear sistemes automàtics que connectin dades, aplicacions i equips complets. </p>
+                                <p>👉 L’únic que cal és imaginar què vols aconseguir, perquè avui la tecnologia ja permet gairebé tot. </p>
+                            </div>
+
+                            <h3>6. ✅ Avantatges d’automatitzar </h3>
+                            <div class="sangria">
+                                <p>◉ Estalvia temps automàticament ⏳. </p>
+                                <p>◉ Redueix errors automàticament ❌. </p>
+                                <p>◉ Dona tranquil·litat automàticament 🧘. </p>
+                                <p>◉ Et permet enfocar-te automàticament en allò important 💡. </p>
+                            </div>
+
+                            <h3>7. ✅ 📍 En resum: </h3>
+                            <div class="sangria">
+                                <p><span class="highlight">L’automatització </span>és
+                                com posar la teva vida digital en pilot automàtic. Des del
+                                més senzill fins al més complex, les possibilitats són
+                                gairebé infinites. 
+                                <span class="highlight">L’automatització</span> permet
+                                substituir tasques repetitives per processos automàtics.
+                                <span class="highlight">Make</span> connecta aplicacions
+                                i serveis perquè treballin de manera coordinada.</p>
+                            </div>                                                
+                        </section>
+                        <div class="video-placeholder">
+                            <iframe
+                                src="https://www.youtube-nocookie.com/embed/gMGKjWjKBGw"                           
+                                title="Vídeo del curs"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen
+                            ></iframe>
+                        </div>                                
+                    <a href="#seccion-teoria" class="index-button">Tornar a l’índex</a>
+                </div>
+            </div>
+
+
+            
+            
+
+            <!-- Bloque 2 teoria: Eines d’automatització -->
+            <div class="block" id="conceptos2">
+                <div id="tittle">
+                    <h2>2. Eines d’automatització</h2>                    
+                </div>           
+                <div class="tab-container">                    
+                    <div class="tab-content" id="text2">
+                        <section>
+                            <h3>1. 🛠️ Eines d’automatització</h3>
+                            <div class="sangria">
+                                <p>
+                                <span class="highlight">L’automatització</span> consisteix a connectar aplicacions perquè facin tasques soles, sense que les hagis de repetir manualment.
+                                </p>                              
+                            </div>
+
+                            <h3>2. 🔗 Què són les eines d’automatització?</h3>
+                                <div class="sangria">
+                                <p><b>Són programes que funcionen com una cola digital:</b> uneixen diferents aplicacions i fan que “parlin” entre elles.
+                                    Amb aquestes eines pots crear fluxos de treball, també anomenats workflows o escenaris, que s’activen automàticament quan passa alguna cosa.
+                                </p>
+                                <p>👉 <b>El millor és que no necessites saber programar. </b>Aquestes eines estan pensades perquè qualsevol persona les pugui utilitzar, fins i tot si mai no ha tocat una línia de codi.
+                                </p>
+                                </div>  
+
+                            <h3>3. 📌 Exemple senzill</h3>
+                            <div class="sangria">
+                                <p>1. Algú omple un formulari ✍️.</p>
+                                <p>2. La informació escrita, com el nom, el correu o el missatge, es guarda en un full de càlcul 📊.</p>
+                                <p>3. Automàticament reps un avís per WhatsApp o per correu 📩.</p>
+                                <p>👉 Tot això passa sol, sense que hagis de copiar i enganxar res.</p>
+                                <p>⚡ Si t’hi fixes, això passa perquè <b>l’eina d’automatització</b> fa que el <b>formulari</b>, <b>el full de càlcul</b> i <b>WhatsApp</b> <b>es puguin comunicar entre ells i treballar en cadena.</b></p>
+                            </div>
+
+                            <h3>4. ⚡ Exemples ràpids</h3>
+                            <div class="sangria">
+                                <p>◉ Quan algú compra a la teva botiga online 🛒 → es genera automàticament una factura en PDF 📄.</p>
+                                <p>◉ Quan reps un email amb un adjunt 📧 → aquest arxiu es guarda al teu Google Drive ☁️.</p>
+                                <p>◉ Quan publiques a Instagram 📷 → el mateix contingut es comparteix a Twitter 🐦 i LinkedIn 💼. </p>
+                                <p>◉ Una acadèmia, per exemple, pot automatitzar que quan un alumne s’inscriu 🧑‍🎓 → se li enviï un email de benvinguda ✉️ i se l’apunti en un full de seguiment 📑.</p>
+                                <p>👉 Aquests fluxos poden ser molt simples o tan complexos com vulguis.</p>
+                                </div>
+
+                            <h3>5. 🔝 Eines més utilitzades</h3>
+                            <div class="sangria">
+                                <p>◉<b>Zapier </b> → Molt popular i fàcil d’utilitzar.</p>
+                                <p>◉ <b>Make, abans Integromat </b>→ Flexible i potent, ideal per a escenaris més avançats.</p>
+                                <p>◉ <b>n8n </b>→ De codi obert, instal·lable al teu propi servidor i molt personalitzable. </p>
+                            </div>
+
+                            <h3>6. 📊 Quadre resum d’eines d’automatització</h3>
+                            <div class="sangria">
+                                <p><b>Zapier</b> → Dificultat: fàcil. Avantatges principals: molt intuïtiu i amb moltes integracions. Ideal per a principiants i pimes.</p>
+                                <p><b>Make</b> → Dificultat: mitjana. Avantatges principals: molt visual, potent i permet fluxos complexos. Ideal per a usuaris que volen més control.</p>
+                                <p><b>n8n</b> → Dificultat: avançada. Avantatges principals: gratuït, de codi obert i molt personalitzable. Ideal per a usuaris tècnics o empreses amb servidor propi.</p>
+                            </div>
+
+                            <h3>7. 💡 Beneficis d’utilitzar automatització</h3>
+                            <div class="sangria">
+                                <p>◉ <b>Estalvi de temps </b>⏳: evites tasques repetitives.</p>
+                                <p>◉ <b>Menys errors </b>❌: ja no depens de copiar i enganxar a mà.</p>
+                                <p>◉ <b>Més productivitat </b>🚀: pots centrar-te en allò important.</p>
+                                <p>◉ <b>Escalabilitat </b>📈: comences amb coses simples i pots créixer fins a sistemes complexos.</p>
+                            </div>  
+
+                            <h3>8. 📝 En resum</h3>
+                            <div class="sangria">
+                                <p><b>Les eines d’automatització </b>són com una cola digital que connecta aplicacions entre elles.
+                                    Et permeten <b>estalviar temps</b>, <b>reduir errors</b> i <b>crear fluxos que poden anar des del més senzill, com guardar dades en un full de càlcul, fins al més complex que puguis imaginar.
+                                        I el millor: no necessites saber programar per començar 🚀.</b>
+                                </p>                              
+                            </div>    
+
+                        </section> 
+                        <div class="video-placeholder">
+                            <iframe
+                                src="https://www.youtube-nocookie.com/embed/RMV7RsFom-g"                                                    
+                                title="Vídeo del curs"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen
+                            >
+                            </iframe>                   
+                        </div>
+
+                    <a href="#seccion-teoria" class="index-button">Tornar a l’índex</a>
+                </div>
+            </div>
+
+            
+
+            <!-- Bloque 3 teoria -->
+            <div class="block" id="conceptos3">
+                <h2>3. Com es construeix una automatització pas a pas</h2>
+
+                <div class="tab-container">                    
+                    <div class="tab-content" id="text3">
+                        <section>
+                            <h3>1. 🛠️ Com es construeix una automatització pas a pas</h3>
+                            <div class="sangria">
+                                <p> Fins ara hem vist <span class="highlight">què és l’automatització</span> i <span class="highlight">quines eines existeixen. </span>Però potser encara tens el dubte: </p>
+                                <p>👉 “D’acord, però com funciona això a la pràctica? Quina pinta té una automatització real?”</p>    
+                                <p>En aquesta fitxa descobrirem <b>l’estructura bàsica de qualsevol automatització,</b> sense entrar encara en conceptes massa tècnics. La idea és que entenguis la lògica general, com si veiessis el mapa d’un viatge abans de començar a caminar.</p>                             
+                            </div>
+
+                            <h3>2. 📦 L’escenari o flux de treball workflow</h3>
+                                <div class="sangria">
+                                <p>Cada automatització viu dins del que normalment s’anomena <b>escenari</b>, en Make, <b>zap</b>, en Zapier, o <b>workflow</b>, és a dir, flux de treball en general.</p>
+                                <p>👉 Imagina que és <b>el contenidor o caixa on passa la màgia.</b> Dins d’aquest escenari col·loquem els passos que volem que s’executin.</p>
+                                <p>💡 Exemple senzill:</p>
+                                <p>Un escenari podria ser: “Cada vegada que algú ompli un formulari, per exemple amb <b>Google Forms</b>, guarda la seva resposta en un full de càlcul, per exemple <b>Google Sheets o Excel</b>, i envia-li un correu de confirmació, per exemple amb <b>Gmail o Outlook</b>.”</p>
+                                </div>  
+
+                            <h3>3. 🧩 Els mòduls o blocs d’acció</h3>
+                            <div class="sangria">
+                                <p>Dins de l’escenari afegim el que les eines anomenen <b>mòduls</b>, en Make, <b>passos</b>, en Zapier, o <b>nodes</b>, en n8n.</p>
+                                <p>Un mòdul és simplement un <b>bloc que fa una tasca concreta dins del flux, escenari o workflow.</b></p>
+                                <div class="sangria2">
+                                    <p>⚫ Moltes vegades un mòdul correspon a una aplicació externa:</p>  
+                                    <div class="sangria3">
+                                        <p>◉ Exemple: un mòdul de <b>Gmail</b> per detectar si arriba un correu.</p> 
+                                        <p>◉ Exemple: un mòdul de <b>Google Sheets</b> per afegir una fila en un full de càlcul.</p> 
+                                    </div>
+                                    <p>⚫ Però altres vegades un mòdul és una funció interna de la mateixa eina:</p>
+                                    <div class="sangria3">
+                                        <p>◉ Exemple: un mòdul que converteix dades a un altre format, com <b>JSON</b>.</p> 
+                                        <p>◉ Exemple: un mòdul que compta quants registres han arribat.</p> 
+                                        <p>◉ Exemple: un mòdul que agrupa diverses dades abans d’enviar-les.</p> 
+                                    </div>
+                                    <p>👉 El més important és entendre que un <b>mòdul no sempre és igual a una aplicació</b>, sinó que és <b>una peça del flux o escenari que fa alguna cosa específica:</b> rep, transforma o envia dades.</p>
+                                </div>
+                                <p>Ho podries veure com una <b>cadena de muntatge:</b></p>
+                                    <div class="sangria2">
+                                        <p>1. Entra una dada, per exemple el <b>nom i el correu electrònic</b> d’algú.</p>  
+                                        <p>2. Passa per un <b>mòdul</b> que la guarda en un full de càlcul, és a dir, en una aplicació.</p>  
+                                        <p>3. Després passa per un altre <b>mòdul</b> que transforma la dada en un format específic, és a dir, una <b>funció interna</b>.</p>  
+                                        <p>4. Finalment arriba a un <b>mòdul</b> que l’envia com a correu de benvinguda, és a dir, una aplicació.</p>  
+                                    </div>                   
+                                <p>👉 D’aquesta manera, tots els mòduls treballen junts com engranatges dins d’un mecanisme.</p>
+                            </div>
+
+                            <h3>4. 🚀 El viatge de les dades</h3>
+                            <div class="sangria">
+                                <p>L’automatització, en el fons, és un viatge de dades entre aplicacions.</p>
+                                <div class="sangria2">
+                                    <p>◉ Tot comença amb un <b>esdeveniment inicial</b>: algú omple un formulari, per exemple amb <b>Google Forms</b>, arriba un correu, per exemple amb <b>Gmail o Outlook</b>, o s’afegeix un nou contacte en una base de dades, per exemple en <b>Airtable o Access</b>.</p> 
+                                    <p>◉ Després, aquesta dada “viatja” de mòdul en mòdul, és a dir, d’aplicació en aplicació o de funció en funció.</p> 
+                                    <p>◉ Finalment, arriba a una destinació: guardar-se, enviar-se o generar una notificació.</p> 
+                                </div>
+                                <p>El més interessant és que <b>tu decideixes el camí</b>: pot ser tan senzill com un parell de passos, o molt més complex, amb bifurcacions i condicions.</p>                     
+                            </div>
+
+                            <h3>5. 📊 Un exemple visual i simple</h3>
+                            <div class="sangria">
+                                    <p>Posem un exemple clàssic:</p>
+                                    <p><b>Google Forms, formulari online per recollir dades → Make, eina d’automatització → Google Sheets, full de càlcul → Gmail, correu electrònic.</b></p>
+                                    <div class="sangria2">
+                                        <p>1. Una persona omple un formulari, per exemple amb <b>Google Forms</b>.</p> 
+                                        <p>2. L’automatització ho guarda automàticament en un full de càlcul, per exemple <b>Google Sheets</b>.</p> 
+                                        <p>3. En aquell mateix instant, s’envia un email de benvinguda al nou contacte, per exemple amb <b>Gmail</b>.</p> 
+                                    </div>
+                                    <p>👉 Tot això passa sense que ho hagis de fer manualment.</p>
+                                    <p>💡 Exemple d’automatització senzilla feta amb Make que consisteix en què cada vegada que algú omple un formulari, en aquest cas des de l’aplicació Tally, s’actualitza la base de dades de possibles clients, Airtable, s’envia un email de benvinguda, Gmail, i es torna a actualitzar la base de dades, Airtable, indicant que el correu ha estat enviat.</p>
+                                    <img src="../../../imagenes/comunes/curso-make/esquema-make-basico.png" alt="Esquema bàsic de Make">
+                            </div>
+
+                            <h3>6. 📝 Resum de la fitxa</h3>
+                            <div class="sangria">
+                                <p>En aquesta fitxa hem après que:</p>
+                                <div class="sangria2">
+                                    <p>◉ Una automatització viu dins d’un <b>escenari o flux de treball workflow</b>.</p>
+                                    <p>◉ Dins d’aquest escenari col·loquem <b>mòduls, que poden ser aplicacions externes o funcions internes</b>, que executen tasques.</p>
+                                    <p>◉ El que realment passa és un <b>viatge de dades</b> des d’un punt d’origen fins a una destinació, passant per tots els passos que hàgim definit.</p>                                
+                                </div>
+                            </div>  
+
+                            <h3>7. 🚀 Preparant el terreny per a la pròxima fitxa</h3>
+                            <div class="sangria">
+                                <p>A la següent fitxa veurem en detall <b>els components tècnics bàsics</b> de qualsevol flux:</p>                              
+                                <div class="sangria2">
+                                    <p>◉ Què és un disparador <b>trigger</b>.</p>
+                                    <p>◉ Què és una acció <b>action</b>.</p>
+                                    <p>◉ Què són els <b>filtres</b>, <b>condicions</b>, <b>bifurcacions</b> i fins i tot els famosos <b>webhooks</b>, etc.</p>                                
+                                </div>
+                                <p>Així, ja no tindràs només el mapa, sinó també les peces clau que el fan funcionar.</p>
+                                </div>                        
+                        </section>
+
+                        <div class="video-placeholder">
+                            <iframe
+                                src="https://www.youtube-nocookie.com/embed/PNJH5P6Ws0A"                                                   
+                                title="Vídeo del curs"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen
+                            ></iframe>
+                        </div>
+                    </div>                
+                    <a href="#seccion-teoria" class="index-button">Tornar a l’índex</a>
+                </div>
+            </div>
+
+            
+
+            <!-- Bloque 4 teoria -->
+            <div class="block" id="conceptos4">
+                <h2>4. Els disparadors – El punt d’arrencada d’una automatització</h2>
+
+                <div class="tab-container">                    
+                    <div class="tab-content" id="text4">
+                        <section>
+                            <h3>1.⚡ Els disparadors – El punt d’arrencada d’una automatització</h3>
+                            <div class="sangria">
+                                <p> A la fitxa anterior vam veure que una <B>automatització</B> viu dins d’un <B>escenari</B> i que està formada per <B>mòduls</B> que executen tasques. Però, com sap Make <B>quan</B> ha de començar a executar aquest <B>escenari</B>? Aquí entra en joc el <B>disparador, o trigger</B>.</p>
+                                <p>👉 <b>Un disparador o trigger </b>és l’<B>esdeveniment inicial</B> que <b>activa l’escenari</b>. Sense <b>disparador</b>, l’<b>automatització no arrenca mai</b>.
+                                </p>                             
+                            </div>
+
+                            <h3>2.⚡ Què és un disparador o trigger?</h3>
+                                <div class="sangria">
+                                <p>Pensa-hi com si fos un <b>“interruptor”</b>.</p>
+                                <p>◉ Alguna cosa passa → el disparador o trigger ho detecta → i això posa en marxa tot l’escenari.</p>
+                                <p>◉ Sense disparador, el flux o escenari està adormit.</p>
+                                <p>Exemples amb aplicacions senzilles:</p>
+                                <div class="sangria2">
+                                    <p>◉ Algú envia un formulari a <b>Tally</b>.</p>  
+                                    <p>◉ T’arriba un correu de benvinguda a <b>Gmail</b>.</p>  
+                                    </div>
+                                    <p>👉 A <b>Make</b>, el <b>primer mòdul de l’escenari sempre és el disparador</b>. En aquesta fitxa, més endavant, es veu un dibuix aclaridor.</p>
+                                </div>      
+
+                            <h3>3. 🧩 Tipus de disparadors a Make</h3>                        
+                            <div class="sangria">
+                                <p><b>Make </b>ofereix dos grans tipus de disparadors:</p>
+                                <div class="sangria2">
+                                    <p>◉ <b>Disparadors instantanis, instant triggers</b>: reaccionen al moment, tan aviat com passa l’esdeveniment.</p>  
+                                    <div class="sangria3">
+                                        <p>◉ Exemple: un usuari envia un formulari des de Tally, el contingut d’aquest formulari arriba a <b>Make</b> i l’escenari arrenca a l’instant. Aquí podem observar el <b>trigger de Tally</b>, però podria ser d’altres aplicacions, on el llampec indica que l’escenari s’executarà de manera immediata.</p> 
+                                        <div class="img-ajustada">
+                                            <img src="../../../imagenes/comunes/curso-make/trigger-tally.png"  alt="Trigger Tally">
+                                        </div>                                   
+                                        <p>◉ <b>Disparadors programats, scheduled triggers</b>: Make revisa de manera periòdica si hi ha alguna cosa nova o si ha d’executar una tasca en un moment concret.</p> 
+                                        <p>👉 La freqüència és <b>totalment configurable</b>:</p>
+                                        <div class="sangria4">
+                                            <p>🔹 Cada pocs minuts, per exemple cada 5, 10, 15 o 30 minuts.</p>
+                                            <p>🔹 Una vegada al dia, a l’hora que tu decideixis.</p>  
+                                            <p>🔹 En dies concrets de la setmana, per exemple només dilluns i dijous.</p>  
+                                            <p>🔹 En dies del mes o dates específiques, per exemple el dia 1 de cada mes o el 31 de desembre.</p>  
+                                            <p>🔹 etc.</p> 
+                                        </div>
+                                        <p>A la figura següent podem veure un <b>trigger o disparador</b> per a l’aplicació de <b>formularis Tally</b>, que en lloc d’executar l’<b>automatització</b> de manera <b>immediata, amb el llampec</b>, ho farà en <b>funció del temps o dels dies que hàgim configurat, amb el rellotge</b>. Com es pot observar, en aquest cas no hi ha un llampec, sinó un rellotge.</p>
+                                        <div class="img-ajustada">
+                                            <img src="../../../imagenes/comunes/curso-make/sheduled-tally.png"  alt="Scheduled Tally">
+                                        </div>
+                                        <p><b>Exemple</b>: executar un escenari cada dia 1 a les 9:00 per generar i enviar un informe mensual en PDF.
+                                            Aquesta diferència és important perquè afecta la rapidesa de resposta i també el consum d’operacions. En parlarem més endavant, quan comencem a fer automatitzacions de manera pràctica.</p>
+                                    </div>
+                            </div>
+
+                            <h3>4. 🖼️ Exemple visual amb Tally + Airtable + Gmail</h3>
+                            <div class="sangria">
+                                <p>Imagina aquest escenari senzill:</p>
+                                <p><b>Tally, formulari → Make, disparador en detectar una resposta nova → Airtable, guardar dades → Gmail, enviar confirmació</b></p>
+
+                                <div class="sangria2">
+                                    <p>◉ Una persona omple un formulari a <b>Tally</b>.</p> 
+                                    <p>◉ El <b>disparador a Make</b> detecta la nova resposta.</p> 
+                                    <p>◉ Les dades es guarden automàticament en una taula d’<b>Airtable</b>.</p>
+                                    <p>◉ S’envia un correu de confirmació a l’usuari, o a l’administrador, a través de <b>Gmail</b>.</p> 
+
+                                </div>
+                                <p>📌 Aquí el <b>primer mòdul, Tally, </b>actua com a <b>disparador</b>.</p> 
+                                <div class="contenedor">
+                                    <img src="../../../imagenes/comunes/curso-make/trigger-formulario-tally.png" alt="Trigger formulari Tally">
+                                </div>                    
+                            </div>
+
+                            <h3>5. 📝 Resum de la fitxa</h3>
+                            <div class="sangria">
+                                <p>En aquesta fitxa hem après que:</p>
+                                <div class="sangria2">
+                                    <p>◉ Un <b>disparador</b> és el que inicia l’<b>automatització</b>.</p>
+                                    <p>◉ Sempre <b>és el primer mòdul</b> d’un escenari.</p>
+                                    <p>◉ Pot ser instantani o programat.</p>
+                                    <p>◉ Sense disparador, l’escenari no comença mai.</p> 
+                                    <p>◉ En el nostre exemple: <b>Tally → Airtable → Gmail.</b></p>                               
+                                </div>
+                            </div>                                          
+                        </section>
+
+                        <div class="video-placeholder">
+                            <iframe
+                                src="https://www.youtube-nocookie.com/embed/-7cLEtM6QfA"                                                                           
+                                title="Vídeo del curs"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen
+                            ></iframe>
+                        </div>
+                    </div>                
+                    <a href="#seccion-teoria" class="index-button">Tornar a l’índex</a>
+                </div>
+            </div>
+
+            
+
+            <!-- Bloque 5 teoria -->
+            <div class="block" id="conceptos5">
+                <h2>5. Connexions: la clau que obre les aplicacions</h2>        
+
+                <div class="tab-container">                    
+                    <div class="tab-content" id="text5">
+                        <section>
+                            <h3>1. 🔗 Què és una connexió?</h3>
+                            <div class="sangria">
+                                <p> Quan afegim un <b>mòdul a Make</b> que correspon a una <b>aplicació externa</b>, per exemple Gmail, Airtable o Telegram, <b>Make</b> necessita un <b>permís especial</b> per poder treballar amb aquesta aplicació.</p>
+                                <p>Aquest permís és el que anomenem <b>connexió</b>.</p>
+                                <p>👉 Dit d’una altra manera: una connexió és com donar una <b>clau digital a Make</b> perquè pugui entrar a la teva aplicació i automatitzar tasques en nom teu.</p>
+                                <p><b>Exemple quotidià:</b> seria com donar a un amic una còpia de la clau de casa teva perquè regui les plantes. No li dones casa teva, només un accés limitat i revocable.</p>  
+                            </div>
+
+                            <h3>2. ❓Quan necessites una connexió?</h3>
+                                <div class="sangria">                           
+                                <p>◉ Els <b>mòduls interns de Make</b>, per exemple Formatter, Delay o Math, <b>no necessiten connexió</b>, perquè no depenen de cap aplicació externa.</p>
+                                <p>◉ Els <b>mòduls d’aplicacions externes</b>, per exemple Gmail, Slack, Airtable o Telegram, <b>sí que requereixen connexió</b>. Abans de poder configurar el mòdul, <b>Make et demanarà crear o seleccionar una connexió</b>.</p>
+                                <div class="contenedor">
+                                    <img src="../../../imagenes/comunes/curso-make/conexion-airtable.png" alt="Connexió amb Airtable">
+                                </div>                       
+                                <p><i>Per exemple, la imatge superior mostra que quan afegeixes el mòdul “Watch Records” d’Airtable, el primer que Make et demanarà és triar o crear una <b>Connection, és a dir, una connexió</b>. La imatge mostra exactament aquest camp “Connection”, que és el primer pas que veuràs.</i></p>
+                                <p>📌 <b>Aclariment important: </b> aquesta imatge <b>no ensenya com crear la connexió completa</b>; només mostra que, per avançar amb un mòdul d’una aplicació, has de tenir una connexió. Si vols veure el pas a pas per crear la connexió, consulta l’<b>Annex: Connexió amb Airtable</b>, o l’annex corresponent a l’app que necessitis.</p>
+                                </div>      
+
+                            <h3>3. ❓Com es configuren les connexions?</h3>                        
+                            <div class="sangria">
+                                <p>Cada <b>aplicació defineix el seu propi mètode d’accés; no ets tu qui decideix el mètode</b>, sinó l’aplicació. Make s’adapta al que l’app exigeix. Els mètodes més habituals són:</p>
+                                <div class="sangria2">
+                                    <p>◉ <b>OAuth, autenticació moderna</b></p>  
+                                    <div class="sangria3">
+                                        <p>🔹S’obre una finestra on inicies sessió i autoritzes permisos, per exemple amb Google o amb moltes integracions actuals.</p> 
+                                        <p>🔹Make no et demana claus manuals; gestiona l’accés amb tokens que es renoven.</p>                                 
+                                    </div>
+                                <p>◉ <b>API Key / Token </b>, cada vegada menys habitual</p>
+                                <div class="sangria3">
+                                    <p>🔹L’aplicació et dona una clau que copies i enganxes a Make.</p> 
+                                    <p>🔹És més directe, però moltes plataformes l’estan substituint per OAuth.</p>                                 
+                                </div>
+                                <p>🔔 <b>Missatge de calma per a principiants:</b> si ara aquests termes et sonen estranys, OAuth, API Key o token, no et preocupis: als annexos pràctics veurem, pas a pas, com fer cada connexió.</p>
+                            </div>
+
+                            <h3>4. ⚠️ Compte amb les diferències, exemples pràctics</h3>
+                            <div class="sangria">
+                                <p>◉ <b>Google Gmail </b>→ sol requerir OAuth i processos de verificació; pot ser més complex, perquè cal acceptar permisos i, de vegades, renovar autoritzacions.</p>
+                                <p>◉ <b>Airtable</b> → actualment utilitza OAuth, ja no es basa en el mètode antic de token API públic.</p>
+                                <p>◉ <b>Telegram</b> → utilitza un <b>token de bot</b>, que obtens des de @BotFather. És relativament senzill i per això se sol utilitzar en exemples ràpids.</p>
+
+                                <p><b>Comentari pràctic:</b> una automatització conceptual com Google Forms → Google Sheets → Gmail és molt clara com a flux, però la complexitat real acostuma a estar en la gestió de la connexió amb Google. Per això, a les fitxes pràctiques convé utilitzar exemples fàcils per començar.</p>
+                            </div>
+
+                            <h3>5. 🧩 Exemple pràctic breu: crear una connexió senzilla</h3>
+                            <div class="sangria">
+                                <p>Com a exemple molt breu i directe, perquè es vegi el mínim imprescindible:</p>
+                                <p><b>Exemple amb Telegram, token:</b></p>                          
+                                <div class="sangria2">
+                                    <p>1. Afegeixes el mòdul <b>Telegram — Send a message</b>.</p>
+                                    <p>2. <b>Make et demana Connection</b> → prems Add.</p>
+                                    <p>3. Enganxes el <b>token del bot</b>, que obtens en crear un bot a @BotFather.</p>
+                                    <p>4. Acceptes i la connexió queda disponible per a aquest escenari i per a altres escenaris.</p>                                                           
+                                </div>
+                                <p>Per a Airtable, el flux serà semblant conceptualment, però la finestra d’autorització et portarà pel procés OAuth. Per això en aquesta fitxa no fem aquí el tutorial complet.</p>
+                            </div>                     
+
+                            <h3>6. 📝 Resum ràpid</h3>
+                            <div class="sangria">                        
+                                <p>1. Una <b>connexió</b> és el permís que dones a Make perquè accedeixi a una app externa.</p>
+                                <p>2. Només els mòduls que utilitzen aplicacions externes la necessiten.</p>
+                                <p>3. El <b>mètode de connexió </b>el defineix l’aplicació, com OAuth, token o API Key.</p>
+                                <p>4. Algunes connexions són molt senzilles, com Telegram; altres poden ser més exigents, com Google o Airtable amb OAuth.</p>
+                                <p>5. Si vols el pas a pas complet per a una app concreta, consulta l’Annex: Connexió amb [NomApp].</p>                                                         
+                            </div>
+                        </section>
+
+                        <div class="video-placeholder">
+                            <iframe
+                                src="https://www.youtube-nocookie.com/embed/xAZtUTcwLr8"                                                 
+                                title="Vídeo del curs"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen
+                            ></iframe>
+                        </div>
+                    </div>            
+                    <a href="#seccion-teoria" class="index-button">Tornar a l’índex</a>
+                </div>
+            </div>
+
+            
+
+            <!-- Bloque 6 teoria: Connexions: Webhooks: la porta que escolta. -->
+            <div class="block" id="conceptos6">
+                <h2>6. Connexions: Webhooks, la porta que escolta</h2>        
+
+                <div class="tab-container">                    
+                    <div class="tab-content" id="text6">
+                        <section>
+                            <h3>1. ❓ Què és un webhook? Resum clar i relació amb els triggers</h3>
+                            <div class="sangria">
+                                <p>1. <b>Un webhook</b> és una forma de trigger en què una <b>aplicació externa avisa Make en temps real</b> quan passa alguna cosa rellevant.</p>
+                                <p>2. <b>Recordatori</b>, connectant amb fitxes anteriors: a la fitxa 4 vam veure els <b>triggers</b>: instantanis, que reaccionen quan passa alguna cosa, i programats o scheduled, en què Make revisa cada cert temps.</p>
+                                <p>3. 👉 <b>El webhook és un altre tipus de trigger push</b>: en lloc que Make vagi a preguntar, l’aplicació externa empeny la informació cap a Make.</p>
+                                <p>4. <b>Important: no tots els triggers instantanis són webhooks, i no tots els webhooks requereixen que els programis manualment.</b> Algunes integracions ofereixen triggers “instantanis” ja preparats a Make, més fàcils per a l’usuari; altres aplicacions requereixen que configuris un webhook explícit.</p>  
+                                <p><b>Exemple senzill</b>: és com si, en lloc de baixar cada 10 minuts a preguntar si ha arribat el paquet, el repartidor truqués al timbre i t’avisés al moment.</p>  
+                            </div>
+
+                            <h3>2. 🔄 Entrant incoming vs sortint outgoing, explicat sense tecnicismes</h3>
+
+                            <div class="sangria">                           
+                                <p>◉ 📩 <b>Webhook entrant, incoming webhook:</b> l’app externa envia dades a una URL que crea Make → això dispara l’escenari.</p>
+                                <div class="sangria2">
+                                    <p>🔹Exemple: la teva plataforma de pagaments, com Stripe, quan confirma un pagament, envia un missatge a Make perquè processi l’operació.</p>  
+                                </div>
+                                <p>◉ 📤 <b>Webhook sortint, outgoing webhook:</b> Make envia dades cap a una URL externa. Això es fa amb el mòdul HTTP de Make.</p>
+                                <div class="sangria2">
+                                    <p>🔹S’utilitza quan vols notificar un altre sistema des de Make.</p>                
+                                </div>
+                                <p>💬<b>Què és això d’una “crida HTTP”?</b></p>
+                                <div class="sangria2">
+                                    <p>🔹És simplement la manera com una app “envia un missatget per Internet” a una altra: una adreça web rep aquest missatget.</p>                
+                                    <p>🔹No necessites saber-ne els detalls tècnics ara; n’hi ha prou amb entendre que <b>és el mecanisme estàndard perquè les apps es parlin per Internet.</b></p>                
+                                </div>
+                                <div class="contenedor">
+                                    <img src="../../../imagenes/comunes/curso-make/esquema-webhook.png" alt="Esquema de connexió Webhooks">
+                                </div>                       
+                            </div>      
+
+                            <h3>3. ❓Webhook vs triggers natius: quin utilitzar i per què?</h3>                                       
+                            <div class="sangria">
+                                <p>◉ ⚡ <b>Utilitza triggers natius de Make</b> quan existeixin i siguin instantanis, per exemple alguns mòduls oficials com Tally, Stripe o altres integracions que Make ja té. Són més simples: selecciones el trigger i ja està.</p>
+                                <p>◉ 🔌 <b>Utilitza un webhook</b> quan l’app:</p>
+                                <div class="sangria2">
+                                    <p>🔹No té un trigger natiu a Make, o</p>
+                                    <p>🔹Necessites integrar-la amb una app personalitzada, o</p>
+                                    <p>🔹Vols màxima immediatesa i control.</p> 
+                                </div>
+                            </div>
+
+
+                            <h3>4.❓ Com s’utilitza un webhook a Make, versió per a principiants</h3>
+                            <div class="sangria">
+                                <p>1. Afegeixes al teu escenari el <b>mòdul Webhook</b>, com Custom webhook o Webhook response.</p>
+                                <p>2. Make et genera una <b>URL única</b>, el teu “timbre digital”.</p>
+                                <p>3. Enganxes aquesta URL a l’app externa, o al seu panell de webhooks, indicant quan ha d’enviar dades.</p>
+                                <p>4. Fas una prova, per exemple enviant un formulari, i comproves que Make rep les dades.</p>
+
+                                <p><b>Nota: no cal entendre tots els tecnicismes ara; el flux general és “obtenir URL → enganxar-la a l’app que envia esdeveniments → provar”.</b></p>
+                                <div class="contenedor">
+                                    <img src="../../../imagenes/comunes/curso-make/url-webhook.png" alt="URL proporcionada pel Webhook de Make">
+                                </div>         
+                            </div>
+
+                            <h3>5. 🧩 Exemples pràctics i comparatius per aclarir casos reals</h3>
+                            <div class="sangria">
+                                <p>◉ Exemple A, trigger natiu: Tally → Make amb trigger oficial. El mòdul instantani de Tally a Make rep la resposta al moment.</p>
+                                <p>◉ Exemple B, webhook manual: una plataforma sense integració oficial → Make → configures un webhook en aquesta plataforma perquè enviï dades a Make.</p>
+                                <p>◉ Exemple C, pagaments: Stripe → Stripe envia un webhook a Make → Make guarda el pagament a Airtable i envia confirmació per Telegram.</p>
+                                <p>👉 Si hi ha un mòdul de trigger oficial, utilitza’l; si no, demana al proveïdor que enviï les dades a la URL del webhook.</p>                          
+                            </div>                     
+
+                            <h3>6. 📝 Seguretat i proves, explicat de manera simple</h3>
+                            <div class="sangria">
+                                <p>◉ 🔐 <b>Utilitza sempre la URL tal com Make te la dona</b> i no la comparteixis públicament.</p>
+                                <p>◉ 🔎 Moltes apps permeten signar o identificar els seus missatges; quan això passi, ho veurem en un annex avançat.</p>
+                                <p>◉ 🧪 Per provar sense trencar res, fes sempre una <b>prova controlada</b>, per exemple enviant un formulari de prova.</p>
+                            </div>
+
+                            <h3>7. 📝 Resum final: el que has de recordar</h3>
+                            <div class="sangria">
+                                <p>◉ Un <b>webhook</b> és una forma de trigger push: l’app externa avisa Make al moment.</p>
+                                <p>◉ Existeixen triggers instantanis natius i webhooks; tots dos poden donar immediatesa.</p>
+                                <p>◉ Si Make té un trigger oficial, utilitza’l, perquè és més còmode. Si no, configura un webhook.</p>
+                                <p>◉ Mantén la seguretat i prova sempre amb dades de test.</p>
+                                <p>◉ Els detalls tècnics, com JSON, signatures o idempotència, poden anar en un annex per quan vulguis aprofundir.</p>                
+                            </div>
+                        </section>
+
+                        <div class="video-placeholder">
+                            <iframe
+                                src="https://www.youtube-nocookie.com/embed/45XARY9iuyU"                                                                 
+                                title="Vídeo del curs"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen
+                            ></iframe>
+                        </div>
+                    </div>        
+                    <a href="#seccion-teoria" class="index-button">Tornar a l’índex</a>
+                </div>
+            </div>
+
+            
+
+            <!-- Bloque 7 teoria: Accions -->
+            <div class="block" id="conceptos7">
+                <h2>7. Accions</h2>        
+
+                <div class="tab-container">                    
+                    <div class="tab-content" id="text7">
+                        <section>
+                            <p>“Si un trigger encén la metxa… l’acció és el que explota, és a dir, el resultat visible.”</p>
+                            <h3>1. 🔎 Què és una acció a Make?</h3>
+                            <div class="sangria">
+                                <p><b>Una acció és el que fa Make</b> una vegada que l’escenari s’ha activat amb un trigger o disparador.</p>
+                                <div class="sangria2">
+                                    <p>🔹El trigger, com un webhook o un registre nou, <b>és l’avís inicial.</b></p>
+                                    <p>🔹<b>L’acció</b> és <b>la tasca concreta que Make executa</b> com a resposta a aquest avís.</p>
+                                </div> 
+                                <p>👉 Pensa-hi com una reacció en cadena:</p>
+                                <div class="sangria2">
+                                    <p>🔹<b>Trigger:</b> sona el timbre de casa teva.</p>
+                                    <p>🔹<b>Acció:</b> t’aixeques i obres la porta.</p>
+                                </div>
+                                <p>El timbre, és a dir, el trigger, no té sentit si després ningú obre la porta, és a dir, si no hi ha cap acció.</p> 
+                                </div>
+
+                            <h3>2. 🧩 Exemples quotidians d’accions</h3>
+                            <div class="sangria">                           
+                                <p>1. Algú compra a la teva botiga online → <b>acció:</b> Make envia un email de confirmació al client.</p>
+                                <p>2. Reps un formulari de contacte → <b>acció:</b> Make guarda la informació a Airtable.</p>
+                                <p>3. T’arriba un pagament a Stripe → <b>acció:</b> Make envia un missatge al teu canal de Telegram avisant l’equip.</p>
+                                <p>Cada una d’aquestes tasques que passen després del “disparador” inicial és una acció.</p>                                              
+                            </div>      
+
+                            <h3>3. 📚 Diferència entre trigger i acció</h3>                                       
+                            <div class="sangria">
+                                <p>◉ <b>Trigger, o disparador:</b> detecta un esdeveniment. Exemple: “Nova comanda rebuda”.</p>
+                                <p>◉ <b>Acció:</b> fa alguna cosa amb aquesta informació. Exemple: “Crear un registre a Google Sheets amb les dades de la comanda”.</p>
+
+                                <p>👉 Regla fàcil de recordar:</p>
+                                <p>◉ <b>Trigger = avís.</b></p>
+                                <p>◉ <b>Acció = reacció.</b></p>
+                            </div>                                
+
+                            <h3>4. 🛠️ Tipus d’accions més comunes a Make</h3>
+                            <div class="sangria">
+                                <p>◉ <b>Crear alguna cosa:</b> crear un registre a Airtable, un document a Google Docs o un esdeveniment a Calendar.</p>
+                                <p>◉ <b>Enviar alguna cosa:</b> enviar un email, un missatge de Slack, una notificació de Telegram, una notificació de WhatsApp, etc.</p>
+                                <p>◉ <b>Actualitzar alguna cosa:</b> canviar l’estat d’una comanda al teu CRM o actualitzar l’estoc a la teva base de dades.</p>   
+                                </div>
+
+                            <h3>5. ✅ Resum de la fitxa</h3>
+                            <div class="sangria">
+                                <p>◉ Les <b>accions</b> són les <b>tasques que Make executa</b> després d’un trigger.</p>
+                                <p>◉ Sempre van juntes: <b>Trigger → Acció → Resultat.</b></p>
+                                <p>◉ Exemple senzill: “Quan algú omple un formulari, trigger → guardar les seves dades en un full, acció”.</p>                                                                           
+                            </div> 
+                                <div class="contenedor">
+                                    <img src="../../../imagenes/comunes/curso-make/acciones-trigger.png" alt="Accions i trigger a Make">
+                                </div>
+                                <div class="contenedor">
+                                    <img src="../../../imagenes/comunes/curso-make/acciones.png" alt="Fitxa 7 sobre accions a Make">
+                                </div>             
+                        </section>
+
+                        <div class="video-placeholder">
+                            <iframe
+                                src="https://www.youtube-nocookie.com/embed/CIFaPwqEfJs"                                                                               
+                                title="Vídeo del curs"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen
+                            ></iframe>
+                        </div>
+                    </div>        
+                    <a href="#seccion-teoria" class="index-button">Tornar a l’índex</a>
+                </div>
+            </div>
+
+            
+
+            <!-- Bloque 8 teoria: Rutes, filtres i lògica: quan el teu escenari pren decisions -->
+            <div class="block" id="conceptos8">
+                <h2>8. Rutes, filtres i lògica: quan el teu escenari pren decisions</h2>        
+
+                <div class="tab-container">                    
+                    <div class="tab-content" id="text8">
+                        <section>
+                            <h3>1. 💡 Per què necessitem lògica en un escenari?</h3>
+                            <div class="sangria">
+                                <p>Fins ara, les nostres <b>automatitzacions eren lineals</b>: un trigger → una acció → un resultat.</p>
+                                <p>Però a la vida real, les coses gairebé mai són tan simples.</p>
+                                <p>Exemple quotidià:</p>
+                                <div class="sangria2">
+                                    <p>🔹Si reps un missatge d’un amic → el contestes de seguida.</p>
+                                    <p>🔹Si reps un missatge de publicitat → l’ignores.</p>
+                                </div> 
+
+                                <p>👉 Make també necessita aquesta <b>capacitat de decidir</b> què ha de fer en cada cas.</p>                       
+                                </div>
+                                <div class="contenedor">
+                                <img src="../../../imagenes/comunes/curso-make/rutas-filtros-logica.png" alt="Rutes, filtres i lògica">
+                                </div>
+
+                            <h3>2. 🛤️ Què són les rutes a Make?</h3>                           
+                            <div class="sangria">                           
+                                <p>Una <b>ruta</b> és com un <b>desviament a la carretera</b> dins del teu escenari. El flux pot seguir diferents camins segons el que passi.</p>
+                                <p>A Make, el mòdul que permet crear aquests desviaments s’anomena <b>Router</b>. Cada Router obre diversos camins possibles, anomenats branches, i tu decideixes què passa en cadascun.</p>
+                                <p>Exemple:</p>
+                                <div class="sangria2">
+                                    <p>🔹Trigger: arriba un formulari de contacte.</p>
+                                    <p>🔹Ruta A, amb Router: si el tema és “Vendes” → enviar-lo a l’equip comercial.</p>
+                                    <p>🔹Ruta B, amb Router: si el tema és “Suport” → enviar-lo a l’equip tècnic.</p>
+                                </div>
+                                <p>👉 Pensa en el Router com si fos una rotonda: arribes a un punt i tries quina sortida agafar segons la informació rebuda.</p>                                              
+                                <div class="contenedor">
+                                    <img src="../../../imagenes/comunes/curso-make/router-make.png" alt="Router amb Make">
+                                </div> 
+                                </div>      
+
+                            <h3>3. 🔽 Què són els filtres?</h3>                                       
+                            <div class="sangria">
+                                <p>Un <b>filtre</b> és com un <b>semàfor</b>: deixa passar la informació només si compleix una condició. Si no, la bloqueja.</p>
+                                <p><b>A Make</b>, els filtres s’apliquen dins de cada camí del <b>Router</b> o entre mòduls, per controlar quines dades continuen endavant.</p>
+                                <p>Exemple quotidià:</p>
+                                <p>◉ Només deixes entrar a casa persones que coneixes → filtre = “conec aquesta persona?”.</p>
+                                <p>◉ Només respons correus si contenen la paraula “urgent” → filtre aplicat a Make.</p>
+                                <p>👉 Així, cada ruta del Router pot tenir el seu propi filtre, garantint que cada camí només s’utilitzi amb la informació adequada.</p>
+                            </div>                                
+
+                            <h3>4. ⚖️ Lògica a Make: prendre decisions</h3>
+                            <div class="sangria">
+                                <p>La lògica és la capacitat d’aplicar regles més complexes dins d’un escenari.</p>
+                                <p>Combina rutes + filtres + condicions.</p>
+                                <p>Exemple:</p> 
+                                <div class="sangria2">
+                                    <p>◉ Trigger: nova comanda a la botiga online.</p>
+                                    <p>◉ Lògica aplicada:</p>
+                                    <div class="sangria3">
+                                        <p>🔹 Si la comanda és superior a 100 € → enviar un cupó de descompte.</p> 
+                                        <p>🔹 Si la comanda és inferior → només enviar confirmació estàndard.</p> 
+                                    </div>
+                                </div>
+                                <p>👉 Igual que tu no actues sempre igual, <b>Make</b> pot reaccionar de manera diferent segons la situació.</p>
+                                </div>
+
+                            <h3>5. 📝 Resum pràctic</h3>
+                            <div class="sangria">
+                                <p>◉ <b>Rutes, Router =</b> desviaments del camí → diferents fluxos segons les dades.</p>
+                                <p>◉ <b>Filtres = semàfors</b> → deixen passar només la informació que compleix condicions.</p>
+                                <p>◉ <b>Lògica =</b> regles de decisió que combinen rutes i filtres.</p>                                           
+                                <p>Amb això, els teus escenaris deixen de ser lineals i es tornen <b>intel·ligents i flexibles.</b></p>
+                                <p>🔖 <b>Nota important</b></p>
+                                <p>Tots aquests exemples són <b>introductoris</b> perquè entenguis la idea de rutes, filtres i lògica.</p>
+                                <p>👉 Més endavant, farem junts escenaris pràctics a Make, on veuràs pas a pas com aplicar-ho en casos reals.</p>
+                                </div>                                 
+                        </section>
+
+                        <div class="video-placeholder">
+                            <iframe
+                                src="https://www.youtube-nocookie.com/embed/huLUdA4mBxc"                                                                                                
+                                title="Vídeo del curs"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen
+                            ></iframe>
+                        </div>
+                    </div>        
+                    <a href="#seccion-teoria" class="index-button">Tornar a l’índex</a>
+                    </div>                
+            </div>
+
+            
+
+            <!-- Bloque 9 teoria: Iterador: desgranant dades pas a pas -->
+            <div class="block" id="conceptos9">
+                <h2>9. Iterador: desgranant dades pas a pas</h2>            
+
+                <div class="tab-container">                    
+                    <div class="tab-content" id="text9">
+                        <section>
+                            <h3>1. Què és un iterador?</h3>
+                            <div class="sangria">
+                                <p>Un <b>iterador a Make</b> és com una eina que agafa un “paquet” amb diversos elements a dins i els va traient <b>un a un</b> perquè Make pugui treballar amb cada element per separat.</p>
+                                <div class="sangria2">
+                                    <p>🔹Imagina una <b>caixa de galetes:</b> l’iterador no et dona la caixa sencera, sinó que et va entregant galeta per galeta.</p>
+                                    <p>🔹A Make, aquest mòdul s’anomena <b>Iterator.</b></p>
+                                </div>                                              
+                            </div>
+                            <div class="contenedor">
+                                <img src="../../../imagenes/comunes/curso-make/esquema-Iterador.png" alt="Esquema d’un iterador">
+                            </div>
+
+                            <h3>2. 🎯 Per què és útil?</h3>
+
+                            <div class="sangria">                           
+                                <p>En molts escenaris, les dades no arriben d’una en una, sinó en lots:</p>
+                                <p>Exemples:</p>
+                                <div class="sangria2">
+                                    <p>🔹Un correu amb <b>diversos adjunts.</b></p>
+                                    <p>🔹Un formulari on algú escriu <b>diverses respostes en una sola pregunta</b>, per exemple una llista d’aficions separades per comes.</p>
+                                    <p>🔹Una botiga online que envia una <b>comanda amb diversos productes.</b></p>
+                                </div>
+                                <p>Amb un iterador, pots processar cada adjunt, cada resposta o cada producte de manera individual.</p>                                              
+                                <p>Exemple de Make amb Iterador, Iterator, que extreu els arxius adjunts del correu i els copia en una carpeta de Dropbox.</p>                                              
+                                <div class="contenedor">
+                                    <img src="../../../imagenes/comunes/curso-make/iterador-make.png" alt="Projecte amb iterador a Make">
+                                </div> 
+                                </div>      
+
+                            <h3>3. 🍪 Exemple quotidià</h3>                                       
+                            <div class="sangria">
+                                <p>Pensa en una safata amb <b>tres galetes de xocolata.</b></p>
+                                <div class="sangria2">
+                                    <p>🔹Sense iterador → Make veu la safata completa i no sap què ha de fer amb cada galeta.</p>
+                                    <p>🔹Amb iterador → Make treu la galeta 1 i la processa; després la galeta 2; després la galeta 3.</p>
+                                </div>
+                                <p>Així pots aplicar una acció a cada galeta per separat:</p>
+                                <div class="sangria2">
+                                    <p>🔹Guardar cadascuna en una taula.</p>
+                                    <p>🔹Enviar un missatge diferent per a cadascuna.</p>
+                                </div>                     
+                            </div>                                
+
+                            <h3>4. 🛠️ Exemple senzill a Make</h3>
+                            <div class="sangria">
+                                <p>Escenari: reps una comanda d’una botiga online amb 3 productes.</p>
+                                <div class="sangria2">
+                                    <p>🔹<b>Pas 1:</b> La comanda arriba com un bloc de dades amb els 3 productes a dins.</p>
+                                    <p>🔹<b>Pas 2:</b> Col·loques un mòdul <b>Iterator.</b></p>
+                                    <p>🔹<b>Pas 3:</b> L’iterador “desmunta” la comanda en <b>producte 1, producte 2, producte 3.</b></p>
+                                    <p>🔹<b>Pas 4:</b> Després pots utilitzar un mòdul <b>“Google Sheets → Add Row”</b> perquè cada producte es guardi en una fila diferent del full.</p>
+                                </div>
+                            </div>
+
+                            <h3>5. 😉 Nota per a tu</h3>
+                            <div class="sangria">
+                                <p><b>No et preocupis si al principi sembla una mica abstracte. Tots aquests exemples i molts més els practicarem en escenaris reals, perquè s’entengui de manera visual i no es quedi només en la teoria.</b></p>
+                            </div>             
+                        </section>
+
+                        <div class="video-placeholder">
+                            <iframe
+                                src="https://www.youtube-nocookie.com/embed/Oq6rf4U9Qnk"                                                                                                                   
+                                title="Vídeo del curs"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen
+                            ></iframe>
+                        </div>
+                    </div>        
+                    <a href="#seccion-teoria" class="index-button">Tornar a l’índex</a>
+                </div>
+            </div>
+
+            
+
+            <!-- Bloque 10 teoria: ArrayAggregator: reunir elements en un sol paquet 📦 -->
+            <div class="block" id="conceptos10">
+                <h2>10. ArrayAggregator: reunir elements en un sol paquet 📦</h2>            
+
+                <div class="tab-container">
+
+                    <div class="tab-content" id="text10">
+                        <section>
+                            <h3>1. 🔍 Què és ArrayAggregator?</h3>
+
+                            <div class="sangria">
+                                <p><b>L’Array Aggregator de Make</b> és un mòdul que <b>reuneix diversos elements individuals en un únic “grup”, una llista o array</b>, perquè després puguis processar-los tots junts.</p>
+                                <div class="sangria2">
+                                    <p>🔹<b>Analogia:</b> imagina que tens moltes cartes soltes i que l’agregador és la carpeta on les poses totes per enviar-les d’una sola vegada.</p>
+                                    <p>🔹<b>Funció bàsica:</b> recollir + empaquetar per enviar o utilitzar després.</p>
+                                </div>                                              
+                            </div>
+
+                            <h3>2. 🎯 Per a què serveix?</h3>
+
+                            <div class="sangria">                           
+                                <p>Serveix quan no vols processar cada ítem o element de manera aïllada, sinó <b>fer alguna cosa amb el conjunt:</b> un informe diari, un email de resum, un CSV amb totes les entrades, un lot per enviar a una altra API, etc.</p>
+                                <div class="sangria2">
+                                    <p>🔹Complementa l’Iterator: si <b>l’Iterator o mòdul iterator divideix</b>, és a dir, treu una galeta cada vegada, <b>l’Aggregator o mòdul Array Aggregator ajunta</b>, és a dir, posa les galetes dins d’una caixa.</p>
+                                    <p>🔹També pot servir en un formulari on algú escriu <b>diverses respostes en una sola pregunta</b>, per exemple una llista d’aficions separades per comes.</p>
+                                    <p>🔹Casos típics: resum diari de correus, agrupar respostes de formularis del dia, ajuntar adjunts per enviar-los en un sol paquet.</p>
+                                </div>
+                                <p>S’adjunta un exemple real creat amb Make. <b>No et preocupis perquè el veurem amb detall en els casos pràctics</b>. En aquest escenari, tots els arxius nous que es pugen a una carpeta de Dropbox s’envien a un Array Aggregator, que els empaqueta en un únic paquet per després enviar tots aquests arxius en un únic email amb el mòdul de Gmail.</p>                                              
+                                <div class="contenedor">
+                                    <img src="../../../imagenes/comunes/curso-make/array-aggregator-make.png" alt="Projecte amb Array Aggregator a Make">
+                                </div> 
+                                </div>      
+
+                            <h3>3. 🧩 Exemples senzills i pràctics</h3>                                       
+                            <div class="sangria">
+                                <p><b>Exemple A — Digest de correus, resum diari de leads</b></p>
+                                <div class="sangria2">
+                                    <p>🔹<b>Objectiu:</b> enviar cada dia un únic correu amb la llista d’assumptes i remitents dels emails entrants.</p>
+                                    <p>🔹<b>Passos conceptuals:</b></p>
+                                    <div class="sangria3">
+                                        <p>🔹 <b>Trigger:</b> <b>Mòdul de Make Gmail – Watch Emails</b>, configurat per revisar cada 24 hores, o a l’hora exacta que vulguis.</p> 
+                                        <p>🔹 <b>Apliquem un filtre:</b> només correus d’interès, per exemple amb l’etiqueta “leads”.</p>
+                                        <p>🔹 <b>Array Aggregator:</b> empaqueta tots els correus detectats en aquella execució, amb remitent, assumpte i data.</p>
+                                        <p>🔹 <b>Acció final:</b> generar un cos d’email amb la llista i enviar-lo en un únic correu-resum.</p>
+                                    </div>
+                                </div>
+                                <p><b>Exemple B — Agrupar respostes d’un formulari</b></p>
+                                <div class="sangria2">
+                                    <p>🔹<b>Objectiu:</b> processar en lot les respostes d’un formulari.</p>
+                                    <p>🔹<b>Passos conceptuals:</b></p>
+                                    <div class="sangria3">
+                                    <p>🔹 <b>Trigger:</b> <b>Typeform / Tally – Watch Responses</b>, executat cada hora.</p> 
+                                    <p>🔹 <b>Array Aggregator:</b> agrupa totes les respostes rebudes en aquest període.</p>
+                                    <p>🔹 <b>Acció final:</b> guardar-les en bloc a Google Sheets o convertir-les en un CSV i adjuntar-les a un correu.</p>
+                                </div>
+                                </div>
+                                <p><b>Exemple C — Resum de productes d’una comanda, per optimitzar crides a API</b></p>
+                                <div class="sangria2">
+                                    <p>🔹<b>Objectiu:</b> enviar la informació d’una comanda amb diverses línies de producte en un únic bloc.</p>
+                                    <p>🔹<b>Passos conceptuals:</b></p>
+                                    <div class="sangria3">
+                                    <p>🔹 <b>Trigger:</b> Shopify – Watch Products detecta una nova comanda.</p> 
+                                    <p>🔹 <b>Array Aggregator:</b> empaqueta les línies de la comanda, amb producte, quantitat i preu, en un sol array.</p>
+                                    <p>🔹 <b>Acció final:</b> enviar el paquet complet a l’ERP o CRM en una única crida API, en lloc d’una crida per cada línia.</p>
+                                </div>
+                                </div>
+                                <p>🔔 Recorda que l’Array Aggregator treballa amb les dades recollides en l’execució de l’escenari. No acumula “en temps real” mentre arriben els elements. Per això, si vols enviaments periòdics, cada dia o cada hora, el control es configura en el <b>trigger de temps</b>, no en l’agregador.</p>                     
+                            </div>                    
+
+                            <h3>4. ⚙️ Com funciona conceptualment a Make, versió per a principiants</h3>
+                            <div class="sangria">
+                                <p>Imagina que estàs organitzant els teus correus, respostes de formularis o comandes de productes: cadascun arriba de manera individual, i tu vols ajuntar-los tots en un mateix paquet per enviar-los o processar-los de cop.</p>
+                                <div class="sangria2">
+                                    <p>◉ <b>Trigger = el detector o disparador:</b></p>
+                                    <div class="sangria3">
+                                        <p>🔹 Pot ser <b>un esdeveniment</b>, per exemple arriba un correu o algú respon un formulari.</p> 
+                                        <p>🔹 O pot ser <b>un temps</b> que tu tries, per exemple cada hora o cada dia.</p>
+                                        <p>🔹 És el que decideix <b>quan comença l’escenari.</b></p>
+                                    </div>
+                                </div>
+                                <div class="sangria2">
+                                    <p>◉ <b>Array Aggregator = la caixa organitzadora:</b></p>
+                                    <div class="sangria3">
+                                    <p>🔹 Cada vegada que l’escenari s’activa, l’Array Aggregator <b>recull els elements que arriben.</b></p> 
+                                    <p>🔹 Els afegeix a un “paquet”, segons el que envia el trigger.</p>
+                                    <p>🔹 No decideix quan enviar res, <b>només empaqueta el que arriba.</b></p>
+                                    </div>
+                                </div>
+                                <div class="sangria2">
+                                    <p>◉ <b>Array = la llista de tot el que s’ha recollit:</b></p>
+                                    <div class="sangria3">
+                                    <p>🔹 Per a tu, que comences, <b>un array és simplement una llista d’elements.</b> Per exemple: [Correu1, Correu2, Correu3]. Cada element pot ser un correu, una resposta de formulari o una línia de comanda.</p> 
+                                    <p>🔹 El mòdul següent de l’escenari pot utilitzar <b>tots els elements de la llista alhora:</b> enviar un email amb resum, crear un CSV, actualitzar un Google Sheet…</p>
+                                    </div>
+                                </div>
+                                <p>💡 <b>Analogia visual:</b></p>
+                                <p>Pensa en el trigger com una <b>font d’objectes</b> que cauen sobre una cinta transportadora. L’Array Aggregator és un <b>calaix que els va recollint.</b> Quan Make decideix passar <b>la caixa al pas següent</b>, tot el que hi ha dins viatja junt. <b>La caixa no té voluntat:</b> només recull el que li arriba.</p>
+                                <div class="contenedor">
+                                    <img src="../../../imagenes/comunes/curso-make/esquema-aggregator.png" alt="Esquema Array Aggregator">
+                                </div>
+                                </div>
+
+                            <h3>5. ⚠️ Bones pràctiques i precaucions</h3>
+                            <div class="sangria">
+                                <p>◉ <b>Comença amb poc:</b> prova amb 2–5 elements abans d’enviar grans quantitats.</p>
+                                <p>◉ <b>Decideix la freqüència al trigger: </b>si vols un resum diari, programa el trigger cada dia; si vols processar-ho tot al moment, configura disparadors en temps real.</p>
+                                <p>◉ <b>Evita caixes gegants:</b> massa elements junts poden alentir el teu escenari o superar límits de Make.</p>
+                                <p>◉ <b>Mantén l’ordre si és important:</b> els ítems arriben en l’ordre en què els detecta el trigger; si l’ordre importa, revisa que es mantingui.</p>
+                                <p>◉ <b>Evita duplicats:</b> si hi ha risc de repetir elements, afegeix lògica de filtratge abans d’enviar-los al mòdul següent.</p>
+                                <p>◉ <b>Registra per depurar:</b> si les dades són importants, guarda un registre temporal, per exemple a Google Sheets, abans d’enviar-les per poder revisar errors.</p>
+                                <p>💡 <b>Consell d’expert:</b> l’Array Aggregator és com un <b>empaquetador passiu: no decideix res, només organitza.</b> Tot el control de quan s’executa i què arriba el determinen el trigger i la configuració de l’escenari.</p>                  
+                                </div>
+
+                            <h3>6. ✅ Resum ràpid</h3>
+                            <div class="sangria">
+                                <p>◉ <b>Array Aggregator</b> reuneix múltiples ítems en una sola llista per processar-los en <b>bloc.</b></p>
+                                <p>◉ És útil per a <b>resums, enviaments per lots, creació de CSV/resums</b> o reducció de crides a APIs.</p>
+                                <p>◉ Complementa l’<b>Iterator:</b> un divideix, l’altre ajunta.</p>                                        
+                                </div>             
+                        </section>
+                        <div class="video-placeholder">
+                            <iframe
+                                src="https://www.youtube-nocookie.com/embed/lFerjD6WXJQ"                                                                                                                  
+                                title="Vídeo del curs"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen
+                            ></iframe>
+                        </div>
+                    </div>                
+                </div>  
+                <a href="#seccion-teoria" class="index-button">Tornar a l’índex</a>  
+            </div>
+            </div>
+
+            
+
+            <!-- Bloque 11 teoria: Variables, comptadors i funcions – El kit secret de Make 🧾 -->
+            <div class="block" id="conceptos11">
+                <h2>11. Variables, comptadors i funcions – El kit secret de Make 🧾</h2>            
+
+                <div class="tab-container">
+
+                    <div class="tab-content" id="text11">
+                        <section>
+                            <h3>1. 🔍 Objectiu</h3>
+
+                            <div class="sangria">
+                                <p>Comprendre què són les <b>variables, comptadors i funcions</b> de tot tipus, per exemple booleanes, matemàtiques, de text, d’arrays i de data/hora, per crear escenaris més dinàmics i controlats. <b>Aquesta fitxa proporciona la base teòrica que aplicarem més endavant en exercicis pràctics.</b></p>
+
+                            </div>
+
+                            <h3>2. 🔣 Variables a Make</h3>
+
+                            <div class="sangria">                           
+                                <p>◉ <b>Què són: </b>Les variables són <b>contenidors per emmagatzemar dades.</b> Pots imaginar cada variable com una “caixa” amb una etiqueta: guarda un valor que pots utilitzar i reutilitzar en diferents mòduls del teu escenari.</p>
+                                <p>◉ <b>Exemple senzill: </b>Guardar el nombre de fitxers processats o el nom d’un usuari per utilitzar-lo després en un correu.</p>
+                                <p>◉ <b>Com funcionen: </b>Cada variable té un nom únic i un valor que pot canviar. Quan Make executa un escenari, el nom de la variable se substitueix pel seu valor actual.</p>
+                                <p>💡 Pensa en una mudança a una casa nova: cada caixa té una etiqueta, que seria el nom, i un contingut, que seria el valor. Quan necessites alguna cosa, busques la caixa per l’etiqueta i obtens el que hi ha dins.</p>
+                                <p>🔔 <b>No et preocupis si ara ho veus una mica abstracte; a la part pràctica veurem escenaris reals on entendràs tots aquests conceptes.</b></p>
+                            </div>      
+
+                            <h3>3. 🔢 Comptadors</h3>                                       
+                            <div class="sangria">                           
+                                <p>◉ <b>Què són: </b>Els comptadors són <b>variables que s’incrementen o es decrementen</b> per portar el compte d’esdeveniments, elements o iteracions dins d’un escenari.</p>
+                                <p>◉ <b>Exemple real: </b>Enviar un correu únicament després que s’hagin processat 5 elements d’un array.</p>
+                                <p>◉ <b>Com funcionen: </b>Es defineixen com a variables incrementables i s’actualitzen amb el mòdul Eina > Funció Incrementar.
+                                    Es poden reiniciar en cada execució o mantenir el seu valor segons el que necessitis.</p>
+                            </div>
+
+                            <h3>4. ⚙️ Funcions a Make</h3>
+                            <div class="sangria">                           
+                                <p>◉ <b>Què són: </b><b>Make</b> ofereix funcions per <b>transformar i manipular dades dins d’un escenari.</b> No es limiten a funcions matemàtiques: també hi ha funcions de text, booleanes, per a arrays i de data/hora.</p>
+                                <p>◉ <b>Tipus principals: </b></p>
+                                <div class="sangria2">
+                                    <p>🔹 <b>Matemàtiques: </b>suma, mitjana, màxim, mínim…</p>
+                                    <p>🔹 <b>Booleanes: </b>cert/fals, comparacions, lògica AND/OR…</p>
+                                    <p>🔹 <b>Text: </b>concatenar, extreure, substituir, longitud…</p>
+                                    <p>🔹 <b>Arrays: </b>unir, filtrar, comptar elements, transformar…</p>
+                                    <p>🔹 <b>Data i hora: </b>formatar, sumar o restar dies, convertir zones horàries…</p>
+                                    <p>🔹 <b>Avançades: </b>parseig de JSON, manipulació de dades complexes…</p>                        
+                                </div>
+                                <p>Exemple senzill: netejar un nom abans d’enviar-lo per correu o comptar només els elements vàlids d’un array abans d’afegir-los a un resum.</p>
+                            </div>                             
+                        </section>
+                        <div class="video-placeholder">
+                            <iframe
+                                src="https://www.youtube-nocookie.com/embed/wWGXm7DXoUg"                                                                                                                  
+                                title="Vídeo del curs"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen
+                            ></iframe>
+                        </div>
+                    </div>        
+                    <a href="#seccion-teoria" class="index-button">Tornar a l’índex</a>
+                </div>    
+            </div>
+        </div>                
+
+        
+
+        <footer id="seccion-footer">
+            <div class="container" id="contact_clients">
+                <div class="footer-content">
+                    <a
+                            href="../../"
+                            class="footer-logo"
+                        >
+                            <img
+                                src="../../../imagenes/comunes/logo.svg"
+                                alt="NEXAUTIA"
+                                width="200"
+                            />
+                        </a>
+                    <div class="footer-links">
+                        <div class="social-links">
+                            <a
+                                href="https://www.facebook.com/profile.php?id=61579981550830"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="social-link"
+                                aria-label="Segueix-nos a Facebook"
+                            >
+                                <svg class="social-icon" viewBox="0 0 24 24">
+                                    <path
+                                        d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+                                    />
+                                </svg>
+                            </a>                            
+                        </div>                        
+                    </div>
+
+                    <!-- Información de contacto -->
+                    <div class="contact-info">
+                        <a href="tel:+34610510642" class="contact-item">
+                            <svg
+                                class="contact-icon"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                            >
+                                <path
+                                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                                ></path>
+                            </svg>
+                            <span class="contact-text">610 510 642</span>
+                        </a>
+
+                        <a
+                            href="mailto:contacto@nexautia.com"
+                            class="contact-item"
+                        >
+                            <svg
+                                class="contact-icon"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                            >
+                                <path
+                                    d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                                ></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                            <span class="contact-text"
+                                >contacto@nexautia.com</span
+                            >
+                        </a>
+                    </div>
+
+                    <div class="footer-text">
+                        <p class="footer-text1">
+                            © 2025 Nexautia. Transformant empreses amb automatització intel·ligent.
+                        </p>
+                        <p class="footer-text2">
+                            Creat amb ❤️ per Nexautia per al traspàs de
+                            coneixement
+                        </p>
+                        <p class="footer-text3">
+                            Segueix explorant l’increïble món de l’automatització d’empreses i la
+                            intel·ligència artificial!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    
+        <script>
+            function mostrarSeccion(seccion) {
+                const teoria = document.getElementById("seccion-teoria");
+                const practica = document.getElementById("seccion-practica");
+                const cabecera = document.getElementById("seccion-footer");
+
+                function scrollToTitle(id) {
+                    const target = document.getElementById(id);
+                    if (!target) return;
+                    window.requestAnimationFrame(function () {
+                        target.scrollIntoView({ behavior: "smooth", block: "start" });
+                    });
+                }
+            
+                if (seccion === "teoria") {
+                    teoria.style.display = "block";
+                    practica.style.display = "none";
+                    cabecera.style.display = "block";
+                    scrollToTitle("titulo-teoria");
+                }
+            
+                if (seccion === "practica") {
+                    practica.style.display = "block";
+                    cabecera.style.display = "block";
+                    teoria.style.display = "none";
+                    scrollToTitle("titulo-practica");
+                }
+            }
+
+            (function () {
+                "use strict";
+
+                const menuButton = document.getElementById("nx-resource-menu-button");
+                const menuOverlay = document.getElementById("nx-resource-menu-overlay");
+                const menuClose = document.getElementById("nx-resource-menu-close");
+
+                function openMenu() {
+                    if (!menuOverlay || !menuButton) return;
+                    menuOverlay.classList.add("is-open");
+                    menuOverlay.setAttribute("aria-hidden", "false");
+                    menuButton.setAttribute("aria-expanded", "true");
+                    menuButton.setAttribute("aria-label", "Tancar menú");
+                    document.body.classList.add("nx-resource-menu-open");
+                }
+
+                function closeMenu() {
+                    if (!menuOverlay || !menuButton) return;
+                    menuOverlay.classList.remove("is-open");
+                    menuOverlay.setAttribute("aria-hidden", "true");
+                    menuButton.setAttribute("aria-expanded", "false");
+                    menuButton.setAttribute("aria-label", "Obrir menú");
+                    document.body.classList.remove("nx-resource-menu-open");
+                }
+
+                window.nxToggleResourceMenu = function () {
+                    if (!menuOverlay) return;
+                    if (menuOverlay.classList.contains("is-open")) {
+                        closeMenu();
+                    } else {
+                        openMenu();
+                    }
+                };
+
+                if (menuButton) {
+                    menuButton.addEventListener("click", function (event) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                        window.nxToggleResourceMenu();
+                    });
+                }
+
+                if (menuClose) {
+                    menuClose.addEventListener("click", function (event) {
+                        event.preventDefault();
+                        closeMenu();
+                    });
+                }
+
+                if (menuOverlay) {
+                    menuOverlay.addEventListener("click", function (event) {
+                        if (event.target === menuOverlay) closeMenu();
+                    });
+
+                    menuOverlay.querySelectorAll("a").forEach(function (link) {
+                        link.addEventListener("click", closeMenu);
+                    });
+                }
+
+                document.addEventListener("keydown", function (event) {
+                    if (event.key === "Escape") closeMenu();
+                });
+
+                window.addEventListener("resize", function () {
+                    if (window.innerWidth > 1120) closeMenu();
+                });
+            }());
+        </script>
+                        
+            
+            
+    </body>
+</html>
