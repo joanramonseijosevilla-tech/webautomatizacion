@@ -3442,3 +3442,9 @@ body.nx-v2.home-page #servicios .card .service-card-btn, body.nx-v2.home-page #s
 body.nx-v2.resources-page .resources-products-btn, body.nx-v2.resources-page .resources-products-btn:visited, body.nx-v2.resources-page a.resources-products-btn, body.nx-v2.resources-page a.resources-products-btn:visited, body.nx-v2.resources-page .resources-products-btn *, body.nx-v2.resources-page a.resources-products-btn * {
   color: #fff;
 }
+
+/* Alineación específica del bloque de experiencia de Nexautia */
+#experiencia-nexautia,
+#experiencia-nexautia ~ p {
+  text-align: left;
+}
