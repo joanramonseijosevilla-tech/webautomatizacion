@@ -3443,8 +3443,27 @@ body.nx-v2.resources-page .resources-products-btn, body.nx-v2.resources-page .re
   color: #fff;
 }
 
-/* Alineación específica del bloque de experiencia de Nexautia */
-#experiencia-nexautia,
+/* Alineación de títulos y textos en la portada */
+#experiencia-nexautia {
+  text-align: center;
+}
+
 #experiencia-nexautia ~ p {
   text-align: left;
+}
+
+body.nx-v2.home-page .card h3,
+body.nx-v2.home-page .process-step h3 {
+  width: 100%;
+  text-align: center;
+}
+
+body.nx-v2.home-page .card p,
+body.nx-v2.home-page .card .service-card-result,
+body.nx-v2.home-page .process-step p,
+body.nx-v2.home-page .testimonial p,
+body.nx-v2.home-page .testimonial strong {
+  width: 100%;
+  text-align: left;
+  align-self: stretch;
 }
