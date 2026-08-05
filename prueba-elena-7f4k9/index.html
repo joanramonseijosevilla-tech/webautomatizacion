@@ -10,12 +10,159 @@
   <link rel="icon" href="../imagenes/comunes/favicon.ico">
   <link rel="stylesheet" href="prueba-elena.css">
 
+  <script>
+    (() => {
+      'use strict';
+
+      const entries = [];
+      const startedAt = new Date();
+      const PUBLIC_KEY = 'public_key_0fbf60f74e38231c13871';
+      const AGENT_ID = 'agent_f17fcf6511fdc854fef66310a9';
+
+      function redact(value) {
+        let text;
+        try {
+          text = typeof value === 'string' ? value : JSON.stringify(value);
+        } catch {
+          text = String(value);
+        }
+        if (!text) return '';
+
+        return text
+          .replaceAll(PUBLIC_KEY, '[PUBLIC_KEY]')
+          .replaceAll(AGENT_ID, '[AGENT_ID]')
+          .replace(/Bearer\s+[A-Za-z0-9._~+\/-]+=*/gi, 'Bearer [OCULTO]')
+          .replace(/("?(?:access[_-]?token|token|authorization)"?\s*[:=]\s*")([^"]+)(")/gi, '$1[OCULTO]$3')
+          .replace(/eyJ[A-Za-z0-9_-]{20,}\.[A-Za-z0-9_-]{10,}\.[A-Za-z0-9_-]{10,}/g, '[TOKEN_JWT_OCULTO]');
+      }
+
+      function addLog(kind, message, details = '') {
+        const item = {
+          time: new Date().toLocaleTimeString('es-ES', { hour12: false }),
+          kind,
+          message: redact(message),
+          details: redact(details).slice(0, 1600)
+        };
+        entries.push(item);
+        if (entries.length > 80) entries.shift();
+        render();
+      }
+
+      function render() {
+        const output = document.getElementById('diag-output');
+        const summary = document.getElementById('diag-summary');
+        if (!output || !summary) return;
+
+        summary.textContent = entries.length
+          ? `Se han registrado ${entries.length} eventos técnicos. El último aparece al final.`
+          : 'Todavía no se ha registrado ningún intento de conexión.';
+
+        output.textContent = entries.map((entry) => {
+          const details = entry.details ? `\n    ${entry.details}` : '';
+          return `[${entry.time}] ${entry.kind}: ${entry.message}${details}`;
+        }).join('\n\n');
+        output.scrollTop = output.scrollHeight;
+      }
+
+      window.__retellDiag = { addLog, entries, render };
+      addLog('INICIO', 'Diagnóstico cargado', `Página: ${location.href} | Origen: ${location.origin} | ${startedAt.toISOString()}`);
+
+      const nativeFetch = window.fetch.bind(window);
+      window.fetch = async function diagnosticFetch(input, init = {}) {
+        const url = typeof input === 'string' ? input : input?.url || String(input);
+        const method = init?.method || (typeof input !== 'string' && input?.method) || 'GET';
+        addLog('FETCH →', `${method} ${url}`);
+        try {
+          const response = await nativeFetch(input, init);
+          let body = '';
+          try {
+            body = await response.clone().text();
+          } catch (error) {
+            body = `No se pudo leer la respuesta: ${error?.message || error}`;
+          }
+          addLog(response.ok ? 'FETCH ✓' : 'FETCH ✗', `${response.status} ${response.statusText} — ${method} ${url}`, body);
+          return response;
+        } catch (error) {
+          addLog('FETCH ERROR', `${method} ${url}`, error?.stack || error?.message || String(error));
+          throw error;
+        }
+      };
+
+      const NativeXHR = window.XMLHttpRequest;
+      window.XMLHttpRequest = function DiagnosticXHR() {
+        const xhr = new NativeXHR();
+        let method = 'GET';
+        let url = '';
+        const nativeOpen = xhr.open;
+        const nativeSend = xhr.send;
+
+        xhr.open = function patchedOpen(nextMethod, nextUrl, ...rest) {
+          method = nextMethod;
+          url = String(nextUrl);
+          return nativeOpen.call(this, nextMethod, nextUrl, ...rest);
+        };
+
+        xhr.send = function patchedSend(body) {
+          addLog('XHR →', `${method} ${url}`, body || '');
+          this.addEventListener('loadend', () => {
+            let response = '';
+            try {
+              response = typeof this.responseText === 'string' ? this.responseText : String(this.response || '');
+            } catch (error) {
+              response = `No se pudo leer la respuesta: ${error?.message || error}`;
+            }
+            addLog(this.status >= 200 && this.status < 300 ? 'XHR ✓' : 'XHR ✗', `${this.status} ${this.statusText || ''} — ${method} ${url}`, response);
+          });
+          this.addEventListener('error', () => addLog('XHR ERROR', `${method} ${url}`, 'Error de red o CORS'));
+          return nativeSend.call(this, body);
+        };
+        return xhr;
+      };
+
+      window.addEventListener('error', (event) => {
+        addLog('JAVASCRIPT ERROR', event.message || 'Error de JavaScript', `${event.filename || ''}:${event.lineno || ''}:${event.colno || ''}`);
+      });
+
+      window.addEventListener('unhandledrejection', (event) => {
+        const reason = event.reason;
+        addLog('PROMESA RECHAZADA', reason?.message || String(reason), reason?.stack || '');
+      });
+
+      window.addEventListener('message', (event) => {
+        if (String(event.origin).includes('retellai.com')) {
+          addLog('MENSAJE RETELL', `Origen: ${event.origin}`, event.data);
+        }
+      });
+
+      window.__retellWidgetLoaded = () => addLog('WIDGET ✓', 'El archivo oficial de Retell se ha cargado correctamente');
+      window.__retellWidgetFailed = () => addLog('WIDGET ✗', 'No se ha podido cargar el archivo oficial de Retell');
+
+      document.addEventListener('DOMContentLoaded', () => {
+        render();
+        document.getElementById('diag-copy')?.addEventListener('click', async () => {
+          const text = document.getElementById('diag-output')?.textContent || '';
+          try {
+            await navigator.clipboard.writeText(text);
+            document.getElementById('diag-copy').textContent = 'Diagnóstico copiado';
+          } catch (error) {
+            addLog('COPIAR ERROR', 'No se pudo copiar automáticamente', error?.message || String(error));
+          }
+        });
+        document.getElementById('diag-clear')?.addEventListener('click', () => {
+          entries.length = 0;
+          addLog('LIMPIEZA', 'Registro borrado. Pulsa ahora Start to call una sola vez.');
+        });
+      });
+    })();
+  </script>
+
   <script
     id="retell-widget"
     src="https://dashboard.retellai.com/retell-widget-v2.js"
     type="module"
     data-voice-public-key="public_key_0fbf60f74e38231c13871"
     data-voice-agent-id="agent_f17fcf6511fdc854fef66310a9"
+    data-agent-version="0"
     data-title="Asistente virtual de Nexautia"
     data-logo-url="https://www.nexautia.com/imagenes/comunes/logo.svg"
     data-theme-color="#07111f"
@@ -25,7 +172,47 @@
     data-popup-message="Prueba el asistente virtual de Nexautia"
     data-show-ai-popup="false"
     data-auto-open="false"
+    onload="window.__retellWidgetLoaded && window.__retellWidgetLoaded()"
+    onerror="window.__retellWidgetFailed && window.__retellWidgetFailed()"
   ></script>
+
+  <style>
+    .diagnostic-panel {
+      margin-top: 1.5rem;
+      padding: 1.25rem;
+      border: 2px solid #f5d76e;
+      border-radius: 16px;
+      background: #020817;
+      color: #ffffff;
+    }
+    .diagnostic-panel h2 { margin-top: 0; color: #f5d76e; }
+    .diagnostic-panel p { color: #ffffff; }
+    .diagnostic-actions { display: flex; flex-wrap: wrap; gap: .75rem; margin: 1rem 0; }
+    .diagnostic-actions button {
+      min-height: 48px;
+      padding: .75rem 1rem;
+      border: 2px solid #ffffff;
+      border-radius: 10px;
+      background: #172554;
+      color: #ffffff;
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    #diag-output {
+      min-height: 180px;
+      max-height: 420px;
+      overflow: auto;
+      white-space: pre-wrap;
+      word-break: break-word;
+      padding: 1rem;
+      border: 1px solid #94a3b8;
+      border-radius: 10px;
+      background: #000000;
+      color: #ffffff;
+      font: 600 16px/1.55 Consolas, Monaco, monospace;
+    }
+  </style>
 </head>
 <body>
   <main class="test-page">
@@ -45,10 +232,20 @@
         <h2>Cómo iniciar la conversación</h2>
         <ol>
           <li>Pulsa el botón <strong>«Hablar con Elena»</strong> situado abajo a la derecha.</li>
-          <li>Permite el acceso al micrófono cuando lo solicite el navegador.</li>
-          <li>Habla con normalidad y finaliza la llamada desde el propio panel.</li>
+          <li>En el panel de Retell pulsa <strong>«Start to call»</strong>.</li>
+          <li>Si vuelve al estado inicial, revisa el diagnóstico técnico de esta misma página.</li>
         </ol>
       </div>
+
+      <section class="diagnostic-panel" aria-labelledby="diag-title">
+        <h2 id="diag-title">Diagnóstico técnico</h2>
+        <p id="diag-summary">Todavía no se ha registrado ningún intento de conexión.</p>
+        <div class="diagnostic-actions">
+          <button id="diag-clear" type="button">Limpiar y volver a probar</button>
+          <button id="diag-copy" type="button">Copiar diagnóstico</button>
+        </div>
+        <pre id="diag-output" aria-live="polite"></pre>
+      </section>
 
       <div class="notice" role="note">
         <strong>Importante:</strong> cada conversación consume saldo de Retell por minuto.
