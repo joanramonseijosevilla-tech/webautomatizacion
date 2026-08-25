@@ -398,6 +398,15 @@ body.nx-v2 .container { width: min(1180px, 100% - 36px); margin: 0 auto; }
   font-size: .94rem;
 }
 
+.faq-card summary {
+  cursor: pointer;
+  font-weight: 800;
+}
+
+.faq-card[open] summary {
+  margin-bottom: 10px;
+}
+
 .final-cta {
   background: linear-gradient(135deg, var(--primary), var(--secondary));
   color: #fff;
