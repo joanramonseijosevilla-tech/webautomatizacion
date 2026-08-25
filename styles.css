@@ -3722,6 +3722,10 @@ body.nx-v2.automation-page .automation-summary > .container > p {
     font-size: .72rem;
     font-weight: 900;
   }
+
+  html[lang="ca"] body.nx-v2.automation-page .automation-table-section tbody td:nth-of-type(1)::before {
+    content: "Exemple pràctic";
+  }
 }
 
 /* Móvil: una tarjeta por fila y márgenes coherentes con el resto */
