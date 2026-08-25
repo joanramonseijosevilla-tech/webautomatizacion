@@ -3477,23 +3477,19 @@ body.nx-v2.home-page .testimonial strong {
   align-self: stretch;
 }
 
-/* FAQ Home: margen lateral y contraste de las preguntas */
-#preguntas-frecuentes {
-  padding-left: 24px;
-  padding-right: 24px;
+/* FAQ Home: ancho, centrado y contraste */
+body.nx-v2.home-page #preguntas-frecuentes .faq-row {
+  width: min(1180px, calc(100% - 36px));
+  margin-left: auto;
+  margin-right: auto;
 }
 
-#preguntas-frecuentes .faq-card summary {
+body.nx-v2.home-page #preguntas-frecuentes .faq-card summary {
   color: var(--light-text);
 }
 
 @media (max-width: 680px) {
-  #preguntas-frecuentes {
-    padding-left: 16px;
-    padding-right: 16px;
-  }
-
-  #preguntas-frecuentes .faq-card summary {
-    color: var(--light-text);
+  body.nx-v2.home-page #preguntas-frecuentes .faq-row {
+    width: min(520px, calc(100% - 28px));
   }
 }
