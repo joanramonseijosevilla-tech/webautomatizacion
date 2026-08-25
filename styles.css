@@ -3476,3 +3476,24 @@ body.nx-v2.home-page .testimonial strong {
   text-align: left;
   align-self: stretch;
 }
+
+/* FAQ Home: margen lateral y contraste de las preguntas */
+#preguntas-frecuentes {
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+#preguntas-frecuentes .faq-card summary {
+  color: var(--light-text);
+}
+
+@media (max-width: 680px) {
+  #preguntas-frecuentes {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  #preguntas-frecuentes .faq-card summary {
+    color: var(--light-text);
+  }
+}
