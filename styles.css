@@ -3795,3 +3795,20 @@ body.nx-v2.automation-page .automation-table-section .automation-table-caption {
   border: 0 !important;
 }
 
+
+/* IA APLICADA · ocultar numeración automática del <ol> sin perder semántica */
+body.nx-v2.ai-page ol.ai-implementation-grid {
+  margin: 0;
+  padding: 0;
+  list-style: none !important;
+}
+
+body.nx-v2.ai-page ol.ai-implementation-grid > li.ai-card-v2 {
+  display: block;
+  list-style: none !important;
+}
+
+body.nx-v2.ai-page ol.ai-implementation-grid > li.ai-card-v2::marker {
+  content: "";
+  font-size: 0;
+}
