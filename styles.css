@@ -3887,17 +3887,6 @@ body.nx-v2.ai-page .ai-related-services-grid .ai-related-service-link {
   display: inline-flex;
 }
 
-body.nx-v2.ai-page .ai-related-services-grid .ai-related-service-link svg {
-  width: 17px;
-  height: 17px;
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 2;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  flex: 0 0 17px;
-}
-
 body.nx-v2.ai-page .ai-related-services-grid .ai-related-service-card p {
   margin-bottom: 16px;
 }
