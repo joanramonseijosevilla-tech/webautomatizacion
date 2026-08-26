@@ -3848,3 +3848,57 @@ body.nx-v2.ai-page .ai-local-related-title {
   font-size: clamp(1.45rem, 2.4vw, 2rem);
   line-height: 1.15;
 }
+
+/* IA LOCAL · tarjetas de servicios relacionados claramente enlazables */
+body.nx-v2.ai-page .ai-related-services-grid .ai-related-service-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  cursor: pointer;
+  border-color: #bfdbfe;
+  transition: transform .18s, box-shadow .18s, border-color .18s, background .18s;
+}
+
+body.nx-v2.ai-page .ai-related-services-grid .ai-related-service-card:hover {
+  background: #f8fbff;
+  border-color: var(--secondary);
+  transform: translateY(-2px);
+  box-shadow: 0 18px 42px #0f172a18;
+}
+
+body.nx-v2.ai-page .ai-related-services-grid .ai-related-service-card:focus-visible {
+  outline: 3px solid #93c5fd;
+  outline-offset: 3px;
+}
+
+body.nx-v2.ai-page .ai-related-services-grid .ai-related-service-link {
+  width: fit-content;
+  color: var(--primary-2);
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: 999px;
+  align-items: center;
+  gap: 7px;
+  margin-top: auto;
+  padding: 8px 12px;
+  font-size: .86rem;
+  font-weight: 850;
+  display: inline-flex;
+}
+
+body.nx-v2.ai-page .ai-related-services-grid .ai-related-service-link svg {
+  width: 17px;
+  height: 17px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  flex: 0 0 17px;
+}
+
+body.nx-v2.ai-page .ai-related-services-grid .ai-related-service-card p {
+  margin-bottom: 16px;
+}
+
