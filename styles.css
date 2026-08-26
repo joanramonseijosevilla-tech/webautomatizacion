@@ -3812,3 +3812,20 @@ body.nx-v2.ai-page ol.ai-implementation-grid > li.ai-card-v2::marker {
   content: "";
   font-size: 0;
 }
+
+/* IA APLICADA · resumen: ocultar viñetas visuales sin perder la lista semántica */
+body.nx-v2.ai-page .ai-summary .ai-difference-note ul {
+  margin-left: 0;
+  padding-left: 0;
+  list-style: none !important;
+}
+
+body.nx-v2.ai-page .ai-summary .ai-difference-note ul > li {
+  list-style: none !important;
+}
+
+body.nx-v2.ai-page .ai-summary .ai-difference-note ul > li::marker {
+  content: "";
+  font-size: 0;
+}
+
