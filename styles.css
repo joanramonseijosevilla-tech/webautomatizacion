@@ -3891,3 +3891,121 @@ body.nx-v2.ai-page .ai-related-services-grid .ai-related-service-card p {
   margin-bottom: 16px;
 }
 
+/* IA APLICADA · índice interno compacto */
+body.nx-v2.ai-page .ai-page-toc {
+  width: min(100%, 980px);
+  margin: 0 auto 34px;
+  padding: 16px 18px;
+  background: #fff;
+  border: 1px solid var(--line-light);
+  border-radius: 16px;
+  box-shadow: 0 12px 30px #0f172a0d;
+}
+
+body.nx-v2.ai-page .ai-page-toc-title {
+  color: var(--light-text);
+  text-align: center;
+  font-size: .95rem;
+  font-weight: 900;
+  display: block;
+}
+
+body.nx-v2.ai-page .ai-page-toc-list {
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin: 10px 0 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+}
+
+body.nx-v2.ai-page .ai-page-toc-list li {
+  margin: 0;
+  list-style: none;
+}
+
+body.nx-v2.ai-page .ai-page-toc-list a {
+  color: var(--primary-2);
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: 999px;
+  padding: 8px 12px;
+  font-size: .86rem;
+  font-weight: 800;
+  display: inline-flex;
+}
+
+body.nx-v2.ai-page .ai-page-toc-list a:hover,
+body.nx-v2.ai-page .ai-page-toc-list a:focus-visible {
+  color: #fff;
+  background: var(--primary);
+  border-color: var(--primary);
+}
+
+/* IA APLICADA · criterio profesional firmado */
+body.nx-v2.ai-page .ai-expert-note {
+  max-width: 900px;
+  color: var(--light-text);
+  background: #f8fbff;
+  border: 1px solid #dbeafe;
+  border-left: 4px solid var(--primary);
+  border-radius: 0 18px 18px 0;
+  margin: 30px auto 0;
+  padding: 22px 24px;
+}
+
+body.nx-v2.ai-page .ai-expert-note p {
+  color: #334155;
+  margin: 0 0 14px;
+  line-height: 1.65;
+}
+
+body.nx-v2.ai-page .ai-expert-note footer {
+  color: var(--light-muted);
+  font-size: .92rem;
+  line-height: 1.5;
+}
+
+body.nx-v2.ai-page .ai-expert-note footer strong {
+  color: var(--light-text);
+}
+
+body.nx-v2.ai-page .ai-expert-note footer a {
+  color: var(--primary-2);
+  font-weight: 850;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+body.nx-v2.ai-page #ia-mataro,
+body.nx-v2.ai-page #casos-uso-ia,
+body.nx-v2.ai-page #implementacion-ia,
+body.nx-v2.ai-page #limites-ia,
+body.nx-v2.ai-page #preguntas-frecuentes-ia {
+  scroll-margin-top: 24px;
+}
+
+@media (max-width: 680px) {
+  body.nx-v2.ai-page .ai-page-toc {
+    margin-bottom: 28px;
+    padding: 15px;
+  }
+
+  body.nx-v2.ai-page .ai-page-toc-list {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    display: grid;
+  }
+
+  body.nx-v2.ai-page .ai-page-toc-list a {
+    justify-content: center;
+    width: 100%;
+  }
+
+  body.nx-v2.ai-page .ai-expert-note {
+    border-radius: 16px;
+    padding: 20px;
+  }
+}
+
