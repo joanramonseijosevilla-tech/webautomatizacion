@@ -3850,7 +3850,7 @@ body.nx-v2.ai-page .ai-local-related-title {
 }
 
 /* IA LOCAL · tarjetas de servicios relacionados claramente enlazables */
-body.nx-v2.ai-page .ai-related-services-grid .ai-related-service-card {
+body.nx-v2:is(.ai-page, .automation-page) .ai-related-services-grid .ai-related-service-card {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -3860,19 +3860,19 @@ body.nx-v2.ai-page .ai-related-services-grid .ai-related-service-card {
   transition: transform .18s, box-shadow .18s, border-color .18s, background .18s;
 }
 
-body.nx-v2.ai-page .ai-related-services-grid .ai-related-service-card:hover {
+body.nx-v2:is(.ai-page, .automation-page) .ai-related-services-grid .ai-related-service-card:hover {
   background: #f8fbff;
   border-color: var(--secondary);
   transform: translateY(-2px);
   box-shadow: 0 18px 42px #0f172a18;
 }
 
-body.nx-v2.ai-page .ai-related-services-grid .ai-related-service-card:focus-visible {
+body.nx-v2:is(.ai-page, .automation-page) .ai-related-services-grid .ai-related-service-card:focus-visible {
   outline: 3px solid #93c5fd;
   outline-offset: 3px;
 }
 
-body.nx-v2.ai-page .ai-related-services-grid .ai-related-service-link {
+body.nx-v2:is(.ai-page, .automation-page) .ai-related-services-grid .ai-related-service-link {
   width: fit-content;
   color: var(--primary-2);
   background: #eff6ff;
@@ -3887,12 +3887,12 @@ body.nx-v2.ai-page .ai-related-services-grid .ai-related-service-link {
   display: inline-flex;
 }
 
-body.nx-v2.ai-page .ai-related-services-grid .ai-related-service-card p {
+body.nx-v2:is(.ai-page, .automation-page) .ai-related-services-grid .ai-related-service-card p {
   margin-bottom: 16px;
 }
 
 /* IA APLICADA · índice interno horizontal */
-body.nx-v2.ai-page .ai-toc-section {
+body.nx-v2:is(.ai-page, .automation-page) .ai-toc-section {
   background: var(--light);
   color: var(--light-text);
   border-top: 1px solid #e2e8f0;
@@ -3900,7 +3900,7 @@ body.nx-v2.ai-page .ai-toc-section {
   padding: 18px 0;
 }
 
-body.nx-v2.ai-page .ai-page-toc {
+body.nx-v2:is(.ai-page, .automation-page) .ai-page-toc {
   width: 100%;
   min-width: 0;
   margin: 0;
@@ -3912,7 +3912,7 @@ body.nx-v2.ai-page .ai-page-toc {
   gap: 10px;
 }
 
-body.nx-v2.ai-page .ai-page-toc-title {
+body.nx-v2:is(.ai-page, .automation-page) .ai-page-toc-title {
   color: var(--light-text);
   white-space: nowrap;
   font-size: .95rem;
@@ -3920,7 +3920,7 @@ body.nx-v2.ai-page .ai-page-toc-title {
   flex: 0 0 auto;
 }
 
-body.nx-v2.ai-page .ai-page-toc-list {
+body.nx-v2:is(.ai-page, .automation-page) .ai-page-toc-list {
   width: min(100%, 1080px);
   min-width: 0;
   flex-wrap: wrap;
@@ -3933,13 +3933,13 @@ body.nx-v2.ai-page .ai-page-toc-list {
   display: flex;
 }
 
-body.nx-v2.ai-page .ai-page-toc-list li {
+body.nx-v2:is(.ai-page, .automation-page) .ai-page-toc-list li {
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-body.nx-v2.ai-page .ai-page-toc-list a {
+body.nx-v2:is(.ai-page, .automation-page) .ai-page-toc-list a {
   color: var(--primary-2);
   white-space: nowrap;
   background: #eff6ff;
@@ -3954,8 +3954,8 @@ body.nx-v2.ai-page .ai-page-toc-list a {
   transition: background .18s, color .18s, border-color .18s, transform .18s;
 }
 
-body.nx-v2.ai-page .ai-page-toc-list a:hover,
-body.nx-v2.ai-page .ai-page-toc-list a:focus-visible {
+body.nx-v2:is(.ai-page, .automation-page) .ai-page-toc-list a:hover,
+body.nx-v2:is(.ai-page, .automation-page) .ai-page-toc-list a:focus-visible {
   color: #fff;
   background: var(--primary);
   border-color: var(--primary);
@@ -3963,7 +3963,7 @@ body.nx-v2.ai-page .ai-page-toc-list a:focus-visible {
 }
 
 /* IA APLICADA · retorno visible al índice */
-body.nx-v2.ai-page .ai-back-top {
+body.nx-v2:is(.ai-page, .automation-page) .ai-back-top {
   width: fit-content;
   color: #fff;
   background: linear-gradient(135deg, var(--primary), var(--primary-2));
@@ -3981,8 +3981,8 @@ body.nx-v2.ai-page .ai-back-top {
   transition: transform .18s, background .18s, border-color .18s, box-shadow .18s;
 }
 
-body.nx-v2.ai-page .ai-back-top:hover,
-body.nx-v2.ai-page .ai-back-top:focus-visible {
+body.nx-v2:is(.ai-page, .automation-page) .ai-back-top:hover,
+body.nx-v2:is(.ai-page, .automation-page) .ai-back-top:focus-visible {
   color: #fff;
   background: #1e40af;
   border-color: #1e40af;
@@ -3991,44 +3991,44 @@ body.nx-v2.ai-page .ai-back-top:focus-visible {
   box-shadow: 0 10px 24px #2563eb38;
 }
 
-body.nx-v2.ai-page .ai-back-top-dark {
+body.nx-v2:is(.ai-page, .automation-page) .ai-back-top-dark {
   color: #0f2747;
   background: #dbeafe;
   border-color: #60a5fa;
   box-shadow: 0 8px 20px #00000024;
 }
 
-body.nx-v2.ai-page .ai-back-top-dark:hover,
-body.nx-v2.ai-page .ai-back-top-dark:focus-visible {
+body.nx-v2:is(.ai-page, .automation-page) .ai-back-top-dark:hover,
+body.nx-v2:is(.ai-page, .automation-page) .ai-back-top-dark:focus-visible {
   color: #07111f;
   background: #eff6ff;
   border-color: #93c5fd;
 }
 
 @media (max-width: 1080px) {
-  body.nx-v2.ai-page .ai-page-toc {
+  body.nx-v2:is(.ai-page, .automation-page) .ai-page-toc {
     flex-direction: column;
     gap: 10px;
   }
 
-  body.nx-v2.ai-page .ai-page-toc-list {
+  body.nx-v2:is(.ai-page, .automation-page) .ai-page-toc-list {
     width: min(100%, 860px);
   }
 }
 
 @media (max-width: 680px) {
-  body.nx-v2.ai-page .ai-toc-section {
+  body.nx-v2:is(.ai-page, .automation-page) .ai-toc-section {
     padding: 16px 0;
   }
 
-  body.nx-v2.ai-page .ai-page-toc-list {
+  body.nx-v2:is(.ai-page, .automation-page) .ai-page-toc-list {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     width: 100%;
     gap: 8px;
     display: grid;
   }
 
-  body.nx-v2.ai-page .ai-page-toc-list a {
+  body.nx-v2:is(.ai-page, .automation-page) .ai-page-toc-list a {
     white-space: normal;
     text-align: center;
     width: 100%;
@@ -4037,23 +4037,23 @@ body.nx-v2.ai-page .ai-back-top-dark:focus-visible {
     line-height: 1.25;
   }
 
-  body.nx-v2.ai-page .ai-page-toc-list li:last-child {
+  body.nx-v2:is(.ai-page, .automation-page) .ai-page-toc-list li:last-child {
     grid-column: 1 / -1;
     width: min(100%, 320px);
     justify-self: center;
   }
 
-  body.nx-v2.ai-page .ai-back-top {
+  body.nx-v2:is(.ai-page, .automation-page) .ai-back-top {
     margin: 0 auto 14px;
   }
 }
 
 @media (max-width: 430px) {
-  body.nx-v2.ai-page .ai-page-toc-list {
+  body.nx-v2:is(.ai-page, .automation-page) .ai-page-toc-list {
     grid-template-columns: 1fr;
   }
 
-  body.nx-v2.ai-page .ai-page-toc-list li:last-child {
+  body.nx-v2:is(.ai-page, .automation-page) .ai-page-toc-list li:last-child {
     grid-column: auto;
     width: 100%;
   }
@@ -4212,7 +4212,7 @@ body.nx-v2.ai-page #indice-ia {
 }
 
 /* IA APLICADA · criterio profesional firmado */
-body.nx-v2.ai-page .ai-expert-note {
+body.nx-v2:is(.ai-page, .automation-page) .ai-expert-note {
   max-width: 900px;
   color: var(--light-text);
   background: #f8fbff;
@@ -4223,23 +4223,23 @@ body.nx-v2.ai-page .ai-expert-note {
   padding: 22px 24px;
 }
 
-body.nx-v2.ai-page .ai-expert-note p {
+body.nx-v2:is(.ai-page, .automation-page) .ai-expert-note p {
   color: #334155;
   margin: 0 0 14px;
   line-height: 1.65;
 }
 
-body.nx-v2.ai-page .ai-expert-note footer {
+body.nx-v2:is(.ai-page, .automation-page) .ai-expert-note footer {
   color: var(--light-muted);
   font-size: .92rem;
   line-height: 1.5;
 }
 
-body.nx-v2.ai-page .ai-expert-note footer strong {
+body.nx-v2:is(.ai-page, .automation-page) .ai-expert-note footer strong {
   color: var(--light-text);
 }
 
-body.nx-v2.ai-page .ai-expert-note footer a {
+body.nx-v2:is(.ai-page, .automation-page) .ai-expert-note footer a {
   color: var(--primary-2);
   font-weight: 850;
   text-decoration: underline;
@@ -4291,5 +4291,60 @@ body.nx-v2.ai-page #preguntas-frecuentes-ia {
   body.nx-v2.ai-page .ai-page-toc-list {
     grid-template-columns: 1fr;
   }
+}
+
+/* =========================================================
+   AUTOMATIZACIÓN · EQUIPARACIÓN SEO / AEO / GEO
+   ========================================================= */
+body.nx-v2.automation-page #diagnostico-automatizacion,
+body.nx-v2.automation-page #casos-practicos-automatizacion,
+body.nx-v2.automation-page #automatizacion-pymes,
+body.nx-v2.automation-page #automatizacion-ia,
+body.nx-v2.automation-page #resumen-automatizacion { background: #fff; }
+
+body.nx-v2.automation-page .automation-local-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+body.nx-v2.automation-page .automation-local-grid .process-card-v2 strong { display: inline; margin: 0; color: #bfdbfe; }
+
+body.nx-v2.automation-page .automation-local-sources,
+body.nx-v2.automation-page .automation-video-note {
+  background: #ffffff10;
+  border: 1px solid #ffffff26;
+  border-radius: 22px;
+  width: min(100%, 980px);
+  margin: 28px auto 0;
+  padding: 24px;
+}
+body.nx-v2.automation-page .automation-local-sources h3 { color: #fff; margin: 0 0 8px; }
+body.nx-v2.automation-page .automation-local-sources p,
+body.nx-v2.automation-page .automation-video-note p { color: var(--muted); margin: 0; line-height: 1.65; }
+body.nx-v2.automation-page .automation-local-sources a,
+body.nx-v2.automation-page .automation-video-note a { color: #bfdbfe; font-weight: 800; text-decoration: underline; text-underline-offset: 3px; }
+
+body.nx-v2.automation-page .automation-related-heading { margin-top: 38px; margin-bottom: 18px; }
+body.nx-v2.automation-page .automation-related-title { letter-spacing: -.03em; margin: 8px auto 0; font-size: clamp(1.45rem, 2.4vw, 2rem); line-height: 1.15; }
+body.nx-v2.automation-page .automation-video-note iframe { border-radius: 16px; margin: 20px 0 14px; display: block; overflow: hidden; }
+
+body.nx-v2.automation-page #diagnostico-automatizacion,
+body.nx-v2.automation-page #procesos-automatizables,
+body.nx-v2.automation-page #casos-practicos-automatizacion,
+body.nx-v2.automation-page #automatizacion-mataro,
+body.nx-v2.automation-page #automatizacion-pymes,
+body.nx-v2.automation-page #implementacion-automatizacion,
+body.nx-v2.automation-page #automatizacion-ia,
+body.nx-v2.automation-page #ejemplo-automatizacion,
+body.nx-v2.automation-page #resumen-automatizacion,
+body.nx-v2.automation-page #preguntas-frecuentes-automatizacion { scroll-margin-top: 24px; }
+body.nx-v2.automation-page #indice-automatizacion { scroll-margin-top: 16px; }
+
+@media (max-width: 1080px) {
+  body.nx-v2.automation-page .automation-local-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  body.nx-v2.automation-page .automation-local-grid .process-card-v2:last-child { grid-column: 1 / -1; width: calc((100% - 18px) / 2); justify-self: center; }
+}
+@media (max-width: 680px) {
+  body.nx-v2.automation-page .automation-local-grid { grid-template-columns: minmax(0, 1fr); }
+  body.nx-v2.automation-page .automation-local-grid .process-card-v2:last-child { grid-column: auto; width: 100%; }
+  body.nx-v2.automation-page .automation-local-sources,
+  body.nx-v2.automation-page .automation-video-note { padding: 20px; }
+  body.nx-v2.automation-page .automation-video-note iframe { border-radius: 12px; }
 }
 
