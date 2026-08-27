@@ -4244,10 +4244,15 @@ body.nx-v2.ai-page .ai-expert-note footer a {
   text-underline-offset: 3px;
 }
 
+body.nx-v2.ai-page #soluciones-ia,
 body.nx-v2.ai-page #ia-mataro,
+body.nx-v2.ai-page #diagnostico-ia,
 body.nx-v2.ai-page #casos-uso-ia,
+body.nx-v2.ai-page #ia-pymes,
 body.nx-v2.ai-page #implementacion-ia,
+body.nx-v2.ai-page #ia-automatizaciones,
 body.nx-v2.ai-page #limites-ia,
+body.nx-v2.ai-page #resumen-ia,
 body.nx-v2.ai-page #preguntas-frecuentes-ia {
   scroll-margin-top: 24px;
 }
@@ -4259,9 +4264,14 @@ body.nx-v2.ai-page #preguntas-frecuentes-ia {
   }
 
   body.nx-v2.ai-page .ai-page-toc-list {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 8px;
     display: grid;
+  }
+
+  body.nx-v2.ai-page .ai-page-toc-list li:last-child {
+    grid-column: auto;
+    width: 100%;
   }
 
   body.nx-v2.ai-page .ai-page-toc-list a {
@@ -4272,6 +4282,12 @@ body.nx-v2.ai-page #preguntas-frecuentes-ia {
   body.nx-v2.ai-page .ai-expert-note {
     border-radius: 16px;
     padding: 20px;
+  }
+}
+
+@media (max-width: 430px) {
+  body.nx-v2.ai-page .ai-page-toc-list {
+    grid-template-columns: 1fr;
   }
 }
 
