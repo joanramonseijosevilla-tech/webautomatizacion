@@ -4058,31 +4058,145 @@ body.nx-v2.ai-page .ai-back-top-dark:focus-visible {
 }
 
 
-/* IA APLICADA · ritmo visual de secciones: oscuro / blanco / gris claro */
+/* IA APLICADA · alternancia visual definitiva */
+
+/* 1 · Soluciones de IA: BLANCO */
 body.nx-v2.ai-page .ai-toc-section + .white-section {
   background: #fff;
 }
 
+/* 2 · Contexto local de Mataró: OSCURO */
 body.nx-v2.ai-page #ia-mataro {
-  background: var(--light);
+  color: #fff;
+  background: var(--dark-band-background);
 }
 
+body.nx-v2.ai-page #ia-mataro .section-heading span {
+  color: var(--secondary);
+}
+
+body.nx-v2.ai-page #ia-mataro .section-heading h2,
+body.nx-v2.ai-page #ia-mataro .section-heading h3 {
+  color: #fff;
+}
+
+body.nx-v2.ai-page #ia-mataro .section-heading p {
+  color: var(--muted);
+}
+
+body.nx-v2.ai-page #ia-mataro .ai-difference-note {
+  background: #ffffff10;
+  border-color: #ffffff26;
+}
+
+body.nx-v2.ai-page #ia-mataro .ai-difference-note h3 {
+  color: #fff;
+}
+
+body.nx-v2.ai-page #ia-mataro .ai-difference-note p {
+  color: var(--muted);
+}
+
+body.nx-v2.ai-page #ia-mataro .ai-difference-note a {
+  color: #bfdbfe;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+body.nx-v2.ai-page #ia-mataro .ai-related-service-card {
+  color: #fff;
+  background: #ffffff10;
+  border-color: #ffffff2b;
+  box-shadow: 0 16px 40px #00000026;
+}
+
+body.nx-v2.ai-page #ia-mataro .ai-related-service-card h3 {
+  color: #fff;
+}
+
+body.nx-v2.ai-page #ia-mataro .ai-related-service-card p {
+  color: var(--muted);
+}
+
+body.nx-v2.ai-page #ia-mataro .ai-related-service-card:hover {
+  background: #ffffff1a;
+  border-color: var(--secondary);
+}
+
+body.nx-v2.ai-page #ia-mataro .ai-related-service-link {
+  color: #07111f;
+  background: #dbeafe;
+  border-color: #60a5fa;
+}
+
+/* 3 · Diagnóstico: BLANCO */
 body.nx-v2.ai-page #ia-mataro + .white-section {
   background: #fff;
 }
 
+/* 4 · Casos de uso ya es OSCURO */
+
+/* 5 · IA para pymes: BLANCO */
 body.nx-v2.ai-page #casos-uso-ia + .white-section {
   background: #fff;
 }
 
+/* 6 · Implementación ya es OSCURO */
+
+/* 7 · IA conectada con automatizaciones: BLANCO */
 body.nx-v2.ai-page #implementacion-ia + .white-section {
   background: #fff;
 }
 
+/* 8 · Caja negra / límites: OSCURO */
 body.nx-v2.ai-page #limites-ia {
-  background: var(--light);
+  color: #fff;
+  background: var(--dark-band-background);
 }
 
+body.nx-v2.ai-page #limites-ia .section-heading span {
+  color: var(--secondary);
+}
+
+body.nx-v2.ai-page #limites-ia .section-heading h2 {
+  color: #fff;
+}
+
+body.nx-v2.ai-page #limites-ia .ai-difference-note {
+  background: #ffffff10;
+  border-color: #ffffff26;
+}
+
+body.nx-v2.ai-page #limites-ia .ai-difference-note p {
+  color: var(--muted);
+}
+
+body.nx-v2.ai-page #limites-ia .ai-difference-note a {
+  color: #bfdbfe;
+  font-weight: 800;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* "Volver al índice" visible en las dos nuevas secciones oscuras */
+body.nx-v2.ai-page #ia-mataro .ai-back-top,
+body.nx-v2.ai-page #limites-ia .ai-back-top {
+  color: #07111f;
+  background: #dbeafe;
+  border-color: #60a5fa;
+  box-shadow: 0 8px 20px #0000002e;
+}
+
+body.nx-v2.ai-page #ia-mataro .ai-back-top:hover,
+body.nx-v2.ai-page #ia-mataro .ai-back-top:focus-visible,
+body.nx-v2.ai-page #limites-ia .ai-back-top:hover,
+body.nx-v2.ai-page #limites-ia .ai-back-top:focus-visible {
+  color: #07111f;
+  background: #fff;
+  border-color: #93c5fd;
+}
+
+/* Después del vídeo volvemos a claro */
 body.nx-v2.ai-page .ai-summary {
   background: #fff;
 }
