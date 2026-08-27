@@ -3960,26 +3960,47 @@ body.nx-v2.ai-page .ai-page-toc-list a:focus-visible {
   transform: translateY(-1px);
 }
 
-/* IA APLICADA · volver al inicio desde las secciones enlazadas */
+/* IA APLICADA · retorno visible al índice */
 body.nx-v2.ai-page .ai-back-top {
   width: fit-content;
-  color: var(--primary-2);
-  margin: 0 0 14px auto;
-  font-size: .84rem;
+  color: #fff;
+  background: linear-gradient(135deg, var(--primary), var(--primary-2));
+  border: 1px solid var(--primary-2);
+  border-radius: 999px;
+  margin: 0 0 18px auto;
+  padding: 8px 13px;
+  font-size: .9rem;
   font-weight: 850;
+  line-height: 1.2;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: center;
+  box-shadow: 0 8px 20px #2563eb24;
+  transition: transform .18s, background .18s, border-color .18s, box-shadow .18s;
 }
 
 body.nx-v2.ai-page .ai-back-top:hover,
 body.nx-v2.ai-page .ai-back-top:focus-visible {
-  text-decoration: underline;
-  text-underline-offset: 3px;
+  color: #fff;
+  background: #1e40af;
+  border-color: #1e40af;
+  text-decoration: none;
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px #2563eb38;
 }
 
 body.nx-v2.ai-page .ai-back-top-dark {
-  color: #bfdbfe;
+  color: #0f2747;
+  background: #dbeafe;
+  border-color: #60a5fa;
+  box-shadow: 0 8px 20px #00000024;
+}
+
+body.nx-v2.ai-page .ai-back-top-dark:hover,
+body.nx-v2.ai-page .ai-back-top-dark:focus-visible {
+  color: #07111f;
+  background: #eff6ff;
+  border-color: #93c5fd;
 }
 
 @media (max-width: 1080px) {
@@ -4021,7 +4042,7 @@ body.nx-v2.ai-page .ai-back-top-dark {
   }
 
   body.nx-v2.ai-page .ai-back-top {
-    margin-bottom: 12px;
+    margin: 0 auto 14px;
   }
 }
 
@@ -4034,6 +4055,44 @@ body.nx-v2.ai-page .ai-back-top-dark {
     grid-column: auto;
     width: 100%;
   }
+}
+
+
+/* IA APLICADA · ritmo visual de secciones: oscuro / blanco / gris claro */
+body.nx-v2.ai-page .ai-toc-section + .white-section {
+  background: #fff;
+}
+
+body.nx-v2.ai-page #ia-mataro {
+  background: var(--light);
+}
+
+body.nx-v2.ai-page #ia-mataro + .white-section {
+  background: #fff;
+}
+
+body.nx-v2.ai-page #casos-uso-ia + .white-section {
+  background: #fff;
+}
+
+body.nx-v2.ai-page #implementacion-ia + .white-section {
+  background: #fff;
+}
+
+body.nx-v2.ai-page #limites-ia {
+  background: var(--light);
+}
+
+body.nx-v2.ai-page .ai-summary {
+  background: #fff;
+}
+
+body.nx-v2.ai-page #preguntas-frecuentes-ia {
+  background: var(--light);
+}
+
+body.nx-v2.ai-page #indice-ia {
+  scroll-margin-top: 16px;
 }
 
 /* IA APLICADA · criterio profesional firmado */
