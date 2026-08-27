@@ -870,7 +870,7 @@ body.nx-v2.ai-page .ai-photo-card img { object-position: center; }
 
 body.nx-v2.ai-page .ai-intro-strip { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 
-body.nx-v2.ai-page .ai-grid-v2 {
+body.nx-v2:is(.ai-page, .automation-page) .ai-grid-v2 {
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 18px;
   display: grid;
@@ -878,7 +878,7 @@ body.nx-v2.ai-page .ai-grid-v2 {
 
 body.nx-v2.ai-page .ai-implementation-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 
-body.nx-v2.ai-page .ai-difference-note {
+body.nx-v2:is(.ai-page, .automation-page) .ai-difference-note {
   background: linear-gradient(135deg, #2563eb17, #2563eb17);
   border: 1px solid #dbeafe;
   border-radius: 22px;
@@ -886,20 +886,20 @@ body.nx-v2.ai-page .ai-difference-note {
   padding: 24px;
 }
 
-body.nx-v2.ai-page .ai-difference-note h3 { color: var(--light-text); margin: 0 0 8px; }
+body.nx-v2:is(.ai-page, .automation-page) .ai-difference-note h3 { color: var(--light-text); margin: 0 0 8px; }
 
-body.nx-v2.ai-page .ai-difference-note p { color: var(--light-muted); margin: 0; }
+body.nx-v2:is(.ai-page, .automation-page) .ai-difference-note p { color: var(--light-muted); margin: 0; }
 
 @media (max-width: 1080px) {
   body.nx-v2.ai-page .hero-grid { grid-template-columns: minmax(0, 1fr); }
-  body.nx-v2.ai-page .ai-intro-strip, body.nx-v2.ai-page .ai-grid-v2, body.nx-v2.ai-page .ai-implementation-grid {
+  body.nx-v2.ai-page .ai-intro-strip, body.nx-v2:is(.ai-page, .automation-page) .ai-grid-v2, body.nx-v2.ai-page .ai-implementation-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     justify-content: center;
   }
 }
 
 @media (max-width: 680px) {
-  body.nx-v2.ai-page .ai-intro-strip, body.nx-v2.ai-page .ai-grid-v2, body.nx-v2.ai-page .ai-implementation-grid {
+  body.nx-v2.ai-page .ai-intro-strip, body.nx-v2:is(.ai-page, .automation-page) .ai-grid-v2, body.nx-v2.ai-page .ai-implementation-grid {
     grid-template-columns: minmax(0, 1fr);
   }
   body.nx-v2.ai-page .ai-card-v2 {
@@ -3837,12 +3837,12 @@ body.nx-v2.ai-page .ai-summary .ai-difference-note ul > li::marker {
 }
 
 /* IA LOCAL · espaciado del bloque de servicios relacionados */
-body.nx-v2.ai-page .ai-local-related-heading {
+body.nx-v2:is(.ai-page, .automation-page) .ai-local-related-heading {
   margin-top: 38px;
   margin-bottom: 18px;
 }
 
-body.nx-v2.ai-page .ai-local-related-title {
+body.nx-v2:is(.ai-page, .automation-page) .ai-local-related-title {
   letter-spacing: -.03em;
   margin: 8px auto 0;
   font-size: clamp(1.45rem, 2.4vw, 2rem);
@@ -4063,7 +4063,7 @@ body.nx-v2:is(.ai-page, .automation-page) .ai-back-top-dark:focus-visible {
 /* IA APLICADA · alternancia visual definitiva */
 
 /* 1 · Soluciones de IA: BLANCO */
-body.nx-v2.ai-page .ai-toc-section + .white-section {
+body.nx-v2:is(.ai-page, .automation-page) .ai-toc-section + .white-section {
   background: #fff;
 }
 
@@ -4086,20 +4086,24 @@ body.nx-v2.ai-page #ia-mataro .section-heading p {
   color: var(--muted);
 }
 
-body.nx-v2.ai-page #ia-mataro .ai-difference-note {
+body.nx-v2.ai-page #ia-mataro .ai-difference-note,
+body.nx-v2.automation-page #automatizacion-mataro .ai-difference-note {
   background: #ffffff10;
   border-color: #ffffff26;
 }
 
-body.nx-v2.ai-page #ia-mataro .ai-difference-note h3 {
+body.nx-v2.ai-page #ia-mataro .ai-difference-note h3,
+body.nx-v2.automation-page #automatizacion-mataro .ai-difference-note h3 {
   color: #fff;
 }
 
-body.nx-v2.ai-page #ia-mataro .ai-difference-note p {
+body.nx-v2.ai-page #ia-mataro .ai-difference-note p,
+body.nx-v2.automation-page #automatizacion-mataro .ai-difference-note p {
   color: var(--muted);
 }
 
-body.nx-v2.ai-page #ia-mataro .ai-difference-note a {
+body.nx-v2.ai-page #ia-mataro .ai-difference-note a,
+body.nx-v2.automation-page #automatizacion-mataro .ai-difference-note a {
   color: #bfdbfe;
   text-decoration: underline;
   text-underline-offset: 3px;
@@ -4164,16 +4168,19 @@ body.nx-v2.ai-page #limites-ia .section-heading h2 {
   color: #fff;
 }
 
-body.nx-v2.ai-page #limites-ia .ai-difference-note {
+body.nx-v2.ai-page #limites-ia .ai-difference-note,
+body.nx-v2.automation-page #ejemplo-automatizacion .ai-difference-note {
   background: #ffffff10;
   border-color: #ffffff26;
 }
 
-body.nx-v2.ai-page #limites-ia .ai-difference-note p {
+body.nx-v2.ai-page #limites-ia .ai-difference-note p,
+body.nx-v2.automation-page #ejemplo-automatizacion .ai-difference-note p {
   color: var(--muted);
 }
 
-body.nx-v2.ai-page #limites-ia .ai-difference-note a {
+body.nx-v2.ai-page #limites-ia .ai-difference-note a,
+body.nx-v2.automation-page #ejemplo-automatizacion .ai-difference-note a {
   color: #bfdbfe;
   font-weight: 800;
   text-decoration: underline;
@@ -4209,6 +4216,18 @@ body.nx-v2.ai-page #preguntas-frecuentes-ia {
 
 body.nx-v2.ai-page #indice-ia {
   scroll-margin-top: 16px;
+}
+
+
+body.nx-v2.automation-page #ejemplo-automatizacion .ai-difference-note h3 {
+  color: #fff;
+}
+
+body.nx-v2.automation-page #ejemplo-automatizacion .ai-difference-note iframe {
+  border-radius: 16px;
+  margin: 20px 0 14px;
+  display: block;
+  overflow: hidden;
 }
 
 /* IA APLICADA · criterio profesional firmado */
@@ -4260,91 +4279,36 @@ body.nx-v2.ai-page #preguntas-frecuentes-ia {
 }
 
 @media (max-width: 680px) {
-  body.nx-v2.ai-page .ai-page-toc {
+  body.nx-v2:is(.ai-page, .automation-page) .ai-page-toc {
     margin-bottom: 28px;
     padding: 15px;
   }
 
-  body.nx-v2.ai-page .ai-page-toc-list {
+  body.nx-v2:is(.ai-page, .automation-page) .ai-page-toc-list {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 8px;
     display: grid;
   }
 
-  body.nx-v2.ai-page .ai-page-toc-list li:last-child {
+  body.nx-v2:is(.ai-page, .automation-page) .ai-page-toc-list li:last-child {
     grid-column: auto;
     width: 100%;
   }
 
-  body.nx-v2.ai-page .ai-page-toc-list a {
+  body.nx-v2:is(.ai-page, .automation-page) .ai-page-toc-list a {
     justify-content: center;
     width: 100%;
   }
 
-  body.nx-v2.ai-page .ai-expert-note {
+  body.nx-v2:is(.ai-page, .automation-page) .ai-expert-note {
     border-radius: 16px;
     padding: 20px;
   }
 }
 
 @media (max-width: 430px) {
-  body.nx-v2.ai-page .ai-page-toc-list {
+  body.nx-v2:is(.ai-page, .automation-page) .ai-page-toc-list {
     grid-template-columns: 1fr;
   }
-}
-
-/* =========================================================
-   AUTOMATIZACIÓN · EQUIPARACIÓN SEO / AEO / GEO
-   ========================================================= */
-body.nx-v2.automation-page #diagnostico-automatizacion,
-body.nx-v2.automation-page #casos-practicos-automatizacion,
-body.nx-v2.automation-page #automatizacion-pymes,
-body.nx-v2.automation-page #automatizacion-ia,
-body.nx-v2.automation-page #resumen-automatizacion { background: #fff; }
-
-body.nx-v2.automation-page .automation-local-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-body.nx-v2.automation-page .automation-local-grid .process-card-v2 strong { display: inline; margin: 0; color: #bfdbfe; }
-
-body.nx-v2.automation-page .automation-local-sources,
-body.nx-v2.automation-page .automation-video-note {
-  background: #ffffff10;
-  border: 1px solid #ffffff26;
-  border-radius: 22px;
-  width: min(100%, 980px);
-  margin: 28px auto 0;
-  padding: 24px;
-}
-body.nx-v2.automation-page .automation-local-sources h3 { color: #fff; margin: 0 0 8px; }
-body.nx-v2.automation-page .automation-local-sources p,
-body.nx-v2.automation-page .automation-video-note p { color: var(--muted); margin: 0; line-height: 1.65; }
-body.nx-v2.automation-page .automation-local-sources a,
-body.nx-v2.automation-page .automation-video-note a { color: #bfdbfe; font-weight: 800; text-decoration: underline; text-underline-offset: 3px; }
-
-body.nx-v2.automation-page .automation-related-heading { margin-top: 38px; margin-bottom: 18px; }
-body.nx-v2.automation-page .automation-related-title { letter-spacing: -.03em; margin: 8px auto 0; font-size: clamp(1.45rem, 2.4vw, 2rem); line-height: 1.15; }
-body.nx-v2.automation-page .automation-video-note iframe { border-radius: 16px; margin: 20px 0 14px; display: block; overflow: hidden; }
-
-body.nx-v2.automation-page #diagnostico-automatizacion,
-body.nx-v2.automation-page #procesos-automatizables,
-body.nx-v2.automation-page #casos-practicos-automatizacion,
-body.nx-v2.automation-page #automatizacion-mataro,
-body.nx-v2.automation-page #automatizacion-pymes,
-body.nx-v2.automation-page #implementacion-automatizacion,
-body.nx-v2.automation-page #automatizacion-ia,
-body.nx-v2.automation-page #ejemplo-automatizacion,
-body.nx-v2.automation-page #resumen-automatizacion,
-body.nx-v2.automation-page #preguntas-frecuentes-automatizacion { scroll-margin-top: 24px; }
-body.nx-v2.automation-page #indice-automatizacion { scroll-margin-top: 16px; }
-
-@media (max-width: 1080px) {
-  body.nx-v2.automation-page .automation-local-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  body.nx-v2.automation-page .automation-local-grid .process-card-v2:last-child { grid-column: 1 / -1; width: calc((100% - 18px) / 2); justify-self: center; }
-}
-@media (max-width: 680px) {
-  body.nx-v2.automation-page .automation-local-grid { grid-template-columns: minmax(0, 1fr); }
-  body.nx-v2.automation-page .automation-local-grid .process-card-v2:last-child { grid-column: auto; width: 100%; }
-  body.nx-v2.automation-page .automation-local-sources,
-  body.nx-v2.automation-page .automation-video-note { padding: 20px; }
-  body.nx-v2.automation-page .automation-video-note iframe { border-radius: 12px; }
 }
 
