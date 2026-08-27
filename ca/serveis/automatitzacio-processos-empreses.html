@@ -149,7 +149,8 @@
                         "sameAs": [
                             "https://www.facebook.com/nexautia/",
                             "https://www.linkedin.com/company/nexautia/",
-                            "https://share.google/MtNi4ky6nYd8qWRhL"
+                            "https://share.google/MtNi4ky6nYd8qWRhL",
+                            "https://www.youtube.com/@JoanRamonSeijo"
                         ]
                     },
                     {
@@ -162,7 +163,8 @@
                             "@id": "https://www.nexautia.com/#organization"
                         },
                         "sameAs": [
-                            "https://www.linkedin.com/in/juanramonseijo/"
+                            "https://www.linkedin.com/in/juanramonseijo/",
+                            "https://www.youtube.com/@JoanRamonSeijo"
                         ]
                     },
                     {
@@ -250,6 +252,9 @@
                         ],
                         "mainEntity": {
                             "@id": "https://www.nexautia.com/ca/serveis/automatitzacio-processos-empreses.html#service"
+                        },
+                        "video": {
+                            "@id": "https://www.nexautia.com/ca/serveis/automatitzacio-processos-empreses.html#video-exemple-automatitzacio"
                         }
                     },
                     {
@@ -279,7 +284,8 @@
                         "sameAs": [
                             "https://www.facebook.com/nexautia/",
                             "https://www.linkedin.com/company/nexautia/",
-                            "https://share.google/MtNi4ky6nYd8qWRhL"
+                            "https://share.google/MtNi4ky6nYd8qWRhL",
+                            "https://www.youtube.com/@JoanRamonSeijo"
                         ]
                     },
                     {
@@ -306,18 +312,14 @@
                             "@id": "https://www.nexautia.com/#organization"
                         },
                         "areaServed": [
-                            {
-                                "@type": "City",
-                                "name": "Mataró"
-                            },
-                            {
-                                "@type": "AdministrativeArea",
-                                "name": "Maresme"
-                            },
-                            {
-                                "@type": "AdministrativeArea",
-                                "name": "Barcelona"
-                            }
+                            {"@type": "City", "name": "Mataró"},
+                            {"@type": "City", "name": "Argentona"},
+                            {"@type": "City", "name": "Cabrera de Mar"},
+                            {"@type": "City", "name": "Vilassar de Mar"},
+                            {"@type": "City", "name": "Premià de Mar"},
+                            {"@type": "City", "name": "El Masnou"},
+                            {"@type": "AdministrativeArea", "name": "Maresme"},
+                            {"@type": "AdministrativeArea", "name": "Barcelona"}
                         ],
                         "description": "Servei d’automatització de processos a Mataró per a empreses i pimes del Maresme i Barcelona: tasques repetitives, CRM, email, formularis, fulls de càlcul, dashboards, workflows i intel·ligència artificial aplicada.",
                         "url": "https://www.nexautia.com/ca/serveis/automatitzacio-processos-empreses.html",
@@ -328,6 +330,18 @@
                             "priceCurrency": "EUR",
                             "description": "Diagnòstic inicial gratuït per a empreses interessades a automatitzar processos i reduir tasques repetitives."
                         }
+                    },
+                    {
+                        "@type": "VideoObject",
+                        "@id": "https://www.nexautia.com/ca/serveis/automatitzacio-processos-empreses.html#video-exemple-automatitzacio",
+                        "name": "Exemple senzill d'automatització amb formulari i router",
+                        "description": "Exemple didàctic creat com a material formatiu per mostrar una automatització senzilla: un formulari recull la informació i un router deriva el flux cap a suport o vendes segons el departament seleccionat.",
+                        "thumbnailUrl": "https://i.ytimg.com/vi/53orJI1Nmd4/hqdefault.jpg",
+                        "embedUrl": "https://www.youtube-nocookie.com/embed/53orJI1Nmd4",
+                        "contentUrl": "https://www.youtube.com/watch?v=53orJI1Nmd4",
+                        "uploadDate": "2026-01-01",
+                        "inLanguage": "es",
+                        "publisher": {"@id": "https://www.nexautia.com/#organization"}
                     },
                     {
                         "@type": "FAQPage",
@@ -520,7 +534,7 @@
                             <figcaption>
                                 Què podem automatitzar · Captació i gestió de
                                 leads · Emails, avisos i comunicacions ·
-                                Informes, reportes i dashboards · CRM,
+                                Informes i dashboards · CRM,
                                 formularis i tasques administratives
                             </figcaption>
                         </figure>
@@ -529,8 +543,29 @@
             </main>
         </div>
 
-        <section class="white-section">
+        <section class="ai-toc-section" id="indice-automatizacion" aria-label="Navegació interna de la pàgina">
             <div class="container">
+                <nav class="ai-page-toc" aria-label="Índex de continguts d'aquesta pàgina">
+                    <strong class="ai-page-toc-title">En aquesta pàgina</strong>
+                    <ul class="ai-page-toc-list">
+                        <li><a href="#diagnostico-automatizacion">Diagnòstic</a></li>
+                        <li><a href="#procesos-automatizables">Processos automatitzables</a></li>
+                        <li><a href="#casos-practicos-automatizacion">Casos pràctics</a></li>
+                        <li><a href="#automatizacion-mataro">Automatització a Mataró</a></li>
+                        <li><a href="#automatizacion-pymes">Solucions per a pimes</a></li>
+                        <li><a href="#implementacion-automatizacion">Com la implementem</a></li>
+                        <li><a href="#automatizacion-ia">Automatització + IA</a></li>
+                        <li><a href="#ejemplo-automatizacion">Exemple didàctic</a></li>
+                        <li><a href="#resumen-automatizacion">En resum</a></li>
+                        <li><a href="#preguntas-frecuentes-automatizacion">Preguntes freqüents</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </section>
+
+        <section class="white-section" id="diagnostico-automatizacion">
+            <div class="container">
+                <a class="ai-back-top" href="#indice-automatizacion" aria-label="Tornar a l'índex d'aquesta pàgina">↑ Tornar a l'índex</a>
                 <div class="section-heading">
                     <span>Diagnòstic de processos</span>
                     <h2>
@@ -569,8 +604,9 @@
             </div>
         </section>
 
-        <section class="dark-band process-band" id="processos-automatitzables">
+        <section class="dark-band process-band" id="procesos-automatizables">
             <div class="container">
+                <a class="ai-back-top ai-back-top-dark" href="#indice-automatizacion" aria-label="Tornar a l'índex d'aquesta pàgina">↑ Tornar a l'índex</a>
                 <div class="section-heading section-heading-dark">
                     <span>Processos automatitzables</span>
                     <h2>Tasques i processos que podem automatitzar a la teva empresa</h2>
@@ -642,7 +678,7 @@
                         </span>
                         <h3>Informes i dashboards</h3>
                         <p>
-                            Creació de reportes automàtics amb dades de
+                            Creació d'informes automàtics amb dades de
                             diferents fonts per evitar copiar i enganxar
                             informació cada setmana o cada mes.
                         </p>
@@ -798,8 +834,9 @@
             </div>
         </section>
 
-        <section class="white-section automation-table-section" aria-labelledby="taula-automatitzacio-title">
+        <section class="white-section automation-table-section" id="casos-practicos-automatizacion" aria-labelledby="taula-automatitzacio-title">
             <div class="container">
+                <a class="ai-back-top" href="#indice-automatizacion" aria-label="Tornar a l'índex d'aquesta pàgina">↑ Tornar a l'índex</a>
                 <div class="section-heading">
                     <span>Casos pràctics</span>
                     <h2 id="taula-automatitzacio-title">Exemples pràctics de processos que pots automatitzar</h2>
@@ -825,8 +862,40 @@
                 </div>
             </div>
         </section>
-        <section class="white-section">
+
+        <section class="dark-band process-band automation-local-section" id="automatizacion-mataro">
             <div class="container">
+                <a class="ai-back-top ai-back-top-dark" href="#indice-automatizacion" aria-label="Tornar a l'índex d'aquesta pàgina">↑ Tornar a l'índex</a>
+                <div class="section-heading section-heading-dark">
+                    <span>Context local</span>
+                    <h2>Automatització de processos per a empreses a Mataró: on sol haver-hi marge de millora</h2>
+                </div>
+                <div class="process-grid-v2 ai-grid-v2">
+                    <article class="process-card-v2">
+                        <span>1</span>
+                        <h3>Teixit empresarial divers</h3>
+                        <p>Mataró compta amb <strong>7 polígons d'activitat econòmica</strong>. La indústria, els serveis i l'activitat professional generen fluxos diferents, però comparteixen tasques de coordinació, documentació, avisos i seguiment.</p>
+                    </article>
+                    <article class="process-card-v2">
+                        <span>2</span>
+                        <h3>Processos que travessen eines</h3>
+                        <p>Als polígons s'hi concentren <strong>unes 900 empreses i més d'11.000 llocs de treball</strong>. En aquest entorn són habituals els processos que passen pel correu, formularis, fulls de càlcul, CRM, documents i calendaris.</p>
+                    </article>
+                    <article class="process-card-v2">
+                        <span>3</span>
+                        <h3>Començar pel que és mesurable</h3>
+                        <p>El <time datetime="2025">2025</time>, <strong>1.010 empreses</strong> van fer alguna acció o van tenir contacte amb el SOM. La dada reflecteix un ecosistema empresarial actiu; per automatitzar, el criteri continua sent localitzar tasques repetitives i mesurables.</p>
+                    </article>
+                </div>
+                <div class="ai-difference-note">
+                    <h3>Fonts oficials</h3>
+                    <p>Context local basat en informació publicada per l'<a href="https://www.mataro.cat/ca/actualitat/noticies/2025/trobada-amb-empreses-dels-poligons-industrials-com-a-primer-pas-per-crear-un-grup-de-treball-transversal" target="_blank" rel="noopener noreferrer">Ajuntament de Mataró sobre els polígons d'activitat econòmica</a> i en el <a href="https://www.mataro.cat/ca/actualitat/noticies/2026/el-servei-d2019ocupacio-de-mataro-som-tanca-el-2025-amb-1-081-insercions-laborals-i-mes-de-4-600-persones-ateses" target="_blank" rel="noopener noreferrer">balanç 2025 del Servei d'Ocupació de Mataró (SOM)</a>.</p>
+                </div>
+            </div>
+        </section>
+        <section class="white-section" id="automatizacion-pymes">
+            <div class="container">
+                <a class="ai-back-top" href="#indice-automatizacion" aria-label="Tornar a l'índex d'aquesta pàgina">↑ Tornar a l'índex</a>
                 <div class="section-heading">
                     <span>Solucions pràctiques</span>
                     <h2>
@@ -865,10 +934,42 @@
                         </p>
                     </article>
                 </div>
+
+                <blockquote class="ai-expert-note">
+                    <p>El meu criteri és senzill: automatitzar no consisteix a encadenar eines perquè sí. Primer cal identificar on es repeteix la feina, quines regles són estables i quin resultat volem millorar. Prefereixo començar amb un flux senzill, mesurar si estalvia temps o redueix errors i, a partir d'aquí, escalar. Una bona automatització ha de donar més control sobre el procés, no menys.</p>
+                    <footer>
+                        <strong>Juan Ramón Seijo</strong>
+                        <span> · Enginyer de Telecomunicació, especialitat Telemàtica · </span>
+                        <a href="https://www.linkedin.com/in/juanramonseijo/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    </footer>
+                </blockquote>
+
+                <div class="section-heading ai-local-related-heading">
+                    <span>Serveis relacionats</span>
+                    <h3 class="ai-local-related-title">Altres serveis que poden complementar una automatització</h3>
+                </div>
+                <div class="format-strip ai-related-services-grid">
+                    <a class="format-card ai-related-service-card" href="intelligencia-artificial-empreses.html">
+                        <h3>Intel·ligència artificial aplicada</h3>
+                        <p>Integrem IA per interpretar documents, classificar informació, resumir continguts o donar suport a decisions.</p>
+                        <span class="ai-related-service-link">Veure servei →</span>
+                    </a>
+                    <a class="format-card ai-related-service-card" href="pagines-web-empreses.html">
+                        <h3>Pàgines web per a empreses</h3>
+                        <p>Dissenyem webs que es poden connectar amb formularis, captació de leads i altres processos interns.</p>
+                        <span class="ai-related-service-link">Veure servei →</span>
+                    </a>
+                    <a class="format-card ai-related-service-card" href="formacio-empreses.html">
+                        <h3>Formació per a empreses</h3>
+                        <p>Formació pràctica perquè els equips entenguin i utilitzin millor les seves eines i automatitzacions.</p>
+                        <span class="ai-related-service-link">Veure servei →</span>
+                    </a>
+                </div>
             </div>
         </section>
-        <section class="dark-band process-band">
+        <section class="dark-band process-band" id="implementacion-automatizacion">
             <div class="container">
+                <a class="ai-back-top ai-back-top-dark" href="#indice-automatizacion" aria-label="Tornar a l'índex d'aquesta pàgina">↑ Tornar a l'índex</a>
                 <div class="section-heading section-heading-dark">
                     <span>Implementació</span>
                     <h2>
@@ -913,8 +1014,9 @@
                 </ol>
             </div>
         </section>
-        <section class="white-section automation-ai-section">
+        <section class="white-section automation-ai-section" id="automatizacion-ia">
             <div class="container">
+                <a class="ai-back-top" href="#indice-automatizacion" aria-label="Tornar a l'índex d'aquesta pàgina">↑ Tornar a l'índex</a>
                 <div class="section-heading">
                     <span>IA aplicada a processos</span>
                     <h2>Automatització empresarial amb IA</h2>
@@ -947,11 +1049,27 @@
                 </div>
             </div>
         </section>
-        <section class="white-section automation-summary" aria-labelledby="resum-automatitzacio-title">
+
+        <section class="dark-band process-band automation-video-section" id="ejemplo-automatizacion" aria-labelledby="video-exemple-automatitzacio-title">
             <div class="container">
+                <a class="ai-back-top ai-back-top-dark" href="#indice-automatizacion" aria-label="Tornar a l'índex d'aquesta pàgina">↑ Tornar a l'índex</a>
+                <div class="section-heading section-heading-dark">
+                    <span>Exemple didàctic</span>
+                    <h2 id="video-exemple-automatitzacio-title">Com funciona una automatització senzilla: formulari, router i departaments</h2>
+                </div>
+                <div class="ai-difference-note">
+                    <p>Aquest exemple es va crear com a material formatiu per mostrar la lògica bàsica d'una automatització. Un formulari recull la informació i, segons el departament seleccionat, un router dirigeix el flux cap a suport o cap a vendes. És una manera senzilla de visualitzar com una entrada pot activar recorreguts diferents sense haver de moure les dades manualment. El vídeo forma part del curs original i està en castellà.</p>
+                    <iframe src="https://www.youtube-nocookie.com/embed/53orJI1Nmd4" title="Exemple senzill d'automatització amb formulari i router" width="1280" height="720" loading="lazy" style="width: 100%; height: auto; aspect-ratio: 16 / 9; border: 0;" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <p><a href="https://youtu.be/53orJI1Nmd4" target="_blank" rel="noopener noreferrer">Veure l'exemple a YouTube</a></p>
+                </div>
+            </div>
+        </section>
+        <section class="white-section automation-summary" id="resumen-automatizacion" aria-labelledby="resum-automatitzacio-title">
+            <div class="container">
+                <a class="ai-back-top" href="#indice-automatizacion" aria-label="Tornar a l'índex d'aquesta pàgina">↑ Tornar a l'índex</a>
                 <div class="section-heading">
-                    <span>Resum i conclusió</span>
-                    <h2 id="resum-automatitzacio-title">Conclusió: automatització de processos amb un objectiu pràctic</h2>
+                    <span>En resum</span>
+                    <h2 id="resum-automatitzacio-title">Automatització de processos amb un objectiu pràctic</h2>
                 </div>
                 <ul class="automation-summary-list">
                     <li><strong>Què automatitzem:</strong> tasques repetitives, tasques administratives, fluxos de dades, comunicacions, seguiment comercial i informes.</li>
@@ -962,8 +1080,9 @@
                 <p>No es tracta d'automatitzar per automatitzar. Apliquem tecnologia allà on aporta un benefici real. I mantenim supervisió i control quan són necessaris.</p>
             </div>
         </section>
-        <section class="faq-cta">
+        <section class="faq-cta" id="preguntas-frecuentes-automatizacion">
             <div class="container">
+                <a class="ai-back-top" href="#indice-automatizacion" aria-label="Tornar a l'índex d'aquesta pàgina">↑ Tornar a l'índex</a>
                 <div class="section-heading">
                     <span>Preguntes freqüents</span>
                     <h2>
@@ -1096,6 +1215,16 @@
                                     aria-hidden="true"
                                 >
                                     <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.049c.476-.9 1.637-1.85 3.37-1.85 3.602 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM7.114 20.452H3.56V9h3.554v11.452z" />
+                                </svg>
+                            </a>
+                            <a href="https://www.youtube.com/@JoanRamonSeijo" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Canal de YouTube de Joan Ramón Seijo i Nexautia">
+                                <svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M23.498 6.186a2.993 2.993 0 0 0-2.107-2.118C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.391.523A2.993 2.993 0 0 0 .502 6.186C0 8.086 0 12 0 12s0 3.914.502 5.814a2.993 2.993 0 0 0 2.107 2.118c1.886.523 9.391.523 9.391.523s7.505 0 9.391-.523a2.993 2.993 0 0 0 2.107-2.118C24 15.914 24 12 24 12s0-3.914-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                                </svg>
+                            </a>
+                            <a href="https://share.google/MtNi4ky6nYd8qWRhL" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Perfil de Google de Nexautia">
+                                <svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 10.5A3.5 3.5 0 1 1 12 5a3.5 3.5 0 0 1 0 7.5z" />
                                 </svg>
                             </a>
                         </div>
