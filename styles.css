@@ -3831,7 +3831,7 @@ body.nx-v2.ai-page .ai-summary .ai-difference-note ul > li::marker {
 
 /* IA LOCAL · reutiliza la tabla compartida; solo cambia la etiqueta de la tarjeta en tablet/móvil */
 @media (max-width: 900px) {
-  body.nx-v2.ai-page .ai-local-table-section tbody td:nth-of-type(1)::before {
+  body.nx-v2:is(.ai-page, .web-service-page) .ai-local-table-section tbody td:nth-of-type(1)::before {
     content: "Dato y contexto";
   }
 }
@@ -3963,7 +3963,7 @@ body.nx-v2:is(.ai-page, .automation-page, .web-service-page) .ai-page-toc-list a
 }
 
 /* IA APLICADA · retorno visible al índice */
-body.nx-v2:is(.ai-page, .automation-page) .ai-back-top {
+body.nx-v2:is(.ai-page, .automation-page, .web-service-page) .ai-back-top {
   width: fit-content;
   color: #fff;
   background: linear-gradient(135deg, var(--primary), var(--primary-2));
@@ -3981,8 +3981,8 @@ body.nx-v2:is(.ai-page, .automation-page) .ai-back-top {
   transition: transform .18s, background .18s, border-color .18s, box-shadow .18s;
 }
 
-body.nx-v2:is(.ai-page, .automation-page) .ai-back-top:hover,
-body.nx-v2:is(.ai-page, .automation-page) .ai-back-top:focus-visible {
+body.nx-v2:is(.ai-page, .automation-page, .web-service-page) .ai-back-top:hover,
+body.nx-v2:is(.ai-page, .automation-page, .web-service-page) .ai-back-top:focus-visible {
   color: #fff;
   background: #1e40af;
   border-color: #1e40af;
@@ -3991,15 +3991,15 @@ body.nx-v2:is(.ai-page, .automation-page) .ai-back-top:focus-visible {
   box-shadow: 0 10px 24px #2563eb38;
 }
 
-body.nx-v2:is(.ai-page, .automation-page) .ai-back-top-dark {
+body.nx-v2:is(.ai-page, .automation-page, .web-service-page) .ai-back-top-dark {
   color: #0f2747;
   background: #dbeafe;
   border-color: #60a5fa;
   box-shadow: 0 8px 20px #00000024;
 }
 
-body.nx-v2:is(.ai-page, .automation-page) .ai-back-top-dark:hover,
-body.nx-v2:is(.ai-page, .automation-page) .ai-back-top-dark:focus-visible {
+body.nx-v2:is(.ai-page, .automation-page, .web-service-page) .ai-back-top-dark:hover,
+body.nx-v2:is(.ai-page, .automation-page, .web-service-page) .ai-back-top-dark:focus-visible {
   color: #07111f;
   background: #eff6ff;
   border-color: #93c5fd;
@@ -4043,7 +4043,7 @@ body.nx-v2:is(.ai-page, .automation-page) .ai-back-top-dark:focus-visible {
     justify-self: center;
   }
 
-  body.nx-v2:is(.ai-page, .automation-page) .ai-back-top {
+  body.nx-v2:is(.ai-page, .automation-page, .web-service-page) .ai-back-top {
     margin: 0 auto 14px;
   }
 }
@@ -4313,6 +4313,14 @@ body.nx-v2.ai-page #preguntas-frecuentes-ia {
 }
 
 
+
+/* PÁGINAS WEB · resumen semántico reutilizando las tarjetas existentes */
+body.nx-v2.web-service-page #resumen-web .web-summary-list {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+}
 
 /* PÁGINAS WEB · enlaces dentro de notas reutilizadas */
 body.nx-v2.web-service-page .ai-difference-note a {
