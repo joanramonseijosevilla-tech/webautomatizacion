@@ -1640,7 +1640,7 @@ body.nx-v2.web-service-page main { background: transparent; color: var(--light-t
 
 body.nx-v2.web-service-page .hero.service-hero-seo { background: transparent; color: #fff; padding: 62px 0 54px; }
 
-body.nx-v2.web-service-page .service-hero-container, body.nx-v2.web-service-page .section, body.nx-v2.web-service-page footer .container {
+body.nx-v2.web-service-page .service-hero-container, body.nx-v2.web-service-page .section, body.nx-v2.web-service-page > footer.footer .container {
   width: min(1180px, 100% - 36px);
   margin-left: auto;
   margin-right: auto;
@@ -1734,9 +1734,15 @@ body.nx-v2.web-service-page .cards, body.nx-v2.web-service-page .process-steps {
 
 body.nx-v2.web-service-page .card, body.nx-v2.web-service-page .process-step { padding: 24px; }
 
-body.nx-v2.web-service-page .card h3, body.nx-v2.web-service-page .process-step h3, body.nx-v2.web-service-page .service-info-card h3 {
+body.nx-v2.web-service-page .card h3, body.nx-v2.web-service-page .process-step h3, body.nx-v2.web-service-page .service-info-card h2 {
   letter-spacing: -.025em;
   margin: 0 0 8px;
+}
+
+body.nx-v2.web-service-page .service-info-card h2 {
+  text-align: left;
+  font-size: 1.17em;
+  line-height: 1.2;
 }
 
 body.nx-v2.web-service-page .card p, body.nx-v2.web-service-page .process-step p, body.nx-v2.web-service-page .service-info-card p {
@@ -1758,7 +1764,7 @@ body.nx-v2.web-service-page .final-cta-text {
   margin: -10px auto 24px;
 }
 
-body.nx-v2.web-service-page footer {
+body.nx-v2.web-service-page > footer.footer {
   background: var(--dark-surface);
   color: var(--muted);
   border-top: 1px solid #ffffff1a;
@@ -1777,7 +1783,7 @@ body.nx-v2.web-service-page footer {
 }
 
 @media (max-width: 680px) {
-  body.nx-v2.web-service-page .service-hero-container, body.nx-v2.web-service-page .section, body.nx-v2.web-service-page footer .container {
+  body.nx-v2.web-service-page .service-hero-container, body.nx-v2.web-service-page .section, body.nx-v2.web-service-page > footer.footer .container {
     width: min(100% - 24px, 1180px);
   }
   body.nx-v2.web-service-page .hero.service-hero-seo { padding: 42px 0 40px; }
@@ -3592,7 +3598,7 @@ body.nx-v2 .automation-table-section tbody tr:nth-child(even) td {
 }
 
 /* El <ol> conserva la rejilla existente sin sangría/list-style del navegador */
-body.nx-v2.automation-page .automation-steps {
+body.nx-v2:is(.automation-page, .web-service-page) .automation-steps {
   margin: 0;
   padding: 0;
   list-style: none;
@@ -3831,8 +3837,12 @@ body.nx-v2.ai-page .ai-summary .ai-difference-note ul > li::marker {
 
 /* IA LOCAL · reutiliza la tabla compartida; solo cambia la etiqueta de la tarjeta en tablet/móvil */
 @media (max-width: 900px) {
-  body.nx-v2:is(.ai-page, .web-service-page) .ai-local-table-section tbody td:nth-of-type(1)::before {
+  body.nx-v2.ai-page .ai-local-table-section tbody td:nth-of-type(1)::before {
     content: "Dato y contexto";
+  }
+
+  body.nx-v2.web-service-page .ai-local-table-section tbody td:nth-of-type(1)::before {
+    content: "Cómo lo trabajamos";
   }
 }
 
@@ -3850,7 +3860,7 @@ body.nx-v2:is(.ai-page, .automation-page, .web-service-page) .ai-local-related-t
 }
 
 /* IA LOCAL · tarjetas de servicios relacionados claramente enlazables */
-body.nx-v2:is(.ai-page, .automation-page) .ai-related-services-grid .ai-related-service-card {
+body.nx-v2:is(.ai-page, .automation-page, .web-service-page) .ai-related-services-grid .ai-related-service-card {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -3860,19 +3870,19 @@ body.nx-v2:is(.ai-page, .automation-page) .ai-related-services-grid .ai-related-
   transition: transform .18s, box-shadow .18s, border-color .18s, background .18s;
 }
 
-body.nx-v2:is(.ai-page, .automation-page) .ai-related-services-grid .ai-related-service-card:hover {
+body.nx-v2:is(.ai-page, .automation-page, .web-service-page) .ai-related-services-grid .ai-related-service-card:hover {
   background: #f8fbff;
   border-color: var(--secondary);
   transform: translateY(-2px);
   box-shadow: 0 18px 42px #0f172a18;
 }
 
-body.nx-v2:is(.ai-page, .automation-page) .ai-related-services-grid .ai-related-service-card:focus-visible {
+body.nx-v2:is(.ai-page, .automation-page, .web-service-page) .ai-related-services-grid .ai-related-service-card:focus-visible {
   outline: 3px solid #93c5fd;
   outline-offset: 3px;
 }
 
-body.nx-v2:is(.ai-page, .automation-page) .ai-related-services-grid .ai-related-service-link {
+body.nx-v2:is(.ai-page, .automation-page, .web-service-page) .ai-related-services-grid .ai-related-service-link {
   width: fit-content;
   color: var(--primary-2);
   background: #eff6ff;
@@ -3887,7 +3897,7 @@ body.nx-v2:is(.ai-page, .automation-page) .ai-related-services-grid .ai-related-
   display: inline-flex;
 }
 
-body.nx-v2:is(.ai-page, .automation-page) .ai-related-services-grid .ai-related-service-card p {
+body.nx-v2:is(.ai-page, .automation-page, .web-service-page) .ai-related-services-grid .ai-related-service-card p {
   margin-bottom: 16px;
 }
 
