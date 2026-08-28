@@ -4247,7 +4247,7 @@ body.nx-v2:is(.ai-page, .automation-page, .web-service-page) .ai-expert-note {
   background: #f8fbff;
   border: 1px solid #dbeafe;
   border-left: 4px solid var(--primary);
-  border-radius: 0 18px 18px 0;
+  border-radius: 18px;
   margin: 30px auto 0;
   padding: 22px 24px;
 }
