@@ -878,7 +878,7 @@ body.nx-v2:is(.ai-page, .automation-page) .ai-grid-v2 {
 
 body.nx-v2.ai-page .ai-implementation-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 
-body.nx-v2:is(.ai-page, .automation-page) .ai-difference-note {
+body.nx-v2:is(.ai-page, .automation-page, .web-service-page) .ai-difference-note {
   background: linear-gradient(135deg, #2563eb17, #2563eb17);
   border: 1px solid #dbeafe;
   border-radius: 22px;
@@ -886,9 +886,9 @@ body.nx-v2:is(.ai-page, .automation-page) .ai-difference-note {
   padding: 24px;
 }
 
-body.nx-v2:is(.ai-page, .automation-page) .ai-difference-note h3 { color: var(--light-text); margin: 0 0 8px; }
+body.nx-v2:is(.ai-page, .automation-page, .web-service-page) .ai-difference-note h3 { color: var(--light-text); margin: 0 0 8px; }
 
-body.nx-v2:is(.ai-page, .automation-page) .ai-difference-note p { color: var(--light-muted); margin: 0; }
+body.nx-v2:is(.ai-page, .automation-page, .web-service-page) .ai-difference-note p { color: var(--light-muted); margin: 0; }
 
 @media (max-width: 1080px) {
   body.nx-v2.ai-page .hero-grid { grid-template-columns: minmax(0, 1fr); }
@@ -3837,12 +3837,12 @@ body.nx-v2.ai-page .ai-summary .ai-difference-note ul > li::marker {
 }
 
 /* IA LOCAL · espaciado del bloque de servicios relacionados */
-body.nx-v2:is(.ai-page, .automation-page) .ai-local-related-heading {
+body.nx-v2:is(.ai-page, .automation-page, .web-service-page) .ai-local-related-heading {
   margin-top: 38px;
   margin-bottom: 18px;
 }
 
-body.nx-v2:is(.ai-page, .automation-page) .ai-local-related-title {
+body.nx-v2:is(.ai-page, .automation-page, .web-service-page) .ai-local-related-title {
   letter-spacing: -.03em;
   margin: 8px auto 0;
   font-size: clamp(1.45rem, 2.4vw, 2rem);
@@ -3892,7 +3892,7 @@ body.nx-v2:is(.ai-page, .automation-page) .ai-related-services-grid .ai-related-
 }
 
 /* IA APLICADA · índice interno horizontal */
-body.nx-v2:is(.ai-page, .automation-page) .ai-toc-section {
+body.nx-v2:is(.ai-page, .automation-page, .web-service-page) .ai-toc-section {
   background: var(--light);
   color: var(--light-text);
   border-top: 1px solid #e2e8f0;
@@ -3900,7 +3900,7 @@ body.nx-v2:is(.ai-page, .automation-page) .ai-toc-section {
   padding: 18px 0;
 }
 
-body.nx-v2:is(.ai-page, .automation-page) .ai-page-toc {
+body.nx-v2:is(.ai-page, .automation-page, .web-service-page) .ai-page-toc {
   width: 100%;
   min-width: 0;
   margin: 0;
@@ -3912,7 +3912,7 @@ body.nx-v2:is(.ai-page, .automation-page) .ai-page-toc {
   gap: 10px;
 }
 
-body.nx-v2:is(.ai-page, .automation-page) .ai-page-toc-title {
+body.nx-v2:is(.ai-page, .automation-page, .web-service-page) .ai-page-toc-title {
   color: var(--light-text);
   white-space: nowrap;
   font-size: .95rem;
@@ -3920,7 +3920,7 @@ body.nx-v2:is(.ai-page, .automation-page) .ai-page-toc-title {
   flex: 0 0 auto;
 }
 
-body.nx-v2:is(.ai-page, .automation-page) .ai-page-toc-list {
+body.nx-v2:is(.ai-page, .automation-page, .web-service-page) .ai-page-toc-list {
   width: min(100%, 1080px);
   min-width: 0;
   flex-wrap: wrap;
@@ -3933,13 +3933,13 @@ body.nx-v2:is(.ai-page, .automation-page) .ai-page-toc-list {
   display: flex;
 }
 
-body.nx-v2:is(.ai-page, .automation-page) .ai-page-toc-list li {
+body.nx-v2:is(.ai-page, .automation-page, .web-service-page) .ai-page-toc-list li {
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-body.nx-v2:is(.ai-page, .automation-page) .ai-page-toc-list a {
+body.nx-v2:is(.ai-page, .automation-page, .web-service-page) .ai-page-toc-list a {
   color: var(--primary-2);
   white-space: nowrap;
   background: #eff6ff;
@@ -3954,8 +3954,8 @@ body.nx-v2:is(.ai-page, .automation-page) .ai-page-toc-list a {
   transition: background .18s, color .18s, border-color .18s, transform .18s;
 }
 
-body.nx-v2:is(.ai-page, .automation-page) .ai-page-toc-list a:hover,
-body.nx-v2:is(.ai-page, .automation-page) .ai-page-toc-list a:focus-visible {
+body.nx-v2:is(.ai-page, .automation-page, .web-service-page) .ai-page-toc-list a:hover,
+body.nx-v2:is(.ai-page, .automation-page, .web-service-page) .ai-page-toc-list a:focus-visible {
   color: #fff;
   background: var(--primary);
   border-color: var(--primary);
@@ -4006,29 +4006,29 @@ body.nx-v2:is(.ai-page, .automation-page) .ai-back-top-dark:focus-visible {
 }
 
 @media (max-width: 1080px) {
-  body.nx-v2:is(.ai-page, .automation-page) .ai-page-toc {
+  body.nx-v2:is(.ai-page, .automation-page, .web-service-page) .ai-page-toc {
     flex-direction: column;
     gap: 10px;
   }
 
-  body.nx-v2:is(.ai-page, .automation-page) .ai-page-toc-list {
+  body.nx-v2:is(.ai-page, .automation-page, .web-service-page) .ai-page-toc-list {
     width: min(100%, 860px);
   }
 }
 
 @media (max-width: 680px) {
-  body.nx-v2:is(.ai-page, .automation-page) .ai-toc-section {
+  body.nx-v2:is(.ai-page, .automation-page, .web-service-page) .ai-toc-section {
     padding: 16px 0;
   }
 
-  body.nx-v2:is(.ai-page, .automation-page) .ai-page-toc-list {
+  body.nx-v2:is(.ai-page, .automation-page, .web-service-page) .ai-page-toc-list {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     width: 100%;
     gap: 8px;
     display: grid;
   }
 
-  body.nx-v2:is(.ai-page, .automation-page) .ai-page-toc-list a {
+  body.nx-v2:is(.ai-page, .automation-page, .web-service-page) .ai-page-toc-list a {
     white-space: normal;
     text-align: center;
     width: 100%;
@@ -4037,7 +4037,7 @@ body.nx-v2:is(.ai-page, .automation-page) .ai-back-top-dark:focus-visible {
     line-height: 1.25;
   }
 
-  body.nx-v2:is(.ai-page, .automation-page) .ai-page-toc-list li:last-child {
+  body.nx-v2:is(.ai-page, .automation-page, .web-service-page) .ai-page-toc-list li:last-child {
     grid-column: 1 / -1;
     width: min(100%, 320px);
     justify-self: center;
@@ -4049,11 +4049,11 @@ body.nx-v2:is(.ai-page, .automation-page) .ai-back-top-dark:focus-visible {
 }
 
 @media (max-width: 430px) {
-  body.nx-v2:is(.ai-page, .automation-page) .ai-page-toc-list {
+  body.nx-v2:is(.ai-page, .automation-page, .web-service-page) .ai-page-toc-list {
     grid-template-columns: 1fr;
   }
 
-  body.nx-v2:is(.ai-page, .automation-page) .ai-page-toc-list li:last-child {
+  body.nx-v2:is(.ai-page, .automation-page, .web-service-page) .ai-page-toc-list li:last-child {
     grid-column: auto;
     width: 100%;
   }
@@ -4063,7 +4063,7 @@ body.nx-v2:is(.ai-page, .automation-page) .ai-back-top-dark:focus-visible {
 /* IA APLICADA · alternancia visual definitiva */
 
 /* 1 · Soluciones de IA: BLANCO */
-body.nx-v2:is(.ai-page, .automation-page) .ai-toc-section + .white-section {
+body.nx-v2:is(.ai-page, .automation-page, .web-service-page) .ai-toc-section + .white-section {
   background: #fff;
 }
 
@@ -4231,7 +4231,7 @@ body.nx-v2.automation-page #ejemplo-automatizacion .ai-difference-note iframe {
 }
 
 /* IA APLICADA · criterio profesional firmado */
-body.nx-v2:is(.ai-page, .automation-page) .ai-expert-note {
+body.nx-v2:is(.ai-page, .automation-page, .web-service-page) .ai-expert-note {
   max-width: 900px;
   color: var(--light-text);
   background: #f8fbff;
@@ -4242,23 +4242,23 @@ body.nx-v2:is(.ai-page, .automation-page) .ai-expert-note {
   padding: 22px 24px;
 }
 
-body.nx-v2:is(.ai-page, .automation-page) .ai-expert-note p {
+body.nx-v2:is(.ai-page, .automation-page, .web-service-page) .ai-expert-note p {
   color: #334155;
   margin: 0 0 14px;
   line-height: 1.65;
 }
 
-body.nx-v2:is(.ai-page, .automation-page) .ai-expert-note footer {
+body.nx-v2:is(.ai-page, .automation-page, .web-service-page) .ai-expert-note footer {
   color: var(--light-muted);
   font-size: .92rem;
   line-height: 1.5;
 }
 
-body.nx-v2:is(.ai-page, .automation-page) .ai-expert-note footer strong {
+body.nx-v2:is(.ai-page, .automation-page, .web-service-page) .ai-expert-note footer strong {
   color: var(--light-text);
 }
 
-body.nx-v2:is(.ai-page, .automation-page) .ai-expert-note footer a {
+body.nx-v2:is(.ai-page, .automation-page, .web-service-page) .ai-expert-note footer a {
   color: var(--primary-2);
   font-weight: 850;
   text-decoration: underline;
@@ -4279,36 +4279,45 @@ body.nx-v2.ai-page #preguntas-frecuentes-ia {
 }
 
 @media (max-width: 680px) {
-  body.nx-v2:is(.ai-page, .automation-page) .ai-page-toc {
+  body.nx-v2:is(.ai-page, .automation-page, .web-service-page) .ai-page-toc {
     margin-bottom: 28px;
     padding: 15px;
   }
 
-  body.nx-v2:is(.ai-page, .automation-page) .ai-page-toc-list {
+  body.nx-v2:is(.ai-page, .automation-page, .web-service-page) .ai-page-toc-list {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 8px;
     display: grid;
   }
 
-  body.nx-v2:is(.ai-page, .automation-page) .ai-page-toc-list li:last-child {
+  body.nx-v2:is(.ai-page, .automation-page, .web-service-page) .ai-page-toc-list li:last-child {
     grid-column: auto;
     width: 100%;
   }
 
-  body.nx-v2:is(.ai-page, .automation-page) .ai-page-toc-list a {
+  body.nx-v2:is(.ai-page, .automation-page, .web-service-page) .ai-page-toc-list a {
     justify-content: center;
     width: 100%;
   }
 
-  body.nx-v2:is(.ai-page, .automation-page) .ai-expert-note {
+  body.nx-v2:is(.ai-page, .automation-page, .web-service-page) .ai-expert-note {
     border-radius: 16px;
     padding: 20px;
   }
 }
 
 @media (max-width: 430px) {
-  body.nx-v2:is(.ai-page, .automation-page) .ai-page-toc-list {
+  body.nx-v2:is(.ai-page, .automation-page, .web-service-page) .ai-page-toc-list {
     grid-template-columns: 1fr;
   }
 }
 
+
+
+/* PÁGINAS WEB · enlaces dentro de notas reutilizadas */
+body.nx-v2.web-service-page .ai-difference-note a {
+  color: var(--primary-2);
+  font-weight: 800;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
