@@ -2390,6 +2390,29 @@ body.nx-v2.resources-page .resources-products-btn { width: fit-content; }
 
 body.nx-v2.resources-page .resources-final-cta { margin-top: 0; }
 
+
+/* RECURSOS · tabla de guía rápida reutilizando el componente de tabla existente */
+body.nx-v2.resources-page #guia-recursos thead th:nth-child(1) { width: 28%; }
+body.nx-v2.resources-page #guia-recursos thead th:nth-child(2) { width: 18%; }
+body.nx-v2.resources-page #guia-recursos thead th:nth-child(3) { width: 54%; }
+
+@media (max-width: 900px) {
+  body.nx-v2.resources-page #guia-recursos tbody td:nth-of-type(1)::before {
+    content: "Punto de partida";
+  }
+
+  body.nx-v2.resources-page #guia-recursos tbody td:nth-of-type(2)::before {
+    content: "Para qué puede servirte";
+    display: block;
+    color: var(--primary-2);
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    margin-bottom: 5px;
+    font-size: .72rem;
+    font-weight: 900;
+  }
+}
+
 @media (max-width: 1080px) {
   body.nx-v2.resources-page .resources-hero-grid, body.nx-v2.resources-page .resources-bridge-grid { grid-template-columns: minmax(0, 1fr); }
   body.nx-v2.resources-page .resources-card-grid, body.nx-v2.resources-page .resources-card-grid-light {
@@ -4258,17 +4281,19 @@ body.nx-v2:is(.ai-page, .automation-page, .web-service-page) .ai-expert-note p {
   line-height: 1.65;
 }
 
-body.nx-v2:is(.ai-page, .automation-page, .web-service-page) .ai-expert-note footer {
+body.nx-v2:is(.ai-page, .automation-page, .web-service-page) .ai-expert-note :is(footer, cite) {
   color: var(--light-muted);
   font-size: .92rem;
+  font-style: normal;
   line-height: 1.5;
+  display: block;
 }
 
-body.nx-v2:is(.ai-page, .automation-page, .web-service-page) .ai-expert-note footer strong {
+body.nx-v2:is(.ai-page, .automation-page, .web-service-page) .ai-expert-note :is(footer, cite) strong {
   color: var(--light-text);
 }
 
-body.nx-v2:is(.ai-page, .automation-page, .web-service-page) .ai-expert-note footer a {
+body.nx-v2:is(.ai-page, .automation-page, .web-service-page) .ai-expert-note :is(footer, cite) a {
   color: var(--primary-2);
   font-weight: 850;
   text-decoration: underline;
