@@ -2397,6 +2397,22 @@ body.nx-v2.resources-page #guia-recursos thead th:nth-child(2) { width: 18%; }
 body.nx-v2.resources-page #guia-recursos thead th:nth-child(3) { width: 54%; }
 
 @media (max-width: 900px) {
+  /* Al pasar a tarjetas, cada celda debe ocupar todo el ancho. */
+  body.nx-v2.resources-page #guia-recursos table,
+  body.nx-v2.resources-page #guia-recursos tbody,
+  body.nx-v2.resources-page #guia-recursos tr,
+  body.nx-v2.resources-page #guia-recursos th,
+  body.nx-v2.resources-page #guia-recursos td {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  body.nx-v2.resources-page #guia-recursos tbody th,
+  body.nx-v2.resources-page #guia-recursos tbody td {
+    overflow-wrap: normal;
+    word-break: normal;
+  }
+
   body.nx-v2.resources-page #guia-recursos tbody td:nth-of-type(1)::before {
     content: "Punto de partida";
   }
